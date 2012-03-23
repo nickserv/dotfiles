@@ -17,7 +17,7 @@ urxvt.background:  #1e1e1e
 urxvt.foreground:  white
 urxvt.cursorColor: #00ff00
 
-!additional colors
+!additional colors (from http://www.reddit.com/r/archlinux/comments/ozh5a/my_archlinux_desktop_followup/)
 urxvt.color0:  black
 urxvt.color1:  #cc0000
 urxvt.color2:  #4e9a06
