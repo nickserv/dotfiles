@@ -25,7 +25,6 @@ draw_borders no
 # stippled borders
 stippled_borders 3
 # border
-border_margin 10
 border_width 10
 # default colors
 default_color 828282
