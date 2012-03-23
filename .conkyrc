@@ -39,8 +39,8 @@ total_run_times 0
 
 TEXT
 DISK ${hr 2}
-Disk: ${fs_used_perc /}%  ${fs_bar 6 /} 
-Swap: $swapperc%   ${swapbar 6}
+disk: $fs_used_perc%  ${fs_bar 6 /} 
+swap: $swapperc%   ${swapbar 6}
 
 CPU ${hr 2}
 $cpu% $cpubar
@@ -52,7 +52,7 @@ ${memgraph 000 000}
 #
 PROCESSES ${hr 2}
 #                 $cpu% CPU   $memperc% RAM
-                    CPU       RAM
+                    cpu       ram
 ${top name 1} ${top cpu 1}%   ${top mem 1}%
 ${top name 2} ${top cpu 2}%   ${top mem 2}%
 ${top name 3} ${top cpu 3}%   ${top mem 3}%
@@ -64,11 +64,11 @@ ${top name 8} ${top cpu 8}%   ${top mem 8}%
 ${top name 9} ${top cpu 9}%   ${top mem 9}%
 
 NETWORK ${hr 2}
-Down: ${downspeed wlan0}/s ${alignr}Up: ${upspeed wlan0}/s
+down: ${downspeed wlan0}/s ${alignr}up: ${upspeed wlan0}/s
 ${downspeedgraph wlan0 25,140 000 000} ${alignr}${upspeedgraph wlan0 25,140 000 000}
 #
 SYSTEM ${hr 2}
-Name: $nodename
-Up:   $uptime
-IP:   ${addr wlan0}
-MAC:  ${wireless_ap wlan0}
+name: $nodename
+up:   $uptime
+ip:   ${addr wlan0}
+mac:  ${wireless_ap wlan0}
