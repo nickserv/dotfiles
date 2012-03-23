@@ -1,0 +1,74 @@
+# Nicolas McCurdy's Conky Config (based off Ubuntu-Conky by Pengo)
+
+# create own window instead of using desktop
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+# use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+# fiddle with window
+use_spacer right
+# use xft
+use_xft yes
+#xftfont mono:bold:size=8
+xftfont Tamsyn:bold:size=8
+xftalpha 0.8
+text_buffer_size 2048
+# update interval in seconds
+update_interval 5.0
+# draw shades?
+draw_shades no
+# text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+# stippled borders
+stippled_borders 3
+# border
+border_margin 10
+border_width 10
+# default colors
+default_color 828282
+# text alignment, other possible values are commented
+alignment top_right
+# gap between borders of screen and text
+gap_x 10
+gap_y 30
+total_run_times 0
+
+
+TEXT
+DISK ${hr 2}
+Disk: ${fs_used_perc /}%  ${fs_bar 6 /} 
+Swap: $swapperc%   ${swapbar 6}
+
+CPU ${hr 2}
+$cpu% $cpubar
+${cpugraph 000 000}
+#
+RAM ${hr 2}
+$memperc% ${membar 6}
+${memgraph 000 000}
+#
+PROCESSES ${hr 2}
+#                 $cpu% CPU   $memperc% RAM
+                    CPU       RAM
+${top name 1} ${top cpu 1}%   ${top mem 1}%
+${top name 2} ${top cpu 2}%   ${top mem 2}%
+${top name 3} ${top cpu 3}%   ${top mem 3}%
+${top name 4} ${top cpu 4}%   ${top mem 4}%
+${top name 5} ${top cpu 5}%   ${top mem 5}%
+${top name 6} ${top cpu 6}%   ${top mem 6}%
+${top name 7} ${top cpu 7}%   ${top mem 7}%
+${top name 8} ${top cpu 8}%   ${top mem 8}%
+${top name 9} ${top cpu 9}%   ${top mem 9}%
+
+NETWORK ${hr 2}
+Down: ${downspeed wlan0}/s ${alignr}Up: ${upspeed wlan0}/s
+${downspeedgraph wlan0 25,140 000 000} ${alignr}${upspeedgraph wlan0 25,140 000 000}
+#
+SYSTEM ${hr 2}
+Name: $nodename
+Up:   $uptime
+IP:   ${addr wlan0}
+MAC:  ${wireless_ap wlan0}
