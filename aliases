@@ -57,7 +57,10 @@ if [ $UID -ne 0 ]; then
 fi
 
 #safety features
+alias cp='cp -i'
+alias mv='mv -i'
 alias rm='rm -I'
+alias ln='ln -i'
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
