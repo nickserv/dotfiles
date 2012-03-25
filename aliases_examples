@@ -1,3 +1,5 @@
+# bash aliases from ArchWiki (https://wiki.archlinux.org/index.php/Bash#Aliases)
+
 # modified commands
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
