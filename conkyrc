@@ -62,12 +62,26 @@ ${top name 7} ${top cpu 7}%   ${top mem 7}%
 ${top name 8} ${top cpu 8}%   ${top mem 8}%
 ${top name 9} ${top cpu 9}%   ${top mem 9}%
 
-NETWORK ${hr 2}
+${if_existing /proc/net/route eth0}#
+NETWORK (wired) ${hr 2}
+down: ${downspeed eth0}/s ${alignr}up: ${upspeed eth0}/s
+${downspeedgraph eth0 25,140 000 000} ${alignr}${upspeedgraph eth0 25,140 000 000}
+$endif#
+#
+${if_existing /proc/net/route wlan0}#
+NETWORK (wireless) ${hr 2}
 down: ${downspeed wlan0}/s ${alignr}up: ${upspeed wlan0}/s
 ${downspeedgraph wlan0 25,140 000 000} ${alignr}${upspeedgraph wlan0 25,140 000 000}
+$endif#
 #
 SYSTEM ${hr 2}
-name: $nodename
-up:   $uptime
-ip:   ${addr wlan0}
-mac:  ${wireless_ap wlan0}
+hostname:      $nodename
+uptime:        $uptime
+${if_existing /proc/net/route eth0}#
+wired ip:      ${addr eth0}
+wired mac:     ${wireless_ap eth0}
+$endif#
+${if_existing /proc/net/route wlan0}#
+wireless ip:   ${addr wlan0}
+wireless mac:  ${wireless_ap wlan0}
+$endif#
