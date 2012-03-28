@@ -1,21 +1,21 @@
 #!/bin/bash
 #alias NICKNAME='COMMAND'
 
-#color support
+# color support
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias diff='colordiff' #requires colordiff package
+alias diff='colordiff' # requires colordiff package
 
-#human sizes
+# human sizes
 alias df='df -h'
 alias du='du -h'
 alias free='free -m'
 
-#modified commands
+# modified commands
 alias more='less'
 #alias df='df -h'
 #alias du='du -c -h'
@@ -24,7 +24,7 @@ alias more='less'
 #alias ping='ping -c 5'
 alias ..='cd ..'
 
-#shortcuts
+# shortcuts
 alias c='clear'
 alias e='exit'
 alias ka='killall'
@@ -35,7 +35,7 @@ alias nsc='notify-send "Process Completed"'
 alias h='history'
 alias ra='ranger'
 
-#new commands
+# new commands
 alias lock='xscreensaver-command -lock'
 alias xmerge='xrdb -merge $HOME/.xresources'
 alias pig='ping google.com'
@@ -45,7 +45,7 @@ alias hist='history | grep $1'      # requires an argument
 alias openports='netstat --all --numeric --programs --inet --inet6'
 #alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
 
-#privileged access
+# privileged access
 if [ $UID -ne 0 ]; then
     alias sudo='sudo '
     alias scat='sudo cat'
@@ -57,7 +57,7 @@ if [ $UID -ne 0 ]; then
     #alias netcfg='sudo netcfg2'
 fi
 
-#safety features
+# safety features
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
@@ -66,17 +66,17 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-#vim
+# vim
 alias vimall='vim -p *'
 alias vimp='vim -p'
 alias vimh='vim -o'
 alias vimv='vim -O'
 alias vimd='vim -d'
 
-#feh
+# feh
 alias feh='feh --scale-down --auto-zoom'
 
-#ls
+# ls
 alias ls='ls -hF --color=auto'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
@@ -87,11 +87,11 @@ alias lz='ll -rS'                   # sort by size
 alias lt='ll -rt'                   # sort by date
 alias lm='la | less'
 
-#pacman/packer
+# pacman/packer
 alias pcm='sudo pacman'
 alias pcr='packer --noedit --auronly'
 
-#pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
+# pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
 #alias pac='pacman -S'      # default action     - install one or more packages
 #alias pacu='pacman -Syu'   # '[u]pdate'         - upgrade all packages to their newest version
 #alias pacs='pacman -Ss'    # '[s]earch'         - search for a package using one or more keywords
