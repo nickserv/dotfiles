@@ -37,7 +37,7 @@ alias ra='ranger'
 
 # new commands
 alias lock='xscreensaver-command -lock'
-alias xmerge='xrdb -merge $HOME/.xresources'
+alias xmerge='xrdb -merge $HOME/.Xresources'
 alias pig='ping google.com'
 alias help='cat ~/.help'
 alias du1='du -h --max-depth=1'
