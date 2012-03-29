@@ -87,6 +87,10 @@ alias lz='ll -rS'                   # sort by size
 alias lt='ll -rt'                   # sort by date
 alias lm='la | less'
 
+# ls++
+alias lsp="ls++"
+alias lap="ls++ -A"
+
 # pacman/packer
 alias pcm='sudo pacman'
 alias pcr='packer --noedit --auronly'
