@@ -79,9 +79,9 @@ hostname:      $nodename
 uptime:        $uptime
 ${if_existing /proc/net/route eth0}#
 wired ip:      ${addr eth0}
-wired mac:     ${wireless_ap eth0}
+wired mac:     ${exec ifconfig eth0 | egrep -o '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'}
 $endif#
 ${if_existing /proc/net/route wlan0}#
 wireless ip:   ${addr wlan0}
-wireless mac:  ${wireless_ap wlan0}
+wireless mac:  ${exec ifconfig wlan0 | egrep -o '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'}
 $endif#
