@@ -9,3 +9,11 @@
 
 ##Extras
 - __aliases_examples__: example aliases for __bash/zsh/etc.__
+- __setup.sh__: an incomplete shell script for installing these config files
+
+##Coming Soon
+- __gitconfig__
+- __hgrc__
+- __zshrc__
+- __awesome themes__
+- __oh my zsh themes__
