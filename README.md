@@ -2,6 +2,7 @@
 
 ##Configs
 - __bashrc__: general settings for __bash__
+- __zshrc__: general settings for __zsh__
 - __inputrc__: autocompletion settings for __bash__
 - __aliases__: shortcuts for __bash/zsh__ commands
 - __conkyrc__: a clean and informative config for __conky__, a text-based system monitor
@@ -14,6 +15,5 @@
 ##Coming Soon
 - __gitconfig__
 - __hgrc__
-- __zshrc__
 - __awesome themes__
 - __oh my zsh themes__
