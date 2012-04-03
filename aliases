@@ -92,7 +92,7 @@ alias lsp="ls++"
 alias lap="ls++ -A"
 
 # pacman/packer
-alias pcm='sudo pacman'
+alias pcm='sudo pacman-color'
 alias pcr='packer --noedit --auronly'
 
 # pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
