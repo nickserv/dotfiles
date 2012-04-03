@@ -1,19 +1,19 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="simplyblue"
-
-# Display red dots while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(ant archlinux gem git lol mercurial nyan python rails rails3 rake ruby rvm svn)
-
-source $ZSH/oh-my-zsh.sh
+# Is oh-my-zsh installed?
+if [ -d ~/.oh-my-zsh ]; then #this computer is awesome
+	# Path to your oh-my-zsh configuration
+	ZSH=$HOME/.oh-my-zsh
+	# Set name of the theme to load from ~/.oh-my-zsh/themes/
+	ZSH_THEME="simplyblue"
+	# Display red dots while waiting for completion
+	COMPLETION_WAITING_DOTS="true"
+	# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+	# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+	plugins=(ant archlinux gem git lol mercurial nyan python rails rails3 rake ruby rvm svn)
+	# Run oh my zsh
+	source $ZSH/oh-my-zsh.sh
+else #this computer sucks
+	echo "You don't have oh-my-zsh. You suck. Get it!"
+fi
 
 #exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 export LD_PRELOAD="/home/nicolas/Bin/stderred/lib64/stderred.so"
@@ -22,7 +22,7 @@ export LD_PRELOAD="/home/nicolas/Bin/stderred/lib64/stderred.so"
 export EDITOR="vim"
 export TERM="xterm"
 
-# bash aliases
+# aliases
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
