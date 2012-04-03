@@ -110,6 +110,6 @@ alias pcr='packer --noedit --auronly'
 #alias pacm='makepkg -fci'  # '[m]ake'           - make package from PKGBUILD file in current directory
 
 # bash aliases
-if [ -f ~/.aliases.personal ]; then
-	. ~/.aliases.personal
+if [ -f ~/.aliases_personal ]; then
+	. ~/.aliases_personal
 fi
