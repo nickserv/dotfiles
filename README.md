@@ -5,11 +5,11 @@
 - __zshrc__: general settings for __zsh__
 - __inputrc__: autocompletion settings for __bash__
 - __aliases__: shortcuts for __bash/zsh__ commands
-- __conkyrc__: a clean and informative config for __conky__, a text-based system monitor
 - __Xresources__: settings for __urxvt__, a fast and lightweight terminal emulator
 
 ##Themes
 - __awesomebang__ for __awesome__: a minimal, [CrunchBang Linux](http://crunchbanglinux.org/) style theme for the [awesome window manager](http://awesome.naquadah.org/)
+- __conkyrc__ for __conky__: a clean and informative config for the great little text based system monitor
 
 ##Extras
 - __aliases_examples__: example aliases for __bash/zsh/etc.__
