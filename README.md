@@ -8,6 +8,9 @@
 - __conkyrc__: a clean and informative config for __conky__, a text-based system monitor
 - __Xresources__: settings for __urxvt__, a fast and lightweight terminal emulator
 
+##Themes
+- __awesomebang__ for __awesome__: a minimal, [CrunchBang Linux](http://crunchbanglinux.org/) style theme for the [awesome window manager](http://awesome.naquadah.org/)
+
 ##Extras
 - __aliases_examples__: example aliases for __bash/zsh/etc.__
 - __setup.sh__: an incomplete shell script for installing these config files
@@ -15,5 +18,4 @@
 ##Coming Soon
 - __gitconfig__
 - __hgrc__
-- __awesome themes__
 - __oh my zsh themes__
