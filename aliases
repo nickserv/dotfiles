@@ -32,8 +32,8 @@ alias db='dropbox'
 alias dbp='dropbox puburl'
 alias ns='notify-send'
 alias nsc='notify-send "Process Completed"'
-alias h='history'
-alias ra='ranger'
+alias h='history | tail -n 25'
+alias ra='python3 /usr/bin/ranger'
 
 # new commands
 alias lock='xscreensaver-command -lock'
