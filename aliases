@@ -67,11 +67,12 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # vim
-alias vimall='vim -p *'
-alias vimp='vim -p'
-alias vimh='vim -o'
-alias vimv='vim -O'
-alias vimd='vim -d'
+alias v='vim'
+alias va='vim -p *'
+alias vp='vim -p'
+alias vh='vim -o'
+alias vv='vim -O'
+alias vd='vim -d'
 
 # feh
 alias feh='feh --scale-down --auto-zoom'
