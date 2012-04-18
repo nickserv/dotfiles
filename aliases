@@ -10,37 +10,36 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='colordiff' # requires colordiff package
 
-# human sizes
-alias df='df -h'
-alias du='du -h'
-alias free='free -m'
-
 # modified commands
-alias more='less'
-#alias df='df -h'
-#alias du='du -c -h'
-#alias mkdir='mkdir -p -v'
-#alias nano='nano -w'
-#alias ping='ping -c 5'
+alias du='du -ha' # human sizes
+alias dus='\du -hs' # human sizes
+alias df='df -h' # human sizes
+alias free='free -m' # human sizes
+alias mkdir='mkdir -pv'
+alias ping='ping -c 5'
 alias ..='cd ..'
 
 # shortcuts
 alias c='clear'
 alias e='exit'
 alias ka='killall'
+alias ra='ranger'
 alias db='dropbox'
 alias dbp='dropbox puburl'
 alias ns='notify-send'
 alias nsc='notify-send "Process Completed"'
 alias h='history | tail -n 25'
-alias ra='python3 /usr/bin/ranger'
+alias open='xdg-open'
+alias lns='ln -s'
 
 # new commands
 alias lock='xscreensaver-command -lock'
 alias xmerge='xrdb -merge $HOME/.Xresources'
 alias pig='ping google.com'
 alias help='cat ~/.help'
-alias du1='du -h --max-depth=1'
+alias du1='du -h --max-depth=1 | sort -hr'
+alias du2='du -h --max-depth=2'
+alias du3='du -h --max-depth=3'
 alias hist='history | grep $1'      # requires an argument
 alias openports='netstat --all --numeric --programs --inet --inet6'
 #alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
@@ -78,7 +77,7 @@ alias vd='vim -d'
 alias feh='feh --scale-down --auto-zoom'
 
 # ls
-alias ls='ls -hF --color=auto'
+alias ls='ls -hF --color=auto --group-directories-first'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ls -A'
