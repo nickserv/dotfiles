@@ -66,9 +66,8 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # vim
-alias v='vim'
+alias v='vim -p'
 alias va='vim -p *'
-alias vp='vim -p'
 alias vh='vim -o'
 alias vv='vim -O'
 alias vd='vim -d'
