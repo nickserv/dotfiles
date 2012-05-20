@@ -17,7 +17,10 @@ fi
 
 # variables
 export EDITOR="vim"
-export TERM="xterm-256color"
+if [ x$DISPLAY != x ]
+then
+	export TERM="xterm-256color"
+fi
 
 # aliases
 if [ -f ~/.aliases ]; then . ~/.aliases; fi
