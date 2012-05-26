@@ -85,6 +85,10 @@ alias vd='vim -d'
 # feh
 alias feh='feh --scale-down --auto-zoom'
 
+# git
+alias git='hub'
+alias g='hub'
+
 # ls
 alias ls='ls -hF --color=auto --group-directories-first'
 alias lr='ls -R'                    # recursive ls
