@@ -12,7 +12,7 @@ if [ -d ~/.oh-my-zsh ]; then #this computer is awesome
 	# Run oh my zsh
 	source $ZSH/oh-my-zsh.sh
 else #this computer sucks
-	echo "You don't have oh-my-zsh. You suck. Get it!"
+	echo "You don't have oh-my-zsh. You should get it!"
 fi
 
 # variables
