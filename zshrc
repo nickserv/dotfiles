@@ -12,7 +12,7 @@ if [ -d ~/.oh-my-zsh ]; then #this computer is awesome
 	# Run oh my zsh
 	source $ZSH/oh-my-zsh.sh
 else #this computer sucks
-	echo "You don't have oh-my-zsh. You suck. Get it!"
+	echo "You don't have oh-my-zsh. You should get it!"
 fi
 
 # variables
@@ -26,7 +26,9 @@ fi
 if [ -f ~/.aliases ]; then . ~/.aliases; fi
 
 # make stderr red
-export LD_PRELOAD="/home/nicolas/Bin/stderred/lib64/stderred.so"
+if [ -f ~/Bin/stderred/lib64/stderred.so ]; then
+	export LD_PRELOAD="~/Bin/stderred/lib64/stderred.so"
+fi
 #exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
 # colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
