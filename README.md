@@ -13,9 +13,10 @@
 
 ##Extras
 - __aliases_examples__: example aliases for __bash/zsh/etc.__
-- __setup.sh__: an incomplete shell script for installing these config files
 
 ##Coming Soon
+- __setup.sh__: an install script for these configs
+- __repocheck.sh__: a simple script for recursively running git status
 - __gitconfig__
 - __hgrc__
 - __oh my zsh themes__
