@@ -8,7 +8,7 @@ if [ -d ~/.oh-my-zsh ]; then #this computer is awesome
 	COMPLETION_WAITING_DOTS="true"
 	# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 	# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-	plugins=(ant archlinux gem git lol mercurial nyan python rails rails3 rake ruby rvm svn)
+	plugins=(ant archlinux gem git hub mercurial nyan python rails rails3 rake ruby rvm svn zsh-syntax-highlighting)
 	# Run oh my zsh
 	source $ZSH/oh-my-zsh.sh
 else #this computer sucks
@@ -41,3 +41,11 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
+
+# fortune!
+if [ x$DISPLAY != x ]
+then
+	fortune -as | cowsay | lolcat
+else
+	fortune -as | cowsay
+fi
