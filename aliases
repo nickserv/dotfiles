@@ -23,6 +23,7 @@ alias ..='cd ..'
 alias c='clear'
 alias e='exit'
 alias ka='killall'
+alias x='startx'
 alias ra='ranger'
 alias db='dropbox'
 alias dbp='dropbox puburl'
@@ -65,6 +66,15 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
+# programming languages
+alias ja='java'
+alias jc='javac'
+alias jca='javac *.java'
+alias jrm='rm *.class'
+alias rb='ruby'
+alias py='python3'
+alias py2='python2'
+
 # vim
 alias v='vim -p'
 alias va='vim -p *'
@@ -74,6 +84,10 @@ alias vd='vim -d'
 
 # feh
 alias feh='feh --scale-down --auto-zoom'
+
+# git
+alias git='hub'
+alias g='hub'
 
 # ls
 alias ls='ls -hF --color=auto --group-directories-first'
