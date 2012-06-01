@@ -6,7 +6,7 @@ do
 	cd "$dir"
 	#start git stuff
 	echo $dir
-	git status
+	git status --short
 	echo
 	#end git stuff
 	cd "$prev"
