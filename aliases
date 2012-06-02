@@ -86,8 +86,12 @@ alias vd='vim -d'
 alias feh='feh --scale-down --auto-zoom'
 
 # git
-alias git='hub'
-alias g='hub'
+if command -v hub &>/dev/null; then
+	alias git='hub'
+	alias g='hub'
+else
+	alias g='git'
+fi
 
 # ls
 alias ls='ls -hF --color=auto --group-directories-first'
