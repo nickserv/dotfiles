@@ -8,13 +8,14 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias diff='colordiff' # requires colordiff package
+alias diff='colordiff' #requires colordiff package
 
 # modified commands
-alias du='du -ha' # human sizes
-alias dus='\du -hs' # human sizes
-alias df='df -h' # human sizes
-alias free='free -m' # human sizes
+alias df='df -h'
+alias du='du -h'
+alias dus='\du -hs'
+alias free='free -h'
+alias less='less -i'
 alias mkdir='mkdir -pv'
 alias ping='ping -c 5'
 alias ..='cd ..'
@@ -95,10 +96,10 @@ fi
 
 # ls
 alias ls='ls -hF --color=auto --group-directories-first'
-alias lr='ls -R'                    # recursive ls
-alias ll='ls -l'
 alias la='ls -A'
-alias lal='ls -Al'
+alias ll='ls -lh'
+alias l='ls -alh'
+alias lr='ls -R'                    # recursive ls
 alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
 alias lt='ll -rt'                   # sort by date
