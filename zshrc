@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Is oh-my-zsh installed?
 if [ -d ~/.oh-my-zsh ]; then #this computer is awesome
 	# Path to your oh-my-zsh configuration
