@@ -13,12 +13,10 @@ alias diff='colordiff' #requires colordiff package
 # modified commands
 alias df='df -h'
 alias du='du -h'
-alias dus='\du -hs'
 alias free='free -h'
 alias less='less -i'
 alias mkdir='mkdir -pv'
 alias ping='ping -c 5'
-alias ..='cd ..'
 
 # shortcuts
 alias c='clear'
@@ -33,15 +31,21 @@ alias nsc='notify-send "Process Completed"'
 alias h='history | tail -n 25'
 alias open='xdg-open'
 alias lns='ln -s'
+alias ..='cd ..'
+alias dua='\du -ha'
+alias dus='\du -hs'
 
 # new commands
 alias lock='xscreensaver-command -lock'
 alias xmerge='xrdb -merge $HOME/.Xresources'
 alias pig='ping google.com'
 alias help='cat ~/.help'
-alias du1='du -h --max-depth=1 | sort -hr'
-alias du2='du -h --max-depth=2'
-alias du3='du -h --max-depth=3'
+alias du1='\du -h --max-depth=1 | sort -hr'
+alias du2='\du -h --max-depth=2'
+alias du3='\du -h --max-depth=3'
+alias du1a='\du -ha --max-depth=1 | sort -hr'
+alias du2a='\du -ha --max-depth=2'
+alias du3a='\du -ha --max-depth=3'
 alias hist='history | grep $1'      # requires an argument
 alias openports='netstat --all --numeric --programs --inet --inet6'
 #alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
