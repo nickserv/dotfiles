@@ -5,7 +5,7 @@
 
 theme = {}
 
-themedir = "~/.config/awesome/themes/awesomebang"
+themedir = awful.util.getdir("config") .. "/themes/awesomebang"
 
 theme.font          = "sans 8"
 
