@@ -1,6 +1,5 @@
-#AwesomeBang by Nicolas McCurdy (http://thenickperson.com)
-A minimal, CrunchBang Linux (http://crunchbanglinux.org/) style theme for the awesome window manager (http://awesome.naquadah.org/).
-Hosted on GitHub at http://github.com/thenickperson/configs.
+#AwesomeBang by [Nicolas McCurdy](http://thenickperson.com)
+A minimal, [CrunchBang Linux](http://crunchbanglinux.org/) style theme for the [awesome window manager](http://awesome.naquadah.org/).
 
 ##About
 This theme is based off of the default awesome theme and inspired by the color schemes of Openbox and tint2 in recent versions of CrunchBang Linux, using similar color values and CrunchBang's default (solid gray) wallpaper. While this theme looks great on CrunchBang, you should be able to use it on any system that can run awesome.
@@ -11,6 +10,6 @@ This theme is based off of the default awesome theme and inspired by the color s
 3. Restart awesome (ctrl-super-r) and enjoy! Also, if you want to use a different font, change the value of theme.font in theme.lua to the font name and font size of your choice (it defaults to sans 8).
 
 ##License
-CC BY-NC 3.0 (http://creativecommons.org/licenses/by-nc/3.0/)
-Based off of the default color scheme of CrunchBang Linux and the default awesome theme by awesome's developers.
-Background images from the default awesome theme by Mikael Eriksson <mikael_eriksson@miffe.org>, licensed under CC BY-SA-3.0.
+- [CC BY-NC 3.0](http://creativecommons.org/licenses/by-nc/3.0/)
+- Based off of the default color scheme of CrunchBang Linux and the default awesome theme by awesome's developers.
+- Background images from the default awesome theme by Mikael Eriksson <mikael_eriksson@miffe.org>, licensed under CC BY-SA-3.0.
