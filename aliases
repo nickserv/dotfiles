@@ -49,6 +49,8 @@ alias du3a='\du -ha --max-depth=3'
 alias hist='history | grep $1'      # requires an argument
 alias openports='netstat --all --numeric --programs --inet --inet6'
 #alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
+alias pcp="rsync --partial --progress --append --rsh=ssh -r -h"
+alias pmv="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
 
 # privileged access
 if [ $UID -ne 0 ]; then
