@@ -39,11 +39,3 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
-
-# fortune!
-if [ x$DISPLAY != x ]
-then
-	fortune -as | cowsay | lolcat
-else
-	fortune -as | cowsay
-fi
