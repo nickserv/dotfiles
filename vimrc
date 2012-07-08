@@ -50,3 +50,34 @@ autocmd BufReadPost *
 syntax on
 filetype plugin indent on
 colorscheme Tomorrow-Night-Eighties
+
+""""""""""""
+" Mappings "
+""""""""""""
+
+" change leader from \ to ,
+let mapleader=","
+
+" enter vim commands without having to press shift
+map ; :
+
+" typing ;; quickly exits insert mode
+imap ;; <Esc>
+
+" toggle NERD Commenter
+map <Leader>/ <Plug>NERDCommenterToggle
+
+" toggle NERD Tree
+map <Leader>n :NERDTreeToggle<CR>
+
+" toggle Taglist
+map <Leader>l :TlistToggle<CR>
+
+" toggle spell check
+map <Leader>s :set spell!<CR>
+
+" toggle invisible character display
+map <Leader>h :set list!<CR>
+
+" run/compile file (see custom commands section)
+map <Leader>r :make<CR>
