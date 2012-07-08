@@ -81,3 +81,29 @@ map <Leader>h :set list!<CR>
 
 " run/compile file (see custom commands section)
 map <Leader>r :make<CR>
+
+"""""""""""""""""""
+" Custom Commands "
+"""""""""""""""""""
+
+" configure <Leader>r shortcut (run/compile file depending on extension)
+au BufNewFile,BufRead *.sh    setlocal makeprg=bash\ %
+au BufNewFile,BufRead *.zsh   setlocal makeprg=zsh\ %
+au BufNewFile,BufRead *.java  setlocal makeprg=javac\ %
+au BufNewFile,BufRead *.rb    setlocal makeprg=ruby\ %
+au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
+au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
+au BufNewFile,BufRead *.html  setlocal makeprg=firefox\ %
+
+" remove trailing whitespace from all lines in the current buffer
+command! Rtrim call <SID>RightTrim()
+function! <SID>RightTrim()
+	:% s/\s*$//g
+	nohl
+endfunction
+
+" diff unsaved changes to file
+if !exists(":Fdiff")
+	command Fdiff vert new | set bt=nofile | r # | 0d_ | diffthis
+		\ | wincmd p | diffthis
+endif
