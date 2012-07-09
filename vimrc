@@ -64,6 +64,22 @@ map ; :
 " typing ;; quickly exits insert mode
 imap ;; <Esc>
 
+" bubble text up and down
+nmap <Up>   [e
+imap <Up>   <C-O><Up>
+vmap <Up>   [egv
+nmap <Down> ]e
+imap <Down> <C-O><Down>
+vmap <Down> ]egv
+
+" indent text left and right
+nmap <Left>   <<
+imap <Left>   <C-O><Left>
+vmap <Left>   <gv
+nmap <Right>  >>
+imap <Right>  <C-O><Right>
+vmap <Right>  >gv
+
 " toggle NERD Commenter
 map <Leader>/ <Plug>NERDCommenterToggle
 
