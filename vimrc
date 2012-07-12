@@ -51,6 +51,18 @@ syntax on
 filetype plugin indent on
 colorscheme Tomorrow-Night-Eighties
 
+""""""""
+" GVim "
+""""""""
+
+set gfn=Tamsyn\ 8 "set font
+set gcr=n:blinkon0 "disable cursor blinking
+
+set guioptions-=m "remove menu bar
+set guioptions-=T "remove toolbar
+set guioptions-=L "remove left scroll bar
+set guioptions-=r "remove right scroll bar
+
 """"""""""""
 " Mappings "
 """"""""""""
