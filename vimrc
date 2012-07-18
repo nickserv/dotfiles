@@ -30,6 +30,9 @@ set ignorecase
 set smartcase
 set gdefault
 
+" ignore whitespace in diff mode
+set diffopt+=iwhite
+
 " automatically load changed files
 set autoread
 
