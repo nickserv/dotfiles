@@ -31,24 +31,6 @@ do
 end
 -- }}}
 
--- Startup
-function run_once(prg)
-	if not prg then
-		do return nil end
-	end
-	awful.util.spawn_with_shell("pgrep -f -u $USER -x " .. prg .. " || (" .. prg .. ")")
-end
---[[
-run_once("nm-applet --sm-disable") --networking
-run_once("xfce4-power-manager") --power
-run_once("thunar --daemon") --thunar daemon
-run_once("synclient VertEdgeScroll=1") --touchpad config
-run_once("sleep 5 && conky -q") --conky
-run_once("sleep 60 && dropboxd") --dropbox daemon
-run_once("synclient HorizEdgeScroll=1") --touchpad config
-run_once("xscreensaver -no-splash") --screen lock
---]]
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/nicolas/.config/awesome/themes/"..theme_name.."/theme.lua")
