@@ -46,6 +46,9 @@ autocmd BufReadPost *
 	\ 	exe "normal g`\"" |
 	\ endif
 
+" show '>   ' at the beginning of lines that are automatically wrapped
+set showbreak=>\ \ \ 
+
 """""""""
 " Theme "
 """""""""
