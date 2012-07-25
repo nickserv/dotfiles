@@ -350,8 +350,8 @@ clientkeys = awful.util.table.join(
 	awful.key({ modkey, "Mod1"    }, "t",      function () awful.util.spawn("thunar") end),
 	awful.key({ modkey, "Mod1"    }, "a",      function () awful.util.spawn("assaultcube") end),
 	--volume
-	awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn("amixer set Master 9%+") end),
-	awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn("amixer set Master 9%-") end),
+	awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn("amixer set Master 5%+") end),
+	awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn("amixer set Master 5%-") end),
 	awful.key({ }, "XF86AudioMute",            function () awful.util.spawn("amixer sset Master toggle") end)
 )
 
