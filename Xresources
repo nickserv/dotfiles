@@ -7,6 +7,8 @@ urxvt.visualBell:  true
 urxvt.perl-ext-common: default,tabbed,clipboard,matcher
 URxvt.urlLauncher:     /usr/bin/firefox
 URxvt.matcher.button:  1
+!URxvt.keysym.M-c:   perl:clipboard:copy
+!URxvt.keysym.M-v:   perl:clipboard:paste
 
 !fonts
 xft.antialias: false
