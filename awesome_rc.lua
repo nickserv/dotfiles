@@ -9,7 +9,7 @@ require("revelation") --client previews
 require("vicious") --widgets
 --require("volume") --volume widget
 
-theme_name = "awesomebang" --theme
+theme_name = "obscur" --theme
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
