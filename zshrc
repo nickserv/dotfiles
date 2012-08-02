@@ -24,6 +24,11 @@ then
 	export TERM="xterm-256color"
 fi
 
+# ssh
+#eval $(ssh-agent)
+#ssh-add
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+
 # aliases
 if [ -f ~/.aliases ]; then . ~/.aliases; fi
 
