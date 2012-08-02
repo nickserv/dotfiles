@@ -18,61 +18,53 @@ URxvt.tabbed.tabbar-bg: 8
 URxvt.tabbed.tab-fg:    0
 URxvt.tabbed.tab-bg:    4
 
-!-- Tomorrow Color Scheme
+!TomorrowNightBright
+#define t_background        #000000
+#define t_current_line      #2a2a2a
+#define t_selection      	#424242
+#define t_foreground      	#eaeaea
+#define t_comment	     	#969896
+#define t_red		     	#d54e53
+#define t_orange	     	#e78c45
+#define t_yellow        	#e7c547
+#define t_green	        	#b9ca4a
+#define t_aqua	        	#70c0b1
+#define t_blue	        	#7aa6da
+#define t_purple        	#c397d8
 
-! Names of the original color are in parenthesis.
 
-! With the exception of DarkYellow (which is Orange) and Yellow
-! (which is Yellow), bright colors were derived by simply upping the 'value'
-! of each color by 22. This number was derived from maxing out the value on
-! Red.
+*.foreground:   t_foreground
+*.background:   t_background
+*.cursorColor:  #aeafad
 
-!urxvt.foreground: #4d4d4c
-!urxvt.background: #ffffff
-!! CursorColor (Selection)
-!urxvt.cursorColor: #d6d6d6
+! Black / Grey
+*.color0:       #000000
+*.color8:       #666666
 
-!! Black + Grey (Comment)
-!urxvt.color0: #000000
-!urxvt.color8: #8e908c
-!! Red + Bright Red
-!urxvt.color1: #c82829
-!urxvt.color9: #ff3334
-!! Green + Bright Green
-!urxvt.color2: #718c00
-!urxvt.color10: #9ec400
-!! Yellow (Orange) + Bright Yellow (Yellow)
-!urxvt.color3: #f5871f
-!urxvt.color11: #eab700
-!! Blue + Bright Blue
-!urxvt.color4: #4271ae
-!urxvt.color12: #5795e6
-!! Magenta (Purple) + Bright Magenta
-!urxvt.color5: #8959a8
-!urxvt.color13: #b777e0
-!! Cyan (Aqua) + Bright Cyan
-!urxvt.color6: #3e999f
-!urxvt.color14: #54ced6
-!! Light Grey (Selection) + White (Current Line)
-!urxvt.color7: #d6d6d6
-!urxvt.color15: #efefef
+! Red / Bright Red
+*.color1:       t_red
+*.color9:       #FF3334
 
-urxvt.foreground: #c5c8c6
-urxvt.background: #1d1f21
-urxvt.cursorColor: #aeafad
-urxvt.color0: #000000
-urxvt.color1: #912226
-urxvt.color2: #778900
-urxvt.color3: #ae7b00
-urxvt.color4: #1d2594
-urxvt.color5: #682a9b
-urxvt.color6: #2b6651
-urxvt.color7: #929593
-urxvt.color8: #666666
-urxvt.color9: #cc6666
-urxvt.color10: #b5bd68
-urxvt.color11: #f0c674
-urxvt.color12: #81a2be
-urxvt.color13: #b294bb
-urxvt.color14: #8abeb7
-urxvt.color15: #ecebec
+! Green + Bright Green
+*.color2:       t_green
+*.color10:      #9ec400
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       t_orange
+*.color11:      t_yellow
+
+! Blue + Bright Blue
+*.color4:       t_blue
+*.color12:      t_blue
+
+! Magenta (Purple) + Bright Magenta
+*.color5:       t_purple
+*.color13:      #b777e0
+
+! Cyan (Aqua) + Bright Cyan
+*.color6:       t_aqua
+*.color14:      #54ced6
+
+! Light Grey (Selection) + White (Current Line)
+*.color7:       t_selection
+*.color15:      t_current_line
