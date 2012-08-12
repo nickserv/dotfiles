@@ -336,7 +336,7 @@ clientkeys = awful.util.table.join(
 			c.maximized_vertical   = not c.maximized_vertical
 		end),
 	-- CUSTOM
-	awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end),
+	awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
 	awful.key({ modkey, "Shift"   }, "s",      function (c) os.execute("sudo shutdown -h now") end),
 	awful.key({ modkey,           }, "q",      function (c) os.execute("xscreensaver-command -lock") end),
 	--awful.key({ modkey,           }, "s",      function (c) os.execute("xfce4-screenshooter") end)
@@ -352,7 +352,7 @@ clientkeys = awful.util.table.join(
 	--volume
 	awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn("amixer set Master 5%+") end),
 	awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn("amixer set Master 5%-") end),
-	awful.key({ }, "XF86AudioMute",            function () awful.util.spawn("amixer sset Master toggle") end)
+	awful.key({ }, "XF86AudioMute",            function () awful.util.spawn("amixer set Master toggle") end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
