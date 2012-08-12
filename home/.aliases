@@ -34,6 +34,7 @@ alias lns='ln -s'
 alias ..='cd ..'
 alias dua='\du -ha'
 alias dus='\du -hs'
+alias to="todo.sh"
 
 # new commands
 alias lock='xscreensaver-command -lock'
@@ -52,6 +53,7 @@ alias openports='netstat --all --numeric --programs --inet --inet6'
 alias rbackup="rsync -ah --progress"
 alias pcp="rsync --partial --progress --append --rsh=ssh -r -h"
 alias pmv="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # privileged access
 if [ $UID -ne 0 ]; then
