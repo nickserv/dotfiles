@@ -38,8 +38,8 @@ end
 beautiful.init("/home/nicolas/.config/awesome/themes/"..theme.."/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
-editor = os.getenv("EDITOR") or "nano"
+terminal = "urxvtc"
+editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
