@@ -2,10 +2,11 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
--- Theme handling library
 require("beautiful")
--- Notification library
 require("naughty")
+
+-- Set theme
+theme = "obscur"
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -34,7 +35,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/nicolas/.config/awesome/themes/"..theme.."/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
