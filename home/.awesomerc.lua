@@ -273,6 +273,11 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey,           }, "s",      function () awful.util.spawn("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
 	awful.key({ modkey, "Shift"   }, "s",      function () awful.util.spawn("sudo shutdown -h now") end),
 	awful.key({ modkey,           }, "q",      function () awful.util.spawn("xscreensaver-command -lock") end),
+
+	-- Volume
+	awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn("amixer set Master 5%+") end),
+	awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn("amixer set Master 5%-") end),
+	awful.key({ }, "XF86AudioMute",            function () awful.util.spawn("amixer set Master toggle") end)
 )
 
 clientkeys = awful.util.table.join(
