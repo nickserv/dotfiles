@@ -277,7 +277,17 @@ globalkeys = awful.util.table.join(
 	-- Volume
 	awful.key({ }, "XF86AudioRaiseVolume",     function () awful.util.spawn("amixer set Master 5%+") end),
 	awful.key({ }, "XF86AudioLowerVolume",     function () awful.util.spawn("amixer set Master 5%-") end),
-	awful.key({ }, "XF86AudioMute",            function () awful.util.spawn("amixer set Master toggle") end)
+	awful.key({ }, "XF86AudioMute",            function () awful.util.spawn("amixer set Master toggle") end),
+
+	-- Shortcuts
+	awful.key({ modkey, "Mod1"    }, "a",      function () awful.util.spawn("assaultcube") end),
+	awful.key({ modkey, "Mod1"    }, "c",      function () awful.util.spawn("chromium") end),
+	awful.key({ modkey, "Mod1"    }, "e",      function () awful.util.spawn("eclipse") end),
+	awful.key({ modkey, "Mod1"    }, "f",      function () awful.util.spawn("firefox") end),
+	awful.key({ modkey, "Mod1"    }, "l",      function () awful.util.spawn("lxappearance") end),
+	awful.key({ modkey, "Mod1"    }, "m",      function () awful.util.spawn("xfce4-mixer") end),
+	awful.key({ modkey, "Mod1"    }, "s",      function () awful.util.spawn("skype") end),
+	awful.key({ modkey, "Mod1"    }, "t",      function () awful.util.spawn("thunar") end)
 )
 
 clientkeys = awful.util.table.join(
