@@ -1,9 +1,9 @@
--- Standard awesome library
+-- Standard awesome libraries
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
-require("beautiful")
-require("naughty")
+require("beautiful")  -- themes
+require("naughty")    -- notifications
 
 -- Set theme
 theme = "obscur"
