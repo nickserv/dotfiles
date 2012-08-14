@@ -5,6 +5,10 @@ require("awful.rules")
 require("beautiful")  -- themes
 require("naughty")    -- notifications
 
+-- Extra libraries
+require("eminent")    -- dyanmic tagging
+require("revelation") -- client previews
+
 -- Set theme
 theme = "obscur"
 
