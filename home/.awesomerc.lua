@@ -269,7 +269,10 @@ globalkeys = awful.util.table.join(
 		end),
 
 	-- Custom
-	awful.key({modkey}, "e", revelation)
+	awful.key({ modkey            }, "e",      revelation),
+	awful.key({ modkey,           }, "s",      function () awful.util.spawn("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
+	awful.key({ modkey, "Shift"   }, "s",      function () awful.util.spawn("sudo shutdown -h now") end),
+	awful.key({ modkey,           }, "q",      function () awful.util.spawn("xscreensaver-command -lock") end),
 )
 
 clientkeys = awful.util.table.join(
