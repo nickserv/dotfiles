@@ -382,6 +382,7 @@ client.add_signal("manage", function (c, startup)
 		if not c.size_hints.user_position and not c.size_hints.program_position then
 			awful.placement.no_overlap(c)
 			awful.placement.no_offscreen(c)
+			awful.placement.under_mouse(c)
 		end
 	end
 end)
