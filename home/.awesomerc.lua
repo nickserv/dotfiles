@@ -96,20 +96,32 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
+mymainmenu = awful.menu({ items = {
+	{ "system", {
+		{ "lock", "xscreensaver-command -lock" },
+		{ "sleep", "gksudo s2ram" },
+		{ "hibernate", "gksudo s2disk" },
+		{ "shutdown", "sudo shutdown -h now" },
+		{ "restart", "sudo reboot" }
+	}},
+	{ "awesome", {
+		{ "manual", terminal .. " -e man awesome" },
+		{ "edit config", editor_cmd .. " " .. awesome.conffile },
+		{ "restart", awesome.restart },
+		{ "quit", awesome.quit }
+	}},
+	{ "programs", {
+		{ "firefox", "firefox" },
+		{ "terminal", "urxvtc" },
+		{ "thunar", "thunar" }
+	}},
+	{ "close", "toggle()" }
+}})
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
+mylauncher = awful.widget.launcher({
+	image = image(beautiful.awesome_icon),
+	menu = mymainmenu
+})
 -- }}}
 
 -- {{{ Wibox
