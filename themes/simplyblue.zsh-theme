@@ -8,6 +8,10 @@ function check_ssh() {
 # Prompt
 PROMPT="$(check_ssh)%{$fg_bold[blue]%}%~ $(git_prompt_info)%{$fg_bold[yellow]%}➜ %{$reset_color%}"
 
+# Title bar
+ZSH_THEME_TERM_TAB_TITLE_IDLE="$(check_ssh)%~"
+ZSH_THEME_TERM_TITLE_IDLE="$(check_ssh)%~"
+
 # Git status
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
