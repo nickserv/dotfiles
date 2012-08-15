@@ -93,6 +93,6 @@ theme.layout_tiletop = themedir .. "/layouts/tiletopw.png"
 theme.layout_spiral  = themedir .. "/layouts/spiralw.png"
 theme.layout_dwindle = themedir .. "/layouts/dwindlew.png"
 
-theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+theme.awesome_icon = themedir .. "/icons/awesome16.png"
 
 return theme
