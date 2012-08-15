@@ -195,7 +195,8 @@ for s = 1, screen.count() do
 	-- Create the wibox
 	mywibox[s] = awful.wibox({ position = "top", screen = s })
 
-	-- Create custom widgets
+	-- Create custom widgets with Vicious
+	-- Documentation: http://git.sysphere.org/vicious/tree/README
 		-- Seperator
 		sep = widget({ type = "textbox" })
 		sep.text = " "
