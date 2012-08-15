@@ -8,6 +8,7 @@ require("naughty")    -- notifications
 -- Extra libraries
 require("eminent")    -- dyanmic tagging
 require("revelation") -- client previews
+require("vicious")    -- widgets
 
 -- Set theme
 theme = "obscur"
@@ -125,9 +126,6 @@ mylauncher = awful.widget.launcher({
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" })
-
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -196,16 +194,37 @@ for s = 1, screen.count() do
 
 	-- Create the wibox
 	mywibox[s] = awful.wibox({ position = "top", screen = s })
+
+	-- Create custom widgets
+		-- Seperator
+		sep = widget({ type = "textbox" })
+		sep.text = "|"
+		-- Date
+		date_widget = widget({ type = "textbox" })
+		vicious.register(date_widget, vicious.widgets.date, "%m/%d|%I:%M%P")
+		-- CPU
+		cpu_widget = widget({ type = "textbox" })
+		vicious.register(cpu_widget, vicious.widgets.cpu, "CPU:$1%")
+		-- Memory
+		mem_widget = widget({ type = "textbox" })
+		vicious.register(mem_widget, vicious.widgets.mem, "MEM:$1%")
+
 	-- Add widgets to the wibox - order matters
 	mywibox[s].widgets = {
 		{
+			-- Before task list, left to right
 			mylauncher,
 			mytaglist[s],
 			mypromptbox[s],
 			layout = awful.widget.layout.horizontal.leftright
 		},
+		-- Task list and after, right to left
 		mylayoutbox[s],
-		mytextclock,
+		date_widget,
+		sep,
+		mem_widget,
+		sep,
+		cpu_widget,
 		s == 1 and mysystray or nil,
 		mytasklist[s],
 		layout = awful.widget.layout.horizontal.rightleft
