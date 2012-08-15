@@ -220,6 +220,15 @@ for s = 1, screen.count() do
 		mem_widget:set_width(10)
 		mem_widget:set_color("#0000ff")
 		vicious.register(mem_widget, vicious.widgets.mem, "$1")
+		-- Volume
+		volume_widget = awful.widget.progressbar()
+		volume_widget:set_vertical(true)
+		volume_widget:set_width(10)
+		volume_widget:set_color("#ffff00")
+		vicious.register(volume_widget, vicious.widgets.volume, "$1", 2, "Master")
+		-- Mute
+		mute_widget = widget({ type = "textbox" })
+		vicious.register(mute_widget, vicious.widgets.volume, "$2 ", 2, "Master")
 		-- Box start
 		box_start = widget({ type = "textbox" })
 		box_start.text = "["
@@ -246,6 +255,9 @@ for s = 1, screen.count() do
 		sep,
 		cpu_widget.widget,
 		cpu_prefix_widget,
+		sep,
+		volume_widget.widget,
+		mute_widget,
 		sep,
 		s == 1 and box_end or nil,
 		s == 1 and mysystray or nil,
