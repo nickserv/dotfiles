@@ -198,16 +198,28 @@ for s = 1, screen.count() do
 	-- Create custom widgets
 		-- Seperator
 		sep = widget({ type = "textbox" })
-		sep.text = "|"
+		sep.text = " "
 		-- Date
 		date_widget = widget({ type = "textbox" })
-		vicious.register(date_widget, vicious.widgets.date, "%m/%d|%I:%M%P")
+		vicious.register(date_widget, vicious.widgets.date, "%m/%d %I:%M%P")
+		-- CPU prefix
+		cpu_prefix_widget = widget({ type = "textbox" })
+		cpu_prefix_widget.text = "C "
 		-- CPU
-		cpu_widget = widget({ type = "textbox" })
-		vicious.register(cpu_widget, vicious.widgets.cpu, "CPU:$1%")
+		cpu_widget = awful.widget.progressbar()
+		cpu_widget:set_vertical(true)
+		cpu_widget:set_width(10)
+		cpu_widget:set_color("#ff0000")
+		vicious.register(cpu_widget, vicious.widgets.cpu, "$1")
+		-- Memory prefix
+		mem_prefix_widget = widget({ type = "textbox" })
+		mem_prefix_widget.text = "M "
 		-- Memory
-		mem_widget = widget({ type = "textbox" })
-		vicious.register(mem_widget, vicious.widgets.mem, "MEM:$1%")
+		mem_widget = awful.widget.progressbar()
+		mem_widget:set_vertical(true)
+		mem_widget:set_width(10)
+		mem_widget:set_color("#0000ff")
+		vicious.register(mem_widget, vicious.widgets.mem, "$1")
 
 	-- Add widgets to the wibox - order matters
 	mywibox[s].widgets = {
@@ -220,11 +232,15 @@ for s = 1, screen.count() do
 		},
 		-- Task list and after, right to left
 		mylayoutbox[s],
+		sep,
 		date_widget,
 		sep,
-		mem_widget,
+		mem_widget.widget,
+		mem_prefix_widget,
 		sep,
-		cpu_widget,
+		cpu_widget.widget,
+		cpu_prefix_widget,
+		sep,
 		s == 1 and mysystray or nil,
 		mytasklist[s],
 		layout = awful.widget.layout.horizontal.rightleft
