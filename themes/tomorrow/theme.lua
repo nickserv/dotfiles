@@ -5,7 +5,7 @@
 
 theme = {}
 
-themedir = awful.util.getdir("config") .. "/themes/default-mod"
+themedir = awful.util.getdir("config") .. "/themes/tomorrow"
 
 theme.font          = "sans 8"
 
