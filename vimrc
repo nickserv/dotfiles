@@ -2,8 +2,7 @@
 " Vundle "
 """"""""""
 
-set nocompatible               " be iMproved
-filetype off                   " required!
+filetype off " required
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -34,7 +33,7 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'FuzzyFinder'
 "Bundle 'git://git.wincent.com/command-t.git'
 
-filetype plugin indent on     " required!
+filetype plugin indent on " required
 "
 " Brief help
 " :BundleList          - list configured bundles
