@@ -68,7 +68,7 @@ set smartindent "automatically inserts one extra level of indentation in some ca
 
 syntax on
 filetype plugin indent on
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night-Bright
 
 """"""""
 " GVim "
