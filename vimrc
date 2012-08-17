@@ -9,6 +9,21 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-pathogen'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'taglist.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Townk/vim-autoclose'
+Bundle 'matchit.zip'
+Bundle 'mattn/zencoding-vim'
+Bundle 'tpope/vim-git'
+Bundle 'jceb/vim-orgmode'
+Bundle 'mileszs/ack.vim'
 
 " recommended by Vundle
 "Bundle 'tpope/vim-fugitive'
