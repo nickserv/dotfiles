@@ -2,6 +2,7 @@
 " Vundle "
 """"""""""
 
+set nocompatible " disable vi features
 filetype off " required
 
 set rtp+=~/.vim/bundle/vundle/
@@ -46,9 +47,6 @@ filetype plugin indent on " required
 """"""
 " UI "
 """"""
-
-" disable vi features
-set nocompatible
 
 " mouse support
 set mouse=a
