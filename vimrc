@@ -30,6 +30,10 @@ set ignorecase
 set smartcase
 set gdefault
 
+" wrapping stuff
+set textwidth=80
+set colorcolumn=80
+
 " ignore whitespace in diff mode
 set diffopt+=iwhite
 
