@@ -11,6 +11,16 @@
 #
 # which will execute the pull and update_plugins tasks.
 
+install_vundle () {
+	echo "Installing vundle..."
+	if [ ! -d "bundle" ]; then
+		mkdir bundle
+	fi
+	if [ ! -d "bundle/vundle" ]; then
+		git clone git://github.com/gmarik/vundle.git bundle/vundle
+	fi
+}
+
 install_plugins () {
 	echo "Installing plugins..."
 	vim +BundleInstall +qall
@@ -42,6 +52,7 @@ pull () {
 install () {
 	echo "Installing VIM bootstrap of awesomesauce..."
 	pull
+	install_vundle
 	install_plugins
 	link_vimrc
 }
