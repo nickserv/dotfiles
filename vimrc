@@ -135,19 +135,19 @@ imap ;; <Esc>
 
 " bubble text up and down
 nmap <Up>   [e
-imap <Up>   <C-O><Up>
 vmap <Up>   [egv
+"imap <Up>   <C-O><Up>
 nmap <Down> ]e
-imap <Down> <C-O><Down>
 vmap <Down> ]egv
+"imap <Down> <C-O><Down>
 
 " indent text left and right
 nmap <Left>   <<
-imap <Left>   <C-O><Left>
 vmap <Left>   <gv
+"imap <Left>   <C-O><Left>
 nmap <Right>  >>
-imap <Right>  <C-O><Right>
 vmap <Right>  >gv
+"imap <Right>  <C-O><Right>
 
 " toggle NERD Commenter
 map <Leader>/ <Plug>NERDCommenterToggle
