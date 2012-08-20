@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Bins and scripts
 export PATH=$PATH:~/Bin:~/.dotfiles/scripts
 
