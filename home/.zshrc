@@ -17,9 +17,6 @@ else #this computer sucks
 	echo "You don't have oh-my-zsh. You should get it!"
 fi
 
-# variables
-export EDITOR="vim"
-
 # aliases
 if [ -f ~/.aliases ]; then . ~/.aliases; fi
 

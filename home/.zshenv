@@ -7,5 +7,6 @@ export PATH=$PATH:~/Bin:~/.dotfiles/scripts
 export PATH=$PATH:~/.rbenv/bin:~/.gem/ruby/1.9.1/bin
 eval "$(rbenv init -)"
 
-# Other options
+# Other variables
+export EDITOR=vim
 export LESS=-x2
