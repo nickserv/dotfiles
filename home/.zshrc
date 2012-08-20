@@ -20,11 +20,6 @@ fi
 # variables
 export EDITOR="vim"
 
-# ssh
-#eval $(ssh-agent)
-#ssh-add
-#eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
-
 # aliases
 if [ -f ~/.aliases ]; then . ~/.aliases; fi
 
@@ -40,5 +35,3 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
-
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
