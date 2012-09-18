@@ -85,6 +85,20 @@ alias rb='ruby'
 alias py='python3'
 alias py2='python2'
 
+# git
+alias g='git'
+alias gst='git status --short'
+alias ga='git add'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gd='git diff'
+alias gp='git push'
+alias gl='git pull'
+alias gcl='git clone'
+alias gch='git checkout'
+alias glg='git log --stat --max-count=5'
+alias glgg='git log --graph --max-count=5'
+
 # vim
 alias v='vim -p'
 alias va='vim -p *'
