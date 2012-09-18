@@ -142,9 +142,13 @@ alias lsp="ls++"
 alias lap="ls++ -A"
 
 # pacman/packer
-alias pcm='sudo pacman-color'
-alias pcr='packer --noedit --auronly'
 alias pf='packer -Ss'
+alias p='sudo pacman-color'
+alias pin='p -S'
+alias pup='p -Syu'
+alias pa='packer --noedit --auronly'
+alias pain='pa -S'
+alias paup='pa -Syu'
 
 # pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
 #alias pac='pacman -S'      # default action     - install one or more packages
