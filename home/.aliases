@@ -35,7 +35,6 @@ alias ..='cd ..'
 alias dua='\du -ha'
 alias dus='\du -hs'
 alias to="todo.sh"
-alias hs="homeshick"
 
 # new commands
 alias lock='xscreensaver-command -lock'
@@ -102,6 +101,13 @@ if command -v hub &>/dev/null; then
 	alias g='hub'
 else
 	alias g='git'
+fi
+
+# homesick/homeshick
+if command -v homesick &>/dev/null; then
+	alias hs='homesick'
+else
+	alias hs='homeshick'
 fi
 
 # ls
