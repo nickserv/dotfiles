@@ -35,6 +35,8 @@ alias ..='cd ..'
 alias dua='\du -ha'
 alias dus='\du -hs'
 alias to="todo.sh"
+alias power-down='sudo shutdown -h now'
+alias power-reboot='sudo reboot'
 
 # new commands
 alias lock='xscreensaver-command -lock'
