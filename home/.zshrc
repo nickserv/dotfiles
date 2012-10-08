@@ -5,7 +5,11 @@ if [ -d ~/.oh-my-zsh ]; then #this computer is awesome
 	# Path to your oh-my-zsh configuration
 	ZSH=$HOME/.oh-my-zsh
 	# Set name of the theme to load from ~/.oh-my-zsh/themes/
-	ZSH_THEME="simplyblue"
+	if [[ $EUID -ne 0 ]]; then
+		ZSH_THEME="simplyblue"
+	else
+		ZSH_THEME="robbyrussell"
+	fi
 	# Display red dots while waiting for completion
 	COMPLETION_WAITING_DOTS="true"
 	# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
