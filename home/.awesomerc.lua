@@ -102,8 +102,8 @@ mymainmenu = awful.menu({ items = {
 		{ "lock", "xscreensaver-command -lock" },
 		{ "sleep", "gksudo s2ram" },
 		{ "hibernate", "gksudo s2disk" },
-		{ "shutdown", "sudo shutdown -h now" },
-		{ "restart", "sudo reboot" }
+		{ "shutdown", "gksudo shutdown -h now" },
+		{ "restart", "gksudo reboot" }
 	}},
 	{ "awesome", {
 		{ "manual", terminal .. " -e man awesome" },
@@ -350,7 +350,7 @@ globalkeys = awful.util.table.join(
 	-- Custom
 	awful.key({ modkey            }, "e",      revelation),
 	awful.key({ modkey,           }, "s",      function () awful.util.spawn("scrot -e 'mv $f ~/Screenshots/ 2>/dev/null'") end),
-	awful.key({ modkey, "Shift"   }, "s",      function () awful.util.spawn("sudo shutdown -h now") end),
+	awful.key({ modkey, "Shift"   }, "s",      function () awful.util.spawn("gksudo shutdown -h now") end),
 	awful.key({ modkey,           }, "q",      function () awful.util.spawn("xscreensaver-command -lock") end),
 
 	-- Volume
