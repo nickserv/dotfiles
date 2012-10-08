@@ -23,8 +23,7 @@ xsetroot -cursor_name left_ptr & #show cursor over backgrounds
 #echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches #behave, Dropbox!
 
 #start gui daemons
-#nm-applet --sm-disable & #networking
-wicd-client --tray & #networking
+nm-applet --sm-disable & #networking
 xfce4-power-manager & #power
 thunar --daemon & #thunar daemon
 urxvtd -q -o -f & #urxvt daemon
