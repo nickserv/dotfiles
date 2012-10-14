@@ -35,8 +35,6 @@ alias ..='cd ..'
 alias dua='\du -ha'
 alias dus='\du -hs'
 alias to="todo.sh"
-alias power-down='sudo shutdown -h now'
-alias power-reboot='sudo reboot'
 
 # new commands
 alias lock='xscreensaver-command -lock'
@@ -140,6 +138,17 @@ alias lm='la | less'
 # ls++
 alias lsp="ls++"
 alias lap="ls++ -A"
+
+# systemd
+alias sc="systemctl"
+alias power-reboot='sudo systemctl reboot'
+alias power-off='sudo systemctl poweroff'
+alias start='sudo systemctl start'
+alias restart='sudo systemctl restart'
+alias stop='sudo systemctl stop'
+alias enable='sudo systemctl enable'
+alias status='sudo systemctl status'
+alias disable='sudo systemctl disable'
 
 # pacman/packer
 alias pf='packer -Ss'
