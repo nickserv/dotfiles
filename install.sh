@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "Installing homeshick..."
-if command -v curl > /dev/null
+if command -v curl > /dev/null; then
 	curl -so ~/homeshick https://raw.github.com/andsens/homeshick/master/homeshick
-elseif command -v wget > /dev/null
+elif command -v wget > /dev/null; then
 	wget -qO ~/homeshick https://raw.github.com/andsens/homeshick/master/homeshick
 else
 	echo "Homeshick installation failed. Please install curl or wget."
@@ -16,9 +16,9 @@ echo "Installing thenickperson/castle..."
 ~/homeshick symlink thenickperson/castle
 
 echo "Installing thenickperson/dotvim..."
-if command -v curl > /dev/null
+if command -v curl > /dev/null; then
 	curl https://raw.github.com/thenickperson/dotvim/master/bootstrap.sh -so - | sh
-elseif command -v wget > /dev/null
+elif command -v wget > /dev/null; then
 	wget -q https://raw.github.com/thenickperson/dotvim/master/bootstrap.sh
 	bash bootstrap.sh
 fi
