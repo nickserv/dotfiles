@@ -24,13 +24,19 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-git'
 Bundle 'jceb/vim-orgmode'
 Bundle 'mileszs/ack.vim'
+Bundle 'jQuery'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+Bundle 'ervandew/supertab'
+Bundle 'FuzzyFinder'
+Bundle 'L9'
+Bundle 'jelera/vim-javascript-syntax'
 
 " recommended by Vundle
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'tpope/vim-rails.git'
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
 "Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on " required
