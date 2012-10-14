@@ -179,6 +179,21 @@ map <Leader>h :set list!<CR>
 " run/compile file (see custom commands section)
 map <Leader>r :make<CR>
 
+"function! FdiffWrapper()
+	"colorscheme Tomorrow
+	"Fdiff
+	"colorscheme Tomorrow-Night-Bright
+"endfunction
+
+"function! GdiffWrapper()
+	"colorscheme Tomorrow
+	"Gdiff
+	"colorscheme Tomorrow-Night-Bright
+"endfunction
+
+"map <leader>df :FdiffWrapper
+"map <leader>dg :GdiffWrapper
+
 """""""""""""""""""
 " Custom Commands "
 """""""""""""""""""
