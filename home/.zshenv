@@ -8,7 +8,5 @@ export PATH=$PATH:~/.rbenv/bin:~/.gem/ruby/1.9.1/bin
 eval "$(rbenv init -)"
 
 # Other variables
-export PAGER=less
 export EDITOR=vim
 export BROWSER=firefox
-export LESS=-x2
