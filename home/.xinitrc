@@ -27,9 +27,9 @@ nm-applet --sm-disable & #networking
 xfce4-power-manager & #power
 thunar --daemon & #thunar daemon
 urxvtd -q -o -f & #urxvt daemon
-#xscreensaver -no-splash & #screen lock
-##sleep 5 && conky -q & #conky
-sleep 10 && dropboxd & #dropbox
+xscreensaver -no-splash & #screen lock
+sleep 300 && dropboxd & #dropbox
+chromium &
 
 #fix gui java apps displaying in awesome
 _JAVA_AWT_WM_NONREPARENTING=1
