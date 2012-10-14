@@ -38,5 +38,6 @@ export _JAVA_AWT_WM_NONREPARENTING
 #tweak skype theme
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
 
-wm_bin="$1"
-exec ${wm_bin} > ~/.cache/wm_out 2> ~/.cache/wm_err
+#WMs: awesome, startxfce4
+wm="awesome"
+exec $wm > ~/.cache/wm_out 2> ~/.cache/wm_err
