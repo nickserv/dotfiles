@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Bins and scripts
-export PATH=$PATH:~/Bin:~/.dotfiles/scripts
+export PATH=$PATH:~/Bin:~/Repos/castle/scripts
 
 # Ruby and rbenv
 export PATH=$PATH:~/.rbenv/bin:~/.gem/ruby/1.9.1/bin
