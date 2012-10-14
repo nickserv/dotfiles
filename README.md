@@ -1,5 +1,8 @@
 #Nick's Config Files for Linux/Unix
 
+##Installation
+`wget -qO- https://raw.github.com/thenickperson/castle/master/install.sh | bash`
+
 ##Configs
 - __bashrc__: general settings for __bash__
 - __zshrc__: general settings for __zsh__
