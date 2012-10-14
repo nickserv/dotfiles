@@ -96,6 +96,9 @@ set showbreak=>\ \ \
 " disable folds
 set nofoldenable
 
+" enable completion
+set ofu=syntaxcomplete#Complete
+
 """""""""""""
 " Indenting "
 """""""""""""
