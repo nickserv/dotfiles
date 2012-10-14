@@ -1,15 +1,12 @@
 #!/bin/bash
 
-echo "Installing homeshick..."
-if command -v curl > /dev/null; then
-	curl -so ~/homeshick https://raw.github.com/andsens/homeshick/master/homeshick
-elif command -v wget > /dev/null; then
-	wget -qO ~/homeshick https://raw.github.com/andsens/homeshick/master/homeshick
-else
-	echo "Homeshick installation failed. Please install curl or wget."
+if [! command -v wget > /dev/null]; then
+	echo "Installation failed. Please install wget."
 	exit 1
 fi
-chmod a+x ~/homeshick
+
+echo "Installing homeshick..."
+wget -qO- https://raw.github.com/andsens/homeshick/master/install.sh | bash
 
 echo "Installing thenickperson/castle..."
 ~/homeshick clone git@github.com:thenickperson/castle.git
