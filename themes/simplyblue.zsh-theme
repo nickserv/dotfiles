@@ -6,7 +6,7 @@ function check_ssh() {
 }
 
 # Prompt
-PROMPT='$(check_ssh)%{$fg_bold[blue]%}%~ $(git_prompt_info)%{$fg_bold[yellow]%}➜ %{$reset_color%}'
+PROMPT='$(check_ssh)%{$fg_bold[blue]%}%~ $(git_prompt_info)%{$fg_bold[yellow]%}$ %{$reset_color%}'
 
 # Title bar
 ZSH_THEME_TERM_TAB_TITLE_IDLE="$(check_ssh)%~"
