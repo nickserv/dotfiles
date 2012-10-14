@@ -7,22 +7,65 @@ theme = {}
 
 themedir = awful.util.getdir("config") .. "/themes/tomorrow"
 
+palettes = {}
+
+palettes.tomorrow = {
+	background = "#ffffff",
+	current_line = "#efefef",
+	selection = "#d6d6d6",
+	foreground = "#4d4d4c",
+	comment = "#8e908c",
+	red = "#c82829",
+	orange = "#f5871f",
+	yellow = "#eab700",
+	green = "#718c00",
+	aqua = "#3e999f",
+	blue = "#4271ae",
+	purple = "#8959a8"
+}
+
+palettes.tomorrow_night = {
+	background = "#1d1f21",
+	current_line = "#282a2e",
+	selection = "#373b41",
+	foreground = "#c5c8c6",
+	comment = "#969896",
+	red = "#cc6666",
+	orange = "#de935f",
+	yellow = "#f0c674",
+	green = "#b5bd68",
+	aqua = "#8abeb7",
+	blue = "#81a2be",
+	purple = "#b294bb"
+}
+
+palettes.tomorrow_night_eighties = {
+}
+
+palettes.tomorrow_night_blue = {
+}
+
+palettes.tomorrow_night_bright = {
+}
+
+palette = palettes.tomorrow_night
+
 theme.font          = "tamsyn 8"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
+theme.bg_normal     = palette.background
+theme.bg_focus      = palette.comment
+theme.bg_urgent     = palette.red
+theme.bg_minimize   = palette.aqua
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = palette.foreground
+theme.fg_focus      = palette.background
+theme.fg_urgent     = palette.background
+theme.fg_minimize   = palette.background
 
 theme.border_width  = "1"
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.border_normal = palette.current_line
+theme.border_focus  = palette.selection
+theme.border_marked = palette.red
 
 -- There are other variable sets
 -- overriding the default one when
