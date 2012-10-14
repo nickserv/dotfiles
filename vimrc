@@ -93,6 +93,9 @@ autocmd BufReadPost *
 " show '>   ' at the beginning of lines that are automatically wrapped
 set showbreak=>\ \ \ 
 
+" disable folds
+set nofoldenable
+
 """""""""""""
 " Indenting "
 """""""""""""
