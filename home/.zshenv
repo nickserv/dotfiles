@@ -11,4 +11,4 @@ eval "$(rbenv init -)"
 
 # Other variables
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=chromium
