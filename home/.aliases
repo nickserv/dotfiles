@@ -159,6 +159,11 @@ alias pa='packer --noedit --auronly'
 alias pain='pa -S'
 alias paup='pa -Syu'
 
+# global aliases
+alias -g L='| less'
+alias -g F='| ack'
+alias -g FE='|& ack'
+
 # pacman aliases (if applicable, replace 'pacman' with 'yaourt'/'pacaur'/whatever)
 #alias pac='pacman -S'      # default action     - install one or more packages
 #alias pacu='pacman -Syu'   # '[u]pdate'         - upgrade all packages to their newest version
