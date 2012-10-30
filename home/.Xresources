@@ -5,7 +5,7 @@ urxvt.visualBell:  true
 
 !extensions
 urxvt.perl-ext-common: default,clipboard,matcher
-URxvt.urlLauncher:     /usr/bin/firefox
+URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1
 !URxvt.keysym.M-c:   perl:clipboard:copy
 !URxvt.keysym.M-v:   perl:clipboard:paste
