@@ -13,5 +13,4 @@ eval "$(rbenv init -)"
 export EDITOR=vim
 export BROWSER=chromium
 
-skip_global_compinit=1
 export PATH=$PATH:/usr/local/heroku/bin
