@@ -41,6 +41,12 @@ function ssh_info() {
 	fi
 }
 
+# Displays version control information if in a repository
+function() vc_info() {
+	vcprompt -f "$fg_bold[cyan]%b$fg[green]%m%u$reset_color "
+}
+
 # Prompt
 autoload -U colors && colors
-PROMPT="$(ssh_info)%{$fg_bold[blue]%}%~ %{$fg_bold[yellow]%}$ %{$reset_color%}"
+setopt prompt_subst
+export PROMPT='$(ssh_info)%{$fg_bold[blue]%}%~ $(vc_info)%{$fg_bold[yellow]%}$ %{$reset_color%}'
