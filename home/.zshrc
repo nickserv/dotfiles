@@ -35,7 +35,7 @@ man() {
 }
 
 # Function that displays the hostname if the current session is over SSH
-function check_ssh() {
+function ssh_info() {
 	if [[ -n $SSH_CONNECTION ]]; then
 		echo "%{$fg_bold[red]%}$(hostname) "
 	fi
@@ -43,4 +43,4 @@ function check_ssh() {
 
 # Prompt
 autoload -U colors && colors
-PROMPT="$(check_ssh)%{$fg_bold[blue]%}%~ %{$fg_bold[yellow]%}$ %{$reset_color%}"
+PROMPT="$(ssh_info)%{$fg_bold[blue]%}%~ %{$fg_bold[yellow]%}$ %{$reset_color%}"
