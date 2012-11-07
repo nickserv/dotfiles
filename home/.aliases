@@ -57,6 +57,7 @@ alias rbackup="rsync -ah --progress"
 alias pcp="rsync --partial --progress --append --rsh=ssh -r -h"
 alias pmv="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias svn-ignore='svn propedit svn:ignore .'
 
 # privileged access
 if [ $UID -ne 0 ]; then
