@@ -50,3 +50,18 @@ function() vc_info() {
 autoload -U colors && colors
 setopt prompt_subst
 export PROMPT='$(ssh_info)%{$fg_bold[blue]%}%~ $(vc_info)%{$fg_bold[yellow]%}$ %{$reset_color%}'
+
+# Set up the title bar text
+title_info() {
+	print -Pn "\e]2;%~\a"
+}
+
+# Enable title bar info display
+# This gets called every time the working directory changes.
+chpwd() {
+	[[ -t 1 ]] || return
+	title_info
+}
+# This extra call is here so that the title bar will also be set when a new
+# terminal is created.
+title_info
