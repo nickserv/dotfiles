@@ -115,14 +115,6 @@ alias vd='vim -d'
 # feh
 alias feh='feh --scale-down --auto-zoom'
 
-# git
-if command -v hub &>/dev/null; then
-	alias git='hub'
-	alias g='hub'
-else
-	alias g='git'
-fi
-
 # homesick/homeshick
 if command -v homesick &>/dev/null; then
 	alias hs='homesick'
