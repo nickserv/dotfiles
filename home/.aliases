@@ -38,6 +38,7 @@ alias dus='\du -hs'
 alias to="todo.sh"
 alias time-zsh="time zsh -i -c exit"
 alias lsmnt="mount | column -t"
+alias source-zsh="source ~/.zshrc"
 
 # new commands
 alias lock='xscreensaver-command -lock'
