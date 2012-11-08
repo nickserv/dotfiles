@@ -168,11 +168,12 @@ alias -g F='| ack'
 alias -g FE='|& ack'
 alias -g LOL='| lolcat'
 
-# bash aliases
+# personal (private) aliases
 if [ -f ~/.aliases_personal ]; then
 	. ~/.aliases_personal
 fi
 
+# functions
 prf() {
 	pgrep $1 | xargs ps
 }
