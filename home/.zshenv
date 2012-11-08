@@ -9,10 +9,12 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Load additional software
+# Heroku
 export PATH=$PATH:/usr/local/heroku/bin
-
-# Ruby and rbenv
-export PATH=$PATH:~/.rbenv/bin:~/.gem/ruby/1.9.1/bin
+# RubyGems
+export PATH=$PATH:~/.gem/ruby/1.9.1/bin
+# rbenv
+export PATH=$PATH:~/.rbenv/bin
 eval "$(rbenv init -)"
 
 # Other variables
