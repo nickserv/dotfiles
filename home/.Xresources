@@ -1,24 +1,26 @@
-!settings
+! UI
 urxvt.iconFile:    /usr/share/icons/Faenza/apps/16/terminal.png
 urxvt.scrollstyle: plain
 urxvt.visualBell:  true
 
-!extensions
+! Extensions
 urxvt.perl-ext-common: default,clipboard,matcher
 URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1
 !URxvt.keysym.M-c:   perl:clipboard:copy
 !URxvt.keysym.M-v:   perl:clipboard:paste
 
-!fonts
+! Fonts
 xft.antialias: false
 urxvt.font:    xft:tamsyn:pixelsize=12
 
-!tab colors
+! Tabs
 URxvt.tabbed.tabbar-fg: 0
 URxvt.tabbed.tabbar-bg: 8
 URxvt.tabbed.tab-fg:    0
 URxvt.tabbed.tab-bg:    4
+
+! Theme
 
 !!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
 !!--------- ------- ---- -------  ----------- ---------- ----------- -----------
