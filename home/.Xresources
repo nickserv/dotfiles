@@ -4,11 +4,9 @@ urxvt.scrollstyle: plain
 urxvt.visualBell:  true
 
 ! Extensions
-urxvt.perl-ext-common: default,clipboard,matcher
+urxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1
-!URxvt.keysym.M-c:   perl:clipboard:copy
-!URxvt.keysym.M-v:   perl:clipboard:paste
 
 ! Fonts
 xft.antialias: false
