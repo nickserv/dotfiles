@@ -43,19 +43,19 @@ man() {
 # Function that displays the hostname if the current session is over SSH
 function ssh_info() {
 	if [[ -n $SSH_CONNECTION ]]; then
-		echo "%{$fg_bold[red]%}$(hostname) "
+		echo "%{$fg[red]%}$(hostname) "
 	fi
 }
 
 # Displays version control information if in a repository
 function() vc_info() {
-	vcprompt -f "$fg_bold[cyan]%b$fg[green]%m%u$reset_color "
+	vcprompt -f "$fg[cyan]%b$fg[green]%m%u$reset_color "
 }
 
 # Prompt
 autoload -U colors && colors
 setopt prompt_subst
-export PROMPT='$(ssh_info)%{$fg_bold[blue]%}%~ $(vc_info)%{$fg_bold[yellow]%}%# %{$reset_color%}'
+export PROMPT='$(ssh_info)%{$fg[blue]%}%~ $(vc_info)%{$fg[yellow]%}%# %{$reset_color%}'
 
 # Set up the title bar text
 title_info() {
