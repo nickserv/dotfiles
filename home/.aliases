@@ -186,3 +186,7 @@ alias -g FE='|& ack'
 if [ -f ~/.aliases_personal ]; then
 	. ~/.aliases_personal
 fi
+
+prf() {
+	pgrep $1 | xargs ps
+}
