@@ -40,4 +40,7 @@ export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
 
 #WMs: awesome, startxfce4
 wm="awesome"
+#wm="openbox-session"
+#wm="startlxde"
+#wm="gnome-session"
 exec $wm > ~/.cache/wm_out 2> ~/.cache/wm_err
