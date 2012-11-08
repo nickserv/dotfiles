@@ -36,9 +36,6 @@ alias ..='cd ..'
 alias dua='\du -ha'
 alias dus='\du -hs'
 alias to="todo.sh"
-alias time-zsh="time zsh -i -c exit"
-alias lsmnt="mount | column -t"
-alias source-zsh="source ~/.zshrc"
 
 # new commands
 alias lock='xscreensaver-command -lock'
@@ -59,6 +56,11 @@ alias pcp="rsync --partial --progress --append --rsh=ssh -r -h"
 alias pmv="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias svn-ignore='svn propedit svn:ignore .'
+alias lsmnt="mount | column -t"
+
+# zsh utility commands
+alias time-zsh="time zsh -ic exit"
+alias source-zsh="source ~/.zshrc"
 
 # privileged access
 if [ $UID -ne 0 ]; then
