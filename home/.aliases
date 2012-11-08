@@ -102,8 +102,8 @@ alias gp='git push'
 alias gl='git pull'
 alias gcl='git clone'
 alias gch='git checkout'
-alias glg='git log --stat --max-count=5'
-alias glgg='git log --graph --max-count=5'
+alias glgs='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias glg='glgs --stat'
 
 # vim
 alias v='vim -p'
