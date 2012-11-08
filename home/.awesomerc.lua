@@ -11,7 +11,7 @@ require("revelation") -- client previews
 require("vicious")    -- widgets
 
 -- Set theme
-theme = "obscur"
+theme = "awesome-solarized/dark"
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
