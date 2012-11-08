@@ -11,6 +11,9 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # Set up aliases
 . ~/.aliases
 
+# Autocomplete command line switches for aliases
+setopt completealiases
+
 # Set up history
 # number of lines kept in history
 export HISTSIZE=1000
@@ -20,6 +23,9 @@ export SAVEHIST=1000
 export HISTFILE=~/.zsh_history
 # append command to history file once executed
 setopt inc_append_history
+# only show past commands that include the current input
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # Colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
 man() {
@@ -49,7 +55,7 @@ function() vc_info() {
 # Prompt
 autoload -U colors && colors
 setopt prompt_subst
-export PROMPT='$(ssh_info)%{$fg_bold[blue]%}%~ $(vc_info)%{$fg_bold[yellow]%}$ %{$reset_color%}'
+export PROMPT='$(ssh_info)%{$fg_bold[blue]%}%~ $(vc_info)%{$fg_bold[yellow]%}%# %{$reset_color%}'
 
 # Set up the title bar text
 title_info() {
