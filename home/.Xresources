@@ -9,8 +9,7 @@ URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1
 
 ! Fonts
-xft.antialias: false
-urxvt.font:    xft:tamsyn:pixelsize=12
+urxvt.font:    xft:tamsyn:pixelsize=12:antialias=false
 
 ! Tabs
 URxvt.tabbed.tabbar-fg: 0
