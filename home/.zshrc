@@ -71,3 +71,12 @@ chpwd() {
 # This extra call is here so that the title bar will also be set when a new
 # terminal is created.
 title_info
+
+# Load zmv
+autoload -U zmv
+
+# Load autocorrect things
+setopt correctall
+
+# Automatically use cd when paths are entered without cd
+setopt autocd
