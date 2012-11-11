@@ -32,6 +32,7 @@ Bundle 'ervandew/supertab'
 Bundle 'FuzzyFinder'
 Bundle 'L9'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'altercation/vim-colors-solarized'
 
 " recommended by Vundle
 "Bundle 'Lokaltog/vim-easymotion'
@@ -116,9 +117,12 @@ set smartindent "automatically inserts one extra level of indentation in some ca
 " Theme "
 """""""""
 
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized
+"colorscheme Tomorrow-Night-Bright
+
 filetype plugin indent on
-colorscheme Tomorrow-Night-Bright
 
 """"""""
 " GVim "
