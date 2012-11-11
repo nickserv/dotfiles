@@ -11,12 +11,6 @@ URxvt.matcher.button:  1
 ! Fonts
 urxvt.font:    xft:tamsyn:pixelsize=12:antialias=false
 
-! Tabs
-URxvt.tabbed.tabbar-fg: 0
-URxvt.tabbed.tabbar-bg: 8
-URxvt.tabbed.tab-fg:    0
-URxvt.tabbed.tab-bg:    4
-
 ! Theme
 
 !!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
