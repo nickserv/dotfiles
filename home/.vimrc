@@ -191,6 +191,9 @@ map <Leader>h :set list!<CR>
 " run/compile file (see custom commands section)
 map <Leader>r :make<CR>
 
+" swap background color (dark/light) for Solarized
+call togglebg#map("<F2>")
+
 "function! FdiffWrapper()
 	"colorscheme Tomorrow
 	"Fdiff
