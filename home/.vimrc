@@ -131,8 +131,6 @@ set background=dark
 colorscheme solarized
 "colorscheme Tomorrow-Night-Bright
 
-filetype plugin indent on
-
 """"""""
 " GVim "
 """"""""
