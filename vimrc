@@ -209,7 +209,7 @@ au BufNewFile,BufRead *.java  setlocal makeprg=javac\ %
 au BufNewFile,BufRead *.rb    setlocal makeprg=ruby\ %
 au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
 au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
-au BufNewFile,BufRead *.html  setlocal makeprg=firefox\ %
+au BufNewFile,BufRead *.html  setlocal makeprg=chromium\ %
 
 " remove trailing whitespace from all lines in the current buffer
 command! Rtrim call <SID>RightTrim()
