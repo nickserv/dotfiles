@@ -7,6 +7,7 @@ urxvt.visualBell:  true
 urxvt.perl-ext-common: default,matcher,-option-popup,-selection-popup
 URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1
+URxvt.colorUL: #4682B4
 
 ! Fonts
 urxvt.font:    xft:tamsyn:pixelsize=12:antialias=false
