@@ -230,3 +230,9 @@ if !exists(":Fdiff")
 	command Fdiff vert new | set bt=nofile | r # | 0d_ | diffthis
 		\ | wincmd p | diffthis
 endif
+
+" indents: convert spaces to tabs
+command! -range=% -nargs=0 IndentTabs execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
+
+" indents: convert tabs to spaces
+command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
