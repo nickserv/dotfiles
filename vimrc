@@ -55,6 +55,9 @@ filetype plugin indent on " required
 " UI "
 """"""
 
+" display incomplete commands
+set showcmd
+
 " mouse support
 set mouse=a
 
@@ -99,6 +102,9 @@ set nofoldenable
 
 " enable completion
 set ofu=syntaxcomplete#Complete
+
+" make laggy connections work faster
+set ttyfast
 
 """""""""""""
 " Indenting "
