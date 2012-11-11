@@ -33,6 +33,7 @@ Bundle 'FuzzyFinder'
 Bundle 'L9'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/syntastic'
 
 " recommended by Vundle
 "Bundle 'Lokaltog/vim-easymotion'
