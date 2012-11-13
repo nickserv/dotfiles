@@ -1,5 +1,4 @@
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-pathogen'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
