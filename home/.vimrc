@@ -147,6 +147,12 @@ map <Leader>l :TlistToggle<CR>
 " toggle spell check
 map <Leader>s :set spell!<CR>
 
+" more spell check shortcuts
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
 " toggle invisible character display
 map <Leader>h :set list!<CR>
 
