@@ -15,6 +15,10 @@ filetype plugin indent on " required
 " UI "
 """"""
 
+" directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backupf
+
 " display incomplete commands
 set showcmd
 
