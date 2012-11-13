@@ -15,6 +15,13 @@ filetype plugin indent on " required
 " UI "
 """"""
 
+" auto-reload vimrc
+autocmd! bufwritepost vimrc source ~/.vim/vimrc
+"autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
+
+" show the filename in the window titlebar
+set title
+
 " set encoding
 set encoding=utf-8
 
@@ -165,6 +172,12 @@ map <Leader>r :make<CR>
 
 " swap background color (dark/light) for Solarized
 call togglebg#map("<F2>")
+
+" Format the current paragraph according to
+" the current 'textwidth' with CTRL-J:
+nmap <C-J>      gqap
+vmap <C-J>      gq
+imap <C-J>      <C-O>gqap
 
 "function! FdiffWrapper()
 	"colorscheme Tomorrow
