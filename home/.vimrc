@@ -94,8 +94,6 @@ set gdefault
 set tabstop=2
 " Width (in spaces) used in each step of autoindent (aswell as << and >>)
 set shiftwidth=2
-" Control how many columns vim uses when you hit Tab in insert mode
-set softtabstop=2
 " Use real tabs, not spaces, for indents
 set noexpandtab
 " When auto-indenting, use the indenting format of the previous line
