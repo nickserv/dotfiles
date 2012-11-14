@@ -15,6 +15,9 @@ filetype plugin indent on " required
 " UI "
 """"""
 
+" automatically load changed files
+set autoread
+
 " auto-reload vimrc
 autocmd! bufwritepost vimrc source ~/.vim/vimrc
 "autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
@@ -47,9 +50,6 @@ set colorcolumn=80
 
 " ignore whitespace in diff mode
 set diffopt+=iwhite
-
-" automatically load changed files
-set autoread
 
 " Powerline
 set laststatus=2
