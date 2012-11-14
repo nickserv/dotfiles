@@ -90,14 +90,23 @@ set gdefault
 " Indenting "
 """""""""""""
 
-set tabstop=2 "width (in spaces) that a <tab> is displayed as
-set shiftwidth=2 "width (in spaces) used in each step of autoindent (aswell as << and >>)
-set softtabstop=2 "control how many columns vim uses when you hit Tab in insert mode
-set noexpandtab "use real tabs, not spaces, for indents
-set copyindent "when auto-indenting, use the indenting format of the previous line
-set smarttab "shiftwidth used in front of a line, but tabstop used otherwise
-set autoindent "turn on auto-indenting (great for programers)
-set smartindent "automatically inserts one extra level of indentation in some cases, and works for C-like files
+" Width (in spaces) that a <tab> is displayed as
+set tabstop=2
+" Width (in spaces) used in each step of autoindent (aswell as << and >>)
+set shiftwidth=2
+" Control how many columns vim uses when you hit Tab in insert mode
+set softtabstop=2
+" Use real tabs, not spaces, for indents
+set noexpandtab
+" When auto-indenting, use the indenting format of the previous line
+set copyindent
+" Shiftwidth used in front of a line, but tabstop used otherwise
+set smarttab
+" Turn on auto-indenting (great for programers)
+set autoindent
+" Automatically inserts one extra level of indentation in some cases, and works
+" for C-like files
+set smartindent
 
 """""""""
 " Theme "
