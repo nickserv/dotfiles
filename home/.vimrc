@@ -41,13 +41,6 @@ set number
 " highlight cursor line
 set cursorline
 
-" search stuff
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set gdefault
-
 " wrapping stuff
 set textwidth=80
 set colorcolumn=80
@@ -82,6 +75,16 @@ set ofu=syntaxcomplete#Complete
 
 " make laggy connections work faster
 set ttyfast
+
+"""""""""""""
+" Searching "
+"""""""""""""
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
 
 """""""""""""
 " Indenting "
