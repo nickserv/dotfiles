@@ -207,9 +207,9 @@ imap <C-J>      <C-O>gqap
 "map <leader>df :FdiffWrapper
 "map <leader>dg :GdiffWrapper
 
-"""""""""""""""""""
-" Custom Commands "
-"""""""""""""""""""
+"""""""""""""""""""""
+" Language-Specific "
+"""""""""""""""""""""
 
 " configure <Leader>r shortcut (run/compile file depending on extension)
 au BufNewFile,BufRead *.sh    setlocal makeprg=bash\ %
@@ -220,6 +220,10 @@ au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
 au BufNewFile,BufRead *.lisp  setlocal makeprg=clisp\ %
 au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
 au BufNewFile,BufRead *.html  setlocal makeprg=chromium\ %
+
+"""""""""""""""""""
+" Custom Commands "
+"""""""""""""""""""
 
 " remove trailing whitespace from all lines in the current buffer
 command! Rtrim call <SID>RightTrim()
