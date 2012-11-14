@@ -29,7 +29,7 @@ set encoding=utf-8
 set backupdir=~/.vim/backup
 set directory=~/.vim/backupf
 
-" display incomplete commands
+" display incomplete commands at the bottom
 set showcmd
 
 " mouse support
@@ -80,27 +80,30 @@ set ttyfast
 " Searching "
 """""""""""""
 
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set gdefault
+set hlsearch "when there is a previous search pattern, highlight all its matches
+set incsearch "while typing a search command, show immediately where the so far typed pattern matches
+set ignorecase "ignore case in search patterns
+set smartcase "override the 'ignorecase' option if the search pattern
+set gdefault "imply global for new searches
 
 """""""""""""
 " Indenting "
 """""""""""""
 
-" Width (in spaces) that a <tab> is displayed as
+" Number of spaces that a <Tab> in the file counts for
 set tabstop=2
-" Width (in spaces) used in each step of autoindent (aswell as << and >>)
+" Number of spaces to use for each step of (auto)indent
 set shiftwidth=2
 " Use real tabs, not spaces, for indents
 set noexpandtab
 " When auto-indenting, use the indenting format of the previous line
 set copyindent
-" Shiftwidth used in front of a line, but tabstop used otherwise
+" When on, a <Tab> in front of a line inserts blanks according to 'shiftwidth'.
+" 'tabstop' is used in other places. A <BS> will delete a 'shiftwidth' worth of
+" space at the start of the line.
 set smarttab
-" Turn on auto-indenting (great for programers)
+" Copy indent from current line when starting a new line (typing <CR> in Insert
+" mode or when using the "o" or "O" command)
 set autoindent
 " Automatically inserts one extra level of indentation in some cases, and works
 " for C-like files
