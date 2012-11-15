@@ -90,7 +90,6 @@ install () {
 	start_install
 	install_homeshick
 	clone_repo
-	pull
 	use_zsh
 	symlink
 	install_vundle
