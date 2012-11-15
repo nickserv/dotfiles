@@ -79,10 +79,8 @@ symlink () {
 }
 
 pull () {
-	pushd ~/.homesick/repos/castle > /dev/null
-	echo "Pulling latest from $(git config remote.origin.url)..."
-	git pull
-	pushd > /dev/null
+	echo "Pulling repository..."
+	$HOME/.homeshick pull castle
 }
 
 install () {
