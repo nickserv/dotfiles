@@ -15,10 +15,10 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'ervandew/supertab'
-Bundle 'FuzzyFinder'
 Bundle 'L9'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-rails'
 
 " Color Schemes
 Bundle 'chriskempson/vim-tomorrow-theme'
