@@ -122,7 +122,7 @@ colorscheme solarized
 " GVim "
 """"""""
 
-set gfn=Tamsyn\ 8 "set font
+set gfn=Source\ Code\ Pro\ 10 "set font
 set gcr=n:blinkon0 "disable cursor blinking
 
 set guioptions-=m "remove menu bar
