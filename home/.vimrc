@@ -159,6 +159,10 @@ nmap <Right>  >>
 vmap <Right>  >gv
 "imap <Right>  <C-O><Right>
 
+" delete individual lines with ctrl-k
+map  <C-K>    dd
+imap <C-K>    <C-O>dd
+
 " toggle NERD Commenter
 map <Leader>/ <Plug>NERDCommenterToggle
 
@@ -192,6 +196,10 @@ nmap <C-J>      gqap
 vmap <C-J>      gq
 imap <C-J>      <C-O>gqap
 
+" tabs
+map <Leader>tp :tabp<CR>
+map <Leader>tn :tabnext<CR>
+
 "function! FdiffWrapper()
 	"colorscheme Tomorrow
 	"Fdiff
@@ -220,6 +228,10 @@ au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
 au BufNewFile,BufRead *.lisp  setlocal makeprg=clisp\ %
 au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
 au BufNewFile,BufRead *.html  setlocal makeprg=chromium\ %
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile *.html.erb set ft=eruby
 
 """""""""""""""""""
 " Custom Commands "
