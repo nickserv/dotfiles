@@ -67,7 +67,10 @@ update_vim_plugins () {
 }
 
 clean () {
+	pushd ~/.homesick/repos/castle > /dev/null
+	echo "Cleaning repository..."
 	git clean -dfx
+	pushd > /dev/null
 }
 
 symlink () {
