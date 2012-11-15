@@ -18,11 +18,15 @@ start_install() {
 		exit 1
 	fi
 	echo "Installing thenickperson/castle..."
-	#$HOME/.homeshick clone git@github.com:thenickperson/castle.git
 }
 
 end_install() {
 	echo "Open a new terminal to start your proper shell."
+}
+
+clone_repo() {
+	echo "Cloning repository..."
+	$HOME/.homeshick clone git@github.com:thenickperson/castle.git
 }
 
 install_homeshick() {
@@ -74,6 +78,7 @@ pull () {
 install () {
 	echo "Installing config files..."
 	start_install
+	clone_repo
 	pull
 	use_zsh
 	install_homeshick
