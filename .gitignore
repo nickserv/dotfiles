@@ -1,2 +1,8 @@
 *.swp
 *_personal
+
+bundle
+.netrwhist
+
+backup
+backupf
