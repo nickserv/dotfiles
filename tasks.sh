@@ -11,7 +11,7 @@
 #
 # which will execute the pull, symlink, and update_vim_plugins tasks.
 
-check_wget() {
+check_wget () {
 	if [! command -v wget > /dev/null]; then
 		echo "Installation failed. Please install wget."
 		popd > /dev/null
@@ -19,14 +19,14 @@ check_wget() {
 	fi
 }
 
-uninstall() {
+uninstall () {
 	echo "Uninstalling thenickperson/castle..."
 	rm -r ~/.homesick
 	rm ~/.homeshick
 	echo "Done. You may need to manually delete leftover symlinks."
 }
 
-clone() {
+clone () {
 	echo "Cloning repository..."
 	$HOME/.homeshick clone git@github.com:thenickperson/castle.git
 }
@@ -48,12 +48,12 @@ clean () {
 	pushd > /dev/null
 }
 
-install_homeshick() {
+install_homeshick () {
 	echo "Installing homeshick..."
 	wget -qO- https://raw.github.com/andsens/homeshick/master/install.sh | bash
 }
 
-use_zsh() {
+use_zsh () {
 	echo "Switching shell to zsh..."
 	sudo chsh --shell /bin/zsh `whoami`
 }
