@@ -31,9 +31,26 @@ uninstall() {
 	echo "Done. You may need to manually delete leftover symlinks."
 }
 
-clone_repo() {
+clone() {
 	echo "Cloning repository..."
 	$HOME/.homeshick clone git@github.com:thenickperson/castle.git
+}
+
+pull () {
+	echo "Pulling repository..."
+	$HOME/.homeshick pull castle
+}
+
+symlink () {
+	echo "Symlinking config files..."
+	$HOME/.homeshick symlink castle
+}
+
+clean () {
+	pushd ~/.homesick/repos/castle > /dev/null
+	echo "Cleaning repository..."
+	git clean -dfx
+	pushd > /dev/null
 }
 
 install_homeshick() {
@@ -66,28 +83,11 @@ update_vim_plugins () {
 	vim +BundleInstall! +qall
 }
 
-clean () {
-	pushd ~/.homesick/repos/castle > /dev/null
-	echo "Cleaning repository..."
-	git clean -dfx
-	pushd > /dev/null
-}
-
-symlink () {
-	echo "Symlinking config files..."
-	$HOME/.homeshick symlink castle
-}
-
-pull () {
-	echo "Pulling repository..."
-	$HOME/.homeshick pull castle
-}
-
 install () {
 	echo "Installing config files..."
 	start_install
 	install_homeshick
-	clone_repo
+	clone
 	use_zsh
 	symlink
 	install_vundle
