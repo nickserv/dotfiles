@@ -3,31 +3,31 @@
 # Simple Rakefile-esque task runner.
 # Call it like this:
 #
-#   ./tasks.sh pull update_plugins link_vimrc
+#   ./tasks.sh pull symlink
 #
 # or just:
 #
 #   ./tasks.sh
 #
-# which will execute the pull and update_plugins tasks.
+# which will execute the pull, symlink, and update_vim_plugins tasks.
 
 install_vundle () {
 	echo "Installing vundle..."
-	if [ ! -d "bundle" ]; then
-		mkdir bundle
+	if [ ! -d "home/.vim/bundle" ]; then
+		mkdir home/.vim/bundle
 	fi
-	if [ ! -d "bundle/vundle" ]; then
-		git clone git://github.com/gmarik/vundle.git bundle/vundle
+	if [ ! -d "home/.vim/bundle/vundle" ]; then
+		git clone git://github.com/gmarik/vundle.git home/.vim/bundle/vundle
 	fi
 }
 
-install_plugins () {
-	echo "Installing plugins..."
+install_vim_plugins () {
+	echo "Installing vim plugins..."
 	vim +BundleInstall +qall
 }
 
-update_plugins () {
-	echo "Updating plugins..."
+update_vim_plugins () {
+	echo "Updating vim plugins..."
 	vim +BundleInstall! +qall
 }
 
@@ -35,13 +35,9 @@ clean () {
 	git clean -dfx
 }
 
-link_vimrc () {
-	echo "Linking ~/.vimrc..."
-	ln -is $PWD/vimrc ~/.vimrc
-
-	#echo "Linking ~/.vimrc and ~/.gvimrc..."
-	#ln -is $PWD/vimrc ~/.vimrc
-	#ln -is $PWD/gvimrc ~/.gvimrc
+symlink () {
+	echo "Symlinking config files..."
+	homesick symlink castle
 }
 
 pull () {
@@ -50,11 +46,11 @@ pull () {
 }
 
 install () {
-	echo "Installing VIM bootstrap of awesomesauce..."
+	echo "Installing config files..."
 	pull
+	symlink
 	install_vundle
-	install_plugins
-	link_vimrc
+	install_vim_plugins
 }
 
 if [ $# -gt 0 ]
@@ -65,5 +61,6 @@ then
 	done
 else
 	pull
-	update_plugins
+	symlink
+	update_vim_plugins
 fi
