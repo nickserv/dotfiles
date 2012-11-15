@@ -48,11 +48,11 @@ use_zsh() {
 
 install_vundle () {
 	echo "Installing vundle..."
-	if [ ! -d "home/.vim/bundle" ]; then
-		mkdir home/.vim/bundle
+	if [ ! -d "$HOME/.vim/bundle" ]; then
+		mkdir $HOME/.vim/bundle
 	fi
 	if [ ! -d "home/.vim/bundle/vundle" ]; then
-		git clone git://github.com/gmarik/vundle.git home/.vim/bundle/vundle
+		git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 	fi
 }
 
