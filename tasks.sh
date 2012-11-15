@@ -24,6 +24,13 @@ end_install() {
 	echo "Open a new terminal to start your proper shell."
 }
 
+uninstall() {
+	echo "Uninstalling thenickperson/castle..."
+	rm -r ~/.homesick
+	rm ~/.homeshick
+	echo "Done. You may need to manually delete leftover symlinks."
+}
+
 clone_repo() {
 	echo "Cloning repository..."
 	$HOME/.homeshick clone git@github.com:thenickperson/castle.git
