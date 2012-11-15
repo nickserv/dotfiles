@@ -49,7 +49,11 @@ function ssh_info() {
 
 # Displays version control information if in a repository
 function() vc_info() {
-	vcprompt -f "$fg[cyan]%b$fg[green]%m%u$reset_color "
+	vc_branch=$(vcprompt -f "%b")
+	if [[ -n $vc_branch ]]; then
+		vc_status=$(vcprompt -f "%m%u")
+		echo "%{$fg[cyan]%}$vc_branch%{$fg[green]%}$vc_status%{$reset_color%} "
+	fi
 }
 
 # Prompt
