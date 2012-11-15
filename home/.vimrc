@@ -198,6 +198,17 @@ imap <C-J>      <C-O>gqap
 map <Leader>tp :tabp<CR>
 map <Leader>tn :tabnext<CR>
 
+" opens an edit command with the path of the currently edited file filled in
+" normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" opens a tab edit command with the path of the currently edited file filled in
+" normal mode: <Leader>t
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" inserts the path of the currently edited file into a command
+" command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 """""""""""""""""""""
 " Language-Specific "
