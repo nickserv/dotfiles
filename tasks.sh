@@ -14,15 +14,14 @@
 start_install() {
 	if [! command -v wget > /dev/null]; then
 		echo "Installation failed. Please install wget."
+		popd > /dev/null
 		exit 1
 	fi
 	echo "Installing thenickperson/castle..."
 	#$HOME/.homeshick clone git@github.com:thenickperson/castle.git
-	pushd $HOME
 }
 
 end_install() {
-	popd
 	echo "Open a new terminal to start your proper shell."
 }
 
@@ -66,8 +65,10 @@ symlink () {
 }
 
 pull () {
+	pushd ~/.homesick/repos/castle > /dev/null
 	echo "Pulling latest from $(git config remote.origin.url)..."
 	git pull
+	pushd > /dev/null
 }
 
 install () {
@@ -82,6 +83,7 @@ install () {
 	end_install
 }
 
+pushd $HOME > /dev/null
 if [ $# -gt 0 ]
 then
 	for i in $@
@@ -93,3 +95,4 @@ else
 	symlink
 	update_vim_plugins
 fi
+popd > /dev/null
