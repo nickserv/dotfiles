@@ -85,10 +85,10 @@ pull () {
 install () {
 	echo "Installing config files..."
 	start_install
+	install_homeshick
 	clone_repo
 	pull
 	use_zsh
-	install_homeshick
 	symlink
 	install_vundle
 	install_vim_plugins
