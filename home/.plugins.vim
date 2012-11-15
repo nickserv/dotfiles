@@ -24,6 +24,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-ruby/vim-ruby'
 
 " Brief help
 " :BundleList          - list configured bundles
