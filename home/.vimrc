@@ -2,7 +2,7 @@
 " Vundle "
 """"""""""
 
-set nocompatible " disable vi features
+set nocompatible " disable vi compatibility
 filetype off " required
 
 set rtp+=~/.vim/bundle/vundle/
@@ -187,7 +187,7 @@ map <Leader>r :make<CR>
 call togglebg#map("<F2>")
 
 " Format the current paragraph according to
-" the current 'textwidth' with CTRL-J:
+" the current 'textwidth' with ctrl-j:
 nmap <C-J>      gqap
 vmap <C-J>      gq
 imap <C-J>      <C-O>gqap
