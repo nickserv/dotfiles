@@ -11,17 +11,12 @@
 #
 # which will execute the pull, symlink, and update_vim_plugins tasks.
 
-start_install() {
+check_wget() {
 	if [! command -v wget > /dev/null]; then
 		echo "Installation failed. Please install wget."
 		popd > /dev/null
 		exit 1
 	fi
-	echo "Installing thenickperson/castle..."
-}
-
-end_install() {
-	echo "Open a new terminal to start your proper shell."
 }
 
 uninstall() {
@@ -84,15 +79,15 @@ update_vim_plugins () {
 }
 
 install () {
-	echo "Installing config files..."
-	start_install
+	echo "Installing thenickperson/castle..."
+	check_wget
 	install_homeshick
 	clone
 	use_zsh
 	symlink
 	install_vundle
 	install_vim_plugins
-	end_install
+	echo "Open a new terminal to start your proper shell."
 }
 
 pushd $HOME > /dev/null
