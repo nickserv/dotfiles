@@ -198,20 +198,6 @@ imap <C-J>      <C-O>gqap
 map <Leader>tp :tabp<CR>
 map <Leader>tn :tabnext<CR>
 
-"function! FdiffWrapper()
-	"colorscheme Tomorrow
-	"Fdiff
-	"colorscheme Tomorrow-Night-Bright
-"endfunction
-
-"function! GdiffWrapper()
-	"colorscheme Tomorrow
-	"Gdiff
-	"colorscheme Tomorrow-Night-Bright
-"endfunction
-
-"map <leader>df :FdiffWrapper
-"map <leader>dg :GdiffWrapper
 
 """""""""""""""""""""
 " Language-Specific "
