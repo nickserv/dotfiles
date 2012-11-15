@@ -143,21 +143,19 @@ map ; :
 " typing ;; quickly exits insert mode
 imap ;; <Esc>
 
-" bubble text up and down
+" bubble individual lines
 nmap <Up>   [e
-vmap <Up>   [egv
-"imap <Up>   <C-O><Up>
 nmap <Down> ]e
+" bubble multiple lines
+vmap <Up>   [egv
 vmap <Down> ]egv
-"imap <Down> <C-O><Down>
 
-" indent text left and right
+" indent individual lines
 nmap <Left>   <<
-vmap <Left>   <gv
-"imap <Left>   <C-O><Left>
 nmap <Right>  >>
+" indent multiple lines
+vmap <Left>   <gv
 vmap <Right>  >gv
-"imap <Right>  <C-O><Right>
 
 " delete individual lines with ctrl-k
 map  <C-K>    dd
