@@ -11,6 +11,31 @@
 #
 # which will execute the pull, symlink, and update_vim_plugins tasks.
 
+start_install() {
+	if [! command -v wget > /dev/null]; then
+		echo "Installation failed. Please install wget."
+		exit 1
+	fi
+	echo "Installing thenickperson/castle..."
+	#$HOME/.homeshick clone git@github.com:thenickperson/castle.git
+	pushd $HOME
+}
+
+end_install() {
+	popd
+	echo "Open a new terminal to start your proper shell."
+}
+
+install_homeshick() {
+	echo "Installing homeshick..."
+	wget -qO- https://raw.github.com/andsens/homeshick/master/install.sh | bash
+}
+
+use_zsh() {
+	echo "Switching shell to zsh..."
+	sudo chsh --shell /bin/zsh `whoami`
+}
+
 install_vundle () {
 	echo "Installing vundle..."
 	if [ ! -d "home/.vim/bundle" ]; then
@@ -37,7 +62,7 @@ clean () {
 
 symlink () {
 	echo "Symlinking config files..."
-	homesick symlink castle
+	$HOME/.homeshick symlink castle
 }
 
 pull () {
@@ -47,10 +72,14 @@ pull () {
 
 install () {
 	echo "Installing config files..."
+	start_install
 	pull
+	use_zsh
+	install_homeshick
 	symlink
 	install_vundle
 	install_vim_plugins
+	end_install
 }
 
 if [ $# -gt 0 ]
