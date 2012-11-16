@@ -11,37 +11,49 @@
 #
 # which will execute the pull, symlink, and update_vim_plugins tasks.
 
-start_install() {
+check_wget () {
 	if [! command -v wget > /dev/null]; then
 		echo "Installation failed. Please install wget."
 		popd > /dev/null
 		exit 1
 	fi
-	echo "Installing thenickperson/castle..."
 }
 
-end_install() {
-	echo "Open a new terminal to start your proper shell."
-}
-
-uninstall() {
+uninstall () {
 	echo "Uninstalling thenickperson/castle..."
 	rm -r ~/.homesick
 	rm ~/.homeshick
 	echo "Done. You may need to manually delete leftover symlinks."
 }
 
-clone_repo() {
+clone () {
 	echo "Cloning repository..."
 	$HOME/.homeshick clone git@github.com:thenickperson/castle.git
 }
 
-install_homeshick() {
+pull () {
+	echo "Pulling repository..."
+	$HOME/.homeshick pull castle
+}
+
+symlink () {
+	echo "Symlinking config files..."
+	$HOME/.homeshick symlink castle
+}
+
+clean () {
+	pushd ~/.homesick/repos/castle > /dev/null
+	echo "Cleaning repository..."
+	git clean -dfx
+	pushd > /dev/null
+}
+
+install_homeshick () {
 	echo "Installing homeshick..."
 	wget -qO- https://raw.github.com/andsens/homeshick/master/install.sh | bash
 }
 
-use_zsh() {
+use_zsh () {
 	echo "Switching shell to zsh..."
 	sudo chsh --shell /bin/zsh `whoami`
 }
@@ -66,36 +78,16 @@ update_vim_plugins () {
 	vim +BundleInstall! +qall
 }
 
-clean () {
-	pushd ~/.homesick/repos/castle > /dev/null
-	echo "Cleaning repository..."
-	git clean -dfx
-	pushd > /dev/null
-}
-
-symlink () {
-	echo "Symlinking config files..."
-	$HOME/.homeshick symlink castle
-}
-
-pull () {
-	pushd ~/.homesick/repos/castle > /dev/null
-	echo "Pulling latest from $(git config remote.origin.url)..."
-	git pull
-	pushd > /dev/null
-}
-
 install () {
-	echo "Installing config files..."
-	start_install
+	echo "Installing thenickperson/castle..."
+	check_wget
 	install_homeshick
-	clone_repo
-	pull
+	clone
 	use_zsh
 	symlink
 	install_vundle
 	install_vim_plugins
-	end_install
+	echo "Open a new terminal to start your proper shell."
 }
 
 pushd $HOME > /dev/null
