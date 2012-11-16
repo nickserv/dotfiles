@@ -28,7 +28,7 @@ uninstall () {
 
 clone () {
 	echo "Cloning repository..."
-	$HOME/.homeshick clone git@github.com:thenickperson/castle.git
+	$HOME/.homeshick clone https://github.com/thenickperson/castle.git
 }
 
 pull () {
@@ -64,7 +64,7 @@ install_vundle () {
 		mkdir $HOME/.vim/bundle
 	fi
 	if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
-		git clone git://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+		git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 	fi
 }
 
