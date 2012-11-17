@@ -1,6 +1,7 @@
-# Nick's Config Files for Linux/Unix
+# Nick's config files for Linux/Unix software
 
 ## Installation
 `wget -qO- https://raw.github.com/thenickperson/castle/master/bootstrap.sh | bash`
 
-## [My Old Vim Configuration](https://github.com/thenickperson/dotvim-old)
+## Older config files
+- [My old fork of Cody Krieger's vim config files](https://github.com/thenickperson/dotvim-old)
