@@ -1,16 +1,8 @@
 #!/bin/sh
 #Executed by startx (run your window manager from here)
 
-#what the hell does this do?
-#if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  #for f in /etc/X11/xinit/xinitrc.d/*; do
-    #[ -x "$f" ] && . "$f"
-  #done
-  #unset f
-#fi
-
 #start important stuff
-xrdb -merge ~/.Xresources #merge X resources
+xrdb -merge ~/.Xresources #update X resources database
 xsetroot -cursor_name left_ptr & #show cursor over backgrounds
 #echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches #behave, Dropbox!
 
@@ -21,18 +13,14 @@ thunar --daemon & #thunar daemon
 urxvtd -q -o -f & #urxvt daemon
 xscreensaver -no-splash & #screen lock
 sleep 300 && dropboxd & #dropbox
-chromium &
+chromium & #browser
 
 #fix gui java apps displaying in awesome
-_JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_AWT_WM_NONREPARENTING
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 #tweak skype theme
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
 
-#WMs: awesome, startxfce4
-wm="awesome"
-#wm="openbox-session"
-#wm="startlxde"
-#wm="gnome-session"
-exec $wm > ~/.cache/wm_out 2> ~/.cache/wm_err
+#Sessions: awesome, openbox-session, startxfce4, startlxde, gnome-session
+session="awesome"
+exec $session > ~/.cache/wm_out 2> ~/.cache/wm_err
