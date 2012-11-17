@@ -212,12 +212,6 @@ for s = 1, screen.count() do
 		-- Mute
 		mute_widget = widget({ type = "textbox" })
 		vicious.register(mute_widget, vicious.widgets.volume, "$2 ", 2, "Master")
-		-- Box start
-		box_start = widget({ type = "textbox" })
-		box_start.text = "["
-		-- Box end
-		box_end = widget({ type = "textbox" })
-		box_end.text = "]"
 
 	-- Add widgets to the wibox - order matters
 	mywibox[s].widgets = {
@@ -236,9 +230,7 @@ for s = 1, screen.count() do
 		volume_widget.widget,
 		mute_widget,
 		sep,
-		s == 1 and box_end or nil,
 		s == 1 and mysystray or nil,
-		s == 1 and box_start or nil,
 		s == 1 and sep or nil,
 		mytasklist[s],
 		layout = awful.widget.layout.horizontal.rightleft
