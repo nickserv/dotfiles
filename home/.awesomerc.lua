@@ -229,7 +229,6 @@ for s = 1, screen.count() do
 		sep,
 		volume_widget.widget,
 		mute_widget,
-		sep,
 		s == 1 and mysystray or nil,
 		s == 1 and sep or nil,
 		mytasklist[s],
