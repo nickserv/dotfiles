@@ -6,6 +6,12 @@ xrdb -merge ~/.Xresources #update X resources database
 xsetroot -cursor_name left_ptr & #show cursor over backgrounds
 #echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches #behave, Dropbox!
 
+#set mouse settings
+synclient VertTwoFingerScroll=1
+synclient HorizTwoFingerScroll=1
+synclient EmulateTwoFingerMinW=5
+synclient EmulateTwoFingerMinZ=48
+
 #start gui daemons
 nm-applet --sm-disable & #networking
 xfce4-power-manager & #power
