@@ -90,6 +90,7 @@ alias jrm='rm *.class'
 alias rb='ruby'
 alias py='python3'
 alias py2='python2'
+alias sbcl='rlwrap --history-no-dupes 1 --histsize 5000 --history-filename $HOME/.rlwrap.d/sbcl_history sbcl'
 
 # git
 alias g='git'
