@@ -1,0 +1,6 @@
+#!/bin/bash
+
+public_folder=$HOME/Dropbox/Public
+
+mv $1 $public_folder
+dropbox puburl $public_folder/$1
