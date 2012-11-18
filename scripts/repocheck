@@ -1,4 +1,5 @@
 #!/bin/bash
+
 prev="$(pwd)"
 ls -1 | while read dir
 do

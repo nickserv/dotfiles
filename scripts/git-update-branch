@@ -1,4 +1,5 @@
 #!/bin/bash
+
 current_branch=$(git symbolic-ref -q HEAD)
 current_branch=${current_branch##refs/heads/}
 current_branch=${current_branch:-HEAD}
