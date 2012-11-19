@@ -41,6 +41,14 @@ symlink () {
 	$HOME/.homeshick symlink castle
 }
 
+set_up_repos_directory () {
+	echo "Setting up ~/Repos..."
+	if [ ! -d "$HOME/Repos" ]; then
+		mkdir $HOME/Repos
+	fi
+	ln -s $HOME/.homesick/repos/castle $HOME/Repos/castle
+}
+
 clean () {
 	pushd ~/.homesick/repos/castle > /dev/null
 	echo "Cleaning repository..."
@@ -85,6 +93,7 @@ install () {
 	clone
 	use_zsh
 	symlink
+	set_up_repos_directory
 	install_vundle
 	install_vim_plugins
 	echo "Open a new terminal to start your proper shell."
