@@ -21,7 +21,7 @@ check_wget () {
 
 uninstall () {
 	echo "Uninstalling thenickperson/castle..."
-	rm -r ~/.homesick
+	rm -rf ~/.homesick
 	rm ~/.homeshick
 	echo "Done. You may need to manually delete leftover symlinks."
 }
