@@ -53,7 +53,6 @@ if command -v vcprompt > /dev/null; then
 else
 	has_vcprompt=false
 fi
-export has_vcprompt
 function() vc_info() {
 	if $has_vcprompt; then
 		vc_branch=$(vcprompt -f "%b")
