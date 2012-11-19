@@ -1,4 +1,5 @@
 #!/bin/bash
+# Runs "git status" on every subdirectory of the current directory.
 
 prev="$(pwd)"
 ls -1 | while read dir
