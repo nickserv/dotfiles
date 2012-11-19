@@ -72,7 +72,7 @@ install_vundle () {
 		mkdir $HOME/.vim/bundle
 	fi
 	if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
-		git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+		git clone -q https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 	fi
 }
 
