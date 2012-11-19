@@ -12,7 +12,7 @@
 # which will execute the pull, symlink, and update_vim_plugins tasks.
 
 check_wget () {
-	if [! command -v wget > /dev/null]; then
+	if ! command -v wget > /dev/null; then
 		echo "Installation failed. Please install wget."
 		popd > /dev/null
 		exit 1
