@@ -110,6 +110,7 @@ alias glgs='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias glg='glgs --stat'
 alias gsh='git show'
 alias gshw='git show --color-words'
+alias gsta='git stash'
 
 # vim
 alias v='vim -p'
