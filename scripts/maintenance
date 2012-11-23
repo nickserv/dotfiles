@@ -1,0 +1,12 @@
+#!/bin/bash
+# Runs commands for cleaning and updating the system.
+
+# Cleaning
+sudo cacheclean 1
+profile-cleaner c
+
+# Updating
+sudo pacman-color -Syu
+packer -Syu --noedit --auronly
+gem update
+sudo npm update -g
