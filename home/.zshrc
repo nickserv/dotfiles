@@ -66,7 +66,7 @@ function() vc_info() {
 # Prompt
 autoload -U colors && colors
 setopt prompt_subst
-export PROMPT='$(title_info)$(ssh_info)%{$fg[blue]%}%~ $(vc_info)%{$fg[yellow]%}%# %{$reset_color%}'
+export PROMPT='%{$(title_info)%}$(ssh_info)%{$fg[blue]%}%~ $(vc_info)%{$fg[yellow]%}%# %{$reset_color%}'
 
 # Set up the title bar text
 title_info() {
