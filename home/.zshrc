@@ -91,3 +91,6 @@ setopt correctall
 
 # Automatically use cd when paths are entered without cd
 setopt autocd
+
+# History search with ctrl-r
+bindkey '^R' history-incremental-search-backward
