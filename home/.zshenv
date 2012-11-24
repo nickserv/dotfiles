@@ -19,4 +19,4 @@ export PATH=$PATH:~/.gem/ruby/1.9.1/bin
 
 # Other variables
 export EDITOR=vim
-export BROWSER=chromium
+export BROWSER=google-chrome

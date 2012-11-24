@@ -19,7 +19,7 @@ thunar --daemon &         #thunar daemon
 urxvtd -q -o -f &         #urxvt daemon
 xscreensaver -no-splash & #screen lock
 sleep 300 && dropboxd &   #dropbox
-chromium &                #web browser
+google-chrome &           #web browser
 
 # Fix Java GUIs
 export _JAVA_AWT_WM_NONREPARENTING=1

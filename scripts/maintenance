@@ -3,7 +3,7 @@
 
 # Cleaning
 sudo cacheclean 1
-profile-cleaner c
+profile-cleaner gc
 
 # Updating
 sudo pacman-color -Syu

@@ -327,7 +327,7 @@ globalkeys = awful.util.table.join(
 
 	-- Shortcuts
 	awful.key({ modkey, "Mod1"    }, "a",      function () awful.util.spawn("assaultcube") end),
-	awful.key({ modkey, "Mod1"    }, "c",      function () awful.util.spawn("chromium") end),
+	awful.key({ modkey, "Mod1"    }, "c",      function () awful.util.spawn("google-chrome") end),
 	awful.key({ modkey, "Mod1"    }, "e",      function () awful.util.spawn("eclipse") end),
 	awful.key({ modkey, "Mod1"    }, "f",      function () awful.util.spawn("firefox") end),
 	awful.key({ modkey, "Mod1"    }, "l",      function () awful.util.spawn("lxappearance") end),
