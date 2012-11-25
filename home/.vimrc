@@ -228,6 +228,9 @@ au BufNewFile,BufRead *.html  setlocal makeprg=google-chrome\ %
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.html.erb set ft=eruby
 
+" Syntastic checkers
+let g:syntastic_javascript_checker='jshint'
+
 """""""""""""""""""
 " Custom Commands "
 """""""""""""""""""
