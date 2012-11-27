@@ -76,6 +76,9 @@ set ofu=syntaxcomplete#Complete
 " make laggy connections work faster
 set ttyfast
 
+" let vim open up to 100 tabs at once
+set tabpagemax=100
+
 """""""""""""
 " Searching "
 """""""""""""
