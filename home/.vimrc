@@ -79,6 +79,9 @@ set ttyfast
 " let vim open up to 100 tabs at once
 set tabpagemax=100
 
+" case-insensitive filename completion
+set wildignorecase
+
 """""""""""""
 " Searching "
 """""""""""""
