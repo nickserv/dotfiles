@@ -234,6 +234,13 @@ au BufRead,BufNewFile *.html.erb set ft=eruby
 " Syntastic checkers
 let g:syntastic_javascript_checker='jshint'
 
+" comfortable prose editing
+au FileType txt set spell spelllang=en 
+au FileType md set spell spelllang=en 
+au FileType html set spell spelllang=en 
+au FileType yaml set spell spelllang=en 
+au FileType xml set spell spelllang=en 
+
 """""""""""""""""""
 " Custom Commands "
 """""""""""""""""""
