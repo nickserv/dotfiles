@@ -89,7 +89,7 @@ set wildignorecase
 set hlsearch "when there is a previous search pattern, highlight all its matches
 set incsearch "while typing a search command, show immediately where the so far typed pattern matches
 set ignorecase "ignore case in search patterns
-set smartcase "override the 'ignorecase' option if the search pattern
+set smartcase "override the 'ignorecase' option if the search pattern contains uppercase characters
 set gdefault "imply global for new searches
 
 """""""""""""
