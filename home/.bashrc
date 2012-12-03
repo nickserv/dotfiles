@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# if not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # prompts
 PS1="\[\e[32m\]\u:\w\$\[\e[m\] " # old config from crunchbang
