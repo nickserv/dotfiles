@@ -1,3 +1,7 @@
+###############
+# Completions #
+###############
+
 # Completions
 autoload -U compinit
 compinit -C
@@ -8,13 +12,20 @@ zstyle ':completion:*' menu select
 # Case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+###########
+# Aliases #
+###########
+
 # Set up aliases
 . ~/.aliases
 
 # Autocomplete command line switches for aliases
 setopt completealiases
 
-# Set up history
+###########
+# History #
+###########
+
 # number of lines kept in history
 export HISTSIZE=1000
 # number of lines saved in the history after logout
@@ -27,18 +38,9 @@ setopt inc_append_history
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-# Colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
-man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-		LESS_TERMCAP_md=$(printf "\e[1;31m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[1;32m") \
-			man "$@"
-}
+##########
+# Prompt #
+##########
 
 # Function that displays the hostname if the current session is over SSH
 function ssh_info() {
@@ -68,6 +70,10 @@ autoload -U colors && colors
 setopt prompt_subst
 export PROMPT='%{$(title_info)%}$(ssh_info)%{$fg[blue]%}%~ $(vc_info)%{$fg[yellow]%}%# %{$reset_color%}'
 
+#############
+# Title Bar #
+#############
+
 # Set up the title bar text
 title_info() {
 	print -Pn "\e]2;%~\a"
@@ -82,6 +88,23 @@ chpwd() {
 # This extra call is here so that the title bar will also be set when a new
 # terminal is created.
 title_info
+
+########
+# Misc #
+########
+
+# Colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+			man "$@"
+}
 
 # Load zmv
 autoload -U zmv

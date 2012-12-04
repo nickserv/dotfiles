@@ -89,7 +89,7 @@ set wildignorecase
 set hlsearch "when there is a previous search pattern, highlight all its matches
 set incsearch "while typing a search command, show immediately where the so far typed pattern matches
 set ignorecase "ignore case in search patterns
-set smartcase "override the 'ignorecase' option if the search pattern
+set smartcase "override the 'ignorecase' option if the search pattern contains uppercase characters
 set gdefault "imply global for new searches
 
 """""""""""""
@@ -233,6 +233,9 @@ au BufNewFile,BufRead *.html  setlocal makeprg=google-chrome\ %
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.html.erb set ft=eruby
+
+" Add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=json syntax=javascript
 
 " Syntastic checkers
 let g:syntastic_javascript_checker='jshint'
