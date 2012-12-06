@@ -45,7 +45,7 @@ bindkey "^[[B" history-beginning-search-forward
 # Function that displays the hostname if the current session is over SSH
 function ssh_info() {
 	if [[ -n $SSH_CONNECTION ]]; then
-		echo "%{$fg[red]%}$(hostname) "
+		echo "%{$fg[red]%}$(hostname -s) "
 	fi
 }
 
