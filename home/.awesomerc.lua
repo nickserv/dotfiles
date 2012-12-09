@@ -6,7 +6,7 @@ require("beautiful")  -- themes
 require("naughty")    -- notifications
 
 -- Extra libraries
-require("eminent")    -- dyanmic tagging
+require("eminent")    -- dynamic tagging
 require("revelation") -- client previews
 require("vicious")    -- widgets
 
