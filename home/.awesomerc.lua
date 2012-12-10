@@ -13,6 +13,23 @@ require("vicious")    -- widgets
 -- Set theme
 theme = "awesome-solarized/dark"
 
+-- Autorun programs
+autorun = true
+autorun_apps = {
+	"nm-applet --sm-disable",  -- networking
+	"xfce4-power-manager",     -- power
+	"thunar --daemon",         -- thunar daemon
+	"urxvtd -q -o -f",         -- urxvt daemon
+	"xscreensaver -no-splash", -- screen lock
+	"sleep 300 && dropboxd",   -- dropbox
+	"google-chrome"            -- web browser
+}
+if autorun then
+	for app = 1, #autorun_apps do
+		awful.util.spawn(autorun_apps[app])
+	end
+end
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)

@@ -12,15 +12,6 @@ synclient HorizTwoFingerScroll=1
 synclient EmulateTwoFingerMinW=5
 synclient EmulateTwoFingerMinZ=48
 
-# Launch startup applications
-nm-applet --sm-disable &  #networking
-xfce4-power-manager &     #power
-thunar --daemon &         #thunar daemon
-urxvtd -q -o -f &         #urxvt daemon
-xscreensaver -no-splash & #screen lock
-sleep 300 && dropboxd &   #dropbox
-google-chrome &           #web browser
-
 # Fix Java GUIs
 export _JAVA_AWT_WM_NONREPARENTING=1
 
