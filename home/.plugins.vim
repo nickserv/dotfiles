@@ -16,6 +16,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails'
 
 " Color Schemes
+Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
 
