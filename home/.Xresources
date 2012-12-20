@@ -11,7 +11,7 @@ urxvt.matcher.button:  1
 urxvt.colorUL: #4682B4
 
 ! Fonts
-urxvt.font:    xft:SourceCodePro:pixelsize=12:antialias=true
+urxvt.font:    xft:Tamsyn:size=10:antialias=false
 
 ! Theme
 
