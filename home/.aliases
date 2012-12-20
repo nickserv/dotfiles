@@ -94,6 +94,7 @@ alias py2='python2'
 alias sbcl='rlwrap --history-no-dupes 1 --histsize 5000 --history-filename $HOME/.rlwrap.d/sbcl_history sbcl'
 
 # git
+alias git='hub'
 alias g='git'
 alias gst='git status --short'
 alias ga='git add'
@@ -180,3 +181,5 @@ fi
 prf() {
 	pgrep $1 | xargs ps
 }
+
+alias irb='pry'
