@@ -123,8 +123,8 @@ set smartindent
 
 syntax enable
 set background=dark
-colorscheme solarized
-"colorscheme molokai
+colorscheme molokai
+"colorscheme solarized
 "colorscheme Tomorrow-Night-Bright
 
 """"""""
