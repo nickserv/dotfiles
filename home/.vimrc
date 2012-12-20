@@ -272,3 +272,21 @@ command! -range=% -nargs=0 IndentTabs execute '<line1>,<line2>s#^\( \{'.&ts.'\}\
 
 " indents: convert tabs to spaces
 command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+
+" troll mode
+command! Troll call Troll()
+function Troll()
+	map <Up>    :x<CR>
+	map <Down>  :x<CR>
+	map <Left>  :x<CR>
+	map <Right> :x<CR>
+endfunction
+
+" noob mode
+command! Noob call Noob()
+function Noob()
+	unmap <Up>
+	unmap <Down>
+	unmap <Left>
+	unmap <Right>
+endfunction
