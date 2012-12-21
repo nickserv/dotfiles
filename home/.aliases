@@ -149,7 +149,7 @@ alias lsp="ls++"
 alias lap="ls++ -A"
 
 # systemd
-alias sc="systemctl"
+alias sc="sudo systemctl"
 alias power-reboot='sudo systemctl reboot'
 alias power-off='sudo systemctl poweroff'
 alias start='sudo systemctl start'
