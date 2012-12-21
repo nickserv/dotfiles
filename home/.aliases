@@ -37,6 +37,7 @@ alias dua='\du -ha'
 alias dus='\du -hs'
 alias to="todo.sh"
 alias chrome='google-chrome'
+alias rm-ds-stores='find . -name "*.DS_Store" -type f -delete'
 
 # new commands
 alias lock='xscreensaver-command -lock'
@@ -57,6 +58,7 @@ alias pmv="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-fil
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias svn-ignore='svn propedit svn:ignore .'
 alias lsmnt="mount | column -t"
+alias serve="python3 -m http.server"
 
 # zsh utility commands
 alias time-zsh="time zsh -ic exit"
