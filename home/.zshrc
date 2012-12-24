@@ -60,7 +60,7 @@ function() vc_info() {
 		vc_branch=$(vcprompt -f "%b")
 		if [[ -n $vc_branch ]]; then
 			vc_status=$(vcprompt -f "%m%u")
-			echo "%{$fg[cyan]%}$vc_branch%{$fg[green]%}$vc_status%{$reset_color%} "
+			echo "%{$fg[green]%}$vc_branch%{$fg[red]%}$vc_status%{$reset_color%} "
 		fi
 	fi
 }
