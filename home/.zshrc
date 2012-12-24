@@ -65,10 +65,20 @@ function() vc_info() {
 	fi
 }
 
+function() dir_info() {
+	# if normal user
+	if [[ $EUID -ne 0 ]]; then
+	 echo "%{$fg[cyan]%}%~"
+	else
+	 echo "%{$fg[red]%}%~"
+	fi
+}
+
 # Prompt
 autoload -U colors && colors
 setopt prompt_subst
-export PROMPT='%{$(title_info)%}$(ssh_info)%{$fg[blue]%}%~ $(vc_info)%{$fg[yellow]%}%# %{$reset_color%}'
+# Colors: black red green yellow blue magenta cyan white
+export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) $(vc_info)%{$fg[yellow]%}%# %{$reset_color%}'
 
 #############
 # Title Bar #
