@@ -14,6 +14,7 @@ Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails'
+Bundle 'mileszs/ack.vim'
 
 " Color Schemes
 Bundle 'tomasr/molokai'
