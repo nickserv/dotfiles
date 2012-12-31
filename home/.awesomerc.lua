@@ -21,7 +21,7 @@ autorun_apps = {
 	"thunar --daemon",         -- thunar daemon
 	"urxvtd -q -o -f",         -- urxvt daemon
 	"xscreensaver -no-splash", -- screen lock
-	"sleep 300 && dropboxd",   -- dropbox
+	"dropboxd",   -- dropbox
 	"google-chrome"            -- web browser
 }
 if autorun then
