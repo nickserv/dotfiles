@@ -12,7 +12,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 
 -- Extra libraries
---local eminent = require("eminent")       -- dynamic tagging
+local eminent = require("eminent")       -- dynamic tagging
 --local revelation = require("revelation") -- client previews
 
 -- Set theme
