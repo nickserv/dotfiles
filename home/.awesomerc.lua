@@ -15,9 +15,6 @@ local menubar = require("menubar")
 local eminent = require("eminent")       -- dynamic tagging
 --local revelation = require("revelation") -- client previews
 
--- Set theme
-theme = "awesome-solarized/dark"
-
 -- Autorun programs
 autorun = true
 autorun_apps = {
@@ -62,7 +59,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/nicolas/.config/awesome/themes/"..theme.."/theme.lua")
+beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
