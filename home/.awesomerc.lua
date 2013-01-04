@@ -14,7 +14,6 @@ local menubar = require("menubar")
 -- Extra libraries
 --local eminent = require("eminent")       -- dynamic tagging
 --local revelation = require("revelation") -- client previews
---local vicious = require("vicious")       -- widgets
 
 -- Set theme
 theme = "awesome-solarized/dark"
