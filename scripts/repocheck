@@ -1,15 +1,11 @@
 #!/bin/bash
 # Runs "git status" on every subdirectory of the current directory.
 
-prev="$(pwd)"
-ls -1 | while read dir
-do
-	[[ ! -d "$dir" ]] && continue
-	cd "$dir"
-	#start git stuff
-	echo $dir
-	git status --short
-	echo
-	#end git stuff
-	cd "$prev"
-done
+command='
+	if ! git diff-index --quiet HEAD --; then
+		pwd
+		git status --short
+	fi
+'
+
+find . -type d -name .git -execdir sh -c "$command" \;
