@@ -86,7 +86,9 @@ export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) $(vc_info)%{$fg[yellow]%}
 
 # Set up the title bar text
 title_info() {
-	print -Pn "\e]2;%~\a"
+	if [[ $TERM != linux ]]; then
+		print -Pn "\e]2;%~\a"
+	fi
 }
 
 # Enable title bar info display
