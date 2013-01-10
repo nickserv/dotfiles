@@ -123,9 +123,15 @@ set smartindent
 
 syntax enable
 set background=dark
-colorscheme molokai
-"colorscheme solarized
-"colorscheme Tomorrow-Night-Bright
+
+" Note: gvim doesn't like the code below
+if $TERM=="linux"
+	colorscheme desert
+else
+	colorscheme molokai
+	"colorscheme solarized
+	"colorscheme Tomorrow-Night-Bright
+endif
 
 """"""""
 " GVim "
