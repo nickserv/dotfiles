@@ -131,7 +131,7 @@ colorscheme molokai
 " GVim "
 """"""""
 
-set gfn=Source\ Code\ Pro\ 10 "set font
+set gfn=Tamsyn\ 10 "set font
 set gcr=n:blinkon0 "disable cursor blinking
 
 set guioptions-=m "remove menu bar
