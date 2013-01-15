@@ -129,3 +129,6 @@ setopt autocd
 
 # History search with ctrl-r
 bindkey '^R' history-incremental-search-backward
+
+# Load autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
