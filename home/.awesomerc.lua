@@ -15,23 +15,6 @@ local menubar = require("menubar")
 local eminent = require("eminent")       -- dynamic tagging
 --local revelation = require("revelation") -- client previews
 
--- Autorun programs
-autorun = true
-autorun_apps = {
-	"nm-applet --sm-disable",  -- networking
-	"xfce4-power-manager",     -- power
-	"thunar --daemon",         -- thunar daemon
-	"urxvtd -q -o -f",         -- urxvt daemon
-	"xscreensaver -no-splash", -- screen lock
-	"dropboxd",   -- dropbox
-	"google-chrome"            -- web browser
-}
-if autorun then
-	for app = 1, #autorun_apps do
-		awful.util.spawn(autorun_apps[app])
-	end
-end
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
