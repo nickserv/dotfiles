@@ -15,7 +15,7 @@ export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:~/.gem/ruby/1.9.1/bin
 # rbenv
 #export PATH=$PATH:~/.rbenv/bin
-#eval "$(rbenv init -)"
+#eval "$(rbenv init - --no-rehash)"
 
 # Other variables
 export EDITOR=vim
