@@ -24,7 +24,17 @@ urxvtd -q -o -f &         # urxvt daemon
 dropboxd &                # dropbox
 google-chrome &           # web browser
 
-# Start a graphical session
+# Choose a graphical session
 # Examples: awesome, openbox-session, startxfce4, startlxde, gnome-session
 session="dwm"
+
+# Configs for dwm
+if [[ "$session" == "dwm" ]]; then
+	while true; do
+		xsetroot -name "$(acpi -b | awk 'sub(/,/,"") {print $3, $4}') | $(date +"%a, %b %d | %I:%M %p")"
+		sleep 1m
+	done &
+fi
+
+# Start WM/DE
 exec $session > ~/.cache/wm_out 2> ~/.cache/wm_err
