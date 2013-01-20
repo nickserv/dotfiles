@@ -5,7 +5,7 @@ source /etc/profile
 
 # Bins and scripts
 if [[ $EUID -ne 0 ]]; then
-	export PATH=$PATH:~/Bin:~/Repos/castle/scripts
+	export PATH=$PATH:~/bin:~/Repos/castle/scripts
 fi
 
 # Load additional software
