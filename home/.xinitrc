@@ -26,5 +26,5 @@ google-chrome &           # web browser
 
 # Start a graphical session
 # Examples: awesome, openbox-session, startxfce4, startlxde, gnome-session
-session="awesome"
+session="dwm"
 exec $session > ~/.cache/wm_out 2> ~/.cache/wm_err
