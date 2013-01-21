@@ -31,7 +31,10 @@ session="dwm"
 # Configs for dwm
 if [[ "$session" == "dwm" ]]; then
 	while true; do
-		xsetroot -name "$(acpi -b | awk 'sub(/,/,"") {print $3, $4}') | $(date +"%a, %b %d | %I:%M %p")"
+		BAT="$(acpi -b | awk 'sub(/,/,"") {print $3, $4}')"
+		TIME="$(date +"%a, %b %d | %I:%M %p")"
+		xsetroot -name "$BAT | $TIME"
+
 		sleep 1m
 	done &
 fi
