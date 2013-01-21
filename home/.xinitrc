@@ -30,6 +30,7 @@ session="dwm"
 
 # Configs for dwm
 if [[ "$session" == "dwm" ]]; then
+	feh --bg-fill ~/wallpaper.jpg
 	while true; do
 		BAT="$(acpi -b | awk 'sub(/,/,"") {print $3, $4}')"
 		TIME="$(date +"%a, %b %d | %I:%M %p")"
