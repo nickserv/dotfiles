@@ -32,9 +32,11 @@ session="dwm"
 if [[ "$session" == "dwm" ]]; then
 	feh --bg-fill ~/wallpaper.jpg
 	while true; do
-		BAT="$(acpi -b | awk 'sub(/,/,"") {print $3, $4}')"
+		BAT="$(acpi -b | awk '{ print $4 " " $5 }' | tr -d ',')"
+		VOL="$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
 		TIME="$(date +"%a, %b %d | %I:%M %p")"
-		xsetroot -name "$BAT | $TIME"
+		TEMP="$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))C"
+		xsetroot -name "$TEMP | $BAT | $VOL | $TIME"
 
 		sleep 1m
 	done &
