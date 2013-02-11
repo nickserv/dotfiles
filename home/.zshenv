@@ -20,3 +20,9 @@ export PATH=$PATH:~/.gem/ruby/1.9.1/bin
 # Other variables
 export EDITOR=vim
 export BROWSER=google-chrome
+
+# Tell SSH servers that we're using a vt100-compatible terminal
+# (prevents annoying compatibility issues)
+if [[ -n $SSH_CONNECTION ]]; then
+	export TERM=vt100
+fi
