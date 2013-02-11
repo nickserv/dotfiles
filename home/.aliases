@@ -161,7 +161,7 @@ alias status='sudo systemctl status'
 alias disable='sudo systemctl disable'
 
 # pacman/packer
-alias p='pacaur --noedit'
+alias p='pacaur'
 alias pf='p -Ss'
 alias pin='p -S'
 alias pup='p -Syu'
