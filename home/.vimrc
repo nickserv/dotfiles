@@ -102,8 +102,8 @@ set gdefault "imply global for new searches
 set tabstop=2
 " Number of spaces to use for each step of (auto)indent
 set shiftwidth=2
-" Use real tabs, not spaces, for indents
-set noexpandtab
+" Use spaces for indents
+set expandtab
 " When auto-indenting, use the indenting format of the previous line
 set copyindent
 " When on, a <Tab> in front of a line inserts blanks according to 'shiftwidth'.
