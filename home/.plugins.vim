@@ -16,6 +16,7 @@ Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'tpope/vim-rails'
 Bundle 'mileszs/ack.vim'
 "Bundle 'mattn/invader-vim'
+Bundle 'Lawrencium'
 
 " Color Schemes
 Bundle 'tomasr/molokai'
