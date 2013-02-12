@@ -97,7 +97,9 @@ alias py2='python2'
 alias sbcl='rlwrap --history-no-dupes 1 --histsize 5000 --history-filename $HOME/.rlwrap.d/sbcl_history sbcl'
 
 # git
-alias git='hub'
+if command -v hub &>/dev/null; then
+	alias git='hub'
+fi
 alias g='git'
 alias gst='git status --short'
 alias ga='git add'
@@ -126,14 +128,6 @@ alias vd='vim -d'
 
 # feh
 alias feh='feh --scale-down --auto-zoom'
-
-# git
-if command -v hub &>/dev/null; then
-	alias git='hub'
-	alias g='hub'
-else
-	alias g='git'
-fi
 
 # homesick/homeshick
 if command -v homesick &>/dev/null; then
