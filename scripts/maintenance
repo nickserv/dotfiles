@@ -6,7 +6,6 @@ sudo cacheclean 1
 profile-cleaner gc
 
 # Updating
-sudo pacman-color -Syu
-packer -Syu --noedit --auronly
+sudo pacaur -Syu
 gem update
 sudo npm update -g
