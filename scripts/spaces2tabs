@@ -3,5 +3,5 @@
 # current directory.
 
 for file in *; do
-	unexpand -t 4 $file | sponge $file
+	unexpand -t 2 $file | sponge $file
 done
