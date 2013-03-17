@@ -16,7 +16,7 @@ alias du='du -h'
 alias free='free -h'
 alias less='less -i'
 alias mkdir='mkdir -pv'
-alias ping='ping -c 5'
+alias ping='ping -c 3'
 
 # shortcuts
 alias _="sudo"
