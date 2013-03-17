@@ -81,9 +81,6 @@ set tabpagemax=100
 " case-insensitive filename completion
 set wildignorecase
 
-" make Syntastic check the file when it opens
-let g:syntastic_check_on_open=1
-
 """""""""""""
 " Searching "
 """""""""""""
