@@ -184,4 +184,12 @@ prf() {
 	pgrep $1 | xargs ps
 }
 
+backup() {
+  cp $1 $1.bak
+}
+
+restore() {
+  mv $1.bak $1
+}
+
 alias irb='pry'
