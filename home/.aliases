@@ -193,3 +193,8 @@ restore() {
 }
 
 alias irb='pry'
+alias remove-rockets='sed -i "s/:\([a-zA-Z_]*\) =>/\1:/g" **/*.rb'
+alias mix='alsamixer'
+alias bu='bundle'
+alias bup='bundle update'
+alias gf='g flow'
