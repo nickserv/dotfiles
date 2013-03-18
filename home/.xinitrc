@@ -4,7 +4,6 @@
 # Start important X stuff
 xrdb -merge ~/.Xresources        #update X resources database
 xsetroot -cursor_name left_ptr & #show cursor over backgrounds
-#echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches #behave, Dropbox!
 
 # Tweak trackpad settings
 synclient VertTwoFingerScroll=1
