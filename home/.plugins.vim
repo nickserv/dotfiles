@@ -16,6 +16,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'mileszs/ack.vim'
 "Bundle 'mattn/invader-vim'
 Bundle 'Lawrencium'
+Bundle 'duellj/DirDiff.vim'
 
 " Color Schemes
 Bundle 'tomasr/molokai'
