@@ -20,8 +20,6 @@ alias ping='ping -c 3'
 
 # shortcuts
 alias _="sudo"
-alias c='clear'
-alias e='exit'
 alias ka='killall'
 alias x='startx'
 alias ra='ranger'
