@@ -29,7 +29,7 @@ session="dwm"
 
 # Configs for dwm
 if [[ "$session" == "dwm" ]]; then
-	feh --bg-fill ~/wallpaper.jpg
+	feh --bg-fill ~/wallpaper.png
 	while true; do
 		BAT="$(acpi -b | awk '{ print $4 " " $5 }' | tr -d ',')"
 		VOL="$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
