@@ -18,10 +18,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
 
 # Startup items
-nm-applet --sm-disable &  # networking
-urxvtd -q -o -f &         # urxvt daemon
-dropboxd &                # dropbox
-google-chrome &           # web browser
+nm-applet --sm-disable &           # networking
+urxvtd -q -o -f &                  # urxvt daemon
+dropboxd &                         # dropbox
+google-chrome &                    # web browser
+xautolock -time 10 -locker slock & # screen locker
 
 # Choose a graphical session
 # Examples: awesome, openbox-session, startxfce4, startlxde, gnome-session
