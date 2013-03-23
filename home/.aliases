@@ -65,7 +65,7 @@ alias source-zsh="source ~/.zshrc"
 
 # privileged access
 if [ $UID -ne 0 ]; then
-    alias sudo='sudo '
+    alias sudo='sudo ' # passes aliases over to root when using sudo
     alias scat='sudo cat'
     alias svim='sudo vim'
     alias root='sudo su'
