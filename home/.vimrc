@@ -233,6 +233,7 @@ au BufNewFile,BufRead *.java  setlocal makeprg=javac\ %
 au BufNewFile,BufRead *.rb    setlocal makeprg=ruby\ %
 au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
 au BufNewFile,BufRead *.lisp  setlocal makeprg=clisp\ %
+au BufNewFile,BufRead *.scm   setlocal makeprg=guile\ %
 au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
 au BufNewFile,BufRead *.html  setlocal makeprg=google-chrome\ %
 
