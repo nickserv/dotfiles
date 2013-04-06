@@ -1,15 +1,23 @@
-# Ignore Linux things
+# Linux files
 !.gitignore
 *~
 
-# Ignore tags (from etags and ctags)
+# Tags (from etags and ctags)
 TAGS
 !TAGS/
 tags
 !tags/
 
-# Ignore Vim things
+# Vim files
 .*.sw[a-z]
 *.un~
 Session.vim
 .netrwhist
+
+# Eclipse files
+.classpath
+.project
+
+# Intellij files
+.idea
+*.iml
