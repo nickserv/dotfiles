@@ -28,6 +28,7 @@ dropboxd &                         # dropbox
 google-chrome &                    # web browser
 xautolock -time 10 -locker slock & # screen locker
 wmname LG3D &                      # fix Java GUIs on non-reparenting WMs
+udiskie &                          # automount volumes
 
 # Choose a graphical session
 # Examples: awesome, openbox-session, startxfce4, startlxde, gnome-session
