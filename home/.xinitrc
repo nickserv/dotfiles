@@ -17,12 +17,17 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Fix Skype theme
 export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
 
+# Use the GTK theme for Java Swing applications
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on
+-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
 # Startup items
 nm-applet --sm-disable &           # networking
 urxvtd -q -o -f &                  # urxvt daemon
 dropboxd &                         # dropbox
 google-chrome &                    # web browser
 xautolock -time 10 -locker slock & # screen locker
+wmname LG3D &                      # fix Java GUIs on non-reparenting WMs
 
 # Choose a graphical session
 # Examples: awesome, openbox-session, startxfce4, startlxde, gnome-session
