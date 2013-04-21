@@ -16,6 +16,9 @@ export PATH=$PATH:~/.gem/ruby/2.0.0/bin
 # rbenv
 #export PATH=$PATH:~/.rbenv/bin
 #eval "$(rbenv init - --no-rehash)"
+# Python virtualenv
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 # Other variables
 export EDITOR=vim
