@@ -130,8 +130,6 @@ setopt autocd
 # Use emacs keybinds, since they're modeless and closer to the bash defaults
 bindkey -e
 
-# History search with ctrl-r
-bindkey '^R' history-incremental-search-backward
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Load autojump
