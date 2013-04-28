@@ -12,7 +12,8 @@ fi
 # Heroku
 export PATH=$PATH:/usr/local/heroku/bin
 # RubyGems
-export PATH=$PATH:~/.gem/ruby/2.0.0/bin
+export GEM_HOME=~/.gem/ruby/2.0.0
+export PATH=$PATH:$GEM_HOME/bin
 # rbenv
 #export PATH=$PATH:~/.rbenv/bin
 #eval "$(rbenv init - --no-rehash)"
