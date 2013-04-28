@@ -1,5 +1,4 @@
 # Linux files
-!.gitignore
 *~
 
 # Tags (from etags and ctags)
@@ -17,7 +16,14 @@ Session.vim
 # Eclipse files
 .classpath
 .project
+.settings
+bin/**
 
 # Intellij files
-.idea
 *.iml
+*.ipr
+*.iws
+.idea/
+*.eml
+.idea
+/out
