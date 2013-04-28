@@ -81,6 +81,9 @@ set tabpagemax=100
 " case-insensitive filename completion
 set wildignorecase
 
+" briefly jump to matching braces when you insert them
+set showmatch
+
 """""""""""""
 " Searching "
 """""""""""""
