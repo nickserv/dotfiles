@@ -37,6 +37,7 @@ alias to="todo.sh"
 alias chrome='google-chrome'
 alias rm-ds-stores='find . -name "*.DS_Store" -type f -delete'
 alias make-dwm='pushd ~/Repos/dwm > /dev/null; sudo make install; popd > /dev/null'
+alias uu='udiskie-umount'
 
 # new commands
 alias lock='xscreensaver-command -lock'
