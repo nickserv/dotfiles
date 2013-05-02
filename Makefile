@@ -63,14 +63,5 @@ update_vim_plugins:
 	echo "Updating vim plugins..."
 	vim +BundleInstall! +qall
 
-install:
-	echo "Installing thenickperson/castle..."
-	check_wget
-	install_homeshick
-	clone
-	use_zsh
-	symlink
-	set_up_repos_directory
-	install_vundle
-	install_vim_plugins
+install: check_wget install_homeshick clone use_zsh symlink set_up_repos_directory install_vundle install_vim_plugins
 	echo "Open a new terminal to start your proper shell."
