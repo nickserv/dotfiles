@@ -1,11 +1,11 @@
 update_all: pull symlink update_vim_plugins
 
 check_wget:
-	if ! command -v wget > /dev/null; then
-		echo "Installation failed. Please install wget."
-		popd > /dev/null
-		exit 1
-	fi
+	#if ! command -v wget > /dev/null; then
+		#echo "Installation failed. Please install wget."
+		#popd > /dev/null
+		#exit 1
+	#fi
 
 uninstall:
 	echo "Uninstalling thenickperson/castle..."
