@@ -1,3 +1,5 @@
+HOMESHICK = $(HOME)/.homesick/repos/homeshick/home/.homeshick
+
 update_all: pull symlink update_vim_plugins
 
 check_wget:
@@ -15,15 +17,15 @@ uninstall:
 
 clone:
 	echo "Cloning repository..."
-	$(HOME)/.homeshick clone https://github.com/thenickperson/castle.git
+	$(HOMESHICK) clone https://github.com/thenickperson/castle.git
 
 pull:
 	echo "Pulling repository..."
-	$(HOME)/.homeshick pull castle
+	$(HOMESHICK) pull castle
 
 symlink:
 	echo "Symlinking config files..."
-	$(HOME)/.homeshick symlink castle
+	$(HOMESHICK) symlink castle
 
 set_up_repos_directory:
 	echo "Setting up ~/Repos..."
@@ -40,7 +42,7 @@ clean:
 
 install_homeshick:
 	echo "Installing homeshick..."
-	wget -qO- https://raw.github.com/andsens/homeshick/master/install.sh | bash
+	git clone git://github.com/andsens/homeshick.git $(HOME)/.homesick/repos/homeshick
 
 use_zsh:
 	echo "Switching shell to zsh..."
