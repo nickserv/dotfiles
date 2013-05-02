@@ -1,3 +1,4 @@
+SHELL     = /bin/bash
 HOMESHICK = $(HOME)/.homesick/repos/homeshick/home/.homeshick
 
 update_all: pull symlink update_vim_plugins
@@ -29,8 +30,9 @@ symlink:
 
 set_up_repos_directory:
 	echo "Setting up ~/Repos..."
-	if [ ! -d "$(HOME)/Repos" ]; then
-		mkdir $(HOME)/Repos
+	if [ ! -d "$(HOME)/Repos" ]; \
+	then \
+		mkdir $(HOME)/Repos; \
 	fi
 	ln -s $(HOME)/.homesick/repos/castle $(HOME)/Repos/castle
 
@@ -50,11 +52,13 @@ use_zsh:
 
 install_vundle:
 	echo "Installing vundle..."
-	if [ ! -d "$(HOME)/.vim/bundle" ]; then
-		mkdir $(HOME)/.vim/bundle
+	if [ ! -d "$(HOME)/.vim/bundle" ]; \
+	then \
+		mkdir $(HOME)/.vim/bundle; \
 	fi
-	if [ ! -d "$(HOME)/.vim/bundle/vundle" ]; then
-		git clone -q https://github.com/gmarik/vundle.git $(HOME)/.vim/bundle/vundle
+	if [ ! -d "$(HOME)/.vim/bundle/vundle" ]; \
+	then \
+		git clone -q https://github.com/gmarik/vundle.git $(HOME)/.vim/bundle/vundle; \
 	fi
 
 install_vim_plugins:
