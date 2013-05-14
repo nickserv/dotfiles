@@ -27,3 +27,17 @@ bin/**
 *.eml
 .idea
 /out
+
+# Emacs files
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode files
+.org-id-locations
+*_archive
