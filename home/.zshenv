@@ -3,17 +3,9 @@
 # Load OS scripts/software
 source /etc/profile
 
-# Bins and scripts
-if [[ $EUID -ne 0 ]]; then
-	export PATH=$PATH:~/bin:~/Repos/castle/scripts
-fi
-
 # Load additional software
-# Heroku
-export PATH=$PATH:/usr/local/heroku/bin
 # RubyGems
 export GEM_HOME=~/.gem/ruby/2.0.0
-export PATH=$PATH:$GEM_HOME/bin
 # rbenv
 #export PATH=$PATH:~/.rbenv/bin
 #eval "$(rbenv init - --no-rehash)"
