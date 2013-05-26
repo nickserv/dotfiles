@@ -1,7 +1,7 @@
 ! UI
 urxvt.iconFile:    /usr/share/icons/Faenza/apps/16/terminal.png
 urxvt.scrollstyle: plain
-urxvt.scrollBar: false
+urxvt.scrollBar: true
 urxvt.visualBell:  true
 
 ! Extensions
