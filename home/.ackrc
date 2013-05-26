@@ -1,0 +1,8 @@
+--ignore-directory=is:components
+--ignore-directory=is:coverage
+--ignore-directory=is:doc
+--ignore-directory=is:docs
+
+# --ignore-file=
+
+# --type-add=
