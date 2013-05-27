@@ -188,6 +188,9 @@ map <Leader>l :TlistToggle<CR>
 " toggle spell check
 map <Leader>s :set spell!<CR>
 
+" update diff display
+map <Leader>d :diffupdate<CR>
+
 " more spell check shortcuts
 map <leader>sn ]s
 map <leader>sp [s
