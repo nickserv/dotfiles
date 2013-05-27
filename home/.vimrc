@@ -248,7 +248,8 @@ au BufRead,BufNewFile *.html.erb set ft=eruby
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
 
 " Syntastic checkers
-let g:syntastic_javascript_checker='jshint'
+let g:syntastic_javascript_checker='jslint'
+"let g:syntastic_javascript_jslint_args="--my --args --here"
 
 " comfortable prose editing
 au FileType txt set spell spelllang=en 
