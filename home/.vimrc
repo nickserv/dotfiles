@@ -128,8 +128,8 @@ set background=dark
 if $TERM=="linux"
 	colorscheme desert
 else
-	colorscheme molokai
-	"colorscheme solarized
+	colorscheme solarized
+	"colorscheme molokai
 	"colorscheme Tomorrow-Night-Bright
 endif
 
