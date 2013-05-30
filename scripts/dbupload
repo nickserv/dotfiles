@@ -1,7 +1,13 @@
 #!/bin/bash
-# Moves a file into your Dropbox/Public folder and gives you a link to it.
+# Moves a file into your Dropbox's Public folder and displays the link to it.
+# Your first and only argument should be the path/filename of the file you want
+# to move into your Public folder. Note that this script assumes that your
+# Dropbox is in $HOME. You may want to wait to share your link until Dropbox is
+# done uploading your file.
 
+# Get the path to the user's Public folder
 public_folder=$HOME/Dropbox/Public
 
+# Move the file to the Public folder and display its new link
 mv $1 $public_folder
 dropbox puburl $public_folder/$1

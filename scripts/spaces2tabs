@@ -1,6 +1,6 @@
 #!/bin/bash
-# Converts space indents to coughsuperiorcough tab indents for every file in the
-# current directory.
+# Converts indents from two spaces to tabs for each file in the current
+# directory (NOT recursive).
 
 for file in *; do
 	unexpand -t 2 $file | sponge $file

@@ -1,9 +1,16 @@
 #!/bin/bash
-# Updates one git branch with commits from another.
+# Merges the current git branch into another branch in the same repo and pushes
+# it. You can pass in the name of a branch to merge into with a command line
+# argument. If you don't specify one, the script will default to gh-pages, which
+# is useful for updating GitHub Pages for your repo.
 
+# Get the name of the current git branch. This will break if the repo is in a
+# detached HEAD state.
 current_branch=$(git symbolic-ref -q HEAD)
 current_branch=${current_branch##refs/heads/}
 current_branch=${current_branch:-HEAD}
+
+# Move to the right branch, merge the previous branch in, push, and switch back.
 if [ $1 ]; then
 	git checkout $1
 else

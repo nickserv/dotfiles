@@ -1,6 +1,9 @@
 #!/bin/bash
-# Runs "git status" on every subdirectory of the current directory.
+# Finds git repos in the current directory (recursively) and runs git status in
+# each of them.
 
+# The command to run in every git repo. Displays the repo's path and its (short)
+# status.
 command='
 	if ! git diff-index --quiet HEAD --; then
 		pwd
@@ -8,4 +11,5 @@ command='
 	fi
 '
 
+# Run the command in every subdirectory (recursively).
 find . -type d -name .git -execdir sh -c "$command" \;

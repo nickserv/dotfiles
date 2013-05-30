@@ -1,3 +1,6 @@
 #!/bin/bash
+# Recursively removes any annoying .DS_Store and resource files (from Mac OS) in
+# the current directory.
+
 find . -type f -name "*.DS_Store" -delete
 find . -type f -name "._*" -delete

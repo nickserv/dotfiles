@@ -1,12 +1,16 @@
 #!/bin/bash
-# Prints out information on what software the user is using for different stuff.
+# Prints out information on what software the user is using for different
+# things. Kind of like Archey, but it just shows the user's default programs
+# based on his/her environment variables.
 
+# Displays one of the items, but only if the environment variable for it is set.
 display_item() {
 	if [ -n "$2" ]; then
 		echo "$1 $2"
 	fi
 }
 
+# Print ALL the things!
 display_item "WM:        " $XDG_CURRENT_DESKTOP
 display_item "Shell:     " $SHELL
 display_item "Pager:     " $PAGER
