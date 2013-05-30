@@ -1,0 +1,29 @@
+#!/bin/bash
+# A wrapper around make with intelligent Makefile finding. Tries to run make in
+# the closest parent directory that has a Makefile in it. Any arguments given to
+# fmake will be passed to make whenever it runs.
+
+echo "Looking for a Makefile..."
+
+# Loop until fmake exists itself
+while true; do
+
+  # Print the current directory
+  echo -n "Checking `pwd`... "
+
+  # If there is a Makefile here, run make and exit fmake
+  if [ -f Makefile ]; then
+    echo -e "yes\nMakefile found, running it...\n"
+    make $@
+    exit 0
+  # Else if we have looked through all the parent directories, exit fmake with 1
+  elif [ `pwd` == "/" ]; then
+    echo -e "no\nMakefile not found, exiting..."
+    exit 1
+  # Otherwise, cd into the parent directory and keep looping
+  else
+    echo "no"
+    cd ..
+  fi
+
+done
