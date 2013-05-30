@@ -18,10 +18,6 @@ filetype plugin indent on " required
 " automatically load changed files
 set autoread
 
-" auto-reload vimrc
-autocmd! bufwritepost vimrc source ~/.vim/vimrc
-"autocmd! bufwritepost gvimrc source ~/.vim/gvimrc
-
 " show the filename in the window titlebar
 set title
 
