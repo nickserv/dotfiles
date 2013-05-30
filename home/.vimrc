@@ -163,8 +163,7 @@ set smartindent
 syntax enable
 set background=dark
 
-" Note: gvim doesn't like the code below
-if $TERM=="linux"
+if $TERM=="linux" && !has('gui_running')
 	colorscheme desert
 else
 	colorscheme solarized
