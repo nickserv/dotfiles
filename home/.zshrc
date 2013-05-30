@@ -45,7 +45,7 @@ bindkey "^[[B" history-beginning-search-forward
 # Function that displays the hostname if the current session is over SSH
 function ssh_info() {
 	if [[ -n $SSH_CONNECTION ]]; then
-		echo "%{$fg_bold[red]%}$(hostname -s) "
+		echo "%{$fg[red]%}$(hostname -s) "
 	fi
 }
 
@@ -60,7 +60,7 @@ function() vc_info() {
 		vc_branch=$(vcprompt -f "%b")
 		if [[ -n $vc_branch ]]; then
 			vc_status=$(vcprompt -f "%m%u")
-			echo "%{$fg_bold[green]%}$vc_branch%{$fg_bold[red]%}$vc_status%{$reset_color%} "
+			echo "%{$fg[green]%}$vc_branch%{$fg[red]%}$vc_status%{$reset_color%} "
 		fi
 	fi
 }
@@ -68,9 +68,9 @@ function() vc_info() {
 function() dir_info() {
 	# if normal user
 	if [[ $EUID -ne 0 ]]; then
-	 echo "%{$fg_bold[cyan]%}%~"
+	 echo "%{$fg[cyan]%}%~"
 	else
-	 echo "%{$fg_bold[red]%}%~"
+	 echo "%{$fg[red]%}%~"
 	fi
 }
 
@@ -78,7 +78,7 @@ function() dir_info() {
 autoload -U colors && colors
 setopt prompt_subst
 # Colors: black red green yellow blue magenta cyan white
-export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) $(vc_info)%{$fg_bold[yellow]%}> %{$reset_color%}'
+export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) $(vc_info)%{$fg[yellow]%}> %{$reset_color%}'
 
 #############
 # Title Bar #
