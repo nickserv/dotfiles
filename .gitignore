@@ -1,6 +1,6 @@
 *_personal
 
-bundle
+bundle/*
 .netrwhist
 
 backup
