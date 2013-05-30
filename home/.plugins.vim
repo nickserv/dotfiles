@@ -17,6 +17,9 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'mattn/invader-vim'
 Bundle 'Lawrencium'
 Bundle 'duellj/DirDiff.vim'
+"Bundle 'Shougo/neocomplcache'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'tpope/vim-surround'
 
 " Color Schemes
 Bundle 'tomasr/molokai'
