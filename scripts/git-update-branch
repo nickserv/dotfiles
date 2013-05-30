@@ -6,9 +6,7 @@
 
 # Get the name of the current git branch. This will break if the repo is in a
 # detached HEAD state.
-current_branch=$(git symbolic-ref -q HEAD)
-current_branch=${current_branch##refs/heads/}
-current_branch=${current_branch:-HEAD}
+current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Move to the right branch, merge the previous branch in, push, and switch back.
 if [ $1 ]; then
