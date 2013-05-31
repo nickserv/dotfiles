@@ -311,10 +311,8 @@ function! <SID>RightTrim()
 endfunction
 
 " diff unsaved changes to file
-if !exists(":Fdiff")
-	command Fdiff vert new | set bt=nofile | r # | 0d_ | diffthis
-		\ | wincmd p | diffthis
-endif
+command! Fdiff vert new | set bt=nofile | r # | 0d_ | diffthis
+  \ | wincmd p | diffthis
 
 " indents: convert spaces to tabs
 command! -range=% -nargs=0 IndentTabs execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
@@ -324,7 +322,7 @@ command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat
 
 " troll mode
 command! Troll call Troll()
-function Troll()
+function! Troll()
 	map <Up>    :x<CR>
 	map <Down>  :x<CR>
 	map <Left>  :x<CR>
@@ -333,7 +331,7 @@ endfunction
 
 " noob mode
 command! Noob call Noob()
-function Noob()
+function! Noob()
 	unmap <Up>
 	unmap <Down>
 	unmap <Left>
