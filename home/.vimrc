@@ -175,13 +175,15 @@ endif
 " GVim "
 """"""""
 
-set gfn=Tamsyn\ 10 "set font
-set gcr=n:blinkon0 "disable cursor blinking
+if has('gui_running')
+  set gfn=Tamsyn\ 10 "set font
+  set gcr=n:blinkon0 "disable cursor blinking
 
-set guioptions-=m "remove menu bar
-set guioptions-=T "remove toolbar
-set guioptions-=L "remove left scroll bar
-set guioptions-=r "remove right scroll bar
+  set guioptions-=m "remove menu bar
+  set guioptions-=T "remove toolbar
+  set guioptions-=L "remove left scroll bar
+  set guioptions-=r "remove right scroll bar
+endif
 
 """"""""""""
 " Mappings "
