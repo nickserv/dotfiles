@@ -132,8 +132,3 @@ setopt autocd
 
 # Use emacs keybinds, since they're modeless and closer to the bash defaults
 bindkey -e
-
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
-# Load autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
