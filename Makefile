@@ -1,7 +1,7 @@
 SHELL     = /bin/bash
 HOMESHICK = $(HOME)/.homesick/repos/homeshick/home/.homeshick
 
-update_all: pull symlink update_vim_plugins
+update: pull symlink update_vim_plugins
 
 check_wget:
 	#if ! command -v wget > /dev/null; then
