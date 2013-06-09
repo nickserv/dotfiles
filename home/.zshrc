@@ -34,9 +34,6 @@ export SAVEHIST=1000
 export HISTFILE=~/.zsh_history
 # append command to history file once executed
 setopt inc_append_history
-# only show past commands that include the current input
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
 
 ##########
 # Prompt #
@@ -130,5 +127,13 @@ setopt correctall
 # Automatically use cd when paths are entered without cd
 setopt autocd
 
+############
+# Keybinds #
+############
+
 # Use emacs keybinds, since they're modeless and closer to the bash defaults
 bindkey -e
+
+# only show past commands that include the current input
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
