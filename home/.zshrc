@@ -134,6 +134,9 @@ setopt autocd
 # Use emacs keybinds, since they're modeless and closer to the bash defaults
 bindkey -e
 
-# only show past commands that include the current input
+# When going through the command history, only show commands that include the
+# current input
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
