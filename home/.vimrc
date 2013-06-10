@@ -288,7 +288,7 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=r
 au BufRead,BufNewFile *.html.erb set ft=eruby
 
 " Add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=json syntax=javascript
+au BufNewFile,BufRead *.json set ft=javascript
 
 " Syntastic checkers
 let g:syntastic_javascript_checkers=['jslint']
