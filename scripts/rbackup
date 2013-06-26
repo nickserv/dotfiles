@@ -1,0 +1,14 @@
+#!/bin/bash
+# Uses rsync to back up part of your home directory to a destination given in a
+# command line arg.
+
+DEST=$1
+
+if [[ -z $DEST ]]; then
+  echo 'No destination specified'
+  exit 1
+fi
+
+# add --delete below if you're feeling brave...
+rsync -ahvzP --exclude=Dropbox --exclude=Repos --exclude=tmp --exclude=Gists --exclude=.npm --exclude=.gem --exclude=.cache --exclude=.bower --delete-excluded $HOME $DEST/Linux
+date > $DEST/Linux/BACKUP
