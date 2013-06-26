@@ -12,6 +12,9 @@ zstyle ':completion:*' menu select
 # Case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# Disable spell correction (too many false positives)
+unsetopt correct_all
+
 ###########
 # Aliases #
 ###########
