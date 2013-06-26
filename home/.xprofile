@@ -19,7 +19,7 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on
 -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 # Startup items
-nm-applet --sm-disable &           # networking
+#nm-applet --sm-disable &           # networking
 urxvtd -q -o -f &                  # urxvt daemon
 #dropboxd &                         # dropbox
 google-chrome &                    # web browser
