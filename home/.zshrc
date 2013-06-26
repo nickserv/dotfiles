@@ -124,9 +124,6 @@ man() {
 # Load zmv
 autoload -U zmv
 
-# Load autocorrect things
-setopt correctall
-
 # Automatically use cd when paths are entered without cd
 setopt autocd
 
