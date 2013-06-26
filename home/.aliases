@@ -52,9 +52,8 @@ alias du2a='\du -ha --max-depth=2'
 alias du3a='\du -ha --max-depth=3'
 alias openports='netstat --all --numeric --programs --inet --inet6'
 #alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
-alias rbackup="rsync -ah --progress"
-alias pcp="rsync --partial --progress --append --rsh=ssh -r -h"
-alias pmv="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
+alias pcp="rsync -hrP"
+alias pmv="pcp --remove-source-files"
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias svn-ignore='svn propedit svn:ignore .'
 alias lsmnt="mount | column -t"
