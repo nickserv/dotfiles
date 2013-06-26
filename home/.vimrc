@@ -30,6 +30,7 @@ Bundle 'duellj/DirDiff.vim'
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'kien/ctrlp.vim'
 "Bundle 'tpope/vim-surround'
+Bundle 'airblade/vim-gitgutter'
 
 " Color Schemes
 Bundle 'tomasr/molokai'
@@ -37,6 +38,7 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
 
 " Language/Syntax Support
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'jQuery'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-markdown'
@@ -123,6 +125,13 @@ set wildignorecase
 " briefly jump to matching braces when you insert them
 set showmatch
 
+" GitGutter
+let g:gitgutter_diff_args = '-w'
+" make the signs column look the same as the line number column
+highlight clear SignColumn
+" disable eager loading
+let g:gitgutter_eager = 0
+
 """""""""""""
 " Searching "
 """""""""""""
@@ -198,6 +207,10 @@ map ; :
 " typing ;; quickly exits insert mode
 imap ;; <Esc>
 
+" git
+"map <Leader>gg :GitGutterToggle<CR>
+"map <Leader>gh :GitGutterLineHighlightsToggle<CR>
+
 " bubble individual lines
 nmap <Up>   [e
 nmap <Down> ]e
@@ -230,6 +243,7 @@ map <Leader>s :set spell!<CR>
 
 " update diff display
 map <Leader>d :diffupdate<CR>
+"map <Leader>d :diffupdate|GitGutterAll<CR>
 
 " more spell check shortcuts
 map <leader>sn ]s
