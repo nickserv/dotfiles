@@ -1,4 +1,4 @@
-# Nick's config files for Linux/Unix software
+# Nick's config files
 
 ## About
 This is my castle (dotfile repo) for
