@@ -1,4 +1,4 @@
 Pry.config.prompt = [
-	proc { '>> ' },
-	proc { '...' }
+  proc { '>> ' },
+  proc { '...' }
 ]

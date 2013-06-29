@@ -10,18 +10,18 @@ visible modifications made in this theme.
 ### Theme Management
 
 - a single variable called themedir controls where all theme resources are
-	loaded from (for easy moving and renaming of themes)
+  loaded from (for easy moving and renaming of themes)
 
 - the readme is formatted in markdown, making it ready for display on GitHub
-	(you're reading it right now!)
+  (you're reading it right now!)
 
 ### Icons
 
 - those weird and confusing wing icons for representing floating windows are
-	replaced with simple white and black "F" icons
+  replaced with simple white and black "F" icons
 
 - awesome's default icons are included in their own folder called "icons" (for
-	easy including of modified icons in new themes)
+  easy including of modified icons in new themes)
 
 - a white version of the submenu icon is included
 

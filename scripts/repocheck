@@ -5,10 +5,10 @@
 # The command to run in every git repo. Displays the repo's path and its (short)
 # status.
 command='
-	if ! git diff-index --quiet HEAD --; then
-		pwd
-		git status --short
-	fi
+  if ! git diff-index --quiet HEAD --; then
+    pwd
+    git status --short
+  fi
 '
 
 # Run the command in every subdirectory (recursively).

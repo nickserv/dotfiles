@@ -126,9 +126,9 @@ alias feh='feh --scale-down --auto-zoom'
 
 # homesick/homeshick
 if command -v homesick &>/dev/null; then
-	alias hs='homesick'
+  alias hs='homesick'
 else
-	alias hs='homeshick'
+  alias hs='homeshick'
 fi
 
 # ls
@@ -171,12 +171,12 @@ alias -g LOL='| lolcat'
 
 # personal (private) aliases
 if [ -f ~/.aliases_personal ]; then
-	. ~/.aliases_personal
+  . ~/.aliases_personal
 fi
 
 # functions
 prf() {
-	pgrep $1 | xargs ps
+  pgrep $1 | xargs ps
 }
 
 backup() {

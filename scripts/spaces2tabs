@@ -3,5 +3,5 @@
 # directory (NOT recursive).
 
 for file in *; do
-	unexpand -t 2 $file | sponge $file
+  unexpand -t 2 $file | sponge $file
 done

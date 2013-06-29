@@ -1,8 +1,8 @@
 # Function that displays the hostname if the current session is over SSH
 function check_ssh() {
-	if [[ -n $SSH_CONNECTION ]]; then
-		echo "%{$fg_bold[red]%}$(hostname) "
-	fi
+  if [[ -n $SSH_CONNECTION ]]; then
+    echo "%{$fg_bold[red]%}$(hostname) "
+  fi
 }
 
 # Prompt

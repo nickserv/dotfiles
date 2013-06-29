@@ -100,9 +100,9 @@ let g:Powerline_colorscheme='solarized256'
 
 " remember last cursor position
 autocmd BufReadPost *
-	\ if line("'\"") > 0 && line("'\"") <= line("$") |
-	\ 	exe "normal g`\"" |
-	\ endif
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
 
 " show '>   ' at the beginning of lines that are automatically wrapped
 set showbreak=>\ \ \ 
@@ -173,11 +173,11 @@ syntax enable
 set background=dark
 
 if $TERM=="linux" && !has('gui_running')
-	colorscheme desert
+  colorscheme desert
 else
-	colorscheme solarized
-	"colorscheme molokai
-	"colorscheme Tomorrow-Night-Bright
+  colorscheme solarized
+  "colorscheme molokai
+  "colorscheme Tomorrow-Night-Bright
 endif
 
 """"""""
@@ -322,8 +322,8 @@ au FileType xml set spell spelllang=en
 " remove trailing whitespace from all lines in the current buffer
 command! Rtrim call <SID>RightTrim()
 function! <SID>RightTrim()
-	:% s/\s*$//g
-	nohl
+  :% s/\s*$//g
+  nohl
 endfunction
 
 " diff unsaved changes to file
@@ -339,17 +339,17 @@ command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat
 " troll mode
 command! Troll call Troll()
 function! Troll()
-	map <Up>    :x<CR>
-	map <Down>  :x<CR>
-	map <Left>  :x<CR>
-	map <Right> :x<CR>
+  map <Up>    :x<CR>
+  map <Down>  :x<CR>
+  map <Left>  :x<CR>
+  map <Right> :x<CR>
 endfunction
 
 " noob mode
 command! Noob call Noob()
 function! Noob()
-	unmap <Up>
-	unmap <Down>
-	unmap <Left>
-	unmap <Right>
+  unmap <Up>
+  unmap <Down>
+  unmap <Left>
+  unmap <Right>
 endfunction

@@ -5,9 +5,9 @@
 
 # Displays one of the items, but only if the environment variable for it is set.
 display_item() {
-	if [ -n "$2" ]; then
-		echo "$1 $2"
-	fi
+  if [ -n "$2" ]; then
+    echo "$1 $2"
+  fi
 }
 
 # Print ALL the things!

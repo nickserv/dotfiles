@@ -44,34 +44,34 @@ setopt inc_append_history
 
 # Function that displays the hostname if the current session is over SSH
 function ssh_info() {
-	if [[ -n $SSH_CONNECTION ]]; then
-		echo "%{$fg[red]%}$(hostname -s) "
-	fi
+  if [[ -n $SSH_CONNECTION ]]; then
+    echo "%{$fg[red]%}$(hostname -s) "
+  fi
 }
 
 # Displays version control information if in a repository
 if command -v vcprompt > /dev/null; then
-	has_vcprompt=true
+  has_vcprompt=true
 else
-	has_vcprompt=false
+  has_vcprompt=false
 fi
 function() vc_info() {
-	if $has_vcprompt; then
-		vc_branch=$(vcprompt -f "%b")
-		if [[ -n $vc_branch ]]; then
-			vc_status=$(vcprompt -f "%m%u")
-			echo "%{$fg[green]%}$vc_branch%{$fg[red]%}$vc_status%{$reset_color%} "
-		fi
-	fi
+  if $has_vcprompt; then
+    vc_branch=$(vcprompt -f "%b")
+    if [[ -n $vc_branch ]]; then
+      vc_status=$(vcprompt -f "%m%u")
+      echo "%{$fg[green]%}$vc_branch%{$fg[red]%}$vc_status%{$reset_color%} "
+    fi
+  fi
 }
 
 function() dir_info() {
-	# if normal user
-	if [[ $EUID -ne 0 ]]; then
-	 echo "%{$fg[cyan]%}%~"
-	else
-	 echo "%{$fg[red]%}%~"
-	fi
+  # if normal user
+  if [[ $EUID -ne 0 ]]; then
+   echo "%{$fg[cyan]%}%~"
+  else
+   echo "%{$fg[red]%}%~"
+  fi
 }
 
 # Prompt
@@ -86,16 +86,16 @@ export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) $(vc_info)%{$fg[yellow]%}
 
 # Set up the title bar text
 title_info() {
-	if [[ $TERM != linux ]]; then
-		print -Pn "\e]2;%~\a"
-	fi
+  if [[ $TERM != linux ]]; then
+    print -Pn "\e]2;%~\a"
+  fi
 }
 
 # Enable title bar info display
 # This gets called every time the working directory changes.
 chpwd() {
-	[[ -t 1 ]] || return
-	title_info
+  [[ -t 1 ]] || return
+  title_info
 }
 # This extra call is here so that the title bar will also be set when a new
 # terminal is created.
@@ -110,15 +110,15 @@ export PATH=~/bin:~/Repos/castle/scripts:/usr/local/heroku/bin:$GEM_HOME/bin:$PA
 
 # Colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
 man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-		LESS_TERMCAP_md=$(printf "\e[1;31m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[1;32m") \
-			man "$@"
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
 }
 
 # Load zmv

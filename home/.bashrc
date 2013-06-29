@@ -2,7 +2,7 @@
 
 # Load aliases
 if [ -f ~/.aliases ]; then
-	. ~/.aliases
+  . ~/.aliases
 fi
 
 # Prompt

@@ -18,5 +18,5 @@ export RAILS_ENV=development
 # Tell SSH servers that we're using a vt100-compatible terminal
 # (prevents annoying compatibility issues)
 if [[ -n $SSH_CONNECTION ]]; then
-	export TERM=vt100
+  export TERM=vt100
 fi

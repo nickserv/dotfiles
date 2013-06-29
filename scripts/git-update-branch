@@ -10,9 +10,9 @@ current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 # Move to the right branch, merge the previous branch in, push, and switch back.
 if [ $1 ]; then
-	git checkout $1
+  git checkout $1
 else
-	git checkout gh-pages
+  git checkout gh-pages
 fi
 git merge $current_branch
 git push origin $current_branch
