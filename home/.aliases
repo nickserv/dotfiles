@@ -184,14 +184,23 @@ prf() {
 }
 
 backup() {
-  cp $1 $1.bak
+  for file; do
+    cp $file $file.bak
+  done
 }
 
 restore() {
-  mv $1.bak $1
+  for file; do
+    mv $file.bak $file
+  done
 }
 
-alias irb='pry'
+up() {
+  for run in {1..$1}; do
+    cd ..
+  done
+}
+
 alias remove-rockets='sed -i "s/:\([a-zA-Z_]*\) =>/\1:/g" **/*.rb'
 alias mix='alsamixer'
 alias bu='bundle'
@@ -199,7 +208,18 @@ alias bup='bundle update'
 alias gf='g flow'
 alias dunnet='emacs -batch -l dunnet'
 alias wifi='sudo wifi-menu wlan0'
+alias ritwifi='sudo netctl start wlan0-rit'
 alias uzbl='uzbl-tabbed'
 alias jslint='jslint --terse'
 alias e='emacsclient -t'
 alias railsbp='rails_best_practices'
+
+alias rmd='rmdir'
+alias mkd='mkdir'
+alias d='diff'
+alias wg='wget'
+
+#chmod things
+alias ch='chmod'
+alias chf='chmod 777'
+alias chx='chmod +x'
