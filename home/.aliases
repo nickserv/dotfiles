@@ -96,7 +96,7 @@ alias sbcl='rlwrap --history-no-dupes 1 --histsize 5000 --history-filename $HOME
 
 # git
 alias g='git'
-alias gst='git status --short'
+alias gst='git status --short --branch'
 alias ga='git add'
 alias gap='git add -p'
 alias gc='git commit -v'
@@ -113,6 +113,10 @@ alias glg='glgs --stat'
 alias gsh='git show'
 alias gshw='git show --color-words'
 alias gsta='git stash'
+alias gme='git merge'
+alias gre='git rebase'
+alias gr='git reset'
+alias gh='git help'
 
 # vim
 alias v='vim -p'
