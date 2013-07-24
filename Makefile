@@ -3,13 +3,6 @@ HOMESHICK = $(HOME)/.homesick/repos/homeshick/home/.homeshick
 
 update: pull symlink update_vim_plugins
 
-check_wget:
-	#if ! command -v wget > /dev/null; then
-		#echo "Installation failed. Please install wget."
-		#popd > /dev/null
-		#exit 1
-	#fi
-
 uninstall:
 	echo "Uninstalling thenickperson/castle..."
 	rm -rf ~/.homesick
@@ -69,5 +62,5 @@ update_vim_plugins:
 	echo "Updating vim plugins..."
 	vim +BundleInstall! +qall
 
-install: check_wget install_homeshick clone use_zsh symlink set_up_repos_directory install_vundle install_vim_plugins
+install: install_homeshick clone use_zsh symlink set_up_repos_directory install_vundle install_vim_plugins
 	echo "Open a new terminal to start your proper shell."
