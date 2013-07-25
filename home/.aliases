@@ -2,13 +2,13 @@
 #alias NICKNAME='COMMAND'
 
 # color support
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias diff='colordiff' #requires colordiff package
+alias dir='dir --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias vdir='vdir --color=auto'
 
 # modified commands
 alias df='df -h'
@@ -19,111 +19,111 @@ alias mkdir='mkdir -pv'
 alias ping='ping -c 3'
 
 # shortcuts
+alias ..='cd ..'
 alias _="sudo"
-alias ka='killall'
-alias x='startx'
-alias ra='ranger'
+alias chrome='google-chrome'
 alias db='dropbox'
 alias dbp='dropbox puburl'
-alias ns='notify-send'
-alias nsc='notify-send "Process Completed"'
-alias h='history'
-alias open='xdg-open'
-alias lns='ln -s'
-alias ..='cd ..'
 alias dua='\du -ha'
 alias dus='\du -hs'
-alias to="todo.sh"
-alias chrome='google-chrome'
-alias rm-ds-stores='find . -name "*.DS_Store" -type f -delete'
+alias h='history'
+alias ka='killall'
+alias lns='ln -s'
 alias make-dwm='pushd ~/Repos/dwm > /dev/null; sudo make install; popd > /dev/null'
+alias ns='notify-send'
+alias nsc='notify-send "Process Completed"'
+alias open='xdg-open'
+alias ra='ranger'
+alias rm-ds-stores='find . -name "*.DS_Store" -type f -delete'
+alias to="todo.sh"
 alias uu='udiskie-umount'
+alias x='startx'
 
 # new commands
-alias lock='xscreensaver-command -lock'
-alias xmerge='xrdb ~/.Xresources'
-alias pig='ping google.com'
-alias help='cat ~/.help'
 alias du1='\du -h --max-depth=1 | sort -hr'
-alias du2='\du -h --max-depth=2'
-alias du3='\du -h --max-depth=3'
 alias du1a='\du -ha --max-depth=1 | sort -hr'
+alias du2='\du -h --max-depth=2'
 alias du2a='\du -ha --max-depth=2'
+alias du3='\du -h --max-depth=3'
 alias du3a='\du -ha --max-depth=3'
-alias openports='netstat --all --numeric --programs --inet --inet6'
-#alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
-alias pcp="rsync -hrP"
-alias pmv="pcp --remove-source-files"
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias svn-ignore='svn propedit svn:ignore .'
+alias help='cat ~/.help'
+alias lock='xscreensaver-command -lock'
 alias lsmnt="mount | column -t"
+alias openports='netstat --all --numeric --programs --inet --inet6'
+alias pcp="rsync -hrP"
+#alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
+alias pig='ping google.com'
+alias pmv="pcp --remove-source-files"
 alias serve="python3 -m http.server"
+alias svn-ignore='svn propedit svn:ignore .'
+alias xmerge='xrdb ~/.Xresources'
 
 # zsh utility commands
-alias time-zsh="time zsh -ic exit"
 alias source-zsh="source ~/.zshrc"
+alias time-zsh="time zsh -ic exit"
 
 # privileged access
 if [ $UID -ne 0 ]; then
     alias sudo='sudo ' # passes aliases over to root when using sudo
+    alias halt='sudo halt'
+    #alias netcfg='sudo netcfg2'
+    alias reboot='sudo reboot'
+    alias root='sudo su'
     alias scat='sudo cat'
     alias svim='sudo vim'
-    alias root='sudo su'
-    alias reboot='sudo reboot'
-    alias halt='sudo halt'
     #alias update='sudo pacman -Su'
-    #alias netcfg='sudo netcfg2'
 fi
 
 # safety features
+alias chgrp='chgrp --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
 alias cp='cp -i'
+alias ln='ln -i'
 alias mv='mv -i'
 alias rm='rm -I'
-alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
 
 # programming languages
 alias ja='java'
 alias jc='javac'
 alias jca='javac *.java'
 alias jrm='rm *.class'
-alias rb='ruby'
-alias py='python3'
 alias py2='python2'
+alias py='python3'
+alias rb='ruby'
 alias sbcl='rlwrap --history-no-dupes 1 --histsize 5000 --history-filename $HOME/.rlwrap.d/sbcl_history sbcl'
 
 # git
 alias g='git'
-alias gst='git status --short --branch'
 alias ga='git add'
 alias gap='git add -p'
+alias gb='git branch'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
-alias gd='git diff'
-alias gwd='git diff --color-words'
-alias gp='git push'
-alias gl='git pull'
-alias gcl='git clone'
 alias gch='git checkout'
-alias gb='git branch'
-alias glgs='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias gcl='git clone'
+alias gd='git diff'
+alias gh='git help'
+alias gl='git pull'
 alias glg='glgs --stat'
+alias glgs='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias gme='git merge'
+alias gp='git push'
+alias gr='git reset'
+alias gre='git rebase'
 alias gsh='git show'
 alias gshw='git show --color-words'
+alias gst='git status --short --branch'
 alias gsta='git stash'
-alias gme='git merge'
-alias gre='git rebase'
-alias gr='git reset'
-alias gh='git help'
+alias gwd='git diff --color-words'
 
 # vim
 alias v='vim -p'
 alias va='vim -p *'
+alias vd='vim -d'
 alias vh='vim -o'
 alias vv='vim -O'
-alias vd='vim -d'
 
 # feh
 alias feh='feh --scale-down --auto-zoom'
@@ -136,30 +136,30 @@ else
 fi
 
 # ls
-alias ls='ls -hF --color=auto --group-directories-first'
+alias l='ls -alh'
 alias la='ls -A'
 alias ll='ls -lh'
-alias l='ls -alh'
+alias lm='la | less'
 alias lr='ls -R'                    # recursive ls
+alias ls='ls -hF --color=auto --group-directories-first'
+alias lt='ll -rt'                   # sort by date
 alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
-alias lt='ll -rt'                   # sort by date
-alias lm='la | less'
 
 # ls++
-alias lsp="ls++"
 alias lap="ls++ -A"
+alias lsp="ls++"
 
 # systemd
 alias sc="sudo systemctl"
-alias power-reboot='sudo systemctl reboot'
-alias power-off='sudo systemctl poweroff'
-alias start='sudo systemctl start'
-alias restart='sudo systemctl restart'
-alias stop='sudo systemctl stop'
-alias enable='sudo systemctl enable'
-alias status='sudo systemctl status'
 alias disable='sudo systemctl disable'
+alias enable='sudo systemctl enable'
+alias power-off='sudo systemctl poweroff'
+alias power-reboot='sudo systemctl reboot'
+alias restart='sudo systemctl restart'
+alias start='sudo systemctl start'
+alias status='sudo systemctl status'
+alias stop='sudo systemctl stop'
 
 # pacman/packer
 alias p='pacaur'
@@ -168,9 +168,9 @@ alias pin='p -S'
 alias pup='p -Syu'
 
 # global aliases
-alias -g L='| less -R'
 alias -g F='| ack'
 alias -g FE='|& ack'
+alias -g L='| less -R'
 alias -g LOL='| lolcat'
 
 # personal (private) aliases
@@ -179,14 +179,14 @@ if [ -f ~/.aliases_personal ]; then
 fi
 
 # functions
-prf() {
-  pgrep $1 | xargs ps
-}
-
 backup() {
   for file; do
     cp $file $file.bak
   done
+}
+
+prf() {
+  pgrep $1 | xargs ps
 }
 
 restore() {
@@ -201,22 +201,22 @@ up() {
   done
 }
 
-alias remove-rockets='sed -i "s/:\([a-zA-Z_]*\) =>/\1:/g" **/*.rb'
-alias mix='alsamixer'
 alias bu='bundle'
 alias bup='bundle update'
-alias gf='g flow'
 alias dunnet='emacs -batch -l dunnet'
-alias wifi='sudo wifi-menu wlan0'
+alias e='emacsclient -t'
+alias gf='g flow'
+alias jslint='jslint --terse'
+alias mix='alsamixer'
+alias railsbp='rails_best_practices'
+alias remove-rockets='sed -i "s/:\([a-zA-Z_]*\) =>/\1:/g" **/*.rb'
 alias ritwifi='sudo netctl start wlan0-rit'
 alias uzbl='uzbl-tabbed'
-alias jslint='jslint --terse'
-alias e='emacsclient -t'
-alias railsbp='rails_best_practices'
+alias wifi='sudo wifi-menu wlan0'
 
-alias rmd='rmdir'
-alias mkd='mkdir'
 alias d='diff'
+alias mkd='mkdir'
+alias rmd='rmdir'
 alias wg='wget'
 
 #chmod things

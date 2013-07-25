@@ -4,15 +4,15 @@
 source /etc/profile
 
 # Load additional software
-# RubyGems
-export GEM_HOME=~/.gem/ruby/2.0.0
 # rbenv
 #export PATH=$PATH:~/.rbenv/bin
 #eval "$(rbenv init - --no-rehash)"
+# RubyGems
+export GEM_HOME=~/.gem/ruby/2.0.0
 
 # Other variables
-export EDITOR=vim
 export BROWSER=firefox
+export EDITOR=vim
 export RAILS_ENV=development
 
 # Tell SSH servers that we're using a vt100-compatible terminal

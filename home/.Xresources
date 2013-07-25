@@ -1,14 +1,14 @@
 ! UI
 urxvt.iconFile:    /usr/share/icons/Faenza/apps/16/terminal.png
-urxvt.scrollstyle: plain
 urxvt.scrollBar: true
+urxvt.scrollstyle: plain
 urxvt.visualBell:  true
 
 ! Extensions
+urxvt.colorUL: #4682B4
+urxvt.matcher.button:  1
 urxvt.perl-ext-common: default,matcher,-option-popup,-selection-popup
 urxvt.urlLauncher:     /usr/bin/google-chrome
-urxvt.matcher.button:  1
-urxvt.colorUL: #4682B4
 
 ! Fonts
 urxvt.font:    xft:Tamsyn:size=10:antialias=false
