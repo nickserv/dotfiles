@@ -1,5 +1,19 @@
 [user]
   name = Nicolas McCurdy
   email = thenickperson@gmail.com
+
+[alias]
+  uncommit = reset --soft HEAD^
+  wdiff = diff --color-words
+  wshow = show --color-words
+
+[color]
+  ui = auto
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+
 [credential]
   helper = cache --timeout=3600
