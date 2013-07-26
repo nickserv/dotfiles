@@ -9,13 +9,13 @@ skip-splash-screen = false
 alternative-bindings = false
 
 # The default tabulation width [default: 8]
-tab-width = 8
+tab-width = 2
 
 # The default fill column (in Auto Fill Mode) [default: 72]
 fill-column = 72
 
 # Automatically enable the Auto Fill Mode [default: false]
-auto-fill-mode = false
+auto-fill-mode = true
 
 # Specify the file backup method [default: simple]
 #
@@ -40,15 +40,15 @@ backup-directory = "~/.backup"
 # Expand tabs [default: false]
 # If disabled, Zile will insert hard tabs (the character \t),
 # otherwise it will insert spaces.
-expand-tabs = false
+expand-tabs = true
 
 # Enable beep [default: true]
 # If enabled, a sound will be emitted on any error.
-beep = true
+beep = false
 
 # Standard indentation level [default: 4]
 # Default number of columns for margin-changing functions to indent.
-standard-indent = 4
+standard-indent = 2
 
 # If enabled, deactivates the mark when the buffer contents change.
 # Also enables highlighting of the region whenever the mark is active.
