@@ -230,7 +230,10 @@ map  <C-K>    dd
 imap <C-K>    <C-O>dd
 
 " toggle NERD Commenter
-map <Leader>/ <Plug>NERDCommenterToggle
+" (for some reason, these seem to also bind to C-/ in some terminals)
+map  <C-_>    <Plug>NERDCommenterToggle
+imap <C-_>    <C-O><Plug>NERDCommenterToggle
+nmap <C-_>    <Plug>NERDCommenterToggle:normal j<CR>
 
 " toggle NERD Tree
 map <Leader>n :NERDTreeToggle<CR>
@@ -241,9 +244,11 @@ map <Leader>l :TlistToggle<CR>
 " toggle spell check
 map <Leader>s :set spell!<CR>
 
-" update diff display
-map <Leader>d :diffupdate<CR>
-"map <Leader>d :diffupdate|GitGutterAll<CR>
+" diffs!
+map <Leader>dd :diffupdate<CR>
+map <Leader>df :Fdiff<CR>
+map <Leader>dg :Gdiff<CR>
+map <Leader>dh :Hgvdiff<CR>
 
 " more spell check shortcuts
 map <leader>sn ]s
@@ -335,6 +340,9 @@ command! -range=% -nargs=0 IndentTabs execute '<line1>,<line2>s#^\( \{'.&ts.'\}\
 
 " indents: convert tabs to spaces
 command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+
+" highlight duplicated code (see http://stackoverflow.com/a/1270689/406249)
+command! Dupes syn clear Repeat | g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Repeat "^' . escape(getline('.'), '".\^$*[]') . '$"' | nohlsearch
 
 " troll mode
 command! Troll call Troll()
