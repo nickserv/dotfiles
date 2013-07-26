@@ -314,11 +314,13 @@ let g:syntastic_javascript_checkers=['jslint']
 "let g:syntastic_javascript_jslint_args="--my --args --here"
 
 " comfortable prose editing
-au FileType txt set spell spelllang=en 
-au FileType md set spell spelllang=en 
-au FileType html set spell spelllang=en 
-au FileType yaml set spell spelllang=en 
-au FileType xml set spell spelllang=en 
+au FileType gitcommit setlocal spell
+au FileType hgcommit  setlocal spell
+au FileType txt       setlocal spell
+au FileType md        setlocal spell
+au FileType html      setlocal spell
+au FileType yaml      setlocal spell
+au FileType xml       setlocal spell
 
 """""""""""""""""""
 " Custom Commands "
