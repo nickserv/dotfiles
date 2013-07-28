@@ -304,11 +304,11 @@ au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
 au BufNewFile,BufRead *.html  setlocal makeprg=google-chrome\ %
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-au BufRead,BufNewFile *.html.erb set ft=eruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} setlocal ft=ruby
+au BufRead,BufNewFile *.html.erb setlocal ft=eruby
 
 " Add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufRead *.json setlocal syntax=javascript
 
 " Syntastic checkers
 let g:syntastic_javascript_checkers=['jslint']
