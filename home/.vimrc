@@ -8,10 +8,9 @@ filetype off " required
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" New Features
+" Features
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-fugitive'
 "Bundle 'taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -22,26 +21,28 @@ Bundle 'tpope/vim-endwise'
 "Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-rails'
 Bundle 'mileszs/ack.vim'
 "Bundle 'mattn/invader-vim'
-Bundle 'Lawrencium'
 "Bundle 'duellj/DirDiff.vim'
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'kien/ctrlp.vim'
-"Bundle 'tpope/vim-surround'
-Bundle 'airblade/vim-gitgutter'
 
-" Color Schemes
+" Themes
 Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
 
-" Language/Syntax Support
+" Version control
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lawrencium'
+Bundle 'airblade/vim-gitgutter'
+
+" Syntax
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jQuery'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-ruby/vim-ruby'
 
