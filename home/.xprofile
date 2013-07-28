@@ -20,9 +20,9 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on
 
 # Startup items
 #dropboxd &                         # dropbox
-google-chrome &                    # web browser
+#google-chrome &                    # web browser
 #nm-applet --sm-disable &           # networking
-udiskie &                          # automount volumes
+#udiskie &                          # automount volumes
 urxvtd -q -o -f &                  # urxvt daemon
 wmname LG3D &                      # fix Java GUIs on non-reparenting WMs
 xautolock -time 10 -locker slock & # screen locker
