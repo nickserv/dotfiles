@@ -129,7 +129,6 @@ set showmatch
 " GitGutter
 let g:gitgutter_diff_args = '-w'
 " make the signs column look the same as the line number column
-highlight clear SignColumn
 " disable eager loading
 let g:gitgutter_eager = 0
 
@@ -180,6 +179,9 @@ else
   "colorscheme molokai
   "colorscheme Tomorrow-Night-Bright
 endif
+
+" Reset the background color of the sign column so it doesn't look ugly
+highlight clear SignColumn
 
 """"""""
 " GVim "
