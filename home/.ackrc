@@ -2,6 +2,7 @@
 --ignore-directory=is:coverage
 --ignore-directory=is:doc
 --ignore-directory=is:docs
+--ignore-directory=is:_site
 
 # --ignore-file=
 
