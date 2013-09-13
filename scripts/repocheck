@@ -7,7 +7,7 @@
 command='
   if ! git diff-index --quiet HEAD --; then
     pwd
-    git status --short
+    git status --short --branch
   fi
 '
 
