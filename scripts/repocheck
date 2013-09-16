@@ -6,8 +6,9 @@
 # status.
 command='
   if ! git diff-index --quiet HEAD --; then
-    pwd
+    echo "`pwd`:"
     git status --short --branch
+    echo
   fi
 '
 
