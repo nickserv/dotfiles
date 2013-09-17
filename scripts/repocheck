@@ -1,6 +1,25 @@
 #!/bin/bash
-# Finds git repos in the current directory (recursively) and runs git status in
-# each of them.
+
+usage() {
+  cat << EOF
+usage: $0 [<options>]
+
+Finds git repos in the current directory (recursively) and runs git status in each of them.
+
+OPTIONS:
+   -h      Show this message
+EOF
+}
+
+while getopts "h" OPTION
+do
+  case $OPTION in
+    h)
+      usage
+      exit 1
+      ;;
+  esac
+done
 
 for git_dir in `find . -type d -name .git` ; do
   pushd `dirname $git_dir` > /dev/null
