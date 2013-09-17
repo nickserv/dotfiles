@@ -2,15 +2,13 @@
 # Finds git repos in the current directory (recursively) and runs git status in
 # each of them.
 
-# The command to run in every git repo. Displays the repo's path and its (short)
-# status.
-command='
+for git_dir in `find . -type d -name .git` ; do
+  pushd `dirname $git_dir` > /dev/null
   if ! git diff-index --quiet HEAD --; then
+    # Displays the repo's path and its (short) status.
     echo "`pwd`:"
     git status --short --branch
     echo
   fi
-'
-
-# Run the command in every subdirectory (recursively).
-find . -type d -name .git -execdir sh -c "$command" \;
+  popd > /dev/null
+done
