@@ -12,10 +12,13 @@ OPTIONS:
 EOF
 }
 
+repo_is_dirty() {
+  ! git diff-index --quiet HEAD --
+}
+
 NAMES_ONLY=
 
-while getopts "hn" OPTION
-do
+while getopts "hn" OPTION; do
   case $OPTION in
     h)
       usage
@@ -29,7 +32,7 @@ done
 
 for git_dir in `find . -type d -name .git` ; do
   pushd `dirname $git_dir` > /dev/null
-  if ! git diff-index --quiet HEAD --; then
+  if repo_is_dirty; then
     if [[ $NAMES_ONLY ]]; then
       # Displays the repo's path.
       pwd
