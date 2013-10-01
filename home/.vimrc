@@ -26,6 +26,7 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'duellj/DirDiff.vim'
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 
 " Themes
 Bundle 'tomasr/molokai'
@@ -41,6 +42,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jQuery'
 Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'jelera/vim-javascript-syntax'
@@ -131,6 +133,12 @@ let g:gitgutter_diff_args = '-w'
 " make the signs column look the same as the line number column
 " disable eager loading
 let g:gitgutter_eager = 0
+
+" rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 """""""""""""
 " Searching "
