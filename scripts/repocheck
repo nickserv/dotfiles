@@ -30,7 +30,7 @@ while getopts "hn" OPTION; do
   esac
 done
 
-for git_dir in `find . -type d -name .git` ; do
+for git_dir in `find -L . -type d -name .git` ; do
   pushd `dirname $git_dir` > /dev/null
   if repo_is_dirty; then
     if [[ $NAMES_ONLY ]]; then
