@@ -309,6 +309,12 @@ au BufNewFile,BufRead *.html  setlocal makeprg=google-chrome\ %
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} setlocal ft=ruby
 au BufRead,BufNewFile *.html.erb setlocal ft=eruby
 
+" ASDF files are Common Lisp
+au BufRead,BufNewFile *.asd setlocal ft=lisp
+
+" Use tab indents for LivePhoto
+au BufRead,BufNewFile */livephoto/* setlocal noexpandtab
+
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json setlocal syntax=javascript
 
