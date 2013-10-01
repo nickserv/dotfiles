@@ -366,3 +366,6 @@ function! Noob()
   unmap <Left>
   unmap <Right>
 endfunction
+
+set relativenumber
+set cursorcolumn
