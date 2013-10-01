@@ -215,6 +215,7 @@ alias railsbp='rails_best_practices'
 alias remove-rockets='sed -i "s/:\([a-zA-Z_]*\) =>/\1:/g" **/*.rb'
 alias ritwifi='sudo netctl start wlan0-rit'
 alias uzbl='uzbl-tabbed'
+alias vcat='vimcat'
 alias wifi='sudo wifi-menu wlan0'
 
 alias d='diff'
