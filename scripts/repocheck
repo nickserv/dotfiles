@@ -4,7 +4,8 @@ usage() {
   cat << EOF
 usage: $0 [<options>]
 
-Finds git repos in the current directory (recursively) and runs git status in each of them.
+Finds git repos in the current directory (recursively) and shows their branch,
+status, push/pull status, and stashes.
 
 OPTIONS:
    -h      Show this message
@@ -37,9 +38,10 @@ for git_dir in `find -L . -type d -name .git` ; do
       # Displays the repo's path.
       pwd
     else
-      # Displays the repo's path and its (short) status.
+      # Displays the repo's path, its (short) status, and its stashes.
       echo "`pwd`:"
       git status --short --branch
+      git stash list
       echo
     fi
   fi
