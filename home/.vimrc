@@ -47,6 +47,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'promela.vim'
 
 " Brief help
 " :BundleList          - list configured bundles
@@ -383,3 +384,8 @@ endfunction
 
 set relativenumber
 set cursorcolumn
+
+augroup filetypedetect
+" Promela
+au BufNewFile,BufRead *.promela,*.prm setf promela
+augroup END
