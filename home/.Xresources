@@ -11,7 +11,7 @@ urxvt.perl-ext-common: default,matcher,-option-popup,-selection-popup
 urxvt.urlLauncher:     /usr/bin/google-chrome
 
 ! Fonts
-urxvt.font:    xft:Tamsyn:size=10:antialias=false
+urxvt.font:    xft:Tamsyn:size=11:antialias=false
 
 ! Solarized color scheme for the X Window System
 !
