@@ -3,7 +3,10 @@
 --ignore-directory=is:doc
 --ignore-directory=is:docs
 --ignore-directory=is:_site
+--ignore-directory=is:log
+--ignore-directory=is:tmp
 
-# --ignore-file=
+--ignore-file=is:jobim.log
+--ignore-file=is:jobim.pid
 
 # --type-add=
