@@ -134,12 +134,8 @@ alias vv='vim -O'
 # feh
 alias feh='feh --scale-down --auto-zoom'
 
-# homesick/homeshick
-if command -v homesick &>/dev/null; then
-  alias hs='homesick'
-else
-  alias hs='homeshick'
-fi
+# homesick
+alias hs='homesick'
 
 # ls
 alias l='ls -alh'
