@@ -11,7 +11,6 @@ Session.vim
 .classpath
 .project
 .settings
-bin/**
 
 # Intellij files
 *.iml
@@ -20,7 +19,6 @@ bin/**
 .idea/
 *.eml
 .idea
-/out
 
 # Emacs files
 *~
@@ -35,3 +33,7 @@ tramp
 # Org-mode files
 .org-id-locations
 *_archive
+
+# Jobim files
+jobim.log
+jobim.pid
