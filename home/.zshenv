@@ -14,9 +14,5 @@ export GEM_HOME=~/.gem/ruby/2.0.0
 export BROWSER=firefox
 export EDITOR=vim
 export RAILS_ENV=development
-
-# Tell SSH servers that we're using a vt100-compatible terminal
-# (prevents annoying compatibility issues)
-if [[ -n $SSH_CONNECTION ]]; then
-  export TERM=vt100
-fi
+export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+export TERM=rxvt
