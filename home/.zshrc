@@ -106,7 +106,7 @@ title_info
 ########
 
 # Set path
-export PATH=~/bin:~/Repos/castle/scripts:/usr/local/heroku/bin:$GEM_HOME/bin:$PATH
+export PATH=~/bin:~/Repos/castle/scripts:/usr/local/heroku/bin:$GEM_HOME/bin:~/cabal/bin:$PATH
 
 # Colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
 man() {
