@@ -1,0 +1,9 @@
+#!/bin/bash
+# Lists all configuration files in the current directory. They must not be
+# symlinks, not be directories, and must start with ".".
+
+for file in `ls -A`; do
+  if [[ ! -h $file && -f $file && $file =~ ^\..*$ ]]; then
+    echo $file
+  fi
+done
