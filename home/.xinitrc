@@ -10,7 +10,6 @@ session="xmonad"
 
 # Configs for dwm
 if [[ "$session" == "dwm" ]]; then
-  feh --bg-fill ~/wallpaper.png
   while true; do
     BAT="$(acpi -b | awk '{ print $4 " " $5 }' | tr -d ',')"
     TIME="$(date +"%a, %b %d | %I:%M %p")"
@@ -18,6 +17,10 @@ if [[ "$session" == "dwm" ]]; then
 
     sleep 1m
   done &
+fi
+
+if [[ "$session" == "dwm" || "$session" == "xmonad" ]]; then
+  feh --bg-fill ~/wallpaper.jpg
 fi
 
 # Start WM/DE
