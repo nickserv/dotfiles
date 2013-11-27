@@ -6,7 +6,7 @@
 
 # Choose a graphical session
 # Examples: awesome, openbox-session, startxfce4, startlxde, gnome-session
-session="dwm"
+session="xmonad"
 
 # Configs for dwm
 if [[ "$session" == "dwm" ]]; then
