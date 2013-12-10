@@ -383,7 +383,6 @@ function! Noob()
   unmap <Right>
 endfunction
 
-set relativenumber
 set cursorcolumn
 
 augroup filetypedetect
