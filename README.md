@@ -8,7 +8,10 @@ install script installs homesick for you, so you won't need to worry about
 that. :)
 
 ## Installation
-`wget -q https://raw.github.com/thenickperson/castle/master/Makefile && make install`
+```bash
+wget -q https://raw.github.com/thenickperson/castle/master/Makefile
+make install
+```
 
 ### Packages
 The `Makefile` does not install these yet, so run this to install some of my
