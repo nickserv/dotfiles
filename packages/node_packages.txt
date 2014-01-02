@@ -1,0 +1,11 @@
+bower
+coffee-script
+coffeelint
+csslint
+docco
+express
+js2coffee
+jshint
+jslint
+jsonlint
+package-json-validator
