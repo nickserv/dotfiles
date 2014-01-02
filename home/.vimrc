@@ -96,6 +96,9 @@ set colorcolumn=80
 " ignore whitespace in diff mode
 set diffopt+=iwhite
 
+" force setting wrap when vim diff opens
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
+
 " Powerline
 set laststatus=2
 set t_Co=256
