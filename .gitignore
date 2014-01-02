@@ -1,3 +1,5 @@
 /home/.vim
 
+# Package manager files
 Gemfile.lock
+.bundle/
