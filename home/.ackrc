@@ -1,3 +1,5 @@
+# Ruby/Rails
+--ignore-directory=is:.bundle
 --ignore-directory=is:components
 --ignore-directory=is:coverage
 --ignore-directory=is:doc
@@ -6,6 +8,11 @@
 --ignore-directory=is:log
 --ignore-directory=is:tmp
 
+# Node/Bower
+--ignore-directory=is:node_modules
+--ignore-directory=is:bower_components
+
+# Jobim
 --ignore-file=is:jobim.log
 --ignore-file=is:jobim.pid
 
