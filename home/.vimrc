@@ -48,6 +48,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'promela.vim'
+Bundle 'digitaltoad/vim-jade'
 
 " Brief help
 " :BundleList          - list configured bundles
