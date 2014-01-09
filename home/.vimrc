@@ -369,24 +369,6 @@ command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat
 " highlight duplicated code (see http://stackoverflow.com/a/1270689/406249)
 command! Dupes syn clear Repeat | g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Repeat "^' . escape(getline('.'), '".\^$*[]') . '$"' | nohlsearch
 
-" troll mode
-command! Troll call Troll()
-function! Troll()
-  map <Up>    :x<CR>
-  map <Down>  :x<CR>
-  map <Left>  :x<CR>
-  map <Right> :x<CR>
-endfunction
-
-" noob mode
-command! Noob call Noob()
-function! Noob()
-  unmap <Up>
-  unmap <Down>
-  unmap <Left>
-  unmap <Right>
-endfunction
-
 set cursorcolumn
 
 augroup filetypedetect
