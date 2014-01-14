@@ -7,6 +7,9 @@
   wdiff = diff --color-words
   wshow = show --color-words
 
+[apply]
+  whitespace = warn
+
 [color]
   ui = auto
 
@@ -16,7 +19,17 @@
   untracked = red
 
 [core]
+  autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
   excludesfile = ~/.gitignore
 
 [credential]
   helper = cache --timeout=3600
+
+[diff]
+  renames = copies
+
+[interactive]
+  singlekey = true
+
+[merge]
+  tool = vimdiff
