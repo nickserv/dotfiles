@@ -47,7 +47,6 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'promela.vim'
 Bundle 'digitaltoad/vim-jade'
 
 " Brief help
@@ -370,8 +369,3 @@ command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat
 command! Dupes syn clear Repeat | g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Repeat "^' . escape(getline('.'), '".\^$*[]') . '$"' | nohlsearch
 
 set cursorcolumn
-
-augroup filetypedetect
-" Promela
-au BufNewFile,BufRead *.promela,*.prm setf promela
-augroup END
