@@ -36,3 +36,7 @@
 
 [push]
   default = simple
+
+[status]
+  branch = true
+  short = true
