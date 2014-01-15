@@ -25,6 +25,9 @@
 [credential]
   helper = cache --timeout=3600
 
+[credential "https://github.com"]
+  username = thenickperson
+
 [diff]
   renames = copies
 
