@@ -1,10 +1,4 @@
-# Borrowed from http://stackoverflow.com/a/2468300/406249
-IRB.conf[:PROMPT][:CUSTOM] = {
-  :PROMPT_I => ">> ",
-  :PROMPT_S => "%l>> ",
-  :PROMPT_C => ".. ",
-  :PROMPT_N => ".. ",
-  :RETURN => "=> %s\n"
-}
-IRB.conf[:PROMPT_MODE] = :CUSTOM
+require 'irb/completion'
+
+IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
