@@ -28,6 +28,9 @@
 [credential "https://github.com"]
   username = thenickperson
 
+[credential "https://gist.github.com"]
+  username = thenickperson
+
 [diff]
   renames = copies
 
