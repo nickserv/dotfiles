@@ -154,14 +154,8 @@ alias lsp="ls++"
 
 # systemd
 alias sc="sudo systemctl"
-alias disable='sudo systemctl disable'
-alias enable='sudo systemctl enable'
 alias power-off='sudo systemctl poweroff'
 alias power-reboot='sudo systemctl reboot'
-alias restart='sudo systemctl restart'
-alias start='sudo systemctl start'
-alias status='sudo systemctl status'
-alias stop='sudo systemctl stop'
 
 # pacman/packer
 alias p='pacaur --noedit'
