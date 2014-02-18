@@ -31,6 +31,9 @@
 [credential "https://gist.github.com"]
   username = thenickperson
 
+[credential "https://bitbucket.org"]
+  username = thenickperson
+
 [diff]
   renames = copies
 
