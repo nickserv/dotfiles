@@ -9,7 +9,7 @@ that. :)
 
 ## Installation
 ```bash
-wget -q https://raw.github.com/nicolasmccurdy/castle/master/Makefile
+wget -q https://raw.github.com/nicolasmccurdy/dotfiles/master/Makefile
 make install
 ```
 

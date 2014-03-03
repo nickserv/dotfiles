@@ -3,25 +3,25 @@ SHELL     = /bin/bash
 update: pull symlink update_vim_plugins
 
 uninstall:
-	@echo "Uninstalling nicolasmccurdy/castle..."
-	rm -rf ~/.homesick/repos/castle
+	@echo "Uninstalling nicolasmccurdy/dotfiles..."
+	rm -rf ~/.homesick/repos/dotfiles
 	gem uninstall homesick
 	@echo "Done. You may need to manually delete leftover symlinks."
 
 clone:
 	@echo "Cloning repository..."
-	if [ ! -d "$(HOME)/.homesick/repos/castle" ]; \
+	if [ ! -d "$(HOME)/.homesick/repos/dotfiles" ]; \
 	then \
-		homesick clone https://github.com/nicolasmccurdy/castle.git; \
+		homesick clone https://github.com/nicolasmccurdy/dotfiles.git; \
 	fi
 
 pull:
 	@echo "Pulling repository..."
-	homesick pull castle
+	homesick pull
 
 symlink:
 	@echo "Symlinking config files..."
-	homesick symlink castle
+	homesick symlink
 
 set_up_repos_directory:
 	@echo "Setting up ~/Repos..."
@@ -29,10 +29,10 @@ set_up_repos_directory:
 	then \
 		mkdir $(HOME)/Repos; \
 	fi
-	ln -s $(HOME)/.homesick/repos/castle $(HOME)/Repos/castle
+	ln -s $(HOME)/.homesick/repos/dotfiles $(HOME)/Repos/dotfiles
 
 clean:
-	pushd ~/.homesick/repos/castle > /dev/null
+	pushd ~/.homesick/repos/dotfiles > /dev/null
 	@echo "Cleaning repository..."
 	git clean -dfx
 	pushd > /dev/null
