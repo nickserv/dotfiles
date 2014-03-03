@@ -140,3 +140,6 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
+
+# Python REPL autocomplete
+export PYTHONSTARTUP="$HOME/.pythonrc"
