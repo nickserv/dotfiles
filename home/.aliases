@@ -39,6 +39,7 @@ alias rm-ds-stores='find . -name "*.DS_Store" -type f -delete'
 alias to="todo.sh"
 alias uu='udiskie-umount'
 alias x='startx'
+alias sc="sudo systemctl"
 
 # new commands
 alias du1='\du -h --max-depth=1 | sort -hr'
@@ -149,11 +150,6 @@ alias lz='ll -rS'                   # sort by size
 # ls++
 alias lap="ls++ -A"
 alias lsp="ls++"
-
-# systemd
-alias sc="sudo systemctl"
-alias power-off='sudo systemctl poweroff'
-alias power-reboot='sudo systemctl reboot'
 
 # pacman/packer
 alias p='pacaur --noedit'
