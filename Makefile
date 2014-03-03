@@ -3,7 +3,7 @@ SHELL     = /bin/bash
 update: pull symlink update_vim_plugins
 
 uninstall:
-	@echo "Uninstalling thenickperson/castle..."
+	@echo "Uninstalling nicolasmccurdy/castle..."
 	rm -rf ~/.homesick/repos/castle
 	gem uninstall homesick
 	@echo "Done. You may need to manually delete leftover symlinks."
@@ -12,7 +12,7 @@ clone:
 	@echo "Cloning repository..."
 	if [ ! -d "$(HOME)/.homesick/repos/castle" ]; \
 	then \
-		homesick clone https://github.com/thenickperson/castle.git; \
+		homesick clone https://github.com/nicolasmccurdy/castle.git; \
 	fi
 
 pull:

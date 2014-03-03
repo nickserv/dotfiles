@@ -26,10 +26,10 @@
   helper = cache --timeout=3600
 
 [credential "https://github.com"]
-  username = thenickperson
+  username = nicolasmccurdy
 
 [credential "https://gist.github.com"]
-  username = thenickperson
+  username = nicolasmccurdy
 
 [credential "https://bitbucket.org"]
   username = thenickperson

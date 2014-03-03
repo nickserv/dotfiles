@@ -9,7 +9,7 @@ that. :)
 
 ## Installation
 ```bash
-wget -q https://raw.github.com/thenickperson/castle/master/Makefile
+wget -q https://raw.github.com/nicolasmccurdy/castle/master/Makefile
 make install
 ```
 
@@ -25,4 +25,4 @@ sudo npm install -g `cat node_packages.txt`
 ```
 
 ## Older config files
-- [My old fork of Cody Krieger's vim config files](https://github.com/thenickperson/dotvim-old)
+- [My old fork of Cody Krieger's vim config files](https://github.com/nicolasmccurdy/dotvim-old)
