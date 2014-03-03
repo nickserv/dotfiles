@@ -1,6 +1,9 @@
 # Linux files
 *~
 
+# Mac OS files
+.DS_Store
+
 # Vim files
 .*.sw[a-z]
 *.un~

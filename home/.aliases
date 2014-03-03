@@ -34,7 +34,6 @@ alias lns='ln -s'
 alias make-dwm='pushd ~/Repos/dwm > /dev/null; sudo make install; popd > /dev/null'
 alias ns='notify-send'
 alias nsc='notify-send "Process Completed"'
-alias open='xdg-open'
 alias ra='ranger'
 alias rm-ds-stores='find . -name "*.DS_Store" -type f -delete'
 alias to="todo.sh"
@@ -78,13 +77,12 @@ if [ $UID -ne 0 ]; then
 fi
 
 # safety features
-alias chgrp='chgrp --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chown='chown --preserve-root'
+alias chgrp='chgrp'
+alias chmod='chmod'
+alias chown='chown'
 alias cp='cp -i'
 alias ln='ln -i'
 alias mv='mv -i'
-alias rm='rm -I'
 
 # programming languages
 alias ja='java'
@@ -143,7 +141,7 @@ alias la='ls -A'
 alias ll='ls -lh'
 alias lm='la | less'
 alias lr='ls -R'                    # recursive ls
-alias ls='ls -hF --color=auto --group-directories-first'
+alias ls='ls -hFG'
 alias lt='ll -rt'                   # sort by date
 alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
