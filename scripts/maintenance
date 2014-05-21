@@ -1,20 +1,9 @@
 #!/bin/bash
-# Runs commands for cleaning and updating various parts of the system.
+# Runs commands for cleaning various parts of the system.
 
 # Maintenance Tasks:
-# - Clean
-#   - pacman cache (keeps the newest cached version of each package)
-#   - profile for Google Chrome (cleans up the user's database)
-# - Update Packages
-#   - pacman/aur
-#   - gem
-#   - npm
+# - clean pacman cache (keeps the newest cached version of each package)
+# - clean profile for Google Chrome (cleans up the user's database)
 
-# Clean
 sudo cacheclean 1
 profile-cleaner gc
-
-# Update Packages
-sudo pacaur -Syu
-gem update
-sudo npm update -g

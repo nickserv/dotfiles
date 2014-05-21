@@ -1,0 +1,11 @@
+#!/bin/bash
+# Runs commands for updating various parts of the system.
+
+# Update Packages:
+# - pacman/aur
+# - gem
+# - npm
+
+sudo pacaur -Syu
+gem update
+sudo npm update -g
