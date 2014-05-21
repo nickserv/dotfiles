@@ -37,6 +37,10 @@
 [diff]
   renames = copies
 
+[grep]
+  lineNumber = true
+  extendedRegexp = true
+
 [interactive]
   singlekey = true
 
