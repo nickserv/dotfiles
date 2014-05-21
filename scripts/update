@@ -1,11 +1,33 @@
 #!/bin/bash
 # Runs commands for updating various parts of the system.
 
-# Update Packages:
-# - pacman/aur
-# - gem
-# - npm
+exists() {
+  command -v $1 > /dev/null
+}
 
-sudo pacaur -Syu
-gem update
-sudo npm update -g
+# System packages
+
+if exists pacaur; then
+  sudo pacaur -Syu
+elif exists pacman; then
+  sudo pacman -Syu
+fi
+
+if exists brew; then
+  brew update
+  brew upgrade
+fi
+
+# Language packages
+
+if exists gem; then
+  gem update
+fi
+
+if exists npm; then
+  if exists brew; then # assumes you're using homebrew npm
+    npm update -g
+  else
+    sudo npm update -g
+  fi
+fi
