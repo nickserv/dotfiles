@@ -21,6 +21,7 @@ alias ping='ping -c 3'
 # shortcuts
 alias ..='cd ..'
 alias _="sudo"
+alias be='bundle exec'
 alias chrome='google-chrome'
 alias db='dropbox'
 alias dbp='dropbox puburl'
@@ -56,7 +57,6 @@ alias pcp="rsync -hrP"
 #alias pg='ps -Af | grep $1'         # requires an argument (note: /usr/bin/pg is installed by the util-linux package; maybe a different alias name should be used)
 alias pig='ping google.com'
 alias pmv="pcp --remove-source-files"
-alias serve="python3 -m http.server"
 alias svn-ignore='svn propedit svn:ignore .'
 alias xmerge='xrdb ~/.Xresources'
 
@@ -92,7 +92,6 @@ alias jrm='rm *.class'
 alias py2='python2'
 alias py='python3'
 alias rb='ruby'
-alias sbcl='rlwrap --history-no-dupes 1 --histsize 5000 --history-filename $HOME/.rlwrap.d/sbcl_history sbcl'
 
 # git
 alias g='git'
@@ -106,6 +105,7 @@ alias gch='git checkout'
 alias gcl='git clone'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gg='git grep'
 alias gh='git help'
 alias gl='git pull'
 alias glg='glgs --stat'
