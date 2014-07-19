@@ -49,22 +49,6 @@ function ssh_info() {
   fi
 }
 
-# Displays version control information if in a repository
-if command -v vcprompt > /dev/null; then
-  has_vcprompt=true
-else
-  has_vcprompt=false
-fi
-function() vc_info() {
-  if $has_vcprompt; then
-    vc_branch=$(vcprompt -f "%b")
-    if [[ -n $vc_branch ]]; then
-      vc_status=$(vcprompt -f "%m%u")
-      echo "%{$fg[green]%}$vc_branch%{$fg[red]%}$vc_status%{$reset_color%} "
-    fi
-  fi
-}
-
 function() dir_info() {
   # if normal user
   if [[ $EUID -ne 0 ]]; then
@@ -78,7 +62,7 @@ function() dir_info() {
 autoload -U colors && colors
 setopt prompt_subst
 # Colors: black red green yellow blue magenta cyan white
-export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) $(vc_info)%{$fg[yellow]%}> %{$reset_color%}'
+export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) %{$fg[yellow]%}→ %{$reset_color%}'
 
 #############
 # Title Bar #
@@ -107,22 +91,6 @@ title_info
 
 # Set path
 export PATH=~/bin:~/Repos/dotfiles/scripts:/usr/local/heroku/bin:$GEM_HOME/bin:~/cabal/bin:$PATH
-
-# Colored man pages (from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages)
-man() {
-  env \
-    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-    LESS_TERMCAP_md=$(printf "\e[1;31m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
-      man "$@"
-}
-
-# Load zmv
-autoload -U zmv
 
 # Automatically use cd when paths are entered without cd
 setopt autocd
