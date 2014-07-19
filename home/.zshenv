@@ -10,9 +10,11 @@ source /etc/profile
 # RubyGems
 export GEM_HOME=~/.gem/ruby/2.0.0
 
+export GOPATH="$HOME/go"
+export GOROOT=`go env GOROOT`
+
 # Other variables
-export BROWSER=firefox
-export EDITOR=vim
-export RAILS_ENV=development
+export EDITOR=subl
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export TERM=rxvt
+export LLVM=/usr/local/opt/emscripten/libexec/llvm/bin
