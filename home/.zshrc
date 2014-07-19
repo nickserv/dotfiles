@@ -111,3 +111,6 @@ bindkey "^N" history-beginning-search-forward
 
 # Python REPL autocomplete
 export PYTHONSTARTUP="$HOME/.pythonrc"
+
+# Autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
