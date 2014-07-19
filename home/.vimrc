@@ -27,6 +27,7 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'Shougo/neocomplcache'
 "Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'mattn/emmet-vim'
 
 " Themes
 Bundle 'tomasr/molokai'
@@ -48,6 +49,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'jnwhiteh/vim-golang'
 
 " Brief help
 " :BundleList          - list configured bundles
@@ -63,6 +65,9 @@ filetype plugin indent on " required
 """"""
 " UI "
 """"""
+
+" Fix for broken backspace key in vim.
+set backspace=indent,eol,start 
 
 " automatically load changed files
 set autoread
@@ -182,7 +187,7 @@ set smartindent
 """""""""
 
 syntax enable
-set background=dark
+set background=light
 
 if $TERM=="linux" && !has('gui_running')
   colorscheme desert
@@ -194,6 +199,8 @@ endif
 
 " Reset the background color of the sign column so it doesn't look ugly
 highlight clear SignColumn
+
+set guifont=Source\ Code\ Pro:h12
 
 """"""""
 " GVim "
@@ -215,9 +222,6 @@ endif
 
 " change leader from \ to ,
 let mapleader=","
-
-" enter vim commands without having to press shift
-map ; :
 
 " typing ;; quickly exits insert mode
 imap ;; <Esc>
@@ -311,12 +315,14 @@ au BufNewFile,BufRead *.sh    setlocal makeprg=bash\ %
 au BufNewFile,BufRead *.zsh   setlocal makeprg=zsh\ %
 au BufNewFile,BufRead *.java  setlocal makeprg=javac\ %
 au BufNewFile,BufRead *.rb    setlocal makeprg=ruby\ %
+au BufNewFile,BufRead *.js    setlocal makeprg=node\ %
 au BufNewFile,BufRead *.py    setlocal makeprg=python\ %
 au BufNewFile,BufRead *.lisp  setlocal makeprg=clisp\ %
 au BufNewFile,BufRead *.scm   setlocal makeprg=guile\ %
 au BufNewFile,BufRead *.lua   setlocal makeprg=lua\ %
 au BufNewFile,BufRead *.html  setlocal makeprg=google-chrome\ %
 au BufNewFile,BufRead *.hs    setlocal makeprg=runhaskell\ %
+au BufNewFile,BufRead *.go    setlocal makeprg=go\ run\ %
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} setlocal ft=ruby
@@ -334,6 +340,7 @@ au BufNewFile,BufRead *.json setlocal syntax=javascript
 " Syntastic checkers
 let g:syntastic_javascript_checkers=['jslint']
 "let g:syntastic_javascript_jslint_args="--my --args --here"
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 " comfortable prose editing
 au FileType gitcommit setlocal spell
