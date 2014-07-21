@@ -190,6 +190,10 @@ up() {
   done
 }
 
+lh() {
+  open http://localhost:${1-3000}
+}
+
 alias bu='bundle'
 alias bup='bundle update'
 alias dunnet='emacs -batch -l dunnet'
