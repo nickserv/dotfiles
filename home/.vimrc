@@ -5,11 +5,11 @@
 set nocompatible " disable vi compatibility
 filetype off " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Features
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'Lokaltog/vim-powerline'
 "Bundle 'taglist.vim'
 Bundle 'scrooloose/nerdtree'
@@ -59,6 +59,8 @@ Bundle 'jnwhiteh/vim-golang'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
+call vundle#end()
 
 filetype plugin indent on " required
 
