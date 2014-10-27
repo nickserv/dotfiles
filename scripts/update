@@ -25,9 +25,5 @@ if exists gem; then
 fi
 
 if exists npm; then
-  if exists brew; then # assumes you're using homebrew npm
-    npm update -g
-  else
-    sudo npm update -g
-  fi
+  sudo npm update -g
 fi

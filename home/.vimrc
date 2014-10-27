@@ -14,13 +14,17 @@ Bundle 'Lokaltog/vim-powerline'
 "Bundle 'taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-unimpaired'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-sleuth'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-unimpaired'
 "Bundle 'tpope/vim-surround'
 "Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mileszs/ack.vim'
 "Bundle 'mattn/invader-vim'
 "Bundle 'duellj/DirDiff.vim'
@@ -30,13 +34,12 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'mattn/emmet-vim'
 
 " Themes
-Bundle 'tomasr/molokai'
-Bundle 'chriskempson/vim-tomorrow-theme'
+"Bundle 'tomasr/molokai'
+"Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'altercation/vim-colors-solarized'
 
 " Version control
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lawrencium'
 Bundle 'airblade/vim-gitgutter'
 
 " Syntax
@@ -45,11 +48,14 @@ Bundle 'jQuery'
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'hail2u/vim-css3-syntax'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'othree/html5.vim'
+Bundle 'moll/vim-node'
 
 " Brief help
 " :BundleList          - list configured bundles
@@ -332,9 +338,6 @@ au BufRead,BufNewFile *.html.erb setlocal ft=eruby
 
 " ASDF files are Common Lisp
 au BufRead,BufNewFile *.asd setlocal ft=lisp
-
-" Use tab indents for LivePhoto
-au BufRead,BufNewFile */livephoto/* setlocal noexpandtab
 
 " Add json syntax highlighting
 au BufNewFile,BufRead *.json setlocal syntax=javascript

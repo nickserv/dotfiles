@@ -4,6 +4,10 @@
 # Mac OS files
 .DS_Store
 
+# Sublime Text files
+*.sublime-workspace
+*.sublime-project
+
 # Vim files
 .*.sw[a-z]
 *.un~

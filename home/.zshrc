@@ -90,7 +90,7 @@ title_info
 ########
 
 # Set path
-export PATH=~/bin:~/Repos/dotfiles/scripts:/usr/local/heroku/bin:$GEM_HOME/bin:~/cabal/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:$(brew --prefix)/opt/ruby/bin:$GEM_HOME/bin:$PATH
 
 # Automatically use cd when paths are entered without cd
 setopt autocd

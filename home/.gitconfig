@@ -22,6 +22,7 @@
   autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
   excludesfile = ~/.gitignore
   editor = subl --wait
+	excludes = /Users/nick/.gitignore
 
 [credential]
   helper = cache --timeout=3600
@@ -42,11 +43,19 @@
   lineNumber = true
   extendedRegexp = true
 
+[format]
+  pretty = oneline
+
 [interactive]
   singlekey = true
 
+[log]
+  abbrevCommit = true
+  decorate = short
+
 [merge]
   tool = vimdiff
+  defaultToUpstream = true
 
 [push]
   default = simple
