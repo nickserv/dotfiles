@@ -34,9 +34,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'mattn/emmet-vim'
 
 " Themes
-"Bundle 'tomasr/molokai'
-"Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
 
 " Version control
 Bundle 'tpope/vim-fugitive'
@@ -195,14 +193,12 @@ set smartindent
 """""""""
 
 syntax enable
-set background=light
+set background=dark
 
 if $TERM=="linux" && !has('gui_running')
   colorscheme desert
 else
-  colorscheme solarized
-  "colorscheme molokai
-  "colorscheme Tomorrow-Night-Bright
+  colorscheme molokai
 endif
 
 " Reset the background color of the sign column so it doesn't look ugly
@@ -288,9 +284,6 @@ map <Leader>h :set list!<CR>
 
 " run/compile file (see custom commands section)
 map <Leader>r :make<CR>
-
-" swap background color (dark/light) for Solarized
-call togglebg#map("<F2>")
 
 " Format the current paragraph according to
 " the current 'textwidth' with ctrl-j:
