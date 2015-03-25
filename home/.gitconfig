@@ -21,7 +21,7 @@
 [core]
   autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
   excludesfile = ~/.gitignore
-  editor = subl --wait
+  editor = atom --wait
 
 [credential]
   helper = cache --timeout=3600
