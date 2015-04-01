@@ -57,7 +57,7 @@
   defaultToUpstream = true
 
 [push]
-  default = simple
+  default = current
 
 [status]
   branch = true
