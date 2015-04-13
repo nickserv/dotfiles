@@ -8,6 +8,6 @@ source /etc/profile
 export GEM_HOME=~/.gem/ruby/2.0.0
 
 # Other variables
-export EDITOR=atom
+export EDITOR='atom --wait'
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export LLVM=/usr/local/opt/emscripten/libexec/llvm/bin
