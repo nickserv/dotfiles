@@ -4,9 +4,6 @@
 source /etc/profile
 
 # Load additional software
-# rbenv
-#export PATH=$PATH:~/.rbenv/bin
-#eval "$(rbenv init - --no-rehash)"
 # RubyGems
 export GEM_HOME=~/.gem/ruby/2.0.0
 
