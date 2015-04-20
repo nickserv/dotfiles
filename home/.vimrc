@@ -32,9 +32,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'mattn/emmet-vim'
 
-" Themes
-Bundle 'tomasr/molokai'
-
 " Version control
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -112,8 +109,6 @@ autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 " Powerline
 set laststatus=2
 set t_Co=256
-let g:Powerline_theme='solarized256'
-let g:Powerline_colorscheme='solarized256'
 
 " remember last cursor position
 autocmd BufReadPost *
@@ -192,13 +187,7 @@ set smartindent
 """""""""
 
 syntax enable
-set background=dark
-
-if $TERM=="linux" && !has('gui_running')
-  colorscheme desert
-else
-  colorscheme molokai
-endif
+set background=light
 
 " Reset the background color of the sign column so it doesn't look ugly
 highlight clear SignColumn
