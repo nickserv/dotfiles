@@ -157,8 +157,7 @@ alias pin='p -S'
 alias pup='p -Syu'
 
 # global aliases
-alias -g F='| ack'
-alias -g FE='|& ack'
+alias -g F='| grep'
 alias -g L='| less -R'
 alias -g LOL='| lolcat'
 
