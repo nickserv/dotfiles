@@ -113,4 +113,4 @@ bindkey "^N" history-beginning-search-forward
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # Autojump
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
