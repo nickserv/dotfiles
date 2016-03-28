@@ -21,9 +21,11 @@ fi
 # Language packages
 
 if exists gem; then
+  gem update --system
   gem update
 fi
 
 if exists npm; then
+  npm install npm -g
   npm update -g
 fi
