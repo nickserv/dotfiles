@@ -36,3 +36,6 @@ tramp
 # Jobim files
 jobim.log
 jobim.pid
+
+# Visual Studio Code files
+.vscode
