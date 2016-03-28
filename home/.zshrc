@@ -114,3 +114,6 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# DNVM (.NET SDK Manager)
+source /usr/local/lib/dnx/bin/dnvm.sh
