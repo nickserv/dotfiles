@@ -6,4 +6,8 @@
 # - clean profile for Google Chrome (cleans up the user's database)
 
 sudo cacheclean 1
+brew cleanup
+brew doctor
+dnu clear-http-cache
+npm cache clean
 profile-cleaner gc
