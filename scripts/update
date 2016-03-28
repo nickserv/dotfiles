@@ -25,5 +25,5 @@ if exists gem; then
 fi
 
 if exists npm; then
-  sudo -H npm update -g
+  npm update -g
 fi

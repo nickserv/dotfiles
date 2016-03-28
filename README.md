@@ -21,7 +21,7 @@ favorite Ruby and Node.js packages:
 # before you run anything, make sure you have bundler and npm installed first
 cd packages
 bundle
-sudo npm install -g `cat node_packages.txt`
+npm install -g `cat node_packages.txt`
 ```
 
 ## Older config files
