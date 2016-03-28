@@ -19,14 +19,6 @@ Session.vim
 .project
 .settings
 
-# Intellij files
-*.iml
-*.ipr
-*.iws
-.idea/
-*.eml
-.idea
-
 # Emacs files
 *~
 \#*\#
