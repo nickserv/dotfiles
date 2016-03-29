@@ -14,10 +14,12 @@ fi
 echo
 
 echo "Switching shell to zsh..."
-if [ "$(uname)" = "Darwin" ]; then
-  chsh -s /bin/zsh
-else
-  sudo chsh --shell /bin/zsh "$(whoami)"
+if [ "$SHELL" != "/bin/zsh" ]; then
+  if [ "$(uname)" = "Darwin" ]; then
+    chsh -s /bin/zsh
+  else
+    sudo chsh --shell /bin/zsh "$(whoami)"
+  fi
 fi
 echo
 
@@ -29,7 +31,9 @@ echo "Setting up ~/Repos..."
 if [ ! -d "$HOME/Repos" ]; then
   mkdir "$HOME/Repos"
 fi
-ln -s "$HOME/.homesick/repos/dotfiles $HOME/Repos/dotfiles"
+if [ ! -e "$HOME/Repos/dotfiles" ]; then
+  ln -s "$HOME/.homesick/repos/dotfiles $HOME/Repos/dotfiles"
+fi
 echo
 
 echo "Installing vundle..."
