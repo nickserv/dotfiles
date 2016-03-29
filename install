@@ -3,9 +3,11 @@
 echo "Installing homesick..."
 gem install homesick
 
-echo "Cloning repository..."
-if [ ! -d "$HOME/.homesick/repos/dotfiles" ]
+if [ -d "$HOME/.homesick/repos/dotfiles" ]
+  echo "Pulling repository..."
+  homesick pull
 then
+  echo "Cloning repository..."
   homesick clone https://github.com/nicolasmccurdy/dotfiles.git
 fi
 
@@ -37,7 +39,7 @@ then
   git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 
-echo "Installing vim plugins..."
-vim +PluginInstall +qall
+echo "Updating vim plugins..."
+vim +PluginInstall! +qall
 
 echo "Open a new terminal to start your proper shell."
