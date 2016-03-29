@@ -5,64 +5,70 @@
 set nocompatible " disable vi compatibility
 filetype off " required
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " Features
-Bundle 'gmarik/Vundle.vim'
-Bundle 'Lokaltog/vim-powerline'
-"Bundle 'taglist.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Townk/vim-autoclose'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-sleuth'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-unimpaired'
-"Bundle 'tpope/vim-surround'
-"Bundle 'ervandew/supertab'
-Bundle 'scrooloose/syntastic'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'mattn/invader-vim'
-"Bundle 'duellj/DirDiff.vim'
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'mattn/emmet-vim'
+Plugin 'Lokaltog/vim-powerline'
+"Plugin 'taglist.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Townk/vim-autoclose'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-unimpaired'
+"Plugin 'tpope/vim-surround'
+"Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'mattn/invader-vim'
+"Plugin 'duellj/DirDiff.vim'
+"Plugin 'Shougo/neocomplcache'
+"Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'mattn/emmet-vim'
 
 " Version control
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Syntax
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'jQuery'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-haml'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'othree/html5.vim'
-Bundle 'moll/vim-node'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'jQuery'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-haml'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'othree/html5.vim'
+Plugin 'moll/vim-node'
 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-call vundle#end()
-
-filetype plugin indent on " required
 
 """"""
 " UI "

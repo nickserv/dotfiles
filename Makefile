@@ -51,18 +51,18 @@ install_vundle:
 	then \
 		mkdir $(HOME)/.vim/bundle; \
 	fi
-	if [ ! -d "$(HOME)/.vim/bundle/vundle" ]; \
+	if [ ! -d "$(HOME)/.vim/bundle/Vundle.vim" ]; \
 	then \
-		git clone https://github.com/gmarik/vundle.git $(HOME)/.vim/bundle/vundle; \
+		git clone https://github.com/VundleVim/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim; \
 	fi
 
 install_vim_plugins:
 	@echo "Installing vim plugins..."
-	vim +BundleInstall +qall
+	vim +PluginInstall +qall
 
 update_vim_plugins:
 	@echo "Updating vim plugins..."
-	vim +BundleInstall! +qall
+	vim +PluginInstall! +qall
 
 install: install_homesick clone use_zsh symlink set_up_repos_directory install_vundle install_vim_plugins
 	@echo "Open a new terminal to start your proper shell."
