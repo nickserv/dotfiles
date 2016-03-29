@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pushd ~/.homesick/repos/dotfiles > /dev/null
+echo "Cleaning repository..."
+git clean -dfx
+pushd > /dev/null

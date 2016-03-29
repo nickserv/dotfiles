@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Pulling repository..."
+homesick pull
+
+echo "Symlinking config files..."
+homesick symlink
+
+echo "Updating vim plugins..."
+vim +PluginInstall! +qall

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Uninstalling nicolasmccurdy/dotfiles..."
+rm -rf ~/.homesick/repos/dotfiles
+gem uninstall homesick
+echo "Done. You may need to manually delete leftover symlinks."

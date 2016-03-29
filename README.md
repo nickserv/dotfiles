@@ -9,12 +9,12 @@ that. :)
 
 ## Installation
 ```bash
-wget -q https://raw.github.com/nicolasmccurdy/dotfiles/master/Makefile
-make install
+wget -q https://raw.github.com/nicolasmccurdy/dotfiles/master/install
+./install
 ```
 
 ### Packages
-The `Makefile` does not install these yet, so run this to install some of my
+The install script does not install these yet, so run this to install some of my
 favorite Ruby and Node.js packages:
 
 ```bash
