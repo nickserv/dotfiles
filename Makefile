@@ -43,7 +43,12 @@ install_homesick:
 
 use_zsh:
 	@echo "Switching shell to zsh..."
-	sudo chsh --shell /bin/zsh `whoami`
+	if [[ "$(shell uname)" == "Darwin" ]]; \
+	then \
+		chsh -s /bin/zsh; \
+	else \
+		sudo chsh --shell /bin/zsh `whoami`; \
+	fi
 
 install_vundle:
 	@echo "Installing vundle..."
