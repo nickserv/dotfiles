@@ -1,63 +1,63 @@
 [user]
-  name = Nicolas McCurdy
-  email = thenickperson@gmail.com
+	name = Nicolas McCurdy
+	email = thenickperson@gmail.com
 
 [alias]
-  uncommit = reset --soft HEAD^
-  wdiff = diff --color-words
-  wshow = show --color-words
+	uncommit = reset --soft HEAD^
+	wdiff = diff --color-words
+	wshow = show --color-words
 
 [apply]
-  whitespace = warn
+	whitespace = warn
 
 [color]
-  ui = auto
+	ui = auto
 
 [color "status"]
-  added = green
-  changed = yellow
-  untracked = red
+	added = green
+	changed = yellow
+	untracked = red
 
 [core]
-  autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
-  excludesfile = ~/.gitignore
+	autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
+	excludesfile = ~/.gitignore
 
 [credential]
-  helper = cache --timeout=3600
+	helper = cache --timeout=3600
 
 [credential "https://github.com"]
-  username = nicolasmccurdy
+	username = nicolasmccurdy
 
 [credential "https://gist.github.com"]
-  username = nicolasmccurdy
+	username = nicolasmccurdy
 
 [credential "https://bitbucket.org"]
-  username = thenickperson
+	username = thenickperson
 
 [diff]
-  renames = copies
+	renames = copies
 
 [grep]
-  lineNumber = true
-  extendedRegexp = true
+	lineNumber = true
+	extendedRegexp = true
 
 [format]
-  pretty = oneline
+	pretty = oneline
 
 [interactive]
-  singlekey = true
+	singlekey = true
 
 [log]
-  abbrevCommit = true
-  decorate = short
+	abbrevCommit = true
+	decorate = short
 
 [merge]
-  tool = vimdiff
-  defaultToUpstream = true
+	tool = vimdiff
+	defaultToUpstream = true
 
 [push]
-  default = current
+	default = current
 
 [status]
-  branch = true
-  short = true
+	branch = true
+	short = true
