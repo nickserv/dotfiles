@@ -92,6 +92,12 @@ title_info
 # Automatically use cd when paths are entered without cd
 setopt autocd
 
+# Autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# nvim
+. "$(brew --prefix nvm)/nvm.sh"
+
 ############
 # Keybinds #
 ############
@@ -105,13 +111,3 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
-
-# Python REPL autocomplete
-export PYTHONSTARTUP="$HOME/.pythonrc"
-
-# Autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# nvim
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"

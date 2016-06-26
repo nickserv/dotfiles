@@ -21,3 +21,5 @@ export GEM_HOME=~/.gem/ruby/2.0.0
 export EDITOR='atom --wait'
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 export LLVM=/usr/local/opt/emscripten/libexec/llvm/bin
+export NVM_DIR="$HOME/.nvm"
+export PYTHONSTARTUP="$HOME/.pythonrc"
