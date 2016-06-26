@@ -86,7 +86,6 @@ alias mv='mv -i'
 
 # programming languages
 alias ja='java'
-alias jc='javac'
 alias jca='javac *.java'
 alias jrm='rm *.class'
 alias py2='python2'
