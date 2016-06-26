@@ -3,6 +3,9 @@
 # Load OS scripts/software
 source /etc/profile
 
+# Set path
+export PATH=$PATH:/usr/local/sbin:$(brew --prefix)/opt/ruby/bin:$GEM_HOME/bin:$HOME/Library/Haskell/bin
+
 # Load additional software
 # RubyGems
 export GEM_HOME=~/.gem/ruby/2.0.0

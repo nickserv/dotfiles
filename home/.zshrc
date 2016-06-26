@@ -89,9 +89,6 @@ title_info
 # Misc #
 ########
 
-# Set path
-export PATH=$PATH:/usr/local/sbin:$(brew --prefix)/opt/ruby/bin:$GEM_HOME/bin:$HOME/Library/Haskell/bin
-
 # Automatically use cd when paths are entered without cd
 setopt autocd
 
