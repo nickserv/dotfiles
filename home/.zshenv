@@ -4,7 +4,13 @@
 source /etc/profile
 
 # Set path
-export PATH=$PATH:/usr/local/sbin:$(brew --prefix)/opt/ruby/bin:$GEM_HOME/bin:$HOME/Library/Haskell/bin
+path=(
+  $path
+  /usr/local/sbin
+  $(brew --prefix)/opt/ruby/bin
+  $GEM_HOME/bin
+  $HOME/Library/Haskell/bin
+)
 
 # Load additional software
 # RubyGems
