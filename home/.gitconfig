@@ -1,6 +1,7 @@
 [user]
 	name = Nicolas McCurdy
 	email = thenickperson@gmail.com
+	signingkey = 2AD315D8
 
 [alias]
 	uncommit = reset --soft HEAD^
