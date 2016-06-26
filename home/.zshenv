@@ -10,6 +10,7 @@ path=(
   $(brew --prefix)/opt/ruby/bin
   $GEM_HOME/bin
   $HOME/Library/Haskell/bin
+  $HOME/Repos/dotfiles/bin
 )
 
 # Load additional software
