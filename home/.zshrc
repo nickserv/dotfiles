@@ -95,7 +95,7 @@ setopt autocd
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# nvim
+# nvm
 . "$(brew --prefix nvm)/nvm.sh"
 
 ############
