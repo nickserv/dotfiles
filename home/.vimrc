@@ -2,9 +2,6 @@
 " Vundle "
 """"""""""
 
-set nocompatible " disable vi compatibility
-filetype off " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -15,6 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Features
+Plugin 'tpope/vim-sensible'
 Plugin 'Lokaltog/vim-powerline'
 "Plugin 'taglist.vim'
 Plugin 'scrooloose/nerdtree'
@@ -58,7 +56,6 @@ Plugin 'moll/vim-node'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -73,12 +70,6 @@ filetype plugin indent on    " required
 """"""
 " UI "
 """"""
-
-" Fix for broken backspace key in vim.
-set backspace=indent,eol,start 
-
-" automatically load changed files
-set autoread
 
 " show the filename in the window titlebar
 set title
@@ -111,10 +102,6 @@ set diffopt+=iwhite
 
 " force setting wrap when vim diff opens
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
-
-" Powerline
-set laststatus=2
-set t_Co=256
 
 " remember last cursor position
 autocmd BufReadPost *
@@ -160,7 +147,6 @@ au Syntax * RainbowParenthesesLoadBraces
 """""""""""""
 
 set hlsearch "when there is a previous search pattern, highlight all its matches
-set incsearch "while typing a search command, show immediately where the so far typed pattern matches
 set ignorecase "ignore case in search patterns
 set smartcase "override the 'ignorecase' option if the search pattern contains uppercase characters
 set gdefault "imply global for new searches
@@ -177,13 +163,6 @@ set shiftwidth=2
 set expandtab
 " When auto-indenting, use the indenting format of the previous line
 set copyindent
-" When on, a <Tab> in front of a line inserts blanks according to 'shiftwidth'.
-" 'tabstop' is used in other places. A <BS> will delete a 'shiftwidth' worth of
-" space at the start of the line.
-set smarttab
-" Copy indent from current line when starting a new line (typing <CR> in Insert
-" mode or when using the "o" or "O" command)
-set autoindent
 " Automatically inserts one extra level of indentation in some cases, and works
 " for C-like files
 set smartindent
@@ -191,9 +170,6 @@ set smartindent
 """""""""
 " Theme "
 """""""""
-
-syntax enable
-set background=light
 
 " Reset the background color of the sign column so it doesn't look ugly
 highlight clear SignColumn
