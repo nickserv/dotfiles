@@ -25,6 +25,10 @@ if exists gem; then
   gem update
 fi
 
+if exists nvm; then
+  nvm install node
+fi
+
 if exists npm; then
   npm install npm -g
   npm update -g
