@@ -6,6 +6,6 @@ path=(
 
 # Other variables
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
-export EDITOR='atom --wait'
+export EDITOR='vim'
 export NVM_DIR="$HOME/.nvm"
 export PYTHONSTARTUP="$HOME/.pythonrc"
