@@ -286,7 +286,7 @@ au BufRead,BufNewFile *.asd setlocal ft=lisp
 au BufNewFile,BufRead *.json setlocal syntax=javascript
 
 " Syntastic checkers
-let g:syntastic_javascript_checkers=['jslint']
+let g:syntastic_javascript_checkers=['standard']
 "let g:syntastic_javascript_jslint_args="--my --args --here"
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
@@ -324,3 +324,4 @@ command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat
 command! Dupes syn clear Repeat | g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Repeat "^' . escape(getline('.'), '".\^$*[]') . '$"' | nohlsearch
 
 set cursorcolumn
+set hidden
