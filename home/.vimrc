@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 " Features
 Plug 'tpope/vim-sensible'
-Plug 'Lokaltog/vim-powerline'
 "Plug 'taglist.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
