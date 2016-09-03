@@ -156,14 +156,13 @@ set smartindent
 " Reset the background color of the sign column so it doesn't look ugly
 highlight clear SignColumn
 
-set guifont=Source\ Code\ Pro:h12
+set guifont=Source\ Code\ Pro:h14
 
 """"""""
 " GVim "
 """"""""
 
 if has('gui_running')
-  set gfn=Tamsyn\ 10 "set font
   set gcr=n:blinkon0 "disable cursor blinking
 
   set guioptions-=m "remove menu bar
