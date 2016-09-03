@@ -132,22 +132,6 @@ set ignorecase "ignore case in search patterns
 set smartcase "override the 'ignorecase' option if the search pattern contains uppercase characters
 set gdefault "imply global for new searches
 
-"""""""""""""
-" Indenting "
-"""""""""""""
-
-" Number of spaces that a <Tab> in the file counts for
-set tabstop=2
-" Number of spaces to use for each step of (auto)indent
-set shiftwidth=2
-" Use spaces for indents
-set expandtab
-" When auto-indenting, use the indenting format of the previous line
-set copyindent
-" Automatically inserts one extra level of indentation in some cases, and works
-" for C-like files
-set smartindent
-
 """""""""
 " Theme "
 """""""""
