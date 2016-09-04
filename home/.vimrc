@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 "Plug 'taglist.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-endwise'
@@ -309,3 +310,9 @@ command! Dupes syn clear Repeat | g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Rep
 
 set cursorcolumn
 set hidden
+
+" open NERDTree automatically with focus on the file
+autocmd VimEnter * NERDTree | wincmd p
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
