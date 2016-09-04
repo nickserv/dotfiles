@@ -1,4 +1,3 @@
-#!/bin/bash
 #alias NICKNAME='COMMAND'
 
 # color support
@@ -155,10 +154,12 @@ alias pf='p -Ss'
 alias pin='p -S'
 alias pup='p -Syu'
 
-# global aliases
-alias -g F='| grep'
-alias -g L='| less -R'
-alias -g LOL='| lolcat'
+# global aliases (zsh only)
+if [[ -n "$ZSH_VERSION" ]]; then
+  alias -g F='| grep'
+  alias -g L='| less -R'
+  alias -g LOL='| lolcat'
+fi
 
 # personal (private) aliases
 if [ -f ~/.aliases_personal ]; then
