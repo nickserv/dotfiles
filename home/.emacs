@@ -9,6 +9,11 @@
 ;; features
 (global-magit-file-mode)
 (ido-mode t)
+(setq vc-handled-backends (delq 'Git vc-handled-backends))
+
+;; binds
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;; hooks
 (add-hook 'after-init-hook 'global-flycheck-mode)
