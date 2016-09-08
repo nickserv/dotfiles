@@ -2,10 +2,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(mapc #'package-install '(base16-theme flycheck magit rainbow-delimiters))
-
-;; themes
-(load-theme 'base16-default-light t)
+(mapc #'package-install '(flycheck magit rainbow-delimiters))
 
 ;; features
 (global-magit-file-mode)
