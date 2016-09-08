@@ -2,15 +2,15 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(mapc #'package-install '(flycheck magit rainbow-delimiters))
+(mapc 'package-install '(flycheck magit rainbow-delimiters))
 
 ;; features
 (global-magit-file-mode)
 (ido-mode t)
 
 ;; hooks
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; mouse
 (unless window-system
