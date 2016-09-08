@@ -12,7 +12,12 @@
 
 ;; hooks
 (add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'prog-mode-hook 'auto-fill-mode)
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'text-mode-hook 'auto-fill-mode)
+(add-hook 'text-mode-hook 'flyspell-mode)
 
 ;; mouse
 (unless window-system
