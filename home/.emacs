@@ -8,10 +8,12 @@
 (load-theme 'base16-default-light t)
 
 ;; features
-(add-hook 'after-init-hook #'global-flycheck-mode)
 (global-magit-file-mode)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (ido-mode t)
+
+;; hooks
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; mouse
 (unless window-system
