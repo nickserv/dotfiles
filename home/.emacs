@@ -4,13 +4,15 @@
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
-(mapc 'package-install '(flycheck magit markdown-mode rainbow-delimiters yaml-mode))
+(mapc 'package-install '(flycheck magit markdown-mode projectile rainbow-delimiters yaml-mode))
 
 ;; features
 (global-magit-file-mode)
 (ido-mode t)
 (setq vc-handled-backends (delq 'Git vc-handled-backends))
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(projectile-global-mode)
+(projectile-discover-projects-in-directory "~/Repos")
 
 ;; binds
 (global-set-key (kbd "C-x g") 'magit-status)
