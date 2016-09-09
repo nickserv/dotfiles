@@ -4,7 +4,7 @@
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
-(mapc 'package-install '(flycheck magit rainbow-delimiters yaml-mode))
+(mapc 'package-install '(flycheck magit markdown-mode rainbow-delimiters yaml-mode))
 
 ;; features
 (global-magit-file-mode)
