@@ -21,7 +21,7 @@
 
 [core]
 	autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore_global
 
 [credential]
 	helper = osxkeychain
