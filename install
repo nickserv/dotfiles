@@ -1,15 +1,11 @@
 #!/bin/sh
 
-echo "Installing homesick..."
-gem install homesick
-echo
-
-if [ -d "$HOME/.homesick/repos/dotfiles" ]; then
+if [ -e "$HOME/Repos/dotfiles" ]; then
   echo "Pulling repository..."
-  homesick pull
+  git -C $HOME/Repos/dotfiles pull
 else
   echo "Cloning repository..."
-  homesick clone https://github.com/nicolasmccurdy/dotfiles.git
+  git clone https://github.com/nicolasmccurdy/dotfiles.git $HOME/Repos/dotfiles
 fi
 echo
 
@@ -24,16 +20,7 @@ fi
 echo
 
 echo "Symlinking config files..."
-homesick symlink
-echo
-
-echo "Setting up ~/Repos..."
-if [ ! -d "$HOME/Repos" ]; then
-  mkdir "$HOME/Repos"
-fi
-if [ ! -e "$HOME/Repos/dotfiles" ]; then
-  ln -s "$HOME/.homesick/repos/dotfiles $HOME/Repos/dotfiles"
-fi
+stow home --dir $HOME/Repos/dotfiles --target $HOME
 echo
 
 echo "Installing plug..."

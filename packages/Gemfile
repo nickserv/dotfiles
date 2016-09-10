@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'gist'
-gem 'homesick'
 gem 'html2haml'
 gem 'jekyll'
 gem 'jobim'

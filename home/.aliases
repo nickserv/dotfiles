@@ -130,9 +130,6 @@ alias vv='vim -O'
 # feh
 alias feh='feh --scale-down --auto-zoom'
 
-# homesick
-alias hs='homesick'
-
 # ls
 alias l='ls -alh'
 alias la='ls -A'
