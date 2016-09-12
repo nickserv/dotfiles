@@ -4,7 +4,7 @@
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
-(mapc 'package-install '(flycheck git-gutter magit markdown-mode projectile rainbow-delimiters yaml-mode))
+(mapc 'package-install '(emmet-mode flycheck git-gutter magit markdown-mode projectile rainbow-delimiters scss-mode yaml-mode))
 
 ;; features
 (global-magit-file-mode)
@@ -23,10 +23,12 @@
 
 ;; hooks
 (add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
 (add-hook 'prog-mode-hook 'auto-fill-mode)
 (add-hook 'prog-mode-hook 'electric-pair-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
