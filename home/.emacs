@@ -32,8 +32,12 @@
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
 
-;; mouse
-(unless window-system
+;; ui
+(if window-system
+  (progn
+    (set-frame-font "Source Code Pro 14" nil t)
+    (tool-bar-mode -1))
+  (menu-bar-mode -1)
   (xterm-mouse-mode t)
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
   (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
