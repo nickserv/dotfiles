@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Uninstalling nicolasmccurdy/dotfiles..."
+echo "Uninstalling nickmccurdy/dotfiles..."
 stow --delete home --dir $HOME/Repos/dotfiles --target $HOME
 rm -rf $HOME/Repos/dotfiles

@@ -1,4 +1,4 @@
-# Default Mod by [Nick McCurdy](http://nicolasmccurdy.github.io)
+# Default Mod by [Nick McCurdy](http://nickmccurdy.github.io)
 A slightly improved version of awesome's default theme. Default Mod aims to be
 a better template for starting new awesome themes.
 

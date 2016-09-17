@@ -9,7 +9,7 @@ that. :)
 
 ## Installation
 ```bash
-wget -q https://raw.github.com/nicolasmccurdy/dotfiles/master/install
+wget -q https://raw.github.com/nickmccurdy/dotfiles/master/install
 ./install
 ```
 
@@ -25,4 +25,4 @@ npm install -g `cat node_packages.txt`
 ```
 
 ## Older config files
-- [My old fork of Cody Krieger's vim config files](https://github.com/nicolasmccurdy/dotvim-old)
+- [My old fork of Cody Krieger's vim config files](https://github.com/nickmccurdy/dotvim-old)

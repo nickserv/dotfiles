@@ -5,7 +5,7 @@ if [ -e "$HOME/Repos/dotfiles" ]; then
   git -C $HOME/Repos/dotfiles pull
 else
   echo "Cloning repository..."
-  git clone https://github.com/nicolasmccurdy/dotfiles.git $HOME/Repos/dotfiles
+  git clone https://github.com/nickmccurdy/dotfiles.git $HOME/Repos/dotfiles
 fi
 echo
 

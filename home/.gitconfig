@@ -27,10 +27,10 @@
 	helper = osxkeychain
 
 [credential "https://github.com"]
-	username = nicolasmccurdy
+	username = nickmccurdy
 
 [credential "https://gist.github.com"]
-	username = nicolasmccurdy
+	username = nickmccurdy
 
 [credential "https://bitbucket.org"]
 	username = thenickperson
