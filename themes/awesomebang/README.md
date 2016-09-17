@@ -1,4 +1,4 @@
-# AwesomeBang by [Nicolas McCurdy](http://nicolasmccurdy.github.io)
+# AwesomeBang by [Nick McCurdy](http://nicolasmccurdy.github.io)
 A minimal, [CrunchBang Linux](http://crunchbanglinux.org/) style theme for the
 [awesome window manager](http://awesome.naquadah.org/).
 

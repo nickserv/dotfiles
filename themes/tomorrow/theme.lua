@@ -1,6 +1,6 @@
 -------------------------------
 -- Default Mod awesome theme --
---    by Nicolas McCurdy     --
+--      by Nick McCurdy      --
 -------------------------------
 
 theme = {}
