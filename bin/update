@@ -1,5 +1,5 @@
 #!/bin/bash
-# Runs commands for updating various parts of the system.
+# Runs commands for updating and cleaning various parts of the system.
 
 exists() {
   command -v $1 > /dev/null
@@ -32,4 +32,29 @@ fi
 if exists npm; then
   npm install npm -g
   npm update -g
+fi
+
+# Maintenance Tasks:
+# - clean pacman cache (keeps the newest cached version of each package)
+# - clean profile for Google Chrome (cleans up the user's database)
+
+if exists cacheclean; then
+  sudo cacheclean 1
+fi
+
+if exists brew; then
+  brew cleanup
+  brew doctor
+fi
+
+if exists dnu; then
+  dnu clear-http-cache
+fi
+
+if exists npm; then
+  npm cache clean
+fi
+
+if exists profile-cleaner; then
+  profile-cleaner gc
 fi
