@@ -1,3 +1,7 @@
+;; custom
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
