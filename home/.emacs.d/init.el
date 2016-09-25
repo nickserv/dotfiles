@@ -8,7 +8,7 @@
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
-(mapc 'package-install '(emmet-mode flycheck git-gutter magit markdown-mode projectile rainbow-delimiters scss-mode yaml-mode))
+(package-install-selected-packages)
 
 ;; features
 (global-magit-file-mode)
