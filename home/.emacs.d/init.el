@@ -45,7 +45,7 @@
 ;; ui
 (if window-system
   (progn
-    (set-frame-font "Source Code Pro 14" nil t)
+    (set-frame-font "Fira Code 14" nil t)
     (tool-bar-mode -1))
   (menu-bar-mode -1)
   (xterm-mouse-mode t)
