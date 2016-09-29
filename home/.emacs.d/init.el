@@ -21,6 +21,8 @@
 (global-diff-hl-mode)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 (nyan-mode)
+(show-paren-mode)
+(column-number-mode)
 
 ;; indentation
 (setq-default indent-tabs-mode nil
