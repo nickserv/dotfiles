@@ -21,6 +21,10 @@
 (global-diff-hl-mode)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 (nyan-mode)
+
+;; indentation
+(setq-default indent-tabs-mode nil
+              tab-width 2)
 (setq tab-always-indent 'complete)
 
 ;; binds
