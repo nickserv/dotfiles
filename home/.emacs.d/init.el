@@ -21,6 +21,7 @@
 (setq linum-format "%d ")
 (global-diff-hl-mode)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+(nyan-mode)
 
 ;; binds
 (global-set-key (kbd "C-x g") 'magit-status)
