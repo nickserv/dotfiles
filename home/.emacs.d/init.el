@@ -13,13 +13,14 @@
 ;; features
 (global-magit-file-mode)
 (ido-mode t)
-(setq vc-handled-backends (delq 'Git vc-handled-backends))
+(diff-hl-mode)
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (projectile-global-mode)
 (projectile-discover-projects-in-directory "~/Repos")
 (global-linum-mode)
 (setq linum-format "%d ")
-(global-git-gutter-mode)
+(global-diff-hl-mode)
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ;; binds
 (global-set-key (kbd "C-x g") 'magit-status)
