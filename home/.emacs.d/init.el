@@ -23,6 +23,10 @@
 (nyan-mode)
 (show-paren-mode)
 (column-number-mode)
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 
 ;; indentation
 (setq-default indent-tabs-mode nil
