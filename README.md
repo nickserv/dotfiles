@@ -1,11 +1,10 @@
 # Nick's config files
 
 ## About
-This is my castle (dotfile repo) for
-[homesick](https://github.com/technicalpickles/homesick), which makes it easier for me
-to store and move around my config files with a git repo. Please note that my
-install script installs homesick for you, so you won't need to worry about
-that. :)
+This is my config file repo for
+[Stow](https://www.gnu.org/software/stow/), which makes it easier for me
+to store and move around my config files with a git repo. Please note
+that you must install Stow yourself before running the install script.
 
 ## Installation
 ```bash
