@@ -15,7 +15,7 @@ fi
 
 if exists brew; then
   brew update
-  brew upgrade --all
+  brew upgrade
 fi
 
 # Language packages
