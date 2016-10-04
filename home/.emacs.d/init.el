@@ -31,7 +31,9 @@
 (setq-default web-mode-markup-indent-offset 2
               web-mode-css-indent-offset 2
               web-mode-code-indent-offset 2
-              web-mode-indent-style 2)
+              web-mode-indent-style 2
+              web-mode-style-padding 2
+              web-mode-script-padding 2)
 
 ;; indentation
 (setq-default indent-tabs-mode nil
