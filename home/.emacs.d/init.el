@@ -28,6 +28,10 @@
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
+(setq-default web-mode-markup-indent-offset 2
+              web-mode-css-indent-offset 2
+              web-mode-code-indent-offset 2
+              web-mode-indent-style 2)
 
 ;; indentation
 (setq-default indent-tabs-mode nil
@@ -46,6 +50,7 @@
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
 
 ;; ui
 (if window-system
