@@ -27,6 +27,7 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; indentation
 (setq-default indent-tabs-mode nil
