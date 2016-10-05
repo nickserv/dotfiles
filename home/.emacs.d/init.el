@@ -17,7 +17,6 @@
 (projectile-global-mode)
 (projectile-discover-projects-in-directory "~/Repos")
 (global-linum-mode)
-(setq linum-format "%d ")
 (global-diff-hl-mode)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 (nyan-mode)
@@ -62,7 +61,8 @@
   (menu-bar-mode -1)
   (xterm-mouse-mode t)
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-  (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  (setq linum-format "%d "))
 
 ;; helm
 (blink-cursor-mode -1)
