@@ -4,7 +4,6 @@
 
 ;; packages
 (package-initialize)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (when (not package-archive-contents)
   (package-refresh-contents))
 (package-install-selected-packages)
@@ -25,17 +24,9 @@
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 (defalias 'yes-or-no-p 'y-or-n-p)
-(setq-default web-mode-markup-indent-offset 2
-              web-mode-css-indent-offset 2
-              web-mode-code-indent-offset 2
-              web-mode-indent-style 2
-              web-mode-style-padding 2
-              web-mode-script-padding 2)
 
 ;; indentation
-(setq-default indent-tabs-mode nil
-              tab-width 2)
-(setq tab-always-indent 'complete)
+(setq-default indent-tabs-mode nil)
 
 ;; binds
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -53,9 +44,7 @@
 
 ;; ui
 (if window-system
-  (progn
-    (set-frame-font "Fira Code 14" nil t)
-    (tool-bar-mode -1))
+    (tool-bar-mode -1)
   (menu-bar-mode -1)
   (xterm-mouse-mode t)
   (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
@@ -73,5 +62,3 @@
 (unless (boundp 'completion-in-region-function)
   (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
   (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
-(setq helm-mode-fuzzy-match t)
-(setq helm-completion-in-region-fuzzy-match t)
