@@ -3,9 +3,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
+ '(column-number-mode t)
+ '(global-diff-hl-mode t)
+ '(global-linum-mode t)
+ '(global-magit-file-mode t)
  '(helm-completion-in-region-fuzzy-match t)
+ '(helm-mode t)
  '(helm-mode-fuzzy-match t)
+ '(indent-tabs-mode nil)
+ '(menu-bar-mode nil)
+ '(nyan-mode t)
  '(package-archives
    (quote
     (("melpa" . "https://melpa.org/packages/")
@@ -13,13 +22,17 @@
  '(package-selected-packages
    (quote
     (js2-mode web-mode helm-projectile helm nyan-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+ '(projectile-global-mode t)
+ '(show-paren-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
+ '(tool-bar-mode nil)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-markup-indent-offset 2)
  '(web-mode-script-padding 2)
- '(web-mode-style-padding 2))
+ '(web-mode-style-padding 2)
+ '(xterm-mouse-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
