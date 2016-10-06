@@ -11,7 +11,6 @@
 ;; features
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 (projectile-discover-projects-in-directory "~/Repos")
-(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
@@ -22,13 +21,8 @@
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;; hooks
-(add-hook 'after-init-hook 'global-flycheck-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
-(add-hook 'prog-mode-hook 'electric-pair-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 
 ;; cli

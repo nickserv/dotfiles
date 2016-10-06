@@ -7,12 +7,14 @@
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(column-number-mode t)
  '(global-diff-hl-mode t)
+ '(global-flycheck-mode t)
  '(global-linum-mode t)
  '(global-magit-file-mode t)
  '(helm-completion-in-region-fuzzy-match t)
  '(helm-mode t)
  '(helm-mode-fuzzy-match t)
  '(indent-tabs-mode nil)
+ '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
  '(nyan-mode t)
  '(package-archives
@@ -22,10 +24,14 @@
  '(package-selected-packages
    (quote
     (js2-mode web-mode helm-projectile helm nyan-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+ '(prog-mode-hook
+   (quote
+    (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
  '(projectile-global-mode t)
  '(show-paren-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
+ '(text-mode-hook (quote (flyspell-mode)))
  '(tool-bar-mode nil)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
