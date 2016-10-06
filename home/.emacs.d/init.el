@@ -3,9 +3,8 @@
 (load custom-file)
 
 ;; packages
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (when (not package-archive-contents)
   (package-refresh-contents))
 (package-install-selected-packages)
@@ -22,7 +21,6 @@
 (nyan-mode)
 (show-paren-mode)
 (column-number-mode)
-(require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
@@ -66,7 +64,6 @@
 
 ;; helm
 (blink-cursor-mode -1)
-(require 'helm-config)
 (helm-mode 1)
 (define-key global-map [remap find-file] 'helm-find-files)
 (define-key global-map [remap occur] 'helm-occur)
