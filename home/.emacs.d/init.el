@@ -4,7 +4,7 @@
 (load custom-file)
 
 ;;; Packages
-(when (not package-archive-contents)
+(unless package-archive-contents
   (package-refresh-contents))
 (package-install-selected-packages)
 
@@ -26,11 +26,10 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; CLI
-(if (not window-system)
-    (progn
-      (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-      (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
-      (setq linum-format "%d ")))
+(unless window-system
+  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  (setq linum-format "%d "))
 
 ;;; Keys
 (global-set-key (kbd "C-x g") 'magit-status)
