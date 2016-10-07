@@ -1,9 +1,9 @@
 ;; custom
+(package-initialize)
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
 ;; packages
-(package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
 (package-install-selected-packages)
