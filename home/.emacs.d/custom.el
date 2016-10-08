@@ -28,6 +28,7 @@
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
  '(projectile-global-mode t)
+ '(projectile-mode t nil (projectile))
  '(show-paren-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
