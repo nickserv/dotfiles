@@ -6,6 +6,7 @@
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(column-number-mode t)
+ '(default-frame-alist (quote ((fullscreen . fullheight))))
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode t)
@@ -14,6 +15,7 @@
  '(helm-mode t)
  '(helm-mode-fuzzy-match t)
  '(indent-tabs-mode nil)
+ '(inhibit-startup-screen t)
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
  '(package-archives
@@ -28,6 +30,7 @@
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
  '(projectile-global-mode t)
  '(projectile-mode t nil (projectile))
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
