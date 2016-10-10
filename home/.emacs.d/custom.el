@@ -16,14 +16,13 @@
  '(indent-tabs-mode nil)
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
- '(nyan-mode t)
  '(package-archives
    (quote
     (("melpa" . "https://melpa.org/packages/")
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (js2-mode web-mode helm-projectile helm nyan-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
