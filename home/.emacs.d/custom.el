@@ -6,6 +6,7 @@
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(column-number-mode t)
+ '(custom-enabled-themes (quote (adwaita)))
  '(default-frame-alist (quote ((fullscreen . fullheight))))
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
