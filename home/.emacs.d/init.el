@@ -2,6 +2,8 @@
 ;; Most of my configured variables are in a custom file. Packages should be
 ;; initialized first because some of the customize variables depend on them.
 (package-initialize)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
