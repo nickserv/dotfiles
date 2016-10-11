@@ -32,6 +32,7 @@
  '(projectile-global-mode t)
  '(projectile-mode t nil (projectile))
  '(scroll-bar-mode nil)
+ '(sh-basic-offset 2)
  '(show-paren-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
