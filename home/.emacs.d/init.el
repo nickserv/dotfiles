@@ -4,7 +4,7 @@
 (package-initialize)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file)
 
 ;;; Packages
