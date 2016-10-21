@@ -17,6 +17,7 @@
  '(global-flycheck-mode t)
  '(global-linum-mode t)
  '(global-magit-file-mode t)
+ '(guru-global-mode t)
  '(helm-completion-in-region-fuzzy-match t)
  '(helm-mode t)
  '(helm-mode-fuzzy-match t)
@@ -30,7 +31,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
