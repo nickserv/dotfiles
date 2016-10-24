@@ -29,7 +29,8 @@
 (add-hook 'web-mode-hook 'emmet-mode)
 
 ;;; Convenience
-(projectile-discover-projects-in-directory "~/Repos")
+(unless (string-equal system-type "windows-nt")
+  (projectile-discover-projects-in-directory "~/Repos"))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; CLI
