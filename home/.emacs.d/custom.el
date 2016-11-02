@@ -13,6 +13,7 @@
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
+ '(electric-pair-mode nil)
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode t)
@@ -33,7 +34,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
@@ -42,6 +43,7 @@
  '(scroll-bar-mode nil)
  '(sh-basic-offset 2)
  '(show-paren-mode t)
+ '(smartparens-global-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
  '(text-mode-hook (quote (flyspell-mode)))
