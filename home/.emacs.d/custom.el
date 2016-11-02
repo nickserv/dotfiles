@@ -47,6 +47,7 @@
  '(text-mode-hook (quote (flyspell-mode)))
  '(tool-bar-mode nil)
  '(vc-follow-symlinks t)
+ '(vc-git-diff-switches "\"--ignore-all-space\"")
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-markup-indent-offset 2)
