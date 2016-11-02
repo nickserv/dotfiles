@@ -23,6 +23,7 @@
  '(helm-mode-fuzzy-match t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
