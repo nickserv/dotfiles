@@ -8,7 +8,7 @@
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(column-number-mode t)
- '(custom-enabled-themes (quote (adwaita)))
+ '(custom-enabled-themes (quote (leuven)))
  '(default-frame-alist (quote ((fullscreen . fullheight))))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
