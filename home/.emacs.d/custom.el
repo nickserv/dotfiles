@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/save/" t))))
+ '(auto-save-default nil)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backup/"))))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
@@ -34,7 +34,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (super-save helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
@@ -44,6 +44,8 @@
  '(sh-basic-offset 2)
  '(show-paren-mode t)
  '(smartparens-global-mode t)
+ '(super-save-auto-save-when-idle t)
+ '(super-save-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
  '(text-mode-hook (quote (flyspell-mode)))
