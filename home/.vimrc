@@ -140,7 +140,7 @@ set gdefault "imply global for new searches
 " Reset the background color of the sign column so it doesn't look ugly
 highlight clear SignColumn
 
-set guifont=Fira\ Code:h14
+set guifont=Source\ Code\ Pro:h14
 
 """"""""
 " GVim "
