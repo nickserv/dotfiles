@@ -28,6 +28,7 @@
  '(ispell-program-name "/usr/local/bin/aspell")
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
+ '(mouse-wheel-scroll-amount (quote (1 ((control)))))
  '(package-archives
    (quote
     (("melpa" . "https://melpa.org/packages/")
