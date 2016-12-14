@@ -30,6 +30,11 @@
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1 ((control)))))
+ '(org-agenda-files (quote ("~/Google Drive/Todo.org")))
+ '(org-fontify-whole-heading-line t)
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-mouse org-rmail org-w3m)))
  '(package-archives
    (quote
     (("melpa" . "https://melpa.org/packages/")
