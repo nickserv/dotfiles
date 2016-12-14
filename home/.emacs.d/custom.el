@@ -9,6 +9,9 @@
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(column-number-mode t)
  '(custom-enabled-themes (quote (leuven)))
+ '(custom-safe-themes
+   (quote
+    ("51897d0e185a9d350a124afac8d5e95cda53e737f3b33befc44ab02f2b03dab1" default)))
  '(default-frame-alist (quote ((fullscreen . fullheight))))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
@@ -41,7 +44,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (helm-flx super-save helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (leuven-theme helm-flx super-save helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode)))
