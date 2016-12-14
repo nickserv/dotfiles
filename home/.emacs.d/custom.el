@@ -30,6 +30,10 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
+ '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
+ '(magit-diff-section-arguments
+   (quote
+    ("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")))
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1 ((control)))))
@@ -60,8 +64,9 @@
  '(tab-width 2)
  '(text-mode-hook (quote (flyspell-mode)))
  '(tool-bar-mode nil)
+ '(vc-diff-switches "-w")
  '(vc-follow-symlinks t)
- '(vc-git-diff-switches "\"--ignore-all-space\"")
+ '(vc-git-diff-switches "-w -C")
  '(visible-bell t)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
