@@ -40,10 +40,6 @@
   (setq linum-format "%d "))
 
 ;;; Keys
-;; Set magit binds everywhere so it can be launched from dired and other non-
-;; file buffers.
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;;;; Helm
 ;; Replace bindings for some existing features to use Helm equivalents.
@@ -56,6 +52,12 @@
 (unless (boundp 'completion-in-region-function)
   (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
   (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+
+;;;; Magit
+;; Set binds everywhere so it can be launched from dired and other non-file
+;; buffers.
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;;;; Org
 (global-set-key (kbd "C-c l") 'org-store-link)
