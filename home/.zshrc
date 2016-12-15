@@ -70,7 +70,7 @@ export PROMPT='%{$(title_info)%}$(ssh_info)$(dir_info) %{$fg[yellow]%}→ %{$res
 
 # Set up the title bar text
 title_info() {
-  if [[ $TERM != linux && $TERM != eterm && $TERM != eterm-color ]]; then
+  if [[ $TERM == xterm* ]]; then
     print -Pn "\e]2;%~\a"
   fi
 }
