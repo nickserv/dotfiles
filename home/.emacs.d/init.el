@@ -41,6 +41,9 @@
 
 ;;; Keys
 
+;;;; Browse at remote
+(global-set-key (kbd "C-c g g") 'browse-at-remote)
+
 ;;;; Helm
 ;; Replace bindings for some existing features to use Helm equivalents.
 (helm-projectile-on)
