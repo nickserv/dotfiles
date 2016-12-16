@@ -8,7 +8,6 @@
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backup/"))))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
- '(column-number-mode t)
  '(cua-enable-cua-keys nil)
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (leuven)))
@@ -37,6 +36,7 @@
  '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
+ '(line-number-mode nil)
  '(magit-diff-refine-hunk (quote all))
  '(magit-diff-section-arguments
    (quote
