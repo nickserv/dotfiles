@@ -23,10 +23,14 @@
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 
 ;;;; Hooks
+
 ;; Set mode hook variables that don't support customize.
 (add-hook 'css-mode-hook 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
+
+;; Ask to save customizations on quit
+(add-hook 'kill-emacs-query-functions 'custom-prompt-customize-unsaved-options)
 
 ;;; Convenience
 (projectile-discover-projects-in-directory "~/Repos")
