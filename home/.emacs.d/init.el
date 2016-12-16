@@ -22,6 +22,13 @@
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 
+;;;; Diminish
+(setq diminished '(auto-fill-mode auto-revert-mode emmet-mode flyspell-mode
+                                  flyspell-prog-mode helm-mode guru-mode
+                                  smartparens-mode super-save-mode
+                                  whitespace-mode))
+(mapc 'diminish diminished)
+
 ;;;; Hooks
 
 ;; Set mode hook variables that don't support customize.

@@ -52,7 +52,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (browse-at-remote evil leuven-theme helm-flx super-save helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (diminish browse-at-remote evil leuven-theme helm-flx super-save helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode linum-mode)))
