@@ -67,3 +67,9 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
+
+;;;; Term
+(defun term-zsh ()
+  (interactive)
+  (ansi-term "/usr/local/bin/zsh"))
+(global-set-key (kbd "C-c t") 'term-zsh)
