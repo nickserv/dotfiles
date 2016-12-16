@@ -21,6 +21,7 @@
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-pair-mode nil)
  '(fill-column 80)
+ '(global-auto-revert-non-file-buffers t)
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode nil)
