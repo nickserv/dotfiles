@@ -13,7 +13,7 @@
  '(custom-safe-themes
    (quote
     ("51897d0e185a9d350a124afac8d5e95cda53e737f3b33befc44ab02f2b03dab1" default)))
- '(default-frame-alist (quote ((fullscreen . fullheight))))
+ '(default-frame-alist (quote ((fullscreen . fullboth))))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
