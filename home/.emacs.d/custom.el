@@ -9,6 +9,8 @@
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(column-number-mode t)
+ '(cua-enable-cua-keys nil)
+ '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes
    (quote
