@@ -20,10 +20,12 @@
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
  '(electric-pair-mode nil)
+ '(fill-column 80)
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode nil)
  '(global-magit-file-mode t)
+ '(global-whitespace-mode t)
  '(guru-global-mode t)
  '(helm-completion-in-region-fuzzy-match t)
  '(helm-flx-mode t)
@@ -77,6 +79,7 @@
  '(web-mode-markup-indent-offset 2)
  '(web-mode-script-padding 2)
  '(web-mode-style-padding 2)
+ '(whitespace-style (quote (face trailing tabs lines-tail empty tab-mark)))
  '(xterm-mouse-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
