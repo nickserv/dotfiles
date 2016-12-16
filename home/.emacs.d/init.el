@@ -14,6 +14,10 @@
   (package-refresh-contents))
 (package-install-selected-packages)
 
+;;;; Magithub
+;; Force the package to load after Magit to prevent failure.
+(with-eval-after-load "magit" (require 'magithub))
+
 ;;; Modes
 
 ;;;; Auto Mode
