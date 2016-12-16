@@ -69,7 +69,7 @@
  '(super-save-mode t)
  '(tab-always-indent (quote complete))
  '(tab-width 2)
- '(text-mode-hook (quote (flyspell-mode)))
+ '(text-mode-hook (quote (flyspell-mode auto-fill-mode)))
  '(tool-bar-mode nil)
  '(vc-diff-switches "-w")
  '(vc-follow-symlinks t)
