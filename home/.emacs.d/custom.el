@@ -32,6 +32,7 @@
  '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
+ '(magit-diff-refine-hunk (quote all))
  '(magit-diff-section-arguments
    (quote
     ("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")))
