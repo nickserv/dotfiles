@@ -62,3 +62,6 @@
 [status]
 	branch = true
 	short = true
+
+[include]
+	path = ~/.gitconfig_local
