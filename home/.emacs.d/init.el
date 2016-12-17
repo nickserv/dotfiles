@@ -65,8 +65,8 @@
 ;;; CLI
 ;; Improve mouse support and margin display in terminals.
 (unless window-system
-  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-  (global-set-key (kbd "<mouse-5>") 'scroll-up-line)
+  (global-set-key "[mouse-4]" 'scroll-down-line)
+  (global-set-key "[mouse-5]" 'scroll-up-line)
   (setq linum-format "%d "))
 
 ;;; Keys
@@ -75,35 +75,35 @@
 (global-set-key (kbd "C-x C-S-c") 'restart-emacs)
 
 ;;;; Browse at remote
-(global-set-key (kbd "C-c r") 'browse-at-remote)
+(global-set-key "\C-cr" 'browse-at-remote)
 
 ;;;; Swiper
-(global-set-key (kbd "C-s") 'swiper)
+(global-set-key "\C-s" 'swiper)
 
 ;; Counsel interfaces
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key "\C-cg" 'counsel-git)
+(global-set-key "\C-cj" 'counsel-git-grep)
 
 ;; Ivy
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key "\C-c\C-r" 'ivy-resume)
 
 ;;;; Magit
 ;; Set binds everywhere so it can be launched from dired and other non-file
 ;; buffers.
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+(global-set-key "\C-xg" 'magit-status)
+(global-set-key "\C-x\M-g" 'magit-dispatch-popup)
 
 ;;;; Org
-(global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 ;;;; Sane Term
 
 ;; Enable sane term
-(global-set-key (kbd "C-x t") 'sane-term)
-(global-set-key (kbd "C-x T") 'sane-term-create)
+(global-set-key "\C-xt" 'sane-term)
+(global-set-key "\C-xT" 'sane-term-create)
 
 ;; Optional convenience binding. This allows C-y to paste even when in term-char-mode (see below).
-(add-hook 'term-mode-hook (lambda() (define-key term-raw-map (kbd "C-y") (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
+(add-hook 'term-mode-hook (lambda() (define-key term-raw-map "\C-y" (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
