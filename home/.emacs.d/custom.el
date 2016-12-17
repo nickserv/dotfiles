@@ -59,13 +59,14 @@
     ("undo-tree" gist yasnippet restart-emacs magithub diminish browse-at-remote evil leuven-theme helm-flx super-save helm-ag smartparens guru-mode transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
-    (rainbow-delimiters-mode flyspell-prog-mode electric-pair-mode linum-mode)))
+    (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
  '(projectile-global-mode t)
  '(projectile-mode t nil (projectile))
  '(scroll-bar-mode nil)
  '(sh-basic-offset 2)
  '(show-paren-mode t)
- '(smartparens-global-mode t)
+ '(smartparens-global-strict-mode t)
+ '(sp-base-key-bindings (quote sp))
  '(super-save-auto-save-when-idle t)
  '(super-save-mode t)
  '(tab-always-indent (quote complete))
