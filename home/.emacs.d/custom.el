@@ -27,11 +27,6 @@
  '(global-magit-file-mode t)
  '(global-undo-tree-mode t)
  '(global-whitespace-mode t)
- '(helm-completion-in-region-fuzzy-match t)
- '(helm-descbinds-mode t)
- '(helm-flx-mode t)
- '(helm-mode t)
- '(helm-mode-fuzzy-match t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
@@ -61,7 +56,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (helm-company swiper-helm sane-term flycheck-pos-tip company helm-describe-modes helm-descbinds "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme helm-flx super-save transpose-frame exec-path-from-shell js2-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
