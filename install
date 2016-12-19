@@ -10,11 +10,11 @@ fi
 echo
 
 echo "Switching shell to zsh..."
-if [ "$SHELL" != "/bin/zsh" ]; then
+if [ "$SHELL" != "/usr/local/bin/zsh" ]; then
   if [ "$(uname)" = "Darwin" ]; then
-    chsh -s /bin/zsh
+    chsh -s /usr/local/bin/zsh
   else
-    sudo chsh --shell /bin/zsh "$(whoami)"
+    sudo chsh --shell /usr/local/bin/zsh "$(whoami)"
   fi
 fi
 echo
