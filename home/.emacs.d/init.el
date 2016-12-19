@@ -68,6 +68,7 @@
 (global-set-key [remap list-buffers] 'helm-buffers-list)
 (global-set-key [remap dabbrev-expand] 'helm-dabbrev)
 (global-set-key [remap execute-extended-command] 'helm-M-x)
+(global-set-key [remap describe-mode] 'helm-describe-modes)
 (unless (boundp 'completion-in-region-function)
   (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
   (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
