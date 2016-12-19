@@ -30,7 +30,8 @@
 (setq diminished '(auto-fill-mode auto-revert-mode emmet-mode flyspell-mode
                                   flyspell-prog-mode helm-mode guru-mode
                                   smartparens-mode super-save-mode
-                                  whitespace-mode))
+                                  undo-tree-mode whitespace-mode
+                                  yas-minor-mode))
 (mapc 'diminish diminished)
 
 ;;;; Hooks
