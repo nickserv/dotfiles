@@ -8,6 +8,7 @@
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backup/"))))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
+ '(company-auto-complete t)
  '(cua-enable-cua-keys nil)
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (leuven)))
@@ -21,6 +22,7 @@
  '(electric-pair-mode nil)
  '(fill-column 80)
  '(global-auto-revert-non-file-buffers t)
+ '(global-company-mode t)
  '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode nil)
@@ -55,7 +57,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    ("undo-tree" gist yasnippet restart-emacs magithub diminish browse-at-remote evil leuven-theme helm-flx super-save helm-ag smartparens transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (company "undo-tree" gist yasnippet restart-emacs magithub diminish browse-at-remote evil leuven-theme helm-flx super-save helm-ag smartparens transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
