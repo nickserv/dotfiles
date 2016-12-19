@@ -42,6 +42,7 @@
    (quote
     ("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")))
  '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
+ '(magit-repository-directories (quote (("~/Repos" . 1))))
  '(magit-save-repository-buffers (quote dontask))
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1 ((control)))))
