@@ -64,6 +64,7 @@
     (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
  '(projectile-global-mode t)
  '(projectile-mode t nil (projectile))
+ '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(sh-basic-offset 2)
  '(show-paren-mode t)
