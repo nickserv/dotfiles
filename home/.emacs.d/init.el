@@ -86,7 +86,7 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 
 ;;;; Term
-(defun term-zsh ()
+(defun term-shell ()
   (interactive)
-  (ansi-term "/usr/local/bin/zsh"))
-(global-set-key (kbd "C-c t") 'term-zsh)
+  (ansi-term (getenv "SHELL")))
+(global-set-key (kbd "C-c t") 'term-shell)
