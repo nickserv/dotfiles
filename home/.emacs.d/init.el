@@ -44,6 +44,11 @@
 ;; Ask to save customizations on quit
 (add-hook 'kill-emacs-query-functions 'custom-prompt-customize-unsaved-options)
 
+;; Use ANSI colors for compilation
+(defun colorize-compilation-buffer ()
+  (ansi-color-apply-on-region compilation-filter-start (point)))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
 ;;; Convenience
 (projectile-discover-projects-in-directory "~/Repos")
 (defalias 'yes-or-no-p 'y-or-n-p)
