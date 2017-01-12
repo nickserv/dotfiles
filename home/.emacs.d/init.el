@@ -49,6 +49,9 @@
   (ansi-color-apply-on-region compilation-filter-start (point)))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
+;; Clean whitespace on save (obeys whitespace style)
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
 ;;; Convenience
 (projectile-discover-projects-in-directory "~/Repos")
 (defalias 'yes-or-no-p 'y-or-n-p)
