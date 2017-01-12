@@ -192,8 +192,6 @@ lh() {
 
 alias bu='bundle'
 alias bup='bundle update'
-alias dunnet='emacs -batch -l dunnet'
-alias e='emacsclient -t'
 alias gf='g flow'
 alias jslint='jslint --terse'
 alias lite='lite-server'

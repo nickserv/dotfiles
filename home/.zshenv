@@ -6,6 +6,6 @@ path=(
 
 # Other variables
 export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
-export EDITOR='emacs'
+export EDITOR='emacsclient'
 export NVM_DIR="$HOME/.nvm"
 export PYTHONSTARTUP="$HOME/.pythonrc"
