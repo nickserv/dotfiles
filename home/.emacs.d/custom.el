@@ -62,7 +62,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (counsel-projectile flx counsel sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (flx counsel sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))

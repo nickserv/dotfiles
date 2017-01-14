@@ -50,7 +50,6 @@
 
 ;;; Convenience
 (projectile-discover-projects-in-directory "~/Repos")
-(counsel-projectile-on)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; CLI
