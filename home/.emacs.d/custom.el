@@ -40,6 +40,7 @@
  '(js2-mode-show-parse-errors nil)
  '(js2-mode-show-strict-warnings nil)
  '(line-number-mode nil)
+ '(magit-completing-read-function (quote ivy-completing-read))
  '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
  '(magit-diff-refine-hunk (quote all))
  '(magit-diff-section-arguments
@@ -65,6 +66,7 @@
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
+ '(projectile-completion-system (quote ivy))
  '(projectile-global-mode t)
  '(projectile-mode t nil (projectile))
  '(projectile-use-git-grep t)
