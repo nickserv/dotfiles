@@ -59,6 +59,10 @@
 ;;;; Browse at remote
 (global-set-key (kbd "C-c g g") 'browse-at-remote)
 
+;;;; Company
+(define-key company-mode-map (kbd "C-:") 'helm-company)
+(define-key company-active-map (kbd "C-:") 'helm-company)
+
 ;;;; Helm
 ;; Replace bindings for some existing features to use Helm equivalents.
 (helm-projectile-on)
