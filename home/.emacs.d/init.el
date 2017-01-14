@@ -23,14 +23,6 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
-;;;; Diminish
-(setq diminished '(auto-fill-mode auto-revert-mode emmet-mode flyspell-mode
-                                  flyspell-prog-mode helm-mode guru-mode
-                                  smartparens-mode super-save-mode
-                                  undo-tree-mode whitespace-mode
-                                  yas-minor-mode))
-(mapc 'diminish diminished)
-
 ;;;; Flycheck
 (flycheck-pos-tip-mode)
 
