@@ -94,8 +94,11 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 
-;;;; Term
-(defun term-shell ()
-  (interactive)
-  (ansi-term (getenv "SHELL")))
-(global-set-key (kbd "C-c t") 'term-shell)
+;;;; Sane Term
+
+;; Enable sane term
+(global-set-key (kbd "C-x t") 'sane-term)
+(global-set-key (kbd "C-x T") 'sane-term-create)
+
+;; Optional convenience binding. This allows C-y to paste even when in term-char-mode (see below).
+(add-hook 'term-mode-hook (lambda() (define-key term-raw-map (kbd "C-y") (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
