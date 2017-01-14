@@ -69,7 +69,6 @@
  '(projectile-completion-system (quote ivy))
  '(projectile-global-mode t)
  '(projectile-mode t nil (projectile))
- '(projectile-use-git-grep t)
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(sh-basic-offset 2)
