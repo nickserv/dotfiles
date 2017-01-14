@@ -36,6 +36,7 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
+ '(js-indent-level 2)
  '(line-number-mode nil)
  '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
  '(magit-diff-refine-hunk (quote all))
