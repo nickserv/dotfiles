@@ -22,6 +22,8 @@
 
 ;;;; Auto Mode
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 ;;;; Diminish
 (setq diminished '(auto-fill-mode auto-revert-mode emmet-mode flyspell-mode
