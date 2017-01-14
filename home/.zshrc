@@ -95,9 +95,6 @@ setopt autocd
 # Autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# nvm
-. "$(brew --prefix nvm)/nvm.sh"
-
 ############
 # Keybinds #
 ############
