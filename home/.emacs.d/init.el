@@ -33,6 +33,9 @@
                                   yas-minor-mode))
 (mapc 'diminish diminished)
 
+;;;; Flycheck
+(flycheck-pos-tip-mode)
+
 ;;;; Hooks
 
 ;; Set mode hook variables that don't support customize.
