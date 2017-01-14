@@ -8,10 +8,8 @@
 (load custom-file)
 
 ;;; Packages
-;; Load package index if it does not exist (new installation) and then install
-;; all selected packages.
-(unless package-archive-contents
-  (package-refresh-contents))
+;; Load package index and then install all selected packages.
+(package-refresh-contents)
 (package-install-selected-packages)
 
 ;;;; Magithub
