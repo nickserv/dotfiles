@@ -16,6 +16,11 @@
 ;; Force the package to load after Magit to prevent failure.
 (with-eval-after-load "magit" (require 'magithub))
 
+;;; Ivy
+;; Fuzzy matching
+(setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+(setq ivy-initial-inputs-alist nil)
+
 ;;; Modes
 
 ;;;; Auto Mode
