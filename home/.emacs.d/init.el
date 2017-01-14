@@ -22,9 +22,6 @@
 
 ;;;; Auto Mode
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 
 ;;;; Diminish
 (setq diminished '(auto-fill-mode auto-revert-mode emmet-mode flyspell-mode
@@ -39,7 +36,6 @@
 ;; Set mode hook variables that don't support customize.
 (add-hook 'css-mode-hook 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'web-mode-hook 'emmet-mode)
 
 ;; Ask to save customizations on quit
 (add-hook 'kill-emacs-query-functions 'custom-prompt-customize-unsaved-options)

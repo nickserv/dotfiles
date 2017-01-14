@@ -58,7 +58,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (company helm-describe-modes helm-descbinds "undo-tree" gist restart-emacs magithub diminish browse-at-remote evil leuven-theme helm-flx super-save transpose-frame exec-path-from-shell js2-mode web-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (company helm-describe-modes helm-descbinds "undo-tree" gist restart-emacs magithub diminish browse-at-remote evil leuven-theme helm-flx super-save transpose-frame exec-path-from-shell js2-mode helm-projectile helm diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(prog-mode-hook
    (quote
     (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
@@ -79,11 +79,6 @@
  '(vc-follow-symlinks t)
  '(vc-git-diff-switches "-w -C")
  '(visible-bell t)
- '(web-mode-code-indent-offset 2)
- '(web-mode-css-indent-offset 2)
- '(web-mode-markup-indent-offset 2)
- '(web-mode-script-padding 2)
- '(web-mode-style-padding 2)
  '(whitespace-style (quote (face trailing tabs lines-tail empty tab-mark)))
  '(xterm-mouse-mode t))
 (custom-set-faces
