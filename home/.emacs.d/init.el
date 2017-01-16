@@ -65,8 +65,9 @@
 ;;; CLI
 ;; Improve mouse support and margin display in terminals.
 (unless window-system
-  (global-set-key "[mouse-4]" 'scroll-down-line)
-  (global-set-key "[mouse-5]" 'scroll-up-line)
+  (bind-keys
+   ("<mouse-4>" . scroll-down-line)
+   ("<mouse-5>" . scroll-up-line))
   (setq linum-format "%d "))
 
 ;;; Keys
@@ -75,35 +76,39 @@
 (global-set-key (kbd "C-x C-S-c") 'restart-emacs)
 
 ;;;; Browse at remote
-(global-set-key "\C-cr" 'browse-at-remote)
+(bind-key "C-c r" 'browse-at-remote)
 
 ;;;; Swiper
-(global-set-key "\C-s" 'swiper)
+(bind-key "C-s" 'swiper)
 
 ;; Counsel interfaces
-(global-set-key "\C-cg" 'counsel-git)
-(global-set-key "\C-cj" 'counsel-git-grep)
+(bind-keys
+ ("C-c g" . counsel-git)
+ ("C-c j" . counsel-git-grep))
 
 ;; Ivy
-(global-set-key "\C-c\C-r" 'ivy-resume)
+(bind-key "C-c C-r" 'ivy-resume)
 
 ;;;; Magit
 ;; Set binds everywhere so it can be launched from dired and other non-file
 ;; buffers.
-(global-set-key "\C-xg" 'magit-status)
-(global-set-key "\C-x\M-g" 'magit-dispatch-popup)
+(bind-keys
+ ("C-x g" . magit-status)
+ ("C-x M-g" . magit-dispatch-popup))
 
 ;;;; Org
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
+(bind-keys
+ ("C-c l" . org-store-link)
+ ("C-c a" . org-agenda)
+ ("C-c c" . org-capture)
+ ("C-c b" . org-iswitchb))
 
 ;;;; Sane Term
 
 ;; Enable sane term
-(global-set-key "\C-xt" 'sane-term)
-(global-set-key "\C-xT" 'sane-term-create)
+(bind-keys
+ ("C-x t" . sane-term)
+ ("C-x T" . sane-term-create))
 
 ;; Optional convenience binding. This allows C-y to paste even when in term-char-mode (see below).
-(add-hook 'term-mode-hook (lambda() (define-key term-raw-map "\C-y" (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
+(add-hook 'term-mode-hook (lambda() (define-key term-raw-map (kbd "C-y") (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
