@@ -16,6 +16,11 @@
 ;; Force the package to load after Magit to prevent failure.
 (with-eval-after-load "magit" (require 'magithub))
 
+;;; Ivy
+;; Fuzzy matching
+(setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+(setq ivy-initial-inputs-alist nil)
+
 ;;; Modes
 
 ;;;; Auto Mode
@@ -59,23 +64,15 @@
 ;;;; Browse at remote
 (global-set-key (kbd "C-c g g") 'browse-at-remote)
 
-;;;; Company
-(define-key company-mode-map (kbd "C-:") 'helm-company)
-(define-key company-active-map (kbd "C-:") 'helm-company)
+;;;; Swiper
+(global-set-key (kbd "C-s") 'swiper)
 
-;;;; Helm
-;; Replace bindings for some existing features to use Helm equivalents.
-(helm-projectile-on)
-(global-set-key [remap find-file] 'helm-find-files)
-(global-set-key [remap occur] 'helm-occur)
-(global-set-key [remap list-buffers] 'helm-buffers-list)
-(global-set-key [remap dabbrev-expand] 'helm-dabbrev)
-(global-set-key [remap execute-extended-command] 'helm-M-x)
-(global-set-key [remap describe-mode] 'helm-describe-modes)
-(global-set-key [remap isearch-forward] 'swiper-helm)
-(unless (boundp 'completion-in-region-function)
-  (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
-  (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
+;; Counsel interfaces
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+
+;; Ivy
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;;;; Magit
 ;; Set binds everywhere so it can be launched from dired and other non-file
