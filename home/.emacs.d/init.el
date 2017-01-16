@@ -72,41 +72,36 @@
 
 ;;; Keys
 
-;;;; Restart
-(global-set-key (kbd "C-x C-S-c") 'restart-emacs)
-
-;;;; Browse at remote
-(bind-key "C-c r" 'browse-at-remote)
-
-;;;; Swiper
-(bind-key "C-s" 'swiper)
-
-;; Counsel interfaces
 (bind-keys
+ ;; Restart
+ ("C-x C-S-c" . restart-emacs)
+
+ ;; Browse at remote
+ ("C-c r" . browse-at-remote)
+
+ ;; Swiper
+ ("C-s" . swiper)
+
+ ;; Counsel interfaces
  ("C-c g" . counsel-git)
- ("C-c j" . counsel-git-grep))
+ ("C-c j" . counsel-git-grep)
 
-;; Ivy
-(bind-key "C-c C-r" 'ivy-resume)
+ ;; Ivy
+ ("C-c C-r" . ivy-resume)
 
-;;;; Magit
-;; Set binds everywhere so it can be launched from dired and other non-file
-;; buffers.
-(bind-keys
+ ;; Magit
+ ;; Set binds everywhere so it can be launched from dired and other non-file
+ ;; buffers.
  ("C-x g" . magit-status)
- ("C-x M-g" . magit-dispatch-popup))
+ ("C-x M-g" . magit-dispatch-popup)
 
-;;;; Org
-(bind-keys
+ ;; Org
  ("C-c l" . org-store-link)
  ("C-c a" . org-agenda)
  ("C-c c" . org-capture)
- ("C-c b" . org-iswitchb))
+ ("C-c b" . org-iswitchb)
 
-;;;; Sane Term
-
-;; Enable sane term
-(bind-keys
+ ;; Sane Term
  ("C-x t" . sane-term)
  ("C-x T" . sane-term-create))
 
