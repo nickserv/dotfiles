@@ -62,7 +62,7 @@
 ;;; Keys
 
 ;;;; Browse at remote
-(global-set-key (kbd "C-c g g") 'browse-at-remote)
+(global-set-key (kbd "C-c r") 'browse-at-remote)
 
 ;;;; Swiper
 (global-set-key (kbd "C-s") 'swiper)
