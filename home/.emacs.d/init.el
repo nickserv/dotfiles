@@ -14,7 +14,10 @@
 
 ;;;; Magithub
 ;; Force the package to load after Magit to prevent failure.
-(with-eval-after-load "magit" (require 'magithub))
+(with-eval-after-load
+    "magit"
+  (require 'magithub)
+  (magithub-feature-autoinject t))
 
 ;;; Ivy
 ;; Fuzzy matching
