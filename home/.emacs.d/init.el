@@ -4,8 +4,7 @@
 (package-initialize)
 (when (eq window-system 'ns)
   (exec-path-from-shell-initialize))
-(setq custom-file (locate-user-emacs-file "custom.el"))
-(load custom-file)
+(load (setq custom-file (locate-user-emacs-file "custom.el")))
 
 ;;; Packages
 ;; Load package index and then install all selected packages.
