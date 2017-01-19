@@ -64,12 +64,7 @@
  '(package-selected-packages
    (quote
     (flx counsel sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
- '(prog-mode-hook
-   (quote
-    (rainbow-delimiters-mode flyspell-prog-mode linum-mode)))
  '(projectile-completion-system (quote ivy))
- '(projectile-global-mode t)
- '(projectile-mode t nil (projectile))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(sh-basic-offset 2)

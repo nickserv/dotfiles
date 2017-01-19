@@ -2,14 +2,16 @@
 ;; Most of my configured variables are in a custom file. Packages should be
 ;; initialized first because some of the customize variables depend on them.
 (package-initialize)
-(when (eq window-system 'ns)
-  (exec-path-from-shell-initialize))
 (load (setq custom-file (locate-user-emacs-file "custom.el")))
 
 ;;; Packages
 ;; Load package index and then install all selected packages.
 (package-refresh-contents)
 (package-install-selected-packages)
+
+;;; Set paths on macOS
+(when (eq window-system 'ns)
+  (exec-path-from-shell-initialize))
 
 ;;;; Magithub
 ;; Force the package to load after Magit to prevent failure.
@@ -50,7 +52,13 @@
 ;; Clean whitespace on save (obeys whitespace style)
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+;; prog-mode
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'prog-mode-hook 'linum-mode)
+
 ;;; Convenience
+(projectile-mode)
 (projectile-discover-projects-in-directory "~/Repos")
 (defalias 'yes-or-no-p 'y-or-n-p)
 
