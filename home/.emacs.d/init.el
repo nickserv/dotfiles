@@ -71,6 +71,9 @@
 
 ;;; Keys
 
+;;;; Restart
+(global-set-key (kbd "C-x C-S-c") 'restart-emacs)
+
 ;;;; Browse at remote
 (global-set-key (kbd "C-c r") 'browse-at-remote)
 
