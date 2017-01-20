@@ -66,6 +66,11 @@
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (add-hook 'prog-mode-hook 'linum-mode)
 
+(defun bind-term-paste ()
+  "Bind `term-paste'."
+  (bind-key "C-c C-y" 'term-paste term-raw-map))
+(add-hook 'term-mode-hook 'bind-term-paste)
+
 ;;; Convenience
 (projectile-mode)
 (projectile-discover-projects-in-directory "~/Repos")
@@ -113,8 +118,5 @@
  ;; Sane Term
  ("C-x t" . sane-term)
  ("C-x T" . sane-term-create))
-
-;; Optional convenience binding. This allows C-y to paste even when in term-char-mode (see below).
-(add-hook 'term-mode-hook (lambda() (define-key term-raw-map (kbd "C-y") (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
 
 ;;; init.el ends here
