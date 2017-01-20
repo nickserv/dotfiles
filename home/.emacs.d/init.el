@@ -1,3 +1,12 @@
+;;; init.el --- Nick's Emacs configuration
+
+;;; Commentary:
+;; My personal GNU Emacs 25.1 configuration for macOS, using MELPA and
+;; customize.  Dependencies are installed automatically, but you may need to
+;; restart Emacs to apply customizations for newly installed packages.
+
+;;; Code:
+
 ;;; Customize
 ;; Most of my configured variables are in a custom file. Packages should be
 ;; initialized first because some of the customize variables depend on them.
@@ -44,8 +53,8 @@
 ;; Ask to save customizations on quit
 (add-hook 'kill-emacs-query-functions 'custom-prompt-customize-unsaved-options)
 
-;; Use ANSI colors for compilation
 (defun colorize-compilation-buffer ()
+  "Use ANSI colors for compilation."
   (ansi-color-apply-on-region compilation-filter-start (point)))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
@@ -107,3 +116,5 @@
 
 ;; Optional convenience binding. This allows C-y to paste even when in term-char-mode (see below).
 (add-hook 'term-mode-hook (lambda() (define-key term-raw-map (kbd "C-y") (lambda () (interactive) (term-line-mode) (yank) (term-char-mode)))))
+
+;;; init.el ends here
