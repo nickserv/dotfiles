@@ -6,6 +6,7 @@
  '(ansi-color-for-comint-mode t)
  '(auto-save-default nil)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backup/"))))
+ '(before-save-hook (quote (whitespace-cleanup)))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(counsel-mode t)

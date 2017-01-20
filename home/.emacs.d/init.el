@@ -58,9 +58,6 @@
   (ansi-color-apply-on-region compilation-filter-start (point)))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-;; Clean whitespace on save (obeys whitespace style)
-(add-hook 'before-save-hook 'whitespace-cleanup)
-
 ;; prog-mode
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
