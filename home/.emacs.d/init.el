@@ -38,6 +38,8 @@ See `add-to-list'."
 
 ;;; Hooks
 
+;;;; Helpers
+
 (defun listify (object)
   "If OBJECT is a list, return it, else wrap it in a list."
   (if (listp object) object (list object)))
@@ -65,7 +67,7 @@ added to a hook."
                          hooks)))
             args)))
 
-;; Hook functions
+;;;; Hook functions
 
 (defun colorize-compilation-buffer ()
   "Use ANSI colors for compilation."
@@ -77,6 +79,7 @@ added to a hook."
   (defvar term-raw-map)
   (bind-key "C-c C-y" 'term-paste term-raw-map))
 
+;;;; Set hooks
 (add-hooks
  ;; Programming modes
  (prog-mode-hook . (flyspell-prog-mode linum-mode rainbow-delimiters-mode))
