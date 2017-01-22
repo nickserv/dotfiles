@@ -9,6 +9,8 @@
  '(before-save-hook (quote (whitespace-cleanup)))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
+ '(company-auto-complete t)
+ '(company-idle-delay 0)
  '(counsel-mode t)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes t)
