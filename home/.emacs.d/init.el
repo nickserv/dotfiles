@@ -48,11 +48,13 @@
 
 (defun colorize-compilation-buffer ()
   "Use ANSI colors for compilation."
+  (defvar compilation-filter-start)
   (ansi-color-apply-on-region compilation-filter-start (point)))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 (defun bind-term-paste ()
   "Bind `term-paste'."
+  (defvar term-raw-map)
   (bind-key "C-c C-y" 'term-paste term-raw-map))
 (add-hook 'term-mode-hook 'bind-term-paste)
 
@@ -96,6 +98,7 @@
   (bind-keys
    ("<mouse-4>" . scroll-down-line)
    ("<mouse-5>" . scroll-up-line))
+  (defvar linum-format)
   (setq linum-format "%d "))
 
 ;;; Flycheck
@@ -103,7 +106,9 @@
 
 ;;; Ivy
 ;; Enable fuzzy matching against any part of candidate strings.
+(defvar ivy-re-builders-alist)
 (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+(defvar ivy-initial-inputs-alist)
 (setq ivy-initial-inputs-alist nil)
 
 ;;; Magithub
