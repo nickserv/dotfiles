@@ -24,9 +24,16 @@
   (exec-path-from-shell-initialize))
 
 ;;; Auto mode
+
+(defun add-to-list-multi (list-var &rest elements)
+  "Add to the value of LIST-VAR items of ELEMENTS if they aren't yet.
+See `add-to-list'."
+  (mapc (lambda (element) (add-to-list list-var element)) elements))
+
 ;; Use yaml-mode and replace js-mode with js2-mode.
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list-multi 'auto-mode-alist
+                   '("\\.yml\\'" . yaml-mode)
+                   '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
 ;;; Hooks
