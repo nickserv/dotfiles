@@ -6,11 +6,10 @@
  '(ansi-color-for-comint-mode t)
  '(auto-save-default nil)
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backup/"))))
+ '(before-save-hook (quote (whitespace-cleanup)))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(counsel-mode t)
- '(cua-enable-cua-keys nil)
- '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes t)
  '(default-frame-alist (quote ((fullscreen . fullboth))))
@@ -63,7 +62,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (flx counsel sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (bind-key flx counsel sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
@@ -87,3 +86,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Source Code Pro")))))
+
+;; Local Variables:
+;; flycheck-disabled-checkers: (emacs-lisp-checkdoc)
+;; End:
