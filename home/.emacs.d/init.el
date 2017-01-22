@@ -31,32 +31,39 @@
 
 ;;; Hooks
 
-;;;; Programming modes
-
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-;; Use Emmet to complete CSS and HTML.
-(add-hook 'css-mode-hook 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode)
-
-;;;; Usability fixes
-
-;; Ask to save customizations on quit.
-(add-hook 'kill-emacs-query-functions 'custom-prompt-customize-unsaved-options)
+(defmacro add-hooks (&rest args)
+  "Call `add-hook' on each cons pair in ARGS.
+For each cons pair, add its `cdr' as a hook function for its `car'."
+  (macroexp-progn (mapcar (lambda (arg)
+                            (let ((hook (car arg))
+                                  (function (cdr arg)))
+                              `(add-hook ',hook ',function)))
+                          args)))
 
 (defun colorize-compilation-buffer ()
   "Use ANSI colors for compilation."
   (defvar compilation-filter-start)
   (ansi-color-apply-on-region compilation-filter-start (point)))
-(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 (defun bind-term-paste ()
   "Bind `term-paste'."
   (defvar term-raw-map)
   (bind-key "C-c C-y" 'term-paste term-raw-map))
-(add-hook 'term-mode-hook 'bind-term-paste)
+
+(add-hooks
+ ;; Programming modes
+ (prog-mode-hook . flyspell-prog-mode)
+ (prog-mode-hook . linum-mode)
+ (prog-mode-hook . rainbow-delimiters-mode)
+
+ ;; Use Emmet to complete CSS and HTML.
+ (css-mode-hook . emmet-mode)
+ (sgml-mode-hook . emmet-mode)
+
+ ;; Usability fixes
+ (kill-emacs-query-functions . custom-prompt-customize-unsaved-options)
+ (compilation-filter-hook . colorize-compilation-buffer)
+ (term-mode-hook . bind-term-paste))
 
 ;;; Keys
 (bind-keys
