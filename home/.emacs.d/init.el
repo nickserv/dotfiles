@@ -58,6 +58,8 @@ added to a hook."
                          hooks)))
             args)))
 
+;; Hook functions
+
 (defun colorize-compilation-buffer ()
   "Use ANSI colors for compilation."
   (defvar compilation-filter-start)
@@ -82,35 +84,27 @@ added to a hook."
 
 ;;; Keys
 (bind-keys
- ;; Restart
- ("C-x C-S-c" . restart-emacs)
-
- ;; Browse at remote
+ ("C-c C-r" . ivy-resume)
  ("C-c r" . browse-at-remote)
-
- ;; Swiper
  ("C-s" . swiper)
+ ("C-x C-S-c" . restart-emacs)
 
  ;; Counsel interfaces
  ("C-c g" . counsel-git)
  ("C-c j" . counsel-git-grep)
 
- ;; Ivy
- ("C-c C-r" . ivy-resume)
-
  ;; Magit
- ;; Set binds everywhere so it can be launched from dired and other non-file
- ;; buffers.
+ ;; Set binds everywhere so it can be launched from non-file buffers.
  ("C-x g" . magit-status)
  ("C-x M-g" . magit-dispatch-popup)
 
  ;; Org
- ("C-c l" . org-store-link)
  ("C-c a" . org-agenda)
- ("C-c c" . org-capture)
  ("C-c b" . org-iswitchb)
+ ("C-c c" . org-capture)
+ ("C-c l" . org-store-link)
 
- ;; Sane Term
+ ;; Sane term
  ("C-x t" . sane-term)
  ("C-x T" . sane-term-create))
 
