@@ -72,6 +72,8 @@
  '(tab-width 2)
  '(text-mode-hook (quote (flyspell-mode auto-fill-mode)))
  '(tool-bar-mode nil)
+ '(undo-tree-visualizer-diff t)
+ '(undo-tree-visualizer-timestamps t)
  '(vc-diff-switches "-w")
  '(vc-follow-symlinks t)
  '(vc-git-diff-switches "-w -C")
