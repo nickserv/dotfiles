@@ -64,7 +64,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (bind-key flx counsel sane-term flycheck-pos-tip company "undo-tree" gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (bind-key flx counsel sane-term flycheck-pos-tip company undo-tree gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
