@@ -25,16 +25,8 @@
 
 ;;; Auto mode
 
-(defun add-to-list-multi (list-var &rest elements)
-  "Add to the value of LIST-VAR items of ELEMENTS if they aren't yet.
-See `add-to-list'."
-  (mapc (lambda (element) (add-to-list list-var element)) elements))
-
-;; Use yaml-mode and replace js-mode with js2-mode.
-(add-to-list-multi 'auto-mode-alist
-                   '("\\.yml\\'" . yaml-mode)
-                   '("\\.js\\'" . js2-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+;; Use yaml-mode.
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;;; Hooks
 
@@ -82,7 +74,7 @@ added to a hook."
 ;;;; Set hooks
 (add-hooks
  ;; Programming modes
- (prog-mode-hook . (flyspell-prog-mode linum-mode rainbow-delimiters-mode))
+ (prog-mode-hook . (flyspell-prog-mode linum-mode))
 
  ;; Use Emmet to complete CSS and HTML.
  ((css-mode-hook sgml-mode-hook) . emmet-mode)

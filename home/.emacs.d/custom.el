@@ -23,7 +23,6 @@
  '(fill-column 80)
  '(global-auto-revert-non-file-buffers t)
  '(global-company-mode t)
- '(global-diff-hl-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode nil)
  '(global-magit-file-mode t)
@@ -38,8 +37,6 @@
  '(ivy-mode t)
  '(ivy-use-virtual-buffers t)
  '(js-indent-level 2)
- '(js2-mode-show-parse-errors nil)
- '(js2-mode-show-strict-warnings nil)
  '(line-number-mode nil)
  '(magit-completing-read-function (quote ivy-completing-read))
  '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
@@ -47,7 +44,6 @@
  '(magit-diff-section-arguments
    (quote
     ("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")))
- '(magit-post-refresh-hook (quote (diff-hl-magit-post-refresh)))
  '(magit-repository-directories (quote (("~/Repos" . 1))))
  '(magit-save-repository-buffers (quote dontask))
  '(menu-bar-mode nil)
@@ -64,7 +60,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (bind-key flx counsel sane-term flycheck-pos-tip company undo-tree gist restart-emacs magithub browse-at-remote evil leuven-theme super-save transpose-frame exec-path-from-shell js2-mode diff-hl yaml-mode scss-mode rainbow-delimiters projectile markdown-mode magit flycheck emmet-mode)))
+    (bind-key flx counsel sane-term flycheck-pos-tip company undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
