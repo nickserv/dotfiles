@@ -47,7 +47,7 @@ See `add-to-list'."
 (defun mapflat (function sequence)
   "Apply FUNCTION to each element of SEQUENCE, and make a list of the results.
 Unlike `mapcar', the list is flattened nondestructively before it is returned."
-  (apply 'append (mapcar function sequence)))
+  (apply #'append (mapcar function sequence)))
 
 (defmacro add-hooks (&rest args)
   "Call `add-hook' on each cons pair in ARGS.
@@ -77,7 +77,7 @@ added to a hook."
 (defun bind-term-paste ()
   "Bind `term-paste'."
   (defvar term-raw-map)
-  (bind-key "C-c C-y" 'term-paste term-raw-map))
+  (bind-key "C-c C-y" #'term-paste term-raw-map))
 
 ;;;; Set hooks
 (add-hooks
