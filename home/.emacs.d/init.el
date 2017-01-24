@@ -122,13 +122,6 @@ added to a hook."
 ;;; Flycheck
 (flycheck-pos-tip-mode)
 
-;;; Ivy
-;; Enable fuzzy matching against any part of candidate strings.
-(defvar ivy-re-builders-alist)
-(setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
-(defvar ivy-initial-inputs-alist)
-(setq ivy-initial-inputs-alist nil)
-
 ;;; Magithub
 ;; Load after Magit and enable all features.
 (with-eval-after-load
