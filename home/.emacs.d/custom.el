@@ -11,6 +11,8 @@
  '(browse-url-browser-function (quote browse-url-default-browser))
  '(company-auto-complete t)
  '(company-idle-delay 0)
+ '(company-quickhelp-delay 0)
+ '(company-quickhelp-mode t)
  '(counsel-mode t)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes t)
@@ -60,7 +62,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (smex bind-key flx counsel sane-term flycheck-pos-tip company undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
+    (company-quickhelp smex bind-key flx counsel sane-term flycheck-pos-tip company undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
