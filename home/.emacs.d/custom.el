@@ -18,6 +18,7 @@
  '(company-idle-delay 0)
  '(company-quickhelp-delay 0)
  '(company-quickhelp-mode t)
+ '(company-tooltip-idle-delay 0)
  '(counsel-mode t)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes t)
