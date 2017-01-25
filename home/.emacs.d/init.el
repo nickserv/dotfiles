@@ -79,6 +79,9 @@ added to a hook."
  ;; Use Emmet to complete CSS and HTML.
  ((css-mode-hook sgml-mode-hook) . emmet-mode)
 
+ ;; Use Tern for JS analysis.
+ (js-mode-hook . tern-mode)
+
  ;; Usability fixes
  (kill-emacs-query-functions . custom-prompt-customize-unsaved-options)
  (compilation-filter-hook . colorize-compilation-buffer)
