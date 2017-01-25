@@ -92,6 +92,7 @@ added to a hook."
  ("C-x C-S-c" . restart-emacs)
 
  ;; Counsel interfaces
+ ("C-:" . counsel-company)
  ("C-c g" . counsel-git)
  ("C-c j" . counsel-git-grep)
 
