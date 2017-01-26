@@ -59,6 +59,7 @@
    (quote
     (tern smex bind-key flx counsel sane-term flycheck-pos-tip undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
+ '(save-place-mode t)
  '(savehist-mode t)
  '(scroll-bar-mode nil)
  '(sh-basic-offset 2)

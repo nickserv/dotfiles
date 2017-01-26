@@ -95,6 +95,8 @@ added to a hook."
 
  ;; Improved defaults
  ("C-s" . swiper)
+ ("C-x C-b" . ibuffer)
+ ("M-/" . hippie-expand)
 
  ;; Counsel interfaces
  ("C-c g" . counsel-git)
