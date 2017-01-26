@@ -82,6 +82,15 @@ added to a hook."
  ;; Use Tern for JS analysis.
  (js-mode-hook . tern-mode)
 
+ ;; Use Paredit for Lisp editing.
+ ((emacs-lisp-mode-hook
+   eval-expression-minibuffer-setup-hook
+   ielm-mode-hook
+   lisp-mode-hook
+   lisp-interaction-mode-hook
+   scheme-mode-hook)
+  . enable-paredit-mode)
+
  ;; Usability fixes
  (kill-emacs-query-functions . custom-prompt-customize-unsaved-options)
  (compilation-filter-hook . colorize-compilation-buffer)
