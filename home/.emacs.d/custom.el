@@ -57,7 +57,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (smex bind-key flx counsel sane-term flycheck-pos-tip undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
+    (tern smex bind-key flx counsel sane-term flycheck-pos-tip undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
