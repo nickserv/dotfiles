@@ -9,16 +9,6 @@
  '(before-save-hook (quote (whitespace-cleanup)))
  '(blink-cursor-mode nil)
  '(browse-url-browser-function (quote browse-url-default-browser))
- '(company-auto-complete t)
- '(company-backends
-   (quote
-    (company-tern company-bbdb company-nxml company-css company-eclim company-semantic company-clang company-xcode company-cmake company-capf company-files
-                  (company-dabbrev-code company-gtags company-etags company-keywords)
-                  company-oddmuse company-dabbrev)))
- '(company-idle-delay 0)
- '(company-quickhelp-delay 0)
- '(company-quickhelp-mode t)
- '(company-tooltip-idle-delay 0)
  '(counsel-mode t)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes t)
@@ -30,7 +20,6 @@
  '(electric-pair-mode t)
  '(fill-column 80)
  '(global-auto-revert-non-file-buffers t)
- '(global-company-mode t)
  '(global-flycheck-mode t)
  '(global-linum-mode nil)
  '(global-magit-file-mode t)
@@ -68,7 +57,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (company-tern company-quickhelp smex bind-key flx counsel sane-term flycheck-pos-tip company undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
+    (smex bind-key flx counsel sane-term flycheck-pos-tip undo-tree gist restart-emacs magithub browse-at-remote leuven-theme super-save exec-path-from-shell yaml-mode scss-mode projectile markdown-mode magit flycheck emmet-mode)))
  '(projectile-completion-system (quote ivy))
  '(savehist-mode t)
  '(scroll-bar-mode nil)
