@@ -91,8 +91,10 @@ added to a hook."
 (bind-keys
  ("C-c C-r" . ivy-resume)
  ("C-c r" . browse-at-remote)
- ("C-s" . swiper)
  ("C-x C-S-c" . restart-emacs)
+
+ ;; Improved defaults
+ ("C-s" . swiper)
 
  ;; Counsel interfaces
  ("C-c g" . counsel-git)
