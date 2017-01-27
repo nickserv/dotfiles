@@ -50,6 +50,9 @@
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-mouse org-rmail org-w3m)))
+ '(org-outline-path-complete-in-steps nil)
+ '(org-refile-targets (quote ((nil :maxlevel . 10))))
+ '(org-refile-use-outline-path (quote file))
  '(package-archives
    (quote
     (("melpa" . "https://melpa.org/packages/")
