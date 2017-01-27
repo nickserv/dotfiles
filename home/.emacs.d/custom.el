@@ -45,9 +45,8 @@
  '(magit-save-repository-buffers (quote dontask))
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1 ((control)))))
- '(org-agenda-files (quote ("~/Google Drive/Org/Todo.org")))
- '(org-default-notes-file "~/Google Drive/Org/Notes.org")
- '(org-directory "~/Google Drive/Org")
+ '(org-agenda-files (quote ("~/Google Drive/Notes.org")))
+ '(org-default-notes-file "~/Google Drive/Notes.org")
  '(org-fontify-whole-heading-line t)
  '(org-modules
    (quote
