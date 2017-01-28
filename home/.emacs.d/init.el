@@ -149,6 +149,9 @@ added to a hook."
 (projectile-mode)
 (projectile-discover-projects-in-directory "~/Repos")
 
+;;; Tern
+(setq tern-command '("tern" "--no-port-file"))
+
 ;;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
