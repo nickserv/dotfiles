@@ -49,13 +49,10 @@
  '(org-default-notes-file "~/Google Drive/Notes.org")
  '(org-fontify-whole-heading-line t)
  '(org-log-done (quote time))
- '(org-modules
-   (quote
-    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-mouse org-rmail org-w3m)))
+ '(org-modules (quote (org-mouse)))
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets (quote ((nil :maxlevel . 10))))
  '(org-refile-use-outline-path (quote file))
- '(org-todo-keywords (quote ((sequence "TODO(t)" "DONE(d)"))))
  '(package-archives
    (quote
     (("melpa" . "https://melpa.org/packages/")
