@@ -26,6 +26,7 @@
  '(global-whitespace-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(initial-buffer-choice "~/Google Drive/Notes.org")
  '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(ivy-count-format "(%d/%d) ")
