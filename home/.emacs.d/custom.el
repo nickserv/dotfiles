@@ -36,7 +36,7 @@
  '(js-indent-level 2)
  '(line-number-mode nil)
  '(magit-completing-read-function (quote ivy-completing-read))
- '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "--stat" "-C")))
+ '(magit-diff-arguments (quote ("--no-ext-diff" "-w" "-C")))
  '(magit-diff-refine-hunk (quote all))
  '(magit-diff-section-arguments
    (quote
