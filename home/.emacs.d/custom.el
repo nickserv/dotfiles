@@ -46,6 +46,18 @@
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1 ((control)))))
  '(org-agenda-files (quote ("~/Google Drive/Notes.org")))
+ '(org-capture-templates
+   (quote
+    (("t" "Task" entry
+      (file+headline "" "Tasks")
+      "* TODO %?
+  %u
+  %a")
+     ("n" "Note" entry
+      (file+headline "" "Notes")
+      "* %?
+  %i
+  %a"))))
  '(org-default-notes-file "~/Google Drive/Notes.org")
  '(org-fontify-whole-heading-line t)
  '(org-log-done (quote time))
