@@ -61,6 +61,7 @@
  '(org-default-notes-file "~/Google Drive/Notes.org")
  '(org-fontify-whole-heading-line t)
  '(org-log-done (quote time))
+ '(org-log-repeat (quote time))
  '(org-modules (quote (org-mouse)))
  '(org-outline-path-complete-in-steps nil)
  '(org-refile-targets (quote ((nil :maxlevel . 10))))
