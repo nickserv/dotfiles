@@ -148,6 +148,8 @@ added to a hook."
 ;;; Projectile
 (projectile-mode)
 (projectile-discover-projects-in-directory "~/Repos")
+(projectile-register-project-type 'npm '("package.json") "npm install" "npm test" "npm start")
+(projectile-register-project-type 'jekyll '("_config.yml") "bundle exec jekyll build" nil "bundle exec jekyll serve")
 
 ;;; Tern
 (setq tern-command '("tern" "--no-port-file"))
