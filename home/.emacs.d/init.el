@@ -74,7 +74,7 @@ added to a hook."
 ;;;; Set hooks
 (add-hooks
  ;; Programming modes
- (prog-mode-hook . (flyspell-prog-mode linum-mode))
+ (prog-mode-hook . (flyspell-prog-mode linum-mode rainbow-mode))
 
  ;; Use Emmet to complete CSS and HTML.
  ((css-mode-hook sgml-mode-hook) . emmet-mode)
