@@ -28,7 +28,7 @@
  '(global-whitespace-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
- '(initial-buffer-choice "~/Google Drive/Notes.org")
+ '(initial-buffer-choice "~/Google Drive/Organizer.org")
  '(initial-scratch-message nil)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(ivy-count-format "(%d/%d) ")
@@ -47,7 +47,7 @@
  '(magit-save-repository-buffers (quote dontask))
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount (quote (1 ((control)))))
- '(org-agenda-files (quote ("~/Google Drive/Notes.org")))
+ '(org-agenda-files (quote ("~/Google Drive/Organizer.org")))
  '(org-capture-templates
    (quote
     (("t" "Task" entry
@@ -60,7 +60,7 @@
       "* %?
   %i
   %a"))))
- '(org-default-notes-file "~/Google Drive/Notes.org")
+ '(org-default-notes-file "~/Google Drive/Organizer.org")
  '(org-fontify-whole-heading-line t)
  '(org-log-done (quote time))
  '(org-log-repeat (quote time))
