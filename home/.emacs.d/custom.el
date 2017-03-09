@@ -61,6 +61,8 @@
   %i
   %a"))))
  '(org-default-notes-file "~/Google Drive/Organizer.org")
+ '(org-enforce-todo-checkbox-dependencies t)
+ '(org-enforce-todo-dependencies t)
  '(org-fontify-whole-heading-line t)
  '(org-log-done (quote time))
  '(org-log-repeat (quote time))
