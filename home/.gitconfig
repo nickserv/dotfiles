@@ -1,6 +1,6 @@
 [user]
 	name = Nick McCurdy
-	email = thenickperson@gmail.com
+	email = nick@nickmccurdy.com
 	signingkey = 2AD315D8
 
 [alias]
@@ -33,7 +33,7 @@
 	username = nickmccurdy
 
 [credential "https://bitbucket.org"]
-	username = thenickperson
+	username = nickmccurdy
 
 [diff]
 	renames = copies
