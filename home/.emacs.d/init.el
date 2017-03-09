@@ -97,6 +97,10 @@ added to a hook."
  (term-mode-hook . bind-term-paste))
 
 ;;; Keys
+(defun find-org-default-notes-file ()
+  "Open the default Org notes file."
+  (interactive)
+  (find-file org-default-notes-file))
 (bind-keys
  ("C-c C-r" . ivy-resume)
  ("C-c r" . browse-at-remote)
@@ -124,7 +128,9 @@ added to a hook."
 
  ;; Sane term
  ("C-x t" . sane-term)
- ("C-x T" . sane-term-create))
+ ("C-x T" . sane-term-create)
+
+ ("C-c o" . find-org-default-notes-file))
 
 ;;; CLI
 ;; Improve mouse support and margin display in terminals.
