@@ -19,9 +19,10 @@
 (package-refresh-contents)
 (package-install-selected-packages)
 
-;;;; Set paths on macOS
-(when (eq window-system 'ns)
-  (exec-path-from-shell-initialize))
+;;;; OS specific configuration
+(if (eq window-system 'ns)
+    (exec-path-from-shell-initialize)
+  (setq default-frame-alist '((fullscreen . maximized))))
 
 ;;; Auto mode
 
