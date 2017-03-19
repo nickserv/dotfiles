@@ -20,9 +20,9 @@
 (package-install-selected-packages)
 
 ;;;; OS specific configuration
-(if (eq window-system 'ns)
-    (exec-path-from-shell-initialize)
-  (setq default-frame-alist '((fullscreen . maximized))))
+(when (eq window-system 'ns)
+  (exec-path-from-shell-initialize)
+  (setq default-frame-alist '((fullscreen . fullboth))))
 
 ;;; Auto mode
 

@@ -13,7 +13,7 @@
  '(css-indent-offset 2)
  '(custom-enabled-themes (quote (leuven)))
  '(custom-safe-themes t)
- '(default-frame-alist (quote ((fullscreen . fullboth))))
+ '(default-frame-alist (quote ((fullscreen . maximized))))
  '(ediff-diff-options "-w")
  '(ediff-split-window-function (quote split-window-horizontally))
  '(ediff-window-setup-function (quote ediff-setup-windows-plain))
