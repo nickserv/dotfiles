@@ -20,9 +20,16 @@
 (package-install-selected-packages)
 
 ;;;; OS specific configuration
-(when (eq window-system 'ns)
+(cond
+ ((eq window-system 'ns)
   (exec-path-from-shell-initialize)
   (setq default-frame-alist '((fullscreen . fullboth))))
+ ((not window-system)
+  (bind-keys
+   ("<mouse-4>" . scroll-down-line)
+   ("<mouse-5>" . scroll-up-line))
+  (defvar linum-format)
+  (setq linum-format "%d ")))
 
 ;;; Auto mode
 
@@ -132,15 +139,6 @@ added to a hook."
  ("C-x T" . sane-term-create)
 
  ("C-c o" . find-org-default-notes-file))
-
-;;; CLI
-;; Improve mouse support and margin display in terminals.
-(unless window-system
-  (bind-keys
-   ("<mouse-4>" . scroll-down-line)
-   ("<mouse-5>" . scroll-up-line))
-  (defvar linum-format)
-  (setq linum-format "%d "))
 
 ;;; Flycheck
 (flycheck-pos-tip-mode)
