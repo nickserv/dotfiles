@@ -2,17 +2,157 @@
 
 ;;; Commentary:
 ;; My personal GNU Emacs 25.1 configuration for macOS, using MELPA and
-;; customize.  Dependencies are installed automatically, but you may need to
-;; restart Emacs to apply customizations for newly installed packages.
+;; use-package.  Dependencies are installed automatically, but you may
+;; need to restart Emacs to apply customizations for newly installed
+;; packages.
 
 ;;; Code:
 
 ;;; Initial setup
 
-;;;; Customize
-;; Initialize installed packages and enable customized variables.
+;;;; Customize Migration
+
+;; Set variables.
+(setq auto-save-default nil
+      backup-directory-alist '((".*" . "~/.emacs.d/backup/"))
+      custom-file (locate-user-emacs-file "custom.el")
+      default-frame-alist '((fullscreen . maximized))
+      fill-column 80
+      inhibit-startup-screen t
+      initial-buffer-choice "~/Google Drive/Organizer.org"
+      initial-scratch-message nil
+      mouse-wheel-scroll-amount '(1 ((control)))
+      package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ("gnu" . "https://elpa.gnu.org/packages/"))
+      tab-always-indent 'complete
+      tab-width 2
+      visible-bell t)
+(setq-default indent-tabs-mode nil
+              tab-width 2)
+(ansi-color-for-comint-mode-on)
+
+;; Initialize installed packages.
 (package-initialize)
-(load (setq custom-file (locate-user-emacs-file "custom.el")))
+(load custom-file)
+
+;; Set included minor modes.
+(blink-cursor-mode 0)
+(electric-layout-mode)
+(electric-pair-mode)
+(line-number-mode 0)
+(menu-bar-mode 0)
+(save-place-mode)
+(savehist-mode)
+(set-frame-font "Source Code Pro" nil t)
+(set-scroll-bar-mode nil)
+(show-paren-mode)
+(tool-bar-mode 0)
+(xterm-mouse-mode)
+
+;; Install use-package.
+(package-install 'use-package)
+
+;; Configure packages.
+(use-package autorevert
+  :config
+  (setq global-auto-revert-non-file-buffers t))
+(use-package compile
+  :init
+  (setq compilation-ask-about-save nil))
+(use-package counsel
+  :init
+  (counsel-mode)
+  (ivy-mode)
+  :config
+  (setq ivy-count-format "(%d/%d) "
+        ivy-display-style 'fancy
+        ivy-use-virtual-buffers t))
+(use-package css-mode
+  :config
+  (setq css-indent-offset 2))
+(use-package ediff
+  :config
+  (setq ediff-diff-options "-w"
+        ediff-split-window-function 'split-window-horizontally
+        ediff-window-setup-function 'ediff-setup-windows-plain))
+(use-package flycheck
+  :init
+  (global-flycheck-mode))
+(use-package ispell
+  :config
+  (setq ispell-program-name "/usr/local/bin/aspell"))
+(use-package js
+  :config
+  (setq js-indent-level 2))
+(use-package leuven-theme
+  :init
+  (load-theme 'leuven t))
+(use-package magit
+  :init
+  (global-magit-file-mode)
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read
+        magit-diff-arguments '("--no-ext-diff" "-w" "-C")
+        magit-diff-refine-hunk 'all
+        magit-diff-section-arguments '("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")
+        magit-repository-directories '(("~/Repos" . 1))
+        magit-save-repository-buffers 'dontask))
+(use-package org
+  :config
+  (setq org-agenda-files '("~/Google Drive/Organizer.org")
+        org-default-notes-file "~/Google Drive/Organizer.org"
+        org-enforce-todo-checkbox-dependencies t
+        org-enforce-todo-dependencies t
+        org-fontify-whole-heading-line t
+        org-log-done 'time
+        org-log-repeat 'time
+        org-modules '(org-mouse)
+        org-outline-path-complete-in-steps nil
+        org-refile-targets '((nil :maxlevel . 10))
+        org-refile-use-outline-path 'file))
+(use-package org-capture
+  :config
+  (setq org-capture-templates '(("t" "Task" entry
+                                 (file+headline "" "Tasks")
+                                 "* TODO %?
+  %u
+  %a")
+                                ("n" "Note" entry
+                                 (file+headline "" "Notes")
+                                 "* %?
+  %i
+  %a"))))
+(use-package projectile
+  :config
+  (setq projectile-completion-system 'ivy))
+(use-package sh-script
+  :config
+  (setq sh-basic-offset 2))
+(use-package super-save
+  :init
+  (super-save-mode)
+  :config
+  (setq super-save-auto-save-when-idle t))
+(use-package undo-tree
+  :init
+  (global-undo-tree-mode)
+  :config
+  (setq undo-tree-visualizer-diff t
+        undo-tree-visualizer-timestamps t))
+(use-package vc
+  :init
+  (setq vc-follow-symlinks t)
+  :config
+  (setq vc-diff-switches "-w"))
+(use-package vc-git
+  :config
+  (setq vc-git-diff-switches "-w -C"))
+(use-package whitespace
+  :init
+  (global-whitespace-mode)
+  :config
+  (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
 
 ;;;; Packages
 ;; Download package data and install packages selected in customize.
@@ -84,6 +224,12 @@ added to a hook."
  ;; Programming modes
  (prog-mode-hook . (flyspell-prog-mode linum-mode rainbow-mode))
 
+ ;; Text modes
+ (text-mode-hook . (flyspell-mode auto-fill-mode))
+
+ ;; Clean whitespace when saving.
+ (before-save-hook . whitespace-cleanup)
+
  ;; Use Emmet to complete CSS and HTML.
  ((css-mode-hook sgml-mode-hook) . emmet-mode)
 
@@ -100,7 +246,6 @@ added to a hook."
   . enable-paredit-mode)
 
  ;; Usability fixes
- (kill-emacs-query-functions . custom-prompt-customize-unsaved-options)
  (compilation-filter-hook . colorize-compilation-buffer)
  (term-mode-hook . bind-term-paste))
 
