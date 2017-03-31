@@ -32,10 +32,6 @@
               tab-width 2)
 (ansi-color-for-comint-mode-on)
 
-;; Initialize installed packages.
-(package-initialize)
-(load custom-file)
-
 ;; Set included minor modes.
 (blink-cursor-mode 0)
 (electric-layout-mode)
@@ -50,8 +46,13 @@
 (tool-bar-mode 0)
 (xterm-mouse-mode)
 
-;; Install use-package.
-(package-install 'use-package)
+;; Initialize installed packages.
+(package-initialize)
+(load custom-file)
+
+;; Download package data and install packages selected in customize.
+(package-refresh-contents)
+(package-install-selected-packages)
 
 ;; Configure packages.
 (use-package autorevert
@@ -153,11 +154,6 @@
   (global-whitespace-mode)
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
-
-;;;; Packages
-;; Download package data and install packages selected in customize.
-(package-refresh-contents)
-(package-install-selected-packages)
 
 ;;;; OS specific configuration
 (cond
