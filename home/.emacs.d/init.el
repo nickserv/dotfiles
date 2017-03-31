@@ -55,6 +55,18 @@
 (package-refresh-contents)
 (package-install-selected-packages)
 
+;; OS specific configuration
+(cond
+ ((eq window-system 'ns)
+  (exec-path-from-shell-initialize)
+  (setq default-frame-alist '((fullscreen . fullboth))))
+ ((not window-system)
+  (bind-keys
+   ("<mouse-4>" . scroll-down-line)
+   ("<mouse-5>" . scroll-up-line))
+  (defvar linum-format)
+  (setq linum-format "%d ")))
+
 ;; Configure packages.
 (use-package autorevert
   :config
@@ -173,18 +185,6 @@
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
 (use-package yaml-mode
   :mode ("\\.yml\\'" . yaml-mode))
-
-;;;; OS specific configuration
-(cond
- ((eq window-system 'ns)
-  (exec-path-from-shell-initialize)
-  (setq default-frame-alist '((fullscreen . fullboth))))
- ((not window-system)
-  (bind-keys
-   ("<mouse-4>" . scroll-down-line)
-   ("<mouse-5>" . scroll-up-line))
-  (defvar linum-format)
-  (setq linum-format "%d ")))
 
 ;;; Hooks
 
