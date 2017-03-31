@@ -31,6 +31,8 @@
 (setq-default indent-tabs-mode nil
               tab-width 2)
 (ansi-color-for-comint-mode-on)
+(set-frame-font "Source Code Pro" nil t)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Set included minor modes.
 (blink-cursor-mode 0)
@@ -40,7 +42,6 @@
 (menu-bar-mode 0)
 (save-place-mode)
 (savehist-mode)
-(set-frame-font "Source Code Pro" nil t)
 (set-scroll-bar-mode nil)
 (show-paren-mode)
 (tool-bar-mode 0)
@@ -80,6 +81,10 @@
 (use-package flycheck
   :init
   (global-flycheck-mode))
+(use-package flycheck-pos-tip-mode
+  :after flycheck
+  :init
+  (flycheck-pos-tip-mode))
 (use-package ispell
   :config
   (setq ispell-program-name "/usr/local/bin/aspell"))
@@ -99,6 +104,10 @@
         magit-diff-section-arguments '("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")
         magit-repository-directories '(("~/Repos" . 1))
         magit-save-repository-buffers 'dontask))
+(use-package magithub
+  :after magit
+  :config
+  (magithub-feature-autoinject t))
 (use-package org
   :config
   (setq org-agenda-files '("~/Google Drive/Organizer.org")
@@ -125,6 +134,11 @@
   %i
   %a"))))
 (use-package projectile
+  :init
+  (projectile-mode)
+  (projectile-discover-projects-in-directory "~/Repos")
+  (projectile-register-project-type 'npm '("package.json") "npm install" "npm test" "npm start")
+  (projectile-register-project-type 'jekyll '("_config.yml") "bundle exec jekyll build" nil "bundle exec jekyll serve")
   :config
   (setq projectile-completion-system 'ivy))
 (use-package sh-script
@@ -135,6 +149,9 @@
   (super-save-mode)
   :config
   (setq super-save-auto-save-when-idle t))
+(use-package tern
+  :config
+  (setq tern-command '("tern" "--no-port-file")))
 (use-package undo-tree
   :init
   (global-undo-tree-mode)
@@ -154,6 +171,8 @@
   (global-whitespace-mode)
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
+(use-package yaml-mode
+  :mode ("\\.yml\\'" . yaml-mode))
 
 ;;;; OS specific configuration
 (cond
@@ -166,11 +185,6 @@
    ("<mouse-5>" . scroll-up-line))
   (defvar linum-format)
   (setq linum-format "%d ")))
-
-;;; Auto mode
-
-;; Use yaml-mode.
-(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;;; Hooks
 
@@ -280,27 +294,5 @@ added to a hook."
  ("C-x T" . sane-term-create)
 
  ("C-c o" . find-org-default-notes-file))
-
-;;; Flycheck
-(flycheck-pos-tip-mode)
-
-;;; Magithub
-;; Load after Magit and enable all features.
-(with-eval-after-load
-    "magit"
-  (require 'magithub)
-  (magithub-feature-autoinject t))
-
-;;; Projectile
-(projectile-mode)
-(projectile-discover-projects-in-directory "~/Repos")
-(projectile-register-project-type 'npm '("package.json") "npm install" "npm test" "npm start")
-(projectile-register-project-type 'jekyll '("_config.yml") "bundle exec jekyll build" nil "bundle exec jekyll serve")
-
-;;; Tern
-(setq tern-command '("tern" "--no-port-file"))
-
-;;; Abbreviate yes/no prompts.
-(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; init.el ends here
