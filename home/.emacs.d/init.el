@@ -71,6 +71,8 @@
 (use-package autorevert
   :config
   (setq global-auto-revert-non-file-buffers t))
+(use-package browse-at-remote
+  :bind ("C-c r" . browse-at-remote))
 (use-package compile
   :init
   (setq compilation-ask-about-save nil))
@@ -78,6 +80,10 @@
   :init
   (counsel-mode)
   (ivy-mode)
+  :bind (("C-c g" . counsel-git)
+         ("C-c j" . counsel-git-grep)
+         ("C-c C-r" . ivy-resume)
+         ("C-s" . swiper))
   :config
   (setq ivy-count-format "(%d/%d) "
         ivy-display-style 'fancy
@@ -97,6 +103,10 @@
   :after flycheck
   :init
   (flycheck-pos-tip-mode))
+(use-package hippie-expand
+  :bind ("M-/" . hippie-expand))
+(use-package ibuffer
+  :bind ("C-x C-b" . ibuffer))
 (use-package ispell
   :config
   (setq ispell-program-name "/usr/local/bin/aspell"))
@@ -109,6 +119,8 @@
 (use-package magit
   :init
   (global-magit-file-mode)
+  :bind (("C-x g" . magit-status)
+         ("C-x M-g" . magit-dispatch-popup))
   :config
   (setq magit-completing-read-function 'ivy-completing-read
         magit-diff-arguments '("--no-ext-diff" "-w" "-C")
@@ -121,6 +133,11 @@
   :config
   (magithub-feature-autoinject t))
 (use-package org
+  :bind (("C-c a" . org-agenda)
+         ("C-c b" . org-iswitchb)
+         ("C-c c" . org-capture)
+         ("C-c l" . org-store-link)
+         ("C-c o" . find-org-default-notes-file))
   :config
   (setq org-agenda-files '("~/Google Drive/Organizer.org")
         org-default-notes-file "~/Google Drive/Organizer.org"
@@ -132,7 +149,12 @@
         org-modules '(org-mouse)
         org-outline-path-complete-in-steps nil
         org-refile-targets '((nil :maxlevel . 10))
-        org-refile-use-outline-path 'file))
+        org-refile-use-outline-path 'file)
+
+  (defun find-org-default-notes-file ()
+    "Open the default Org notes file."
+    (interactive)
+    (find-file org-default-notes-file)))
 (use-package org-capture
   :config
   (setq org-capture-templates '(("t" "Task" entry
@@ -153,6 +175,11 @@
   (projectile-register-project-type 'jekyll '("_config.yml") "bundle exec jekyll build" nil "bundle exec jekyll serve")
   :config
   (setq projectile-completion-system 'ivy))
+(use-package restart-emacs
+  :bind ("C-x C-S-c" . restart-emacs))
+(use-package sane-term
+  :bind (("C-x t" . sane-term)
+         ("C-x T" . sane-term-create)))
 (use-package sh-script
   :config
   (setq sh-basic-offset 2))
@@ -161,6 +188,9 @@
   (super-save-mode)
   :config
   (setq super-save-auto-save-when-idle t))
+(use-package term
+  :bind (:map term-raw-map
+              ("C-c C-y" . term-paste)))
 (use-package tern
   :config
   (setq tern-command '("tern" "--no-port-file")))
@@ -184,7 +214,7 @@
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
 (use-package yaml-mode
-  :mode ("\\.yml\\'" . yaml-mode))
+  :mode "\\.yml\\'")
 
 ;;; Hooks
 
@@ -224,11 +254,6 @@ added to a hook."
   (defvar compilation-filter-start)
   (ansi-color-apply-on-region compilation-filter-start (point)))
 
-(defun bind-term-paste ()
-  "Bind `term-paste'."
-  (defvar term-raw-map)
-  (bind-key "C-c C-y" #'term-paste term-raw-map))
-
 ;;;; Set hooks
 (add-hooks
  ;; Programming modes
@@ -256,43 +281,6 @@ added to a hook."
   . enable-paredit-mode)
 
  ;; Usability fixes
- (compilation-filter-hook . colorize-compilation-buffer)
- (term-mode-hook . bind-term-paste))
-
-;;; Keys
-(defun find-org-default-notes-file ()
-  "Open the default Org notes file."
-  (interactive)
-  (find-file org-default-notes-file))
-(bind-keys
- ("C-c C-r" . ivy-resume)
- ("C-c r" . browse-at-remote)
- ("C-x C-S-c" . restart-emacs)
-
- ;; Improved defaults
- ("C-s" . swiper)
- ("C-x C-b" . ibuffer)
- ("M-/" . hippie-expand)
-
- ;; Counsel interfaces
- ("C-c g" . counsel-git)
- ("C-c j" . counsel-git-grep)
-
- ;; Magit
- ;; Set binds everywhere so it can be launched from non-file buffers.
- ("C-x g" . magit-status)
- ("C-x M-g" . magit-dispatch-popup)
-
- ;; Org
- ("C-c a" . org-agenda)
- ("C-c b" . org-iswitchb)
- ("C-c c" . org-capture)
- ("C-c l" . org-store-link)
-
- ;; Sane term
- ("C-x t" . sane-term)
- ("C-x T" . sane-term-create)
-
- ("C-c o" . find-org-default-notes-file))
+ (compilation-filter-hook . colorize-compilation-buffer))
 
 ;;; init.el ends here
