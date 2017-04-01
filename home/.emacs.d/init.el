@@ -8,6 +8,35 @@
 
 ;;; Code:
 
+;;; Helpers
+
+(defun listify (object)
+  "If OBJECT is a list, return it, else wrap it in a list."
+  (if (listp object) object (list object)))
+
+(defun mapflat (function sequence)
+  "Apply FUNCTION to each element of SEQUENCE, and make a list of the results.
+Unlike `mapcar', the list is flattened nondestructively before it is returned."
+  (apply #'append (mapcar function sequence)))
+
+(defmacro add-hooks (&rest args)
+  "Call `add-hook' on each cons pair in ARGS.
+Each pair has a `car' for setting hooks and a `cdr' for setting
+functions to add to those hooks.  Either side of the pair can be
+a single symbol or a list of symbols, in which case a function
+can be added to multiple hooks and/or multiple functions can be
+added to a hook."
+  (macroexp-progn
+   (mapflat (lambda (arg)
+              (let ((hooks (listify (car arg)))
+                    (functions (listify (cdr arg))))
+                (mapflat (lambda (hook)
+                           (mapcar (lambda (function)
+                                     `(add-hook ',hook ',function))
+                                   functions))
+                         hooks)))
+            args)))
+
 ;;; Initial setup
 
 ;;;; Customize Migration
@@ -75,7 +104,14 @@
   :bind ("C-c r" . browse-at-remote))
 (use-package compile
   :init
-  (setq compilation-ask-about-save nil))
+  (setq compilation-ask-about-save nil)
+
+  (defun colorize-compilation-buffer ()
+    "Use ANSI colors for compilation."
+    (defvar compilation-filter-start)
+    (ansi-color-apply-on-region compilation-filter-start (point)))
+
+  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
 (use-package counsel
   :init
   (counsel-mode)
@@ -96,6 +132,9 @@
   (setq ediff-diff-options "-w"
         ediff-split-window-function 'split-window-horizontally
         ediff-window-setup-function 'ediff-setup-windows-plain))
+(use-package emmet
+  :init
+  (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
 (use-package flycheck
   :init
   (global-flycheck-mode))
@@ -103,6 +142,10 @@
   :after flycheck
   :init
   (flycheck-pos-tip-mode))
+(use-package flyspell
+  :init
+  (add-hooks (text-mode-hook . flyspell-mode)
+             (prog-mode-hook . flyspell-prog-mode)))
 (use-package hippie-expand
   :bind ("M-/" . hippie-expand))
 (use-package ibuffer
@@ -116,6 +159,9 @@
 (use-package leuven-theme
   :init
   (load-theme 'leuven t))
+(use-package linum
+  :init
+  (add-hook 'prog-mode-hook 'linum-mode))
 (use-package magit
   :init
   (global-magit-file-mode)
@@ -167,6 +213,15 @@
                                  "* %?
   %i
   %a"))))
+(use-package paredit
+  :init
+  (add-hooks ((emacs-lisp-mode-hook
+               eval-expression-minibuffer-setup-hook
+               ielm-mode-hook
+               lisp-mode-hook
+               lisp-interaction-mode-hook
+               scheme-mode-hook)
+              . enable-paredit-mode)))
 (use-package projectile
   :init
   (projectile-mode)
@@ -175,6 +230,9 @@
   (projectile-register-project-type 'jekyll '("_config.yml") "bundle exec jekyll build" nil "bundle exec jekyll serve")
   :config
   (setq projectile-completion-system 'ivy))
+(use-package rainbow-mode
+  :init
+  (add-hook 'prog-mode-hook 'rainbow-mode))
 (use-package restart-emacs
   :bind ("C-x C-S-c" . restart-emacs))
 (use-package sane-term
@@ -183,6 +241,9 @@
 (use-package sh-script
   :config
   (setq sh-basic-offset 2))
+(use-package simple
+  :init
+  (add-hook 'text-mode-hook 'auto-fill-mode))
 (use-package super-save
   :init
   (super-save-mode)
@@ -192,6 +253,8 @@
   :bind (:map term-raw-map
               ("C-c C-y" . term-paste)))
 (use-package tern
+  :init
+  (add-hook 'js-mode-hook 'tern-mode)
   :config
   (setq tern-command '("tern" "--no-port-file")))
 (use-package undo-tree
@@ -211,76 +274,10 @@
 (use-package whitespace
   :init
   (global-whitespace-mode)
+  (add-hook 'before-save-hook 'whitespace-cleanup)
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
 (use-package yaml-mode
   :mode "\\.yml\\'")
-
-;;; Hooks
-
-;;;; Helpers
-
-(defun listify (object)
-  "If OBJECT is a list, return it, else wrap it in a list."
-  (if (listp object) object (list object)))
-
-(defun mapflat (function sequence)
-  "Apply FUNCTION to each element of SEQUENCE, and make a list of the results.
-Unlike `mapcar', the list is flattened nondestructively before it is returned."
-  (apply #'append (mapcar function sequence)))
-
-(defmacro add-hooks (&rest args)
-  "Call `add-hook' on each cons pair in ARGS.
-Each pair has a `car' for setting hooks and a `cdr' for setting
-functions to add to those hooks.  Either side of the pair can be
-a single symbol or a list of symbols, in which case a function
-can be added to multiple hooks and/or multiple functions can be
-added to a hook."
-  (macroexp-progn
-   (mapflat (lambda (arg)
-              (let ((hooks (listify (car arg)))
-                    (functions (listify (cdr arg))))
-                (mapflat (lambda (hook)
-                           (mapcar (lambda (function)
-                                     `(add-hook ',hook ',function))
-                                   functions))
-                         hooks)))
-            args)))
-
-;;;; Hook functions
-
-(defun colorize-compilation-buffer ()
-  "Use ANSI colors for compilation."
-  (defvar compilation-filter-start)
-  (ansi-color-apply-on-region compilation-filter-start (point)))
-
-;;;; Set hooks
-(add-hooks
- ;; Programming modes
- (prog-mode-hook . (flyspell-prog-mode linum-mode rainbow-mode))
-
- ;; Text modes
- (text-mode-hook . (flyspell-mode auto-fill-mode))
-
- ;; Clean whitespace when saving.
- (before-save-hook . whitespace-cleanup)
-
- ;; Use Emmet to complete CSS and HTML.
- ((css-mode-hook sgml-mode-hook) . emmet-mode)
-
- ;; Use Tern for JS analysis.
- (js-mode-hook . tern-mode)
-
- ;; Use Paredit for Lisp editing.
- ((emacs-lisp-mode-hook
-   eval-expression-minibuffer-setup-hook
-   ielm-mode-hook
-   lisp-mode-hook
-   lisp-interaction-mode-hook
-   scheme-mode-hook)
-  . enable-paredit-mode)
-
- ;; Usability fixes
- (compilation-filter-hook . colorize-compilation-buffer))
 
 ;;; init.el ends here
