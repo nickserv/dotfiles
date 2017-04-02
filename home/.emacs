@@ -111,15 +111,8 @@ added to a hook."
   :ensure
   :init
   (counsel-mode)
-  (ivy-mode)
   :bind (("C-c g" . counsel-git)
-         ("C-c j" . counsel-git-grep)
-         ("C-c C-r" . ivy-resume)
-         ("C-s" . swiper))
-  :config
-  (setq ivy-count-format "(%d/%d) "
-        ivy-display-style 'fancy
-        ivy-use-virtual-buffers t))
+         ("C-c j" . counsel-git-grep)))
 
 (use-package css-mode
   :config
@@ -173,6 +166,15 @@ added to a hook."
 (use-package ispell
   :config
   (setq ispell-program-name "/usr/local/bin/aspell"))
+
+(use-package ivy
+  :init
+  (ivy-mode)
+  :bind ("C-c C-r" . ivy-resume)
+  :config
+  (setq ivy-count-format "(%d/%d) "
+        ivy-display-style 'fancy
+        ivy-use-virtual-buffers t))
 
 (use-package js
   :config
@@ -315,6 +317,9 @@ added to a hook."
 
 (use-package smex
   :ensure)
+
+(use-package swiper
+  :bind ("C-s" . swiper))
 
 (use-package super-save
   :ensure
