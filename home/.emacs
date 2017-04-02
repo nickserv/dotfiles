@@ -56,6 +56,7 @@ added to a hook."
 (setq-default indent-tabs-mode nil
               tab-width 2)
 
+(add-hook 'text-mode-hook 'auto-fill-mode)
 (ansi-color-for-comint-mode-on)
 (set-frame-font "Source Code Pro" nil t)
 
@@ -307,10 +308,6 @@ added to a hook."
 (use-package sh-script
   :config
   (setq sh-basic-offset 2))
-
-(use-package simple
-  :init
-  (add-hook 'text-mode-hook 'auto-fill-mode))
 
 (use-package smex
   :ensure)
