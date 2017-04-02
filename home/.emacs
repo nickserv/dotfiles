@@ -113,10 +113,10 @@ added to a hook."
 
 (use-package counsel
   :ensure
-  :init
-  (counsel-mode)
   :bind (("C-c g" . counsel-git)
-         ("C-c j" . counsel-git-grep)))
+         ("C-c j" . counsel-git-grep))
+  :init
+  (counsel-mode))
 
 (use-package css-mode
   :config
@@ -166,9 +166,9 @@ added to a hook."
   (setq ispell-program-name "/usr/local/bin/aspell"))
 
 (use-package ivy
+  :bind ("C-c C-r" . ivy-resume)
   :init
   (ivy-mode)
-  :bind ("C-c C-r" . ivy-resume)
   :config
   (setq ivy-count-format "(%d/%d) "
         ivy-display-style 'fancy
@@ -191,11 +191,11 @@ added to a hook."
 
 (use-package magit
   :ensure
-  :init
-  (global-magit-file-mode)
   ;; Set binds everywhere so it can be launched from non-file buffers.
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup))
+  :init
+  (global-magit-file-mode)
   :config
   (setq magit-completing-read-function 'ivy-completing-read
         magit-diff-arguments '("--no-ext-diff" "-w" "-C")
