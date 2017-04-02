@@ -58,6 +58,8 @@ added to a hook."
 
 (ansi-color-for-comint-mode-on)
 (set-frame-font "Source Code Pro" nil t)
+
+;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Use full screen on macOS only.
@@ -191,6 +193,7 @@ added to a hook."
   :ensure
   :init
   (global-magit-file-mode)
+  ;; Set binds everywhere so it can be launched from non-file buffers.
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup))
   :config
@@ -209,6 +212,7 @@ added to a hook."
   :ensure
   :after magit
   :config
+  ;; Enable all features.
   (magithub-feature-autoinject t))
 
 (use-package markdown-mode
