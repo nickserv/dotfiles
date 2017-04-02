@@ -38,11 +38,7 @@ added to a hook."
                          hooks)))
             args)))
 
-;;; Initial setup
-
-;;;; Customize Migration
-
-;; Set variables.
+;;; Variables
 
 (setq auto-save-default nil
       backup-directory-alist '((".*" . "~/.emacs.d/backup/"))
@@ -70,7 +66,7 @@ added to a hook."
 (when (eq window-system 'ns)
   (setq default-frame-alist '((fullscreen . fullboth))))
 
-;; Set included minor modes.
+;;; Minor Modes
 (blink-cursor-mode 0)
 (electric-layout-mode)
 (electric-pair-mode)
@@ -81,19 +77,17 @@ added to a hook."
 (show-paren-mode)
 (xterm-mouse-mode)
 
-;; Initialize installed packages.
+;;; Package Setup
 (package-initialize)
 (load custom-file)
-
-;; Download package data and install packages selected in customize.
 (package-refresh-contents)
 (package-install-selected-packages)
 
-;; Set global keybinds.
+;;; Binds
 (bind-keys ("<mouse-4>" . scroll-down-line)
            ("<mouse-5>" . scroll-up-line))
 
-;; Configure packages.
+;;; Packages
 
 (use-package autorevert
   :config
