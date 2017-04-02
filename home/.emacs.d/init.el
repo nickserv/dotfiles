@@ -1,10 +1,8 @@
 ;;; init.el --- Nick's Emacs configuration
 
 ;;; Commentary:
-;; My personal GNU Emacs 25.1 configuration for macOS, using MELPA and
-;; use-package.  Dependencies are installed automatically, but you may
-;; need to restart Emacs to apply customizations for newly installed
-;; packages.
+;; My GNU Emacs 25.1 configuration for macOS and Windows, using MELPA
+;; and use-package.
 
 ;;; Code:
 
