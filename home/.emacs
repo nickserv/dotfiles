@@ -84,9 +84,12 @@ added to a hook."
 ;; Install use-package
 (package-install 'use-package)
 
-;;; Binds
+;;; Bind Improvements
 (bind-keys ("<mouse-4>" . scroll-down-line)
-           ("<mouse-5>" . scroll-up-line))
+           ("<mouse-5>" . scroll-up-line)
+           ("C-s" . swiper)
+           ("C-x C-b" . ibuffer)
+           ("M-/" . hippie-expand))
 
 ;;; Packages
 
@@ -156,12 +159,6 @@ added to a hook."
 
 (use-package gist
   :ensure)
-
-(use-package hippie-expand
-  :bind ("M-/" . hippie-expand))
-
-(use-package ibuffer
-  :bind ("C-x C-b" . ibuffer))
 
 (use-package ispell
   :config
@@ -317,9 +314,6 @@ added to a hook."
 
 (use-package smex
   :ensure)
-
-(use-package swiper
-  :bind ("C-s" . swiper))
 
 (use-package super-save
   :ensure
