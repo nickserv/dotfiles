@@ -1,4 +1,4 @@
-;;; init.el --- Nick's Emacs configuration
+;;; .emacs --- Nick's Emacs configuration
 
 ;;; Commentary:
 ;; My GNU Emacs 25.1 configuration for macOS and Windows, using MELPA
@@ -362,4 +362,4 @@ added to a hook."
   :ensure
   :mode "\\.yml\\'")
 
-;;; init.el ends here
+;;; .emacs ends here
