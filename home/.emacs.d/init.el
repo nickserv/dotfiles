@@ -74,9 +74,7 @@ added to a hook."
 (menu-bar-mode 0)
 (save-place-mode)
 (savehist-mode)
-(set-scroll-bar-mode nil)
 (show-paren-mode)
-(tool-bar-mode 0)
 (xterm-mouse-mode)
 
 ;; Initialize installed packages.
@@ -139,7 +137,7 @@ added to a hook."
         ediff-split-window-function 'split-window-horizontally
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
-(use-package emmet
+(use-package emmet-mode
   :init
   (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
 
@@ -263,6 +261,10 @@ added to a hook."
   :bind (("C-x t" . sane-term)
          ("C-x T" . sane-term-create)))
 
+(use-package scroll-bar
+  :config
+  (set-scroll-bar-mode nil))
+
 (use-package sh-script
   :config
   (setq sh-basic-offset 2))
@@ -285,6 +287,10 @@ added to a hook."
   (add-hook 'js-mode-hook 'tern-mode)
   :config
   (setq tern-command '("tern" "--no-port-file")))
+
+(use-package tool-bar
+  :init
+  (tool-bar-mode 0))
 
 (use-package undo-tree
   :init
