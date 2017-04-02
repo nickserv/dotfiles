@@ -351,7 +351,6 @@ added to a hook."
   (global-whitespace-mode))
 
 (use-package yaml-mode
-  :ensure
-  :mode "\\.yml\\'")
+  :ensure)
 
 ;;; .emacs ends here
