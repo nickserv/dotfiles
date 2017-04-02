@@ -103,7 +103,7 @@ added to a hook."
   :bind ("C-c r" . browse-at-remote))
 
 (use-package compile
-  :init
+  :config
   (setq compilation-ask-about-save nil)
   (defun colorize-compilation-buffer ()
     "Use ANSI colors for compilation."
@@ -130,13 +130,13 @@ added to a hook."
 
 (use-package emmet-mode
   :ensure
-  :init
+  :config
   (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
 
 (use-package exec-path-from-shell
   :ensure
   :if (eq window-system 'ns)
-  :init
+  :config
   (exec-path-from-shell-initialize))
 
 (use-package flx
@@ -144,17 +144,17 @@ added to a hook."
 
 (use-package flycheck
   :ensure
-  :init
+  :config
   (global-flycheck-mode))
 
 (use-package flycheck-pos-tip
   :ensure
   :after flycheck
-  :init
+  :config
   (flycheck-pos-tip-mode))
 
 (use-package flyspell
-  :init
+  :config
   (add-hooks (text-mode-hook . flyspell-mode)
              (prog-mode-hook . flyspell-prog-mode)))
 
@@ -167,12 +167,11 @@ added to a hook."
 
 (use-package ivy
   :bind ("C-c C-r" . ivy-resume)
-  :init
-  (ivy-mode)
   :config
   (setq ivy-count-format "(%d/%d) "
         ivy-display-style 'fancy
-        ivy-use-virtual-buffers t))
+        ivy-use-virtual-buffers t)
+  (ivy-mode))
 
 (use-package js
   :config
@@ -180,11 +179,11 @@ added to a hook."
 
 (use-package leuven-theme
   :ensure
-  :init
+  :config
   (load-theme 'leuven t))
 
 (use-package linum
-  :init
+  :config
   (unless window-system
     (setq linum-format "%d "))
   (add-hook 'prog-mode-hook 'linum-mode))
@@ -194,8 +193,6 @@ added to a hook."
   ;; Set binds everywhere so it can be launched from non-file buffers.
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup))
-  :init
-  (global-magit-file-mode)
   :config
   (setq magit-completing-read-function 'ivy-completing-read
         magit-diff-arguments '("--no-ext-diff" "-w" "-C")
@@ -206,7 +203,8 @@ added to a hook."
                                        "-M"
                                        "-C")
         magit-repository-directories '(("~/Repos" . 1))
-        magit-save-repository-buffers 'dontask))
+        magit-save-repository-buffers 'dontask)
+  (global-magit-file-mode))
 
 (use-package magithub
   :ensure
@@ -260,7 +258,7 @@ added to a hook."
 
 (use-package paredit
   :ensure
-  :init
+  :config
   (add-hooks ((emacs-lisp-mode-hook
                eval-expression-minibuffer-setup-hook
                ielm-mode-hook
@@ -271,7 +269,8 @@ added to a hook."
 
 (use-package projectile
   :ensure
-  :init
+  :config
+  (setq projectile-completion-system 'ivy)
   (projectile-mode)
   (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'npm
@@ -283,13 +282,11 @@ added to a hook."
                                     '("_config.yml")
                                     "bundle exec jekyll build"
                                     nil
-                                    "bundle exec jekyll serve")
-  :config
-  (setq projectile-completion-system 'ivy))
+                                    "bundle exec jekyll serve"))
 
 (use-package rainbow-mode
   :ensure
-  :init
+  :config
   (add-hook 'prog-mode-hook 'rainbow-mode))
 
 (use-package restart-emacs
@@ -314,49 +311,44 @@ added to a hook."
 
 (use-package super-save
   :ensure
-  :init
-  (super-save-mode)
   :config
-  (setq super-save-auto-save-when-idle t))
+  (setq super-save-auto-save-when-idle t)
+  (super-save-mode))
 
 (use-package term
   :bind (:map term-raw-map ("C-c C-y" . term-paste)))
 
 (use-package tern
   :ensure
-  :init
-  (add-hook 'js-mode-hook 'tern-mode)
   :config
-  (setq tern-command '("tern" "--no-port-file")))
+  (setq tern-command '("tern" "--no-port-file"))
+  (add-hook 'js-mode-hook 'tern-mode))
 
 (use-package tool-bar
-  :init
+  :config
   (tool-bar-mode 0))
 
 (use-package undo-tree
   :ensure
-  :init
-  (global-undo-tree-mode)
   :config
   (setq undo-tree-visualizer-diff t
-        undo-tree-visualizer-timestamps t))
+        undo-tree-visualizer-timestamps t)
+  (global-undo-tree-mode))
 
 (use-package vc
-  :init
-  (setq vc-follow-symlinks t)
   :config
-  (setq vc-diff-switches "-w"))
+  (setq vc-diff-switches "-w"
+        vc-follow-symlinks t))
 
 (use-package vc-git
   :config
   (setq vc-git-diff-switches "-w -C"))
 
 (use-package whitespace
-  :init
-  (global-whitespace-mode)
-  (add-hook 'before-save-hook 'whitespace-cleanup)
   :config
-  (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
+  (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark))
+  (add-hook 'before-save-hook 'whitespace-cleanup)
+  (global-whitespace-mode))
 
 (use-package yaml-mode
   :ensure
