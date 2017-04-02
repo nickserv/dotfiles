@@ -184,7 +184,11 @@ added to a hook."
   (setq magit-completing-read-function 'ivy-completing-read
         magit-diff-arguments '("--no-ext-diff" "-w" "-C")
         magit-diff-refine-hunk 'all
-        magit-diff-section-arguments '("--ignore-space-change" "--ignore-all-space" "--no-ext-diff" "-M" "-C")
+        magit-diff-section-arguments '("--ignore-space-change"
+                                       "--ignore-all-space"
+                                       "--no-ext-diff"
+                                       "-M"
+                                       "-C")
         magit-repository-directories '(("~/Repos" . 1))
         magit-save-repository-buffers 'dontask))
 
@@ -218,12 +222,16 @@ added to a hook."
 
 (use-package org-capture
   :config
-  (setq org-capture-templates '(("t" "Task" entry
+  (setq org-capture-templates '(("t"
+                                 "Task"
+                                 entry
                                  (file+headline "" "Tasks")
                                  "* TODO %?
   %u
   %a")
-                                ("n" "Note" entry
+                                ("n"
+                                 "Note"
+                                 entry
                                  (file+headline "" "Notes")
                                  "* %?
   %i
@@ -243,8 +251,16 @@ added to a hook."
   :init
   (projectile-mode)
   (projectile-discover-projects-in-directory "~/Repos")
-  (projectile-register-project-type 'npm '("package.json") "npm install" "npm test" "npm start")
-  (projectile-register-project-type 'jekyll '("_config.yml") "bundle exec jekyll build" nil "bundle exec jekyll serve")
+  (projectile-register-project-type 'npm
+                                    '("package.json")
+                                    "npm install"
+                                    "npm test"
+                                    "npm start")
+  (projectile-register-project-type 'jekyll
+                                    '("_config.yml")
+                                    "bundle exec jekyll build"
+                                    nil
+                                    "bundle exec jekyll serve")
   :config
   (setq projectile-completion-system 'ivy))
 
