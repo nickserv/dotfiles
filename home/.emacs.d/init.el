@@ -66,6 +66,10 @@ added to a hook."
 (set-frame-font "Source Code Pro" nil t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; Use full screen on macOS only.
+(when (eq window-system 'ns)
+  (setq default-frame-alist '((fullscreen . fullboth))))
+
 ;; Set included minor modes.
 (blink-cursor-mode 0)
 (electric-layout-mode)
@@ -85,16 +89,9 @@ added to a hook."
 (package-refresh-contents)
 (package-install-selected-packages)
 
-;; OS specific configuration
-(cond ((eq window-system 'ns)
-       (exec-path-from-shell-initialize)
-       (setq default-frame-alist '((fullscreen . fullboth))))
-
-      ((not window-system)
-       (bind-keys ("<mouse-4>" . scroll-down-line)
-                  ("<mouse-5>" . scroll-up-line))
-       (defvar linum-format)
-       (setq linum-format "%d ")))
+;; Set global keybinds.
+(bind-keys ("<mouse-4>" . scroll-down-line)
+           ("<mouse-5>" . scroll-up-line))
 
 ;; Configure packages.
 
@@ -141,6 +138,11 @@ added to a hook."
   :init
   (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
 
+(use-package exec-path-from-shell
+  :if (eq window-system 'ns)
+  :init
+  (exec-path-from-shell-initialize))
+
 (use-package flycheck
   :init
   (global-flycheck-mode))
@@ -175,6 +177,8 @@ added to a hook."
 
 (use-package linum
   :init
+  (unless window-system
+    (setq linum-format "%d "))
   (add-hook 'prog-mode-hook 'linum-mode))
 
 (use-package magit
