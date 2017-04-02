@@ -79,9 +79,10 @@ added to a hook."
 
 ;;; Package Setup
 (package-initialize)
-(load custom-file)
 (package-refresh-contents)
-(package-install-selected-packages)
+
+;; Install use-package
+(package-install 'use-package)
 
 ;;; Binds
 (bind-keys ("<mouse-4>" . scroll-down-line)
@@ -94,6 +95,7 @@ added to a hook."
   (setq global-auto-revert-non-file-buffers t))
 
 (use-package browse-at-remote
+  :ensure
   :bind ("C-c r" . browse-at-remote))
 
 (use-package compile
@@ -106,6 +108,7 @@ added to a hook."
   (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
 
 (use-package counsel
+  :ensure
   :init
   (counsel-mode)
   (ivy-mode)
@@ -129,19 +132,26 @@ added to a hook."
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
 (use-package emmet-mode
+  :ensure
   :init
   (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
 
 (use-package exec-path-from-shell
+  :ensure
   :if (eq window-system 'ns)
   :init
   (exec-path-from-shell-initialize))
 
+(use-package flx
+  :ensure)
+
 (use-package flycheck
+  :ensure
   :init
   (global-flycheck-mode))
 
-(use-package flycheck-pos-tip-mode
+(use-package flycheck-pos-tip
+  :ensure
   :after flycheck
   :init
   (flycheck-pos-tip-mode))
@@ -150,6 +160,9 @@ added to a hook."
   :init
   (add-hooks (text-mode-hook . flyspell-mode)
              (prog-mode-hook . flyspell-prog-mode)))
+
+(use-package gist
+  :ensure)
 
 (use-package hippie-expand
   :bind ("M-/" . hippie-expand))
@@ -166,6 +179,7 @@ added to a hook."
   (setq js-indent-level 2))
 
 (use-package leuven-theme
+  :ensure
   :init
   (load-theme 'leuven t))
 
@@ -176,6 +190,7 @@ added to a hook."
   (add-hook 'prog-mode-hook 'linum-mode))
 
 (use-package magit
+  :ensure
   :init
   (global-magit-file-mode)
   :bind (("C-x g" . magit-status)
@@ -193,9 +208,13 @@ added to a hook."
         magit-save-repository-buffers 'dontask))
 
 (use-package magithub
+  :ensure
   :after magit
   :config
   (magithub-feature-autoinject t))
+
+(use-package markdown-mode
+  :ensure)
 
 (use-package org
   :bind (("C-c a" . org-agenda)
@@ -238,6 +257,7 @@ added to a hook."
   %a"))))
 
 (use-package paredit
+  :ensure
   :init
   (add-hooks ((emacs-lisp-mode-hook
                eval-expression-minibuffer-setup-hook
@@ -248,6 +268,7 @@ added to a hook."
               . enable-paredit-mode)))
 
 (use-package projectile
+  :ensure
   :init
   (projectile-mode)
   (projectile-discover-projects-in-directory "~/Repos")
@@ -265,13 +286,16 @@ added to a hook."
   (setq projectile-completion-system 'ivy))
 
 (use-package rainbow-mode
+  :ensure
   :init
   (add-hook 'prog-mode-hook 'rainbow-mode))
 
 (use-package restart-emacs
+  :ensure
   :bind ("C-x C-S-c" . restart-emacs))
 
 (use-package sane-term
+  :ensure
   :bind (("C-x t" . sane-term)
          ("C-x T" . sane-term-create)))
 
@@ -287,7 +311,11 @@ added to a hook."
   :init
   (add-hook 'text-mode-hook 'auto-fill-mode))
 
+(use-package smex
+  :ensure)
+
 (use-package super-save
+  :ensure
   :init
   (super-save-mode)
   :config
@@ -297,6 +325,7 @@ added to a hook."
   :bind (:map term-raw-map ("C-c C-y" . term-paste)))
 
 (use-package tern
+  :ensure
   :init
   (add-hook 'js-mode-hook 'tern-mode)
   :config
@@ -307,6 +336,7 @@ added to a hook."
   (tool-bar-mode 0))
 
 (use-package undo-tree
+  :ensure
   :init
   (global-undo-tree-mode)
   :config
@@ -331,6 +361,7 @@ added to a hook."
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark)))
 
 (use-package yaml-mode
+  :ensure
   :mode "\\.yml\\'")
 
 ;;; init.el ends here
