@@ -147,6 +147,12 @@ added to a hook."
   :config
   (global-flycheck-mode))
 
+(use-package flycheck-package
+  :ensure
+  :after flycheck
+  :config
+  (flycheck-package-setup))
+
 (use-package flycheck-pos-tip
   :ensure
   :after flycheck
