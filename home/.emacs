@@ -60,6 +60,7 @@
 ;;; Bind Improvements
 (bind-keys ("<mouse-4>" . scroll-down-line)
            ("<mouse-5>" . scroll-up-line)
+           ("C-c s" . sort-lines)
            ("C-s" . swiper)
            ("C-x C-b" . ibuffer)
            ("M-/" . hippie-expand))
