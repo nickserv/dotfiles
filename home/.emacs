@@ -105,6 +105,15 @@
   :config
   (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
 
+(use-package ert
+  :bind (("C-c e" . ert-run-tests-from-buffer))
+  :config
+  (defun ert-run-tests-from-buffer ()
+    "Eval the current buffer and run all ERT tests."
+    (interactive)
+    (eval-buffer)
+    (ert t)))
+
 (use-package exec-path-from-shell
   :ensure
   :if (eq window-system 'ns)
