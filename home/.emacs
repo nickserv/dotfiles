@@ -103,7 +103,7 @@
 (use-package emmet-mode
   :ensure
   :config
-  (add-hooks ((css-mode-hook sgml-mode-hook) . emmet-mode)))
+  (add-hooks '(((css-mode-hook sgml-mode-hook) . emmet-mode))))
 
 (use-package ert
   :bind (("C-c e" . ert-run-tests-from-buffer))
@@ -142,8 +142,8 @@
 
 (use-package flyspell
   :config
-  (add-hooks (text-mode-hook . flyspell-mode)
-             (prog-mode-hook . flyspell-prog-mode)))
+  (add-hooks '((text-mode-hook . flyspell-mode)
+               (prog-mode-hook . flyspell-prog-mode))))
 
 (use-package gist
   :ensure)
@@ -246,13 +246,13 @@
 (use-package paredit
   :ensure
   :config
-  (add-hooks ((emacs-lisp-mode-hook
-               eval-expression-minibuffer-setup-hook
-               ielm-mode-hook
-               lisp-mode-hook
-               lisp-interaction-mode-hook
-               scheme-mode-hook)
-              . enable-paredit-mode)))
+  (add-hooks '(((emacs-lisp-mode-hook
+                 eval-expression-minibuffer-setup-hook
+                 ielm-mode-hook
+                 lisp-mode-hook
+                 lisp-interaction-mode-hook
+                 scheme-mode-hook)
+                . enable-paredit-mode))))
 
 (use-package projectile
   :ensure
