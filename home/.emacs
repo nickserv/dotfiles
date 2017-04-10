@@ -36,7 +36,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Use full screen on macOS only.
-(when (eq window-system 'ns)
+(when (memq window-system '(mac ns))
   (setq default-frame-alist '((fullscreen . fullboth))))
 
 ;;; Minor Modes
@@ -117,7 +117,7 @@
 
 (use-package exec-path-from-shell
   :ensure
-  :if (eq window-system 'ns)
+  :if (memq window-system '(mac ns))
   :config
   (exec-path-from-shell-initialize))
 
