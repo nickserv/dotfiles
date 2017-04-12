@@ -317,6 +317,11 @@
   :config
   (tool-bar-mode 0))
 
+(use-package typescript-mode
+  :ensure
+  :config
+  (setq typescript-indent-level 2))
+
 (use-package undo-tree
   :ensure
   :config
