@@ -104,7 +104,7 @@
 (use-package emmet-mode
   :ensure
   :config
-  (add-hooks '(((css-mode-hook sgml-mode-hook) . emmet-mode))))
+  (add-hooks-pair '(css-mode-hook sgml-mode-hook) 'emmet-mode))
 
 (use-package ert
   :bind (("C-c e" . ert-run-tests-from-buffer))
@@ -247,13 +247,13 @@
 (use-package paredit
   :ensure
   :config
-  (add-hooks '(((emacs-lisp-mode-hook
+  (add-hooks-pair '(emacs-lisp-mode-hook
                  eval-expression-minibuffer-setup-hook
                  ielm-mode-hook
                  lisp-mode-hook
                  lisp-interaction-mode-hook
                  scheme-mode-hook)
-                . enable-paredit-mode))))
+                  'enable-paredit-mode))
 
 (use-package projectile
   :ensure
