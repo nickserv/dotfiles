@@ -2,9 +2,7 @@
 
 ;;; Commentary:
 ;; My GNU Emacs 25.1 configuration for macOS and Windows, using MELPA
-;; and use-package.  Requires add-hooks
-;; (https://github.com/nickmccurdy/add-hooks), which should be
-;; installed manually until it is added to MELPA.
+;; and use-package.
 
 ;;; Code:
 
@@ -66,6 +64,9 @@
            ("M-/" . hippie-expand))
 
 ;;; Packages
+
+(use-package add-hooks
+  :ensure)
 
 (use-package autorevert
   :config
