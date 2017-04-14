@@ -8,23 +8,27 @@
 
 ;;; Variables
 
+(defconst nick-indent-level 2)
+(defconst nick-mac-window-system (memq window-system '(mac ns)))
+(defconst nick-organizer "~/Google Drive/Organizer.org")
+(defconst nick-projects-directory "~/Repos")
+
 (setq auto-save-default nil
       backup-directory-alist '((".*" . "~/.emacs.d/backup/"))
       custom-file (locate-user-emacs-file "custom.el")
       default-frame-alist '((fullscreen . maximized))
       fill-column 80
       inhibit-startup-screen t
-      initial-buffer-choice "~/Google Drive/Organizer.org"
+      initial-buffer-choice nick-organizer
       initial-scratch-message nil
       mouse-wheel-scroll-amount '(1 ((control)))
       package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("gnu" . "https://elpa.gnu.org/packages/"))
       tab-always-indent 'complete
-      tab-width 2
       visible-bell t)
 
 (setq-default indent-tabs-mode nil
-              tab-width 2)
+              tab-width nick-indent-level)
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
 (ansi-color-for-comint-mode-on)
@@ -34,7 +38,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Use full screen on macOS only.
-(when (memq window-system '(mac ns))
+(when nick-mac-window-system
   (setq default-frame-alist '((fullscreen . fullboth))))
 
 ;;; Minor Modes
@@ -96,7 +100,7 @@
 
 (use-package css-mode
   :config
-  (setq css-indent-offset 2))
+  (setq css-indent-offset nick-indent-level))
 
 (use-package ediff
   :config
@@ -120,7 +124,7 @@
 
 (use-package exec-path-from-shell
   :ensure
-  :if (memq window-system '(mac ns))
+  :if nick-mac-window-system
   :config
   (exec-path-from-shell-initialize))
 
@@ -166,7 +170,7 @@
 
 (use-package js
   :config
-  (setq js-indent-level 2))
+  (setq js-indent-level nick-indent-level))
 
 (use-package leuven-theme
   :ensure
@@ -193,7 +197,7 @@
                                        "--no-ext-diff"
                                        "-M"
                                        "-C")
-        magit-repository-directories '(("~/Repos" . 1))
+        magit-repository-directories `((,nick-projects-directory . 1))
         magit-save-repository-buffers 'dontask)
   (global-magit-file-mode))
 
@@ -214,8 +218,8 @@
          ("C-c l" . org-store-link)
          ("C-c o" . find-org-default-notes-file))
   :config
-  (setq org-agenda-files '("~/Google Drive/Organizer.org")
-        org-default-notes-file "~/Google Drive/Organizer.org"
+  (setq org-agenda-files (list org-default-notes-file)
+        org-default-notes-file initial-buffer-choice
         org-enforce-todo-checkbox-dependencies t
         org-enforce-todo-dependencies t
         org-fontify-whole-heading-line t
@@ -263,7 +267,7 @@
   :config
   (setq projectile-completion-system 'ivy)
   (projectile-mode)
-  (projectile-discover-projects-in-directory "~/Repos")
+  (projectile-discover-projects-in-directory nick-projects-directory)
   (projectile-register-project-type 'npm
                                     '("package.json")
                                     "npm install"
@@ -295,7 +299,7 @@
 
 (use-package sh-script
   :config
-  (setq sh-basic-offset 2))
+  (setq sh-basic-offset nick-indent-level))
 
 (use-package smex
   :ensure)
@@ -322,7 +326,7 @@
 (use-package typescript-mode
   :ensure
   :config
-  (setq typescript-indent-level 2))
+  (setq typescript-indent-level nick-indent-level))
 
 (use-package undo-tree
   :ensure
