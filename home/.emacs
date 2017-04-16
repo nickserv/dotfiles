@@ -44,12 +44,10 @@
 
 ;;; Minor Modes
 (blink-cursor-mode 0)
-(electric-pair-mode)
 (line-number-mode 0)
 (menu-bar-mode 0)
 (save-place-mode)
 (savehist-mode)
-(show-paren-mode)
 (xterm-mouse-mode)
 
 ;;; Package Setup
@@ -251,17 +249,6 @@
   %i
   %a"))))
 
-(use-package paredit
-  :ensure
-  :config
-  (add-hooks-pair '(emacs-lisp-mode-hook
-                 eval-expression-minibuffer-setup-hook
-                 ielm-mode-hook
-                 lisp-mode-hook
-                 lisp-interaction-mode-hook
-                 scheme-mode-hook)
-                  'enable-paredit-mode))
-
 (use-package projectile
   :ensure
   :config
@@ -300,6 +287,14 @@
 (use-package sh-script
   :config
   (setq sh-basic-offset nick-indent-level))
+
+(use-package smartparens
+  :ensure
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-strict-mode)
+  (sp-use-smartparens-bindings)
+  (show-smartparens-global-mode))
 
 (use-package smex
   :ensure)
