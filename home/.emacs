@@ -1,6 +1,7 @@
 ;;; .emacs --- Nick's Emacs configuration
 
 ;;; Commentary:
+
 ;; My GNU Emacs 25.1 configuration for macOS and Windows, using MELPA
 ;; and use-package.
 
@@ -14,7 +15,7 @@
 (defconst nick-projects-directory "~/Repos")
 
 (setq auto-save-default nil
-      backup-directory-alist '((".*" . "~/.emacs.d/backup/"))
+      backup-directory-alist `((".*" . ,(locate-user-emacs-file "backup/")))
       custom-file (locate-user-emacs-file "custom.el")
       default-frame-alist '((fullscreen . maximized))
       fill-column 80
@@ -43,7 +44,6 @@
 
 ;;; Minor Modes
 (blink-cursor-mode 0)
-(electric-layout-mode)
 (electric-pair-mode)
 (line-number-mode 0)
 (menu-bar-mode 0)
