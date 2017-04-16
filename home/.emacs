@@ -70,6 +70,11 @@
 (use-package add-hooks
   :ensure)
 
+(use-package aggressive-indent
+  :ensure
+  :config
+  (global-aggressive-indent-mode))
+
 (use-package autorevert
   :config
   (setq auto-revert-verbose nil
