@@ -170,6 +170,9 @@
   :config
   (setq js-indent-level nick-indent-level))
 
+(use-package js-comint
+  :ensure)
+
 (use-package leuven-theme
   :ensure
   :config
@@ -208,6 +211,11 @@
 
 (use-package markdown-mode
   :ensure)
+
+(use-package npm-mode
+  :ensure
+  :config
+  (npm-global-mode))
 
 (use-package org
   :bind (("C-c a" . org-agenda)
