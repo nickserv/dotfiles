@@ -38,10 +38,6 @@
 ;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Use full screen on macOS only.
-(when nick-mac-window-system
-  (setq default-frame-alist '((fullscreen . fullboth))))
-
 ;;; Minor Modes
 (blink-cursor-mode 0)
 (line-number-mode 0)
@@ -49,6 +45,11 @@
 (save-place-mode)
 (savehist-mode)
 (xterm-mouse-mode)
+
+;; macOS GUI
+(when nick-mac-window-system
+  (setq default-frame-alist '((fullscreen . fullboth)))
+  (menu-bar-mode))
 
 ;;; Package Setup
 (package-initialize)
