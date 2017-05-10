@@ -269,16 +269,8 @@
   (setq projectile-completion-system 'ivy)
   (projectile-mode)
   (projectile-discover-projects-in-directory nick-projects-directory)
-  (projectile-register-project-type 'npm
-                                    '("package.json")
-                                    "npm install"
-                                    "npm test"
-                                    "npm start")
-  (projectile-register-project-type 'jekyll
-                                    '("_config.yml")
-                                    "bundle exec jekyll build"
-                                    nil
-                                    "bundle exec jekyll serve"))
+  (projectile-register-project-type 'jekyll '("_config.yml")
+                                    :compile "bundle exec jekyll serve"))
 
 (use-package rainbow-mode
   :ensure
