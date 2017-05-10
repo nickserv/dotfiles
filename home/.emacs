@@ -283,6 +283,17 @@
   :ensure
   :bind ("C-x C-S-c" . restart-emacs))
 
+(use-package restclient
+  :ensure
+  :bind ("C-c h" . restclient-buffer)
+  :config
+  (defun restclient-buffer ()
+    (interactive)
+    (let ((buffer "*HTTP Request*"))
+      (get-buffer-create buffer)
+      (switch-to-buffer-other-window buffer)
+      (restclient-mode))))
+
 (use-package sane-term
   :ensure
   :bind (("C-x t" . sane-term)
