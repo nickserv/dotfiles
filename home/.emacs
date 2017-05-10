@@ -229,10 +229,11 @@
          ("C-c c" . org-capture)
          ("C-c l" . org-store-link)
          ("C-c o" . find-org-default-notes-file))
+  :init
+  (setq org-default-notes-file initial-buffer-choice
+        org-agenda-files (list org-default-notes-file))
   :config
-  (setq org-agenda-files (list org-default-notes-file)
-        org-default-notes-file initial-buffer-choice
-        org-enforce-todo-checkbox-dependencies t
+  (setq org-enforce-todo-checkbox-dependencies t
         org-enforce-todo-dependencies t
         org-fontify-whole-heading-line t
         org-log-done 'time
