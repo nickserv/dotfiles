@@ -115,7 +115,7 @@
 (use-package emmet-mode
   :ensure
   :config
-  (add-hooks-pair '(css-mode-hook sgml-mode-hook) 'emmet-mode))
+  (add-hooks-pair '(css-mode-hook scss-mode-hook sgml-mode-hook) 'emmet-mode))
 
 (use-package ert
   :bind (("C-c e" . ert-run-tests-from-buffer))
