@@ -173,6 +173,7 @@
   (ivy-mode))
 
 (use-package js
+  :mode ("\\.jsx?\\'" . js-jsx-mode)
   :config
   (setq js-indent-level nick-indent-level))
 
