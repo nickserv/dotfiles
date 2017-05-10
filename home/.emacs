@@ -172,6 +172,10 @@
         ivy-use-virtual-buffers t)
   (ivy-mode))
 
+(use-package ivy-hydra
+  :ensure
+  :after ivy)
+
 (use-package js
   :mode ("\\.jsx?\\'" . js-jsx-mode)
   :config
