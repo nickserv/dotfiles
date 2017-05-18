@@ -31,7 +31,6 @@
 (setq-default indent-tabs-mode nil
               tab-width nick-indent-level)
 
-(add-hook 'text-mode-hook 'auto-fill-mode)
 (ansi-color-for-comint-mode-on)
 (set-frame-font "Source Code Pro" nil t)
 
@@ -93,7 +92,7 @@
     "Use ANSI colors for compilation."
     (defvar compilation-filter-start)
     (ansi-color-apply-on-region compilation-filter-start (point)))
-  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+  (add-hooks-pair 'compilation-filter 'colorize-compilation-buffer))
 
 (use-package counsel
   :ensure
@@ -115,7 +114,7 @@
 (use-package emmet-mode
   :ensure
   :config
-  (add-hooks-pair '(css-mode-hook scss-mode-hook sgml-mode-hook) 'emmet-mode))
+  (add-hooks-pair '(css-mode scss-mode sgml-mode) 'emmet-mode))
 
 (use-package ert
   :bind (("C-c e" . ert-run-tests-from-buffer))
@@ -154,8 +153,8 @@
 
 (use-package flyspell
   :config
-  (add-hooks '((text-mode-hook . flyspell-mode)
-               (prog-mode-hook . flyspell-prog-mode))))
+  (add-hooks '((text-mode . flyspell-mode)
+               (prog-mode . flyspell-prog-mode))))
 
 (use-package gist
   :ensure)
@@ -193,7 +192,7 @@
   :config
   (unless window-system
     (setq linum-format "%d "))
-  (add-hook 'prog-mode-hook 'linum-mode))
+  (add-hooks-pair 'prog-mode 'linum-mode))
 
 (use-package magit
   :ensure
@@ -281,7 +280,7 @@
 (use-package rainbow-mode
   :ensure
   :config
-  (add-hook 'prog-mode-hook 'rainbow-mode))
+  (add-hooks-pair 'prog-mode 'rainbow-mode))
 
 (use-package restart-emacs
   :ensure
@@ -311,6 +310,10 @@
   :config
   (setq sh-basic-offset nick-indent-level))
 
+(use-package simple
+  :config
+  (add-hooks-pair 'text-mode 'auto-fill-mode))
+
 (use-package smartparens
   :ensure
   :config
@@ -335,7 +338,7 @@
   :ensure
   :config
   (setq tern-command '("tern" "--no-port-file"))
-  (add-hook 'js-mode-hook 'tern-mode))
+  (add-hooks-pair 'js-mode 'tern-mode))
 
 (use-package tool-bar
   :config
@@ -365,7 +368,7 @@
 (use-package whitespace
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark))
-  (add-hook 'before-save-hook 'whitespace-cleanup)
+  (add-hooks-pair 'before-save 'whitespace-cleanup)
   (global-whitespace-mode))
 
 (use-package yaml-mode
