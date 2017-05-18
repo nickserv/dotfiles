@@ -212,13 +212,6 @@
         magit-save-repository-buffers 'dontask)
   (global-magit-file-mode))
 
-(use-package magithub
-  :ensure
-  :after magit
-  :config
-  ;; Enable all features.
-  (magithub-feature-autoinject t))
-
 (use-package markdown-mode
   :ensure)
 
