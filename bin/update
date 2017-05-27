@@ -47,10 +47,6 @@ if exists dnu; then
   dnu clear-http-cache
 fi
 
-if exists npm; then
-  npm cache clean
-fi
-
 if exists profile-cleaner; then
   profile-cleaner gc
 fi
