@@ -24,6 +24,7 @@
       initial-scratch-message nil
       mouse-wheel-scroll-amount '(1 ((control)))
       package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
                          ("gnu" . "https://elpa.gnu.org/packages/"))
       tab-always-indent 'complete
       visible-bell t)
@@ -224,6 +225,7 @@
   (npm-global-mode))
 
 (use-package org
+  :ensure org-plus-contrib
   :bind (("C-c a" . org-agenda)
          ("C-c b" . org-iswitchb)
          ("C-c c" . org-capture)
