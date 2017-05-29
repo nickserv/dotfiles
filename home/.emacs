@@ -111,6 +111,9 @@
         ediff-split-window-function 'split-window-horizontally
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
+(use-package emacs-lisp-mode
+  :mode "Cask")
+
 (use-package emmet-mode
   :ensure
   :config
