@@ -179,11 +179,6 @@
   :ensure
   :after ivy)
 
-(use-package js
-  :mode ("\\.jsx?\\'" . js-jsx-mode)
-  :config
-  (setq js-indent-level nick-indent-level))
-
 (use-package js-comint
   :ensure)
 
@@ -294,6 +289,13 @@
       (get-buffer-create buffer)
       (switch-to-buffer-other-window buffer)
       (restclient-mode))))
+
+(use-package rjsx-mode
+  :mode ("\\.jsx?\\'" . rjsx-mode)
+  :config
+  (setq js-indent-level nick-indent-level
+        js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil))
 
 (use-package sane-term
   :ensure
