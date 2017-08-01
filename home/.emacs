@@ -334,12 +334,6 @@
 (use-package term
   :bind (:map term-raw-map ("C-c C-y" . term-paste)))
 
-(use-package tern
-  :ensure
-  :config
-  (setq tern-command '("tern" "--no-port-file"))
-  (add-hooks-pair 'js-mode 'tern-mode))
-
 (use-package tool-bar
   :config
   (tool-bar-mode 0))
