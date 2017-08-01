@@ -182,6 +182,12 @@
 (use-package js-comint
   :ensure)
 
+(use-package js2-mode
+  :config
+  (setq js-indent-level nick-indent-level
+        js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil))
+
 (use-package leuven-theme
   :ensure
   :config
@@ -291,11 +297,8 @@
       (restclient-mode))))
 
 (use-package rjsx-mode
-  :mode ("\\.jsx?\\'" . rjsx-mode)
-  :config
-  (setq js-indent-level nick-indent-level
-        js2-mode-show-parse-errors nil
-        js2-mode-show-strict-warnings nil))
+  :ensure
+  :mode "\\.jsx?\\'")
 
 (use-package sane-term
   :ensure
