@@ -182,12 +182,6 @@
 (use-package js-comint
   :ensure)
 
-(use-package js2-mode
-  :config
-  (setq js-indent-level nick-indent-level
-        js2-mode-show-parse-errors nil
-        js2-mode-show-strict-warnings nil))
-
 (use-package leuven-theme
   :ensure
   :config
@@ -293,10 +287,6 @@
       (switch-to-buffer-other-window buffer)
       (restclient-mode))))
 
-(use-package rjsx-mode
-  :ensure
-  :mode "\\.jsx?\\'")
-
 (use-package sane-term
   :ensure
   :bind (("C-x t" . sane-term)
@@ -358,6 +348,15 @@
 (use-package vc-git
   :config
   (setq vc-git-diff-switches "-w -C"))
+
+(use-package web-mode
+  :ensure
+  :mode "\\.jsx?\\'"
+  :config
+  (setq web-mode-code-indent-offset nick-indent-level
+        web-mode-css-indent-offset nick-indent-level
+        web-mode-markup-indent-offset nick-indent-level)
+  (add-to-list 'web-mode-content-types '("jsx" . "\\.jsx?\\'")))
 
 (use-package whitespace
   :config
