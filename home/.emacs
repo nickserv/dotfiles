@@ -351,10 +351,14 @@
 
 (use-package web-mode
   :ensure
-  :mode "\\.jsx?\\'"
+  :mode
+  "\\.html?\\'"
+  "\\.jsx?\\'"
+  "\\.json\\'"
   :config
   (setq web-mode-code-indent-offset nick-indent-level
         web-mode-css-indent-offset nick-indent-level
+        web-mode-engines-alist '(("liquid" . "\\.html?\\'"))
         web-mode-markup-indent-offset nick-indent-level)
   (add-to-list 'web-mode-content-types '("jsx" . "\\.jsx?\\'")))
 
