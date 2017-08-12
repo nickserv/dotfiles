@@ -71,12 +71,17 @@
 (use-package add-hooks
   :ensure)
 
+(use-package delight
+  :ensure)
+
 (use-package aggressive-indent
   :ensure
+  :delight
   :config
   (global-aggressive-indent-mode))
 
 (use-package autorevert
+  :delight auto-revert-mode
   :config
   (setq auto-revert-verbose nil
         global-auto-revert-non-file-buffers t)
@@ -97,6 +102,7 @@
 
 (use-package counsel
   :ensure
+  :delight
   :bind (("C-c g" . counsel-git)
          ("C-c j" . counsel-git-grep))
   :init
@@ -117,6 +123,7 @@
 
 (use-package emmet-mode
   :ensure
+  :delight
   :config
   (add-hooks-pair '(css-mode scss-mode sgml-mode) 'emmet-mode))
 
@@ -141,6 +148,7 @@
 (use-package flycheck
   :ensure
   :config
+  (setq flycheck-mode-line-prefix nil)
   (global-flycheck-mode))
 
 (use-package flycheck-package
@@ -156,6 +164,7 @@
   (flycheck-pos-tip-mode))
 
 (use-package flyspell
+  :delight
   :config
   (add-hooks '((text-mode . flyspell-mode)
                (prog-mode . flyspell-prog-mode))))
@@ -169,6 +178,7 @@
 
 (use-package ivy
   :bind ("C-c C-r" . ivy-resume)
+  :delight
   :config
   (setq ivy-count-format "(%d/%d) "
         ivy-display-style 'fancy
@@ -212,6 +222,7 @@
 
 (use-package npm-mode
   :ensure
+  :delight
   :config
   (npm-global-mode))
 
@@ -259,6 +270,7 @@
 
 (use-package projectile
   :ensure
+  :delight '(:eval (concat " " (projectile-project-name)))
   :config
   (setq projectile-completion-system 'ivy
         projectile-switch-project-action 'projectile-vc)
@@ -269,6 +281,7 @@
 
 (use-package rainbow-mode
   :ensure
+  :delight
   :config
   (add-hooks-pair 'prog-mode 'rainbow-mode))
 
@@ -301,11 +314,13 @@
   (setq sh-basic-offset nick-indent-level))
 
 (use-package simple
+  :delight auto-fill-function
   :config
   (add-hooks-pair 'text-mode 'auto-fill-mode))
 
 (use-package smartparens
   :ensure
+  :delight
   :config
   (require 'smartparens-config)
   (smartparens-global-strict-mode)
@@ -317,6 +332,7 @@
 
 (use-package super-save
   :ensure
+  :delight
   :config
   (setq super-save-auto-save-when-idle t)
   (super-save-mode))
@@ -335,6 +351,7 @@
 
 (use-package undo-tree
   :ensure
+  :delight
   :config
   (setq undo-tree-visualizer-diff t
         undo-tree-visualizer-timestamps t)
@@ -363,6 +380,7 @@
   (add-to-list 'web-mode-content-types '("jsx" . "\\.jsx?\\'")))
 
 (use-package whitespace
+  :delight global-whitespace-mode
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark))
   (add-hooks-pair 'before-save 'whitespace-cleanup)
