@@ -92,9 +92,6 @@ title_info
 # Automatically use cd when paths are entered without cd
 setopt autocd
 
-# Autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 ############
 # Keybinds #
 ############
