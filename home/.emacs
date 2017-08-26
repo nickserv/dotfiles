@@ -18,7 +18,6 @@
       backup-directory-alist `((".*" . ,(locate-user-emacs-file "backup/")))
       custom-file (locate-user-emacs-file "custom.el")
       default-frame-alist '((fullscreen . maximized))
-      fill-column 80
       inhibit-startup-screen t
       initial-buffer-choice nick-organizer
       initial-scratch-message nil
@@ -29,7 +28,8 @@
       tab-always-indent 'complete
       visible-bell t)
 
-(setq-default indent-tabs-mode nil
+(setq-default fill-column 80
+              indent-tabs-mode nil
               tab-width nick-indent-level)
 
 (ansi-color-for-comint-mode-on)
