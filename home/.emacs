@@ -326,6 +326,7 @@
 (use-package simple
   :delight auto-fill-function
   :config
+  (setq kill-whole-line t)
   (add-hooks-pair 'text-mode 'auto-fill-mode))
 
 (use-package smartparens
