@@ -273,11 +273,21 @@
   :delight '(:eval (concat " " (projectile-project-name)))
   :config
   (setq projectile-completion-system 'ivy
+        projectile-create-missing-test-files t
         projectile-switch-project-action 'projectile-vc)
   (projectile-mode)
   (projectile-discover-projects-in-directory nick-projects-directory)
   (projectile-register-project-type 'jekyll '("_config.yml")
-                                    :compile "bundle exec jekyll serve"))
+                                    :compile "jekyll build"
+                                    :test "jekyll doctor"
+                                    :run "jekyll serve")
+  (projectile-register-project-type 'npm '("package.json")
+                                    :compile "npm install"
+                                    :test "npm test"
+                                    :run "npm start"
+                                    :test-suffix ".test")
+  (projectile-register-project-type 'web '("index.html")
+                                    :run 'browse-url-of-buffer))
 
 (use-package rainbow-mode
   :ensure
