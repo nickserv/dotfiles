@@ -104,7 +104,9 @@
   :ensure
   :delight
   :bind (("C-c g" . counsel-git)
-         ("C-c j" . counsel-git-grep))
+         ("C-c j" . counsel-git-grep)
+         ("C-c k" . counsel-rg)
+         ("C-x l" . counsel-locate))
   :init
   (counsel-mode))
 
