@@ -74,6 +74,11 @@
 (use-package delight
   :ensure)
 
+(use-package add-node-modules-path
+  :ensure
+  :config
+  (add-hooks-pair 'web-mode 'add-node-modules-path))
+
 (use-package aggressive-indent
   :ensure
   :delight
@@ -150,8 +155,15 @@
 (use-package flycheck
   :ensure
   :config
+  (defun enable-web-mode-linter ()
+    (when (equal (file-name-extension buffer-file-name) "js")
+      (flycheck-add-mode 'javascript-jshint 'web-mode)
+      (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (flycheck-add-mode 'javascript-jscs 'web-mode)
+      (flycheck-add-mode 'javascript-standard 'web-mode)))
   (setq flycheck-mode-line-prefix nil)
-  (global-flycheck-mode))
+  (global-flycheck-mode)
+  (add-hooks-pair 'web-mode 'enable-web-mode-linter))
 
 (use-package flycheck-package
   :ensure
