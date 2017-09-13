@@ -8,6 +8,7 @@ exists() {
 if exists brew; then
     echo brew
     brew upgrade
+    brew cask outdated | xargs brew cask reinstall
 fi
 
 if exists gem; then
