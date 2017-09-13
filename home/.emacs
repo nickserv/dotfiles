@@ -32,7 +32,6 @@
               indent-tabs-mode nil
               tab-width nick-indent-level)
 
-(ansi-color-for-comint-mode-on)
 (set-frame-font "Source Code Pro" nil t)
 
 ;; Abbreviate yes/no prompts.
@@ -104,12 +103,7 @@
                '("^\\(/.*\\)" 1))
   ;; Node
   (add-to-list 'compilation-error-regexp-alist
-               '("at [^ ]+ (\\(.+?\\):\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3))
-  (defun colorize-compilation-buffer ()
-    "Use ANSI colors for compilation."
-    (defvar compilation-filter-start)
-    (ansi-color-apply-on-region compilation-filter-start (point)))
-  (add-hooks-pair 'compilation-filter 'colorize-compilation-buffer))
+               '("at [^ ]+ (\\(.+?\\):\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3)))
 
 (use-package counsel
   :ensure
