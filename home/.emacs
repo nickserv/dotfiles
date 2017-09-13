@@ -99,6 +99,12 @@
 (use-package compile
   :config
   (setq compilation-ask-about-save nil)
+  ;; ESLint
+  (add-to-list 'compilation-error-regexp-alist
+               '("^\\(/.*\\)" 1))
+  ;; Node
+  (add-to-list 'compilation-error-regexp-alist
+               '("at [^ ]+ (\\(.+?\\):\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3))
   (defun colorize-compilation-buffer ()
     "Use ANSI colors for compilation."
     (defvar compilation-filter-start)
