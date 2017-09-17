@@ -365,6 +365,12 @@
 (use-package term
   :bind (:map term-raw-map ("C-c C-y" . term-paste)))
 
+(use-package tern
+  :ensure
+  :config
+  (add-to-list 'tern-command "--no-port-file" t)
+  (add-hooks-pair 'web-mode 'tern-mode))
+
 (use-package tool-bar
   :config
   (tool-bar-mode 0))
