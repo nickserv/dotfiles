@@ -68,3 +68,5 @@
 
 [pull]
 	rebase = true
+[magit]
+	hideCampaign = true
