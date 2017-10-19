@@ -32,7 +32,7 @@
               indent-tabs-mode nil
               tab-width nick-indent-level)
 
-(set-frame-font "Source Code Pro" nil t)
+(set-frame-font "SF Pro Text" nil t)
 
 ;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -210,12 +210,6 @@
   :ensure
   :config
   (load-theme 'leuven t))
-
-(use-package linum
-  :config
-  (unless window-system
-    (setq linum-format "%d "))
-  (add-hooks-pair 'prog-mode 'linum-mode))
 
 (use-package magit
   :ensure
