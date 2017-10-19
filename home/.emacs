@@ -228,12 +228,6 @@
 (use-package markdown-mode
   :ensure)
 
-(use-package npm-mode
-  :ensure
-  :delight
-  :config
-  (npm-global-mode))
-
 (use-package org
   :ensure org-plus-contrib
   :bind (("C-c a" . org-agenda)
@@ -318,11 +312,6 @@
       (switch-to-buffer-other-window buffer)
       (restclient-mode))))
 
-(use-package sane-term
-  :ensure
-  :bind (("C-x t" . sane-term)
-         ("C-x T" . sane-term-create)))
-
 (use-package scroll-bar
   :config
   (set-scroll-bar-mode nil))
@@ -355,9 +344,6 @@
   :config
   (setq super-save-auto-save-when-idle t)
   (super-save-mode))
-
-(use-package term
-  :bind (:map term-raw-map ("C-c C-y" . term-paste)))
 
 (use-package tern
   :ensure
