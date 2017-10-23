@@ -30,6 +30,7 @@
 
 (setq-default fill-column 80
               indent-tabs-mode nil
+              line-spacing 0.4
               tab-width nick-indent-level)
 
 (set-frame-font "SF Pro Text" nil t)
