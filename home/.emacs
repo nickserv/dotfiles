@@ -139,13 +139,16 @@
   (add-hooks-pair '(css-mode scss-mode sgml-mode) 'emmet-mode))
 
 (use-package ert
-  :bind (("C-c e" . ert-run-tests-from-buffer))
+  :bind ("C-c e" . ert-run-tests-from-buffer)
   :config
   (defun ert-run-tests-from-buffer ()
     "Eval the current buffer and run all ERT tests."
     (interactive)
     (eval-buffer)
     (ert t)))
+
+(use-package shell
+  :bind ("C-x t" . shell))
 
 (use-package exec-path-from-shell
   :ensure
