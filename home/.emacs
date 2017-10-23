@@ -104,7 +104,10 @@
                '("^\\(/.*\\)" 1))
   ;; Node
   (add-to-list 'compilation-error-regexp-alist
-               '("at [^ ]+ (\\(.+?\\):\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3)))
+               '("at [^ ]+ (\\(.+?\\):\\([[:digit:]]+\\):\\([[:digit:]]+\\))" 1 2 3))
+  ;; Standard
+  (add-to-list 'compilation-error-regexp-alist
+               '("^  \\(.+?\\)::\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3)))
 
 (use-package counsel
   :ensure
