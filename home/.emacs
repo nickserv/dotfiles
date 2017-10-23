@@ -284,13 +284,22 @@
                                     :compile "jekyll build"
                                     :test "jekyll doctor"
                                     :run "jekyll serve")
+  (projectile-register-project-type 'jekyll-bundler '("_config.yml")
+                                    :compile "bundle exec jekyll build"
+                                    :test "bundle exec jekyll doctor"
+                                    :run "bundle exec jekyll serve")
   (projectile-register-project-type 'npm '("package.json")
                                     :compile "npm install"
                                     :test "npm test"
                                     :run "npm start"
                                     :test-suffix ".test")
   (projectile-register-project-type 'web '("index.html")
-                                    :run 'browse-url-of-buffer))
+                                    :run 'browse-url-of-buffer)
+  (projectile-register-project-type 'yarn '("yarn.lock")
+                                    :compile "yarn"
+                                    :test "yarn test"
+                                    :run "yarn run start"
+                                    :test-suffix ".test"))
 
 (use-package rainbow-mode
   :ensure
