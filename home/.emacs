@@ -33,8 +33,6 @@
               line-spacing 0.4
               tab-width nick-indent-level)
 
-(set-frame-font "SF Pro Text" nil t)
-
 ;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -306,6 +304,13 @@
                                     :test "yarn test"
                                     :run "yarn run start"
                                     :test-suffix ".test"))
+
+(use-package proportional
+  :ensure
+  :config
+  (setq proportional-font "SF Pro Text"
+        proportional-monospace-font "SF Mono")
+  (proportional-mode))
 
 (use-package rainbow-mode
   :ensure
