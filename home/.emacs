@@ -121,6 +121,11 @@
   :config
   (setq css-indent-offset nick-indent-level))
 
+(use-package dired
+  :config
+  (setq dired-recursive-copies 'always
+        dired-recursive-deletes 'always))
+
 (use-package ediff
   :config
   (setq ediff-diff-options "-w"
