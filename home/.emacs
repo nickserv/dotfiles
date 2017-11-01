@@ -134,7 +134,7 @@
   :ensure
   :delight
   :config
-  (add-hooks-pair '(css-mode scss-mode sgml-mode) 'emmet-mode))
+  (add-hooks-pair '(css-mode scss-mode sgml-mode web-mode) 'emmet-mode))
 
 (use-package ert
   :bind ("C-c e" . ert-run-tests-from-buffer)
@@ -404,6 +404,7 @@
   "\\.html?\\'"
   "\\.jsx?\\'"
   "\\.json\\'"
+  :interpreter "node"
   :config
   (setq web-mode-code-indent-offset nick-indent-level
         web-mode-css-indent-offset nick-indent-level
