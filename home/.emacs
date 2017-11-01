@@ -145,8 +145,8 @@
     (eval-buffer)
     (ert t)))
 
-(use-package shell
-  :bind ("C-x t" . shell))
+(use-package eshell
+  :bind ("C-x t" . eshell))
 
 (use-package exec-path-from-shell
   :ensure
