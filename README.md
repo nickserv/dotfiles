@@ -24,4 +24,5 @@ npm install -g `cat node_packages.txt`
 ```
 
 ## Older config files
-- [My old fork of Cody Krieger's vim config files](https://github.com/nickmccurdy/dotvim-old)
+- [Fork of Cody Krieger's vim config](https://github.com/nickmccurdy/dotvim-old)
+- [Fork of dwm](https://github.com/nickmccurdy/dwm)
