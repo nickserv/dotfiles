@@ -64,6 +64,21 @@
            ("C-x C-b" . ibuffer)
            ("M-/" . hippie-expand))
 
+;; cdnm
+
+(defun cdnm-list ()
+  "List CDN dependencies in buffer."
+  (interactive)
+  (shell-command (concat "cdnm list " buffer-file-name) "*cdnm-list*"))
+
+(defun cdnm-update ()
+  "Update CDN dependencies in buffer."
+  (interactive)
+  (shell-command (concat "cdnm update " buffer-file-name) "*cdnm-update*"))
+
+(bind-keys ("C-c m l" . cdnm-list)
+           ("C-c m u" . cdnm-update))
+
 ;;; Packages
 
 (use-package add-hooks
