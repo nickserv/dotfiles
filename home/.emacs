@@ -253,6 +253,12 @@
 (use-package markdown-mode
   :ensure)
 
+(use-package npm-mode
+  :ensure
+  :delight
+  :config
+  (npm-global-mode))
+
 (use-package org
   :ensure org-plus-contrib
   :bind (("C-c a" . org-agenda)
