@@ -424,6 +424,11 @@
   :config
   (setq vc-git-diff-switches "-w -C"))
 
+(use-package wakatime-mode
+  :ensure
+  :config
+  (global-wakatime-mode))
+
 (use-package web-mode
   :ensure
   :mode
