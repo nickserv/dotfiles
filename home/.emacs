@@ -87,6 +87,12 @@
 (use-package delight
   :ensure)
 
+(use-package exec-path-from-shell
+  :ensure
+  :if nick-mac-window-system
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package add-node-modules-path
   :ensure
   :config
@@ -167,12 +173,6 @@
 
 (use-package eshell
   :bind ("C-x t" . eshell))
-
-(use-package exec-path-from-shell
-  :ensure
-  :if nick-mac-window-system
-  :config
-  (exec-path-from-shell-initialize))
 
 (use-package flx
   :ensure)
