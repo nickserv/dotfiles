@@ -310,6 +310,8 @@
         projectile-switch-project-action 'projectile-vc)
   (projectile-mode)
   (projectile-discover-projects-in-directory nick-projects-directory)
+  (projectile-register-project-type 'web '("index.html")
+                                    :run 'browse-url-of-buffer)
   (projectile-register-project-type 'jekyll '("_config.yml")
                                     :compile "jekyll build"
                                     :test "jekyll doctor"
@@ -323,8 +325,6 @@
                                     :test "npm test"
                                     :run "npm start"
                                     :test-suffix ".test")
-  (projectile-register-project-type 'web '("index.html")
-                                    :run 'browse-url-of-buffer)
   (projectile-register-project-type 'yarn '("yarn.lock")
                                     :compile "yarn"
                                     :test "yarn test"
