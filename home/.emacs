@@ -146,7 +146,8 @@
 (use-package dired
   :config
   (setq dired-recursive-copies 'always
-        dired-recursive-deletes 'always))
+        dired-recursive-deletes 'always)
+  (add-hooks-pair 'dired-mode 'dired-hide-details-mode))
 
 (use-package ediff
   :config
