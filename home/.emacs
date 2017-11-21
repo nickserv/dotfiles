@@ -22,6 +22,7 @@
       initial-buffer-choice nick-organizer
       initial-scratch-message nil
       mouse-wheel-scroll-amount '(1 ((control)))
+      ns-pop-up-frames nil
       package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")
                          ("gnu" . "https://elpa.gnu.org/packages/"))
