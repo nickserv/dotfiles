@@ -31,6 +31,10 @@
               line-spacing 0.4
               tab-width nick-indent-level)
 
+(let ((system-fonts '((ns .  "SF Mono")
+                      (w32 . "Consolas"))))
+  (set-frame-font (alist-get window-system system-fonts) nil t))
+
 ;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -329,16 +333,6 @@
                                     :test "yarn test"
                                     :run "yarn run start"
                                     :test-suffix ".test"))
-
-(use-package proportional
-  :ensure
-  :config
-  (pcase window-system
-    ('ns  (setq proportional-font "SF Pro Text"
-                proportional-monospace-font "SF Mono"))
-    ('w32 (setq proportional-font "Segoe UI"
-                proportional-monospace-font "Consolas")))
-  (proportional-mode))
 
 (use-package rainbow-mode
   :ensure
