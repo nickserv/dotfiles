@@ -147,6 +147,11 @@
   :init
   (counsel-mode))
 
+(use-package counsel-projectile
+  :ensure
+  :config
+  (counsel-projectile-on))
+
 (use-package css-mode
   :config
   (setq css-indent-offset nick-indent-level))
@@ -313,8 +318,7 @@
   :delight '(:eval (concat " " (projectile-project-name)))
   :config
   (setq projectile-completion-system 'ivy
-        projectile-create-missing-test-files t
-        projectile-switch-project-action 'projectile-vc)
+        projectile-create-missing-test-files t)
   (projectile-mode)
   (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'web '("index.html")
