@@ -117,6 +117,13 @@
   :ensure
   :bind ("C-c r" . browse-at-remote))
 
+(use-package company
+  :ensure
+  :config
+  (setq company-idle-delay 0
+        company-minimum-prefix-length 0)
+  (global-company-mode))
+
 (use-package compile
   :config
   (setq compilation-ask-about-save nil)
