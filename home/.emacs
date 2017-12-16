@@ -103,10 +103,11 @@
   (global-aggressive-indent-mode))
 
 (use-package autorevert
+  :custom
+  (auto-revert-verbose nil)
+  (global-auto-revert-non-file-buffers t)
   :delight auto-revert-mode
   :config
-  (setq auto-revert-verbose nil
-        global-auto-revert-non-file-buffers t)
   (global-auto-revert-mode))
 
 (use-package browse-at-remote
@@ -115,14 +116,16 @@
 
 (use-package company
   :ensure
+  :custom
+  (company-idle-delay 0)
+  (company-minimum-prefix-length 0)
   :config
-  (setq company-idle-delay 0
-        company-minimum-prefix-length 0)
   (global-company-mode))
 
 (use-package compile
+  :custom
+  (compilation-ask-about-save nil)
   :config
-  (setq compilation-ask-about-save nil)
   ;; ESLint
   (add-to-list 'compilation-error-regexp-alist
                '("^\\(/.*\\)" 1))
@@ -140,7 +143,7 @@
          ("C-c j" . counsel-git-grep)
          ("C-c k" . counsel-rg)
          ("C-x l" . counsel-locate))
-  :init
+  :config
   (counsel-mode))
 
 (use-package counsel-projectile
@@ -149,20 +152,20 @@
   (counsel-projectile-on))
 
 (use-package css-mode
-  :config
-  (setq css-indent-offset nick-indent-level))
+  :custom
+  (css-indent-offset nick-indent-level))
 
 (use-package dired
   :hook (dired-mode . dired-hide-details-mode)
-  :config
-  (setq dired-recursive-copies 'always
-        dired-recursive-deletes 'always))
+  :custom
+  (dired-recursive-copies 'always)
+  (dired-recursive-deletes 'always))
 
 (use-package ediff
-  :config
-  (setq ediff-diff-options "-w"
-        ediff-split-window-function 'split-window-horizontally
-        ediff-window-setup-function 'ediff-setup-windows-plain))
+  :custom
+  (ediff-diff-options "-w")
+  (ediff-split-window-function 'split-window-horizontally)
+  (ediff-window-setup-function 'ediff-setup-windows-plain))
 
 (use-package emacs-lisp-mode
   :mode "Cask")
@@ -187,6 +190,8 @@
 (use-package flycheck
   :ensure
   :hook (web-mode . enable-web-mode-linter)
+  :custom
+  (flycheck-mode-line-prefix nil)
   :config
   (defun enable-web-mode-linter ()
     (when (equal (file-name-extension buffer-file-name) "js")
@@ -194,7 +199,6 @@
       (flycheck-add-mode 'javascript-eslint 'web-mode)
       (flycheck-add-mode 'javascript-jscs 'web-mode)
       (flycheck-add-mode 'javascript-standard 'web-mode)))
-  (setq flycheck-mode-line-prefix nil)
   (global-flycheck-mode))
 
 (use-package flycheck-package
@@ -218,16 +222,17 @@
   :ensure)
 
 (use-package ispell
-  :config
-  (setq ispell-program-name "/usr/local/bin/aspell"))
+  :custom
+  (ispell-program-name "/usr/local/bin/aspell"))
 
 (use-package ivy
   :bind ("C-c C-r" . ivy-resume)
+  :custom
+  (ivy-count-format "(%d/%d) ")
+  (ivy-display-style 'fancy)
+  (ivy-use-virtual-buffers t)
   :delight
   :config
-  (setq ivy-count-format "(%d/%d) "
-        ivy-display-style 'fancy
-        ivy-use-virtual-buffers t)
   (ivy-mode))
 
 (use-package ivy-hydra
@@ -244,16 +249,17 @@
 
 (use-package magit
   :ensure
+  :custom
+  (magit-completing-read-function 'ivy-completing-read)
+  (magit-diff-arguments '("--no-ext-diff" "-w" "-C"))
+  (magit-diff-refine-hunk 'all)
+  (magit-diff-section-arguments '("--ignore-space-change"
+                                  "--ignore-all-space"
+                                  "--no-ext-diff"
+                                  "-M"
+                                  "-C"))
+  (magit-save-repository-buffers 'dontask)
   :config
-  (setq magit-completing-read-function 'ivy-completing-read
-        magit-diff-arguments '("--no-ext-diff" "-w" "-C")
-        magit-diff-refine-hunk 'all
-        magit-diff-section-arguments '("--ignore-space-change"
-                                       "--ignore-all-space"
-                                       "--no-ext-diff"
-                                       "-M"
-                                       "-C")
-        magit-save-repository-buffers 'dontask)
   (global-magit-file-mode))
 
 (use-package markdown-mode
@@ -272,47 +278,48 @@
          ("C-c c" . org-capture)
          ("C-c l" . org-store-link)
          ("C-c o" . find-org-default-notes-file))
-  :init
-  (setq org-default-notes-file initial-buffer-choice
-        org-agenda-files (list org-default-notes-file))
+  :custom
+  (org-agenda-files (list initial-buffer-choice))
+  (org-default-notes-file initial-buffer-choice)
+  (org-enforce-todo-checkbox-dependencies t)
+  (org-enforce-todo-dependencies t)
+  (org-fontify-whole-heading-line t)
+  (org-log-done 'time)
+  (org-log-repeat 'time)
+  (org-modules '(org-mouse))
+  (org-outline-path-complete-in-steps nil)
+  (org-refile-targets '((nil :maxlevel . 10)))
+  (org-refile-use-outline-path 'file)
   :config
-  (setq org-enforce-todo-checkbox-dependencies t
-        org-enforce-todo-dependencies t
-        org-fontify-whole-heading-line t
-        org-log-done 'time
-        org-log-repeat 'time
-        org-modules '(org-mouse)
-        org-outline-path-complete-in-steps nil
-        org-refile-targets '((nil :maxlevel . 10))
-        org-refile-use-outline-path 'file)
   (defun find-org-default-notes-file ()
     "Open the default Org notes file."
     (interactive)
     (find-file org-default-notes-file)))
 
 (use-package org-capture
-  :config
-  (setq org-capture-templates '(("t"
-                                 "Task"
-                                 entry
-                                 (file+headline "" "Tasks")
-                                 "* TODO %?
+  :custom
+  (org-capture-templates '(("t"
+                            "Task"
+                            entry
+                            (file+headline "" "Tasks")
+                            "* TODO %?
   %u
   %a")
-                                ("n"
-                                 "Note"
-                                 entry
-                                 (file+headline "" "Notes")
-                                 "* %?
+                           ("n"
+                            "Note"
+                            entry
+                            (file+headline "" "Notes")
+                            "* %?
   %i
   %a"))))
 
 (use-package projectile
   :ensure
+  :custom
+  (projectile-completion-system 'ivy)
+  (projectile-create-missing-test-files t)
   :delight '(:eval (concat " " (projectile-project-name)))
   :config
-  (setq projectile-completion-system 'ivy
-        projectile-create-missing-test-files t)
   (projectile-mode)
   (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'web '("index.html")
@@ -357,18 +364,18 @@
       (restclient-mode))))
 
 (use-package scroll-bar
-  :config
-  (set-scroll-bar-mode nil))
+  :custom
+  (scroll-bar-mode nil))
 
 (use-package sh-script
-  :config
-  (setq sh-basic-offset nick-indent-level))
+  :custom
+  (sh-basic-offset nick-indent-level))
 
 (use-package simple
   :hook (text-mode . auto-fill-mode)
-  :delight auto-fill-function
-  :config
-  (setq kill-whole-line t))
+  :custom
+  (kill-whole-line t)
+  :delight auto-fill-function)
 
 (use-package smartparens
   :ensure
@@ -384,9 +391,10 @@
 
 (use-package super-save
   :ensure
+  :custom
+  (super-save-auto-save-when-idle t)
   :delight
   :config
-  (setq super-save-auto-save-when-idle t)
   (super-save-mode))
 
 (use-package tern
@@ -401,25 +409,26 @@
 
 (use-package typescript-mode
   :ensure
-  :config
-  (setq typescript-indent-level nick-indent-level))
+  :custom
+  (typescript-indent-level nick-indent-level))
 
 (use-package undo-tree
   :ensure
+  :custom
+  (undo-tree-visualizer-diff t)
+  (undo-tree-visualizer-timestamps t)
   :delight
   :config
-  (setq undo-tree-visualizer-diff t
-        undo-tree-visualizer-timestamps t)
   (global-undo-tree-mode))
 
 (use-package vc
-  :config
-  (setq vc-diff-switches "-w"
-        vc-follow-symlinks t))
+  :custom
+  (vc-diff-switches "-w")
+  (vc-follow-symlinks t))
 
 (use-package vc-git
-  :config
-  (setq vc-git-diff-switches "-w -C"))
+  :custom
+  (vc-git-diff-switches "-w -C"))
 
 (use-package wakatime-mode
   :ensure
@@ -433,18 +442,20 @@
   "\\.jsx?\\'"
   "\\.json\\'"
   :interpreter "node"
+  :custom
+  (web-mode-code-indent-offset nick-indent-level)
+  (web-mode-css-indent-offset nick-indent-level)
+  (web-mode-engines-alist '(("liquid" . "\\.html?\\'")))
+  (web-mode-markup-indent-offset nick-indent-level)
   :config
-  (setq web-mode-code-indent-offset nick-indent-level
-        web-mode-css-indent-offset nick-indent-level
-        web-mode-engines-alist '(("liquid" . "\\.html?\\'"))
-        web-mode-markup-indent-offset nick-indent-level)
   (add-to-list 'web-mode-content-types '("jsx" . "\\.jsx?\\'")))
 
 (use-package whitespace
-  :delight global-whitespace-mode
   :hook (before-save . whitespace-cleanup)
+  :custom
+  (whitespace-style '(face trailing tabs lines-tail empty tab-mark))
+  :delight global-whitespace-mode
   :config
-  (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark))
   (global-whitespace-mode))
 
 (use-package yaml-mode
