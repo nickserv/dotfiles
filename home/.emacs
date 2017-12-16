@@ -333,8 +333,11 @@
 (use-package proportional
   :ensure
   :config
-  (setq proportional-font "SF Pro Text"
-        proportional-monospace-font "SF Mono")
+  (pcase window-system
+    ('ns  (setq proportional-font "SF Pro Text"
+                proportional-monospace-font "SF Mono"))
+    ('w32 (setq proportional-font "Segoe UI"
+                proportional-monospace-font "Consolas")))
   (proportional-mode))
 
 (use-package rainbow-mode
