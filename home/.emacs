@@ -10,16 +10,13 @@
 ;;; Variables
 
 (defconst nick-indent-level 2)
-(defconst nick-mac-window-system (memq window-system '(mac ns)))
-(defconst nick-organizer "~/Google Drive/Organizer.org")
-(defconst nick-projects-directory "~/Repos")
 
 (setq auto-save-default nil
       backup-directory-alist `((".*" . ,(locate-user-emacs-file "backup/")))
       custom-file (locate-user-emacs-file "custom.el")
       default-frame-alist '((fullscreen . maximized))
       inhibit-startup-screen t
-      initial-buffer-choice nick-organizer
+      initial-buffer-choice "~/Google Drive/Organizer.org"
       initial-scratch-message nil
       mouse-wheel-scroll-amount '(1 ((control)))
       ns-pop-up-frames nil
@@ -46,7 +43,7 @@
 (xterm-mouse-mode)
 
 ;; macOS GUI
-(when nick-mac-window-system
+(when (eq window-system 'ns)
   (setq default-frame-alist '((fullscreen . fullboth)))
   (menu-bar-mode))
 
@@ -90,7 +87,7 @@
 
 (use-package exec-path-from-shell
   :ensure
-  :if nick-mac-window-system
+  :if (eq window-system 'ns)
   :config
   (exec-path-from-shell-initialize))
 
@@ -311,7 +308,7 @@
         projectile-create-missing-test-files t
         projectile-switch-project-action 'projectile-vc)
   (projectile-mode)
-  (projectile-discover-projects-in-directory nick-projects-directory)
+  (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'web '("index.html")
                                     :run 'browse-url-of-buffer)
   (projectile-register-project-type 'jekyll '("_config.yml")
@@ -336,8 +333,11 @@
 (use-package proportional
   :ensure
   :config
-  (setq proportional-font "SF Pro Text"
-        proportional-monospace-font "SF Mono")
+  (pcase window-system
+    ('ns  (setq proportional-font "SF Pro Text"
+                proportional-monospace-font "SF Mono"))
+    ('w32 (setq proportional-font "Segoe UI"
+                proportional-monospace-font "Consolas")))
   (proportional-mode))
 
 (use-package rainbow-mode
