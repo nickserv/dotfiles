@@ -83,9 +83,6 @@
 
 ;;; Packages
 
-(use-package add-hooks
-  :ensure)
-
 (use-package delight
   :ensure)
 
@@ -97,8 +94,7 @@
 
 (use-package add-node-modules-path
   :ensure
-  :config
-  (add-hooks-pair 'web-mode 'add-node-modules-path))
+  :hook web-mode)
 
 (use-package aggressive-indent
   :ensure
@@ -157,10 +153,10 @@
   (setq css-indent-offset nick-indent-level))
 
 (use-package dired
+  :hook (dired-mode . dired-hide-details-mode)
   :config
   (setq dired-recursive-copies 'always
-        dired-recursive-deletes 'always)
-  (add-hooks-pair 'dired-mode 'dired-hide-details-mode))
+        dired-recursive-deletes 'always))
 
 (use-package ediff
   :config
@@ -173,9 +169,8 @@
 
 (use-package emmet-mode
   :ensure
-  :delight
-  :config
-  (add-hooks-pair '(css-mode scss-mode sgml-mode web-mode) 'emmet-mode))
+  :hook (css-mode scss-mode sgml-mode web-mode)
+  :delight)
 
 (use-package ert
   :bind ("C-c e" . ert-run-tests-from-buffer)
@@ -191,6 +186,7 @@
 
 (use-package flycheck
   :ensure
+  :hook (web-mode . enable-web-mode-linter)
   :config
   (defun enable-web-mode-linter ()
     (when (equal (file-name-extension buffer-file-name) "js")
@@ -199,8 +195,7 @@
       (flycheck-add-mode 'javascript-jscs 'web-mode)
       (flycheck-add-mode 'javascript-standard 'web-mode)))
   (setq flycheck-mode-line-prefix nil)
-  (global-flycheck-mode)
-  (add-hooks-pair 'web-mode 'enable-web-mode-linter))
+  (global-flycheck-mode))
 
 (use-package flycheck-package
   :ensure
@@ -215,10 +210,9 @@
   (flycheck-pos-tip-mode))
 
 (use-package flyspell
-  :delight
-  :config
-  (add-hooks '((text-mode . flyspell-mode)
-               (prog-mode . flyspell-prog-mode))))
+  :hook ((text-mode . flyspell-mode)
+         (prog-mode . flyspell-prog-mode))
+  :delight)
 
 (use-package gist
   :ensure)
@@ -344,9 +338,8 @@
 
 (use-package rainbow-mode
   :ensure
-  :delight
-  :config
-  (add-hooks-pair 'prog-mode 'rainbow-mode))
+  :hook prog-mode
+  :delight)
 
 (use-package restart-emacs
   :ensure
@@ -372,10 +365,10 @@
   (setq sh-basic-offset nick-indent-level))
 
 (use-package simple
+  :hook (text-mode . auto-fill-mode)
   :delight auto-fill-function
   :config
-  (setq kill-whole-line t)
-  (add-hooks-pair 'text-mode 'auto-fill-mode))
+  (setq kill-whole-line t))
 
 (use-package smartparens
   :ensure
@@ -398,9 +391,9 @@
 
 (use-package tern
   :ensure
+  :hook (web-mode . tern-mode)
   :config
-  (add-to-list 'tern-command "--no-port-file" t)
-  (add-hooks-pair 'web-mode 'tern-mode))
+  (add-to-list 'tern-command "--no-port-file" t))
 
 (use-package tool-bar
   :config
@@ -449,9 +442,9 @@
 
 (use-package whitespace
   :delight global-whitespace-mode
+  :hook (before-save . whitespace-cleanup)
   :config
   (setq whitespace-style '(face trailing tabs lines-tail empty tab-mark))
-  (add-hooks-pair 'before-save 'whitespace-cleanup)
   (global-whitespace-mode))
 
 (use-package yaml-mode
