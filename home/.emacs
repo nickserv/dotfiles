@@ -184,9 +184,6 @@
 (use-package eshell
   :bind ("C-x t" . eshell))
 
-(use-package flx
-  :ensure)
-
 (use-package flycheck
   :ensure
   :config
