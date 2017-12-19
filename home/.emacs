@@ -149,7 +149,7 @@
 (use-package counsel-projectile
   :ensure
   :config
-  (counsel-projectile-on))
+  (counsel-projectile-mode))
 
 (use-package css-mode
   :custom
