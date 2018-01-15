@@ -262,6 +262,12 @@
   :config
   (global-magit-file-mode))
 
+(use-package magithub
+  :ensure
+  :after magit
+  :config
+  (magithub-feature-autoinject t))
+
 (use-package markdown-mode
   :ensure)
 
