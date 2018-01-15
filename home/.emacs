@@ -119,6 +119,7 @@
   :custom
   (company-idle-delay 0)
   (company-minimum-prefix-length 0)
+  :delight
   :config
   (global-company-mode))
 
@@ -385,7 +386,7 @@
 
 (use-package smartparens-config
   :ensure smartparens
-  :delight
+  :delight smartparens-mode
   :config
   (smartparens-global-strict-mode)
   (sp-use-smartparens-bindings)
@@ -405,6 +406,7 @@
 (use-package tern
   :ensure
   :hook (web-mode . tern-mode)
+  :delight
   :config
   (add-to-list 'tern-command "--no-port-file" t))
 
@@ -437,6 +439,7 @@
 
 (use-package wakatime-mode
   :ensure
+  :delight
   :config
   (global-wakatime-mode))
 
