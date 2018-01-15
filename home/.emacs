@@ -377,11 +377,10 @@
   (kill-whole-line t)
   :delight auto-fill-function)
 
-(use-package smartparens
-  :ensure
+(use-package smartparens-config
+  :ensure smartparens
   :delight
   :config
-  (require 'smartparens-config)
   (smartparens-global-strict-mode)
   (sp-use-smartparens-bindings)
   (show-smartparens-global-mode))
