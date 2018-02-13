@@ -118,7 +118,7 @@
   :ensure
   :custom
   (company-idle-delay 0)
-  (company-minimum-prefix-length 0)
+  (company-minimum-prefix-length 1)
   :delight
   :config
   (global-company-mode))
