@@ -414,11 +414,6 @@
   :config
   (tool-bar-mode 0))
 
-(use-package typescript-mode
-  :ensure
-  :custom
-  (typescript-indent-level nick-indent-level))
-
 (use-package undo-tree
   :ensure
   :custom
