@@ -319,6 +319,11 @@
   %i
   %a"))))
 
+(use-package prettier-js
+  :ensure
+  :hook (web-mode . prettier-js-mode)
+  :delight)
+
 (use-package projectile
   :ensure
   :custom
