@@ -81,6 +81,12 @@
 (bind-keys ("C-c m l" . cdnm-list)
            ("C-c m u" . cdnm-update))
 
+;; Easy quitting
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+  (cl-letf (((symbol-function #'process-list) (lambda ())))
+    ad-do-it))
+
 ;;; Packages
 
 (use-package delight
