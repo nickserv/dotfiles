@@ -198,7 +198,6 @@
     (when (equal (file-name-extension buffer-file-name) "js")
       (flycheck-add-mode 'javascript-jshint 'web-mode)
       (flycheck-add-mode 'javascript-eslint 'web-mode)
-      (flycheck-add-mode 'javascript-jscs 'web-mode)
       (flycheck-add-mode 'javascript-standard 'web-mode)))
   (global-flycheck-mode))
 
