@@ -100,7 +100,7 @@
 
 (use-package add-node-modules-path
   :ensure
-  :hook web-mode)
+  :hook rjsx-mode)
 
 (use-package aggressive-indent
   :ensure
@@ -179,7 +179,7 @@
 
 (use-package emmet-mode
   :ensure
-  :hook (css-mode scss-mode sgml-mode web-mode)
+  :hook (css-mode rjsx-mode scss-mode sgml-mode)
   :delight)
 
 (use-package ert
@@ -196,15 +196,9 @@
 
 (use-package flycheck
   :ensure
-  :hook (web-mode . enable-web-mode-linter)
   :custom
   (flycheck-mode-line-prefix nil)
   :config
-  (defun enable-web-mode-linter ()
-    (when (equal (file-name-extension buffer-file-name) "js")
-      (flycheck-add-mode 'javascript-jshint 'web-mode)
-      (flycheck-add-mode 'javascript-eslint 'web-mode)
-      (flycheck-add-mode 'javascript-standard 'web-mode)))
   (global-flycheck-mode))
 
 (use-package flycheck-package
@@ -327,7 +321,7 @@
 
 (use-package prettier-js
   :ensure
-  :hook (web-mode . prettier-js-mode)
+  :hook (rjsx-mode . prettier-js-mode)
   :delight)
 
 (use-package projectile
@@ -380,6 +374,14 @@
       (switch-to-buffer-other-window buffer)
       (restclient-mode))))
 
+(use-package rjsx-mode
+  :ensure
+  :mode "\\.jsx?\\'"
+  :custom
+  (js-indent-level 2)
+  (js2-mode-show-parse-errors nil)
+  (js2-mode-show-strict-warnings nil))
+
 (use-package scroll-bar
   :custom
   (scroll-bar-mode nil))
@@ -415,7 +417,7 @@
 
 (use-package tern
   :ensure
-  :hook (web-mode . tern-mode)
+  :hook (rjsx-mode . tern-mode)
   :delight
   :config
   (add-to-list 'tern-command "--no-port-file" t))
@@ -447,21 +449,6 @@
   :delight
   :config
   (global-wakatime-mode))
-
-(use-package web-mode
-  :ensure
-  :mode
-  "\\.html?\\'"
-  "\\.jsx?\\'"
-  "\\.json\\'"
-  :interpreter "node"
-  :custom
-  (web-mode-code-indent-offset nick-indent-level)
-  (web-mode-css-indent-offset nick-indent-level)
-  (web-mode-engines-alist '(("liquid" . "\\.html?\\'")))
-  (web-mode-markup-indent-offset nick-indent-level)
-  :config
-  (add-to-list 'web-mode-content-types '("jsx" . "\\.jsx?\\'")))
 
 (use-package whitespace
   :hook (before-save . whitespace-cleanup)
