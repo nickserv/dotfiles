@@ -64,15 +64,7 @@
 ;; Install use-package
 (package-install 'use-package)
 
-;;; Bind Improvements
-(bind-keys ("<mouse-4>" . scroll-down-line)
-           ("<mouse-5>" . scroll-up-line)
-           ("C-c s" . sort-lines)
-           ("C-s" . swiper)
-           ("C-x C-b" . ibuffer)
-           ("M-/" . hippie-expand))
-
-;; cdnm
+;;; Binds
 
 (defun cdnm-list ()
   "List CDN dependencies in buffer."
@@ -84,8 +76,14 @@
   (interactive)
   (shell-command (concat "cdnm update " buffer-file-name) "*cdnm-update*"))
 
-(bind-keys ("C-c m l" . cdnm-list)
-           ("C-c m u" . cdnm-update))
+(bind-keys ("<mouse-4>" . scroll-down-line)
+           ("<mouse-5>" . scroll-up-line)
+           ("C-c m l" . cdnm-list)
+           ("C-c m u" . cdnm-update)
+           ("C-c s" . sort-lines)
+           ("C-s" . swiper)
+           ("C-x C-b" . ibuffer)
+           ("M-/" . hippie-expand))
 
 ;;; Packages
 
