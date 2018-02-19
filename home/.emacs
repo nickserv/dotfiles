@@ -40,13 +40,15 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;;; Package Setup
+;;; Package setup
 (package-initialize)
 
-;; Install use-package
+;; use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
 
 ;;; Binds
 
@@ -71,21 +73,17 @@
 
 ;;; Packages
 
-(use-package delight
-  :ensure)
+(use-package delight)
 
 (use-package exec-path-from-shell
-  :ensure
   :if (eq window-system 'ns)
   :config
   (exec-path-from-shell-initialize))
 
 (use-package add-node-modules-path
-  :ensure
   :hook rjsx-mode)
 
 (use-package aggressive-indent
-  :ensure
   :delight
   :config
   (global-aggressive-indent-mode))
@@ -99,11 +97,9 @@
   (global-auto-revert-mode))
 
 (use-package browse-at-remote
-  :ensure
   :bind ("C-c r" . browse-at-remote))
 
 (use-package company
-  :ensure
   :custom
   (company-idle-delay 0)
   (company-minimum-prefix-length 1)
@@ -126,7 +122,6 @@
                '("^  \\(.+?\\)::\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3)))
 
 (use-package counsel
-  :ensure
   :delight
   :bind (("C-c g" . counsel-git)
          ("C-c j" . counsel-git-grep)
@@ -136,7 +131,6 @@
   (counsel-mode))
 
 (use-package counsel-projectile
-  :ensure
   :config
   (counsel-projectile-mode))
 
@@ -144,7 +138,13 @@
   :custom
   (css-indent-offset nick-indent-level))
 
+(use-package custom
+  :ensure nil
+  :custom
+  (custom-enabled-themes '(leuven)))
+
 (use-package dired
+  :ensure nil
   :hook (dired-mode . dired-hide-details-mode)
   :custom
   (dired-recursive-copies 'always)
@@ -157,10 +157,10 @@
   (ediff-window-setup-function 'ediff-setup-windows-plain))
 
 (use-package emacs-lisp-mode
+  :ensure nil
   :mode "Cask")
 
 (use-package emmet-mode
-  :ensure
   :hook (css-mode rjsx-mode scss-mode sgml-mode)
   :delight)
 
@@ -177,20 +177,17 @@
   :bind ("C-x t" . eshell))
 
 (use-package flycheck
-  :ensure
   :custom
   (flycheck-mode-line-prefix nil)
   :config
   (global-flycheck-mode))
 
 (use-package flycheck-package
-  :ensure
   :after flycheck
   :config
   (flycheck-package-setup))
 
 (use-package flycheck-pos-tip
-  :ensure
   :after flycheck
   :config
   (flycheck-pos-tip-mode))
@@ -201,6 +198,7 @@
   :delight)
 
 (use-package frame
+  :ensure nil
   :custom
   (blink-cursor-mode)
   :config
@@ -208,8 +206,7 @@
                         (w32 . "Consolas"))))
     (set-frame-font (alist-get window-system system-fonts) nil t)))
 
-(use-package gist
-  :ensure)
+(use-package gist)
 
 (use-package ispell
   :custom
@@ -226,19 +223,11 @@
   (ivy-mode))
 
 (use-package ivy-hydra
-  :ensure
   :after ivy)
 
-(use-package js-comint
-  :ensure)
-
-(use-package leuven-theme
-  :ensure
-  :config
-  (load-theme 'leuven t))
+(use-package js-comint)
 
 (use-package magit
-  :ensure
   :custom
   (magit-completing-read-function 'ivy-completing-read)
   (magit-diff-arguments '("--no-ext-diff" "-w" "-C"))
@@ -253,22 +242,18 @@
   (global-magit-file-mode))
 
 (use-package magithub
-  :ensure
   :after magit
   :config
   (magithub-feature-autoinject t))
 
-(use-package markdown-mode
-  :ensure)
+(use-package markdown-mode)
 
 (use-package npm-mode
-  :ensure
   :delight
   :config
   (npm-global-mode))
 
 (use-package org
-  :ensure org-plus-contrib
   :bind (("C-c a" . org-agenda)
          ("C-c b" . org-iswitchb)
          ("C-c c" . org-capture)
@@ -293,6 +278,7 @@
     (find-file org-default-notes-file)))
 
 (use-package org-capture
+  :ensure nil
   :custom
   (org-capture-templates '(("t"
                             "Task"
@@ -310,12 +296,10 @@
   %a"))))
 
 (use-package prettier-js
-  :ensure
   :hook (rjsx-mode . prettier-js-mode)
   :delight)
 
 (use-package projectile
-  :ensure
   :custom
   (projectile-completion-system 'ivy)
   (projectile-create-missing-test-files t)
@@ -345,16 +329,13 @@
                                     :test-suffix ".test"))
 
 (use-package rainbow-mode
-  :ensure
   :hook prog-mode
   :delight)
 
 (use-package restart-emacs
-  :ensure
   :bind ("C-x C-S-c" . restart-emacs))
 
 (use-package restclient
-  :ensure
   :bind ("C-c h" . restclient-buffer)
   :config
   (defun restclient-buffer ()
@@ -365,7 +346,6 @@
       (restclient-mode))))
 
 (use-package rjsx-mode
-  :ensure
   :mode "\\.jsx?\\'"
   :custom
   (js-indent-level 2)
@@ -377,6 +357,7 @@
   (save-place-mode t))
 
 (use-package scroll-bar
+  :ensure nil
   :custom
   (scroll-bar-mode nil))
 
@@ -385,6 +366,7 @@
   (sh-basic-offset nick-indent-level))
 
 (use-package simple
+  :ensure nil
   :hook (text-mode . auto-fill-mode)
   :custom
   (kill-whole-line t)
@@ -399,11 +381,9 @@
   (sp-use-smartparens-bindings)
   (show-smartparens-global-mode))
 
-(use-package smex
-  :ensure)
+(use-package smex)
 
 (use-package super-save
-  :ensure
   :custom
   (super-save-auto-save-when-idle t)
   :delight
@@ -411,18 +391,17 @@
   (super-save-mode))
 
 (use-package tern
-  :ensure
   :hook (rjsx-mode . tern-mode)
   :delight
   :config
   (add-to-list 'tern-command "--no-port-file" t))
 
 (use-package tool-bar
+  :ensure nil
   :config
   (tool-bar-mode 0))
 
 (use-package undo-tree
-  :ensure
   :custom
   (undo-tree-visualizer-diff t)
   (undo-tree-visualizer-timestamps t)
@@ -436,11 +415,11 @@
   (vc-follow-symlinks t))
 
 (use-package vc-git
+  :ensure nil
   :custom
   (vc-git-diff-switches "-w -C"))
 
 (use-package wakatime-mode
-  :ensure
   :delight
   :config
   (global-wakatime-mode))
@@ -453,7 +432,6 @@
   :config
   (global-whitespace-mode))
 
-(use-package yaml-mode
-  :ensure)
+(use-package yaml-mode)
 
 ;;; .emacs ends here
