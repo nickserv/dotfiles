@@ -69,12 +69,12 @@
 (defun cdnm-list ()
   "List CDN dependencies in buffer."
   (interactive)
-  (shell-command (concat "cdnm list " buffer-file-name) "*cdnm-list*"))
+  (shell-command (format "cdnm list \"%s\"" buffer-file-name) "*cdnm-list*"))
 
 (defun cdnm-update ()
   "Update CDN dependencies in buffer."
   (interactive)
-  (shell-command (concat "cdnm update " buffer-file-name) "*cdnm-update*"))
+  (shell-command (format "cdnm update \"%s\"" buffer-file-name) "*cdnm-update*"))
 
 (bind-keys ("<mouse-4>" . scroll-down-line)
            ("<mouse-5>" . scroll-up-line)
