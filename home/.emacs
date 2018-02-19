@@ -14,7 +14,7 @@
 (setq auto-save-default nil
       backup-directory-alist `((".*" . ,(locate-user-emacs-file "backup/")))
       custom-file (locate-user-emacs-file "custom.el")
-      default-frame-alist '((fullscreen . maximized))
+      default-frame-alist `((fullscreen . ,(if (eq window-system 'ns) 'fullboth 'maximized)))
       inhibit-startup-screen t
       initial-buffer-choice "~/Google Drive/Organizer.org"
       initial-scratch-message nil
@@ -31,10 +31,6 @@
               line-spacing 0.4
               tab-width nick-indent-level)
 
-(let ((system-fonts '((ns .  "SF Mono")
-                      (w32 . "Consolas"))))
-  (set-frame-font (alist-get window-system system-fonts) nil t))
-
 ;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -44,25 +40,13 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;;; Minor Modes
-(blink-cursor-mode 0)
-(line-number-mode 0)
-(menu-bar-mode 0)
-(save-place-mode)
-(savehist-mode)
-(xterm-mouse-mode)
-
-;; macOS GUI
-(when (eq window-system 'ns)
-  (setq default-frame-alist '((fullscreen . fullboth)))
-  (menu-bar-mode))
-
 ;;; Package Setup
 (package-initialize)
-(package-refresh-contents)
 
 ;; Install use-package
-(package-install 'use-package)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 ;;; Binds
 
@@ -215,6 +199,14 @@
   :hook ((text-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode))
   :delight)
+
+(use-package frame
+  :custom
+  (blink-cursor-mode)
+  :config
+  (let ((system-fonts '((ns .  "SF Mono")
+                        (w32 . "Consolas"))))
+    (set-frame-font (alist-get window-system system-fonts) nil t)))
 
 (use-package gist
   :ensure)
@@ -380,6 +372,10 @@
   (js2-mode-show-parse-errors nil)
   (js2-mode-show-strict-warnings nil))
 
+(use-package saveplace
+  :custom
+  (save-place-mode t))
+
 (use-package scroll-bar
   :custom
   (scroll-bar-mode nil))
@@ -392,6 +388,7 @@
   :hook (text-mode . auto-fill-mode)
   :custom
   (kill-whole-line t)
+  (line-number-mode)
   :delight auto-fill-function)
 
 (use-package smartparens-config
