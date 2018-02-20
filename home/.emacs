@@ -48,7 +48,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
-(setq use-package-always-ensure t)
+(setq use-package-always-defer t
+      use-package-always-ensure t)
 
 ;;; Binds
 
@@ -77,7 +78,7 @@
 
 (use-package exec-path-from-shell
   :if (eq window-system 'ns)
-  :config
+  :init
   (exec-path-from-shell-initialize))
 
 (use-package add-node-modules-path
@@ -85,7 +86,7 @@
 
 (use-package aggressive-indent
   :delight
-  :config
+  :init
   (global-aggressive-indent-mode))
 
 (use-package autorevert
@@ -93,7 +94,7 @@
   (auto-revert-verbose nil)
   (global-auto-revert-non-file-buffers t)
   :delight auto-revert-mode
-  :config
+  :init
   (global-auto-revert-mode))
 
 (use-package browse-at-remote
@@ -104,7 +105,7 @@
   (company-idle-delay 0)
   (company-minimum-prefix-length 1)
   :delight
-  :config
+  :init
   (global-company-mode))
 
 (use-package compile
@@ -127,11 +128,12 @@
          ("C-c j" . counsel-git-grep)
          ("C-c k" . counsel-rg)
          ("C-x l" . counsel-locate))
-  :config
+  :init
   (counsel-mode))
 
 (use-package counsel-projectile
-  :config
+  :after counsel
+  :init
   (counsel-projectile-mode))
 
 (use-package css-mode
@@ -179,17 +181,17 @@
 (use-package flycheck
   :custom
   (flycheck-mode-line-prefix nil)
-  :config
+  :init
   (global-flycheck-mode))
 
 (use-package flycheck-package
   :after flycheck
-  :config
+  :init
   (flycheck-package-setup))
 
 (use-package flycheck-pos-tip
   :after flycheck
-  :config
+  :init
   (flycheck-pos-tip-mode))
 
 (use-package flyspell
@@ -223,6 +225,7 @@
   (ivy-mode))
 
 (use-package ivy-hydra
+  :demand
   :after ivy)
 
 (use-package js-comint)
@@ -238,19 +241,19 @@
                                   "-M"
                                   "-C"))
   (magit-save-repository-buffers 'dontask)
-  :config
+  :init
   (global-magit-file-mode))
 
 (use-package magithub
   :after magit
-  :config
+  :init
   (magithub-feature-autoinject t))
 
 (use-package markdown-mode)
 
 (use-package npm-mode
   :delight
-  :config
+  :init
   (npm-global-mode))
 
 (use-package org
@@ -304,8 +307,9 @@
   (projectile-completion-system 'ivy)
   (projectile-create-missing-test-files t)
   :delight '(:eval (concat " " (projectile-project-name)))
-  :config
+  :init
   (projectile-mode)
+  :config
   (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'web '("index.html")
                                     :run 'browse-url-of-buffer)
@@ -373,11 +377,12 @@
   (line-number-mode)
   :delight auto-fill-function)
 
-(use-package smartparens-config
-  :ensure smartparens
+(use-package smartparens
   :delight smartparens-mode
-  :config
+  :init
+  (require 'smartparens-config)
   (smartparens-global-strict-mode)
+  :config
   (sp-use-smartparens-bindings)
   (show-smartparens-global-mode))
 
@@ -387,7 +392,7 @@
   :custom
   (super-save-auto-save-when-idle t)
   :delight
-  :config
+  :init
   (super-save-mode))
 
 (use-package tern
@@ -406,7 +411,7 @@
   (undo-tree-visualizer-diff t)
   (undo-tree-visualizer-timestamps t)
   :delight
-  :config
+  :init
   (global-undo-tree-mode))
 
 (use-package vc
@@ -421,7 +426,7 @@
 
 (use-package wakatime-mode
   :delight
-  :config
+  :init
   (global-wakatime-mode))
 
 (use-package whitespace
