@@ -74,7 +74,7 @@
 
 ;;; Packages
 
-(use-package delight)
+(use-package diminish)
 
 (use-package exec-path-from-shell
   :if (eq window-system 'ns)
@@ -85,7 +85,7 @@
   :hook rjsx-mode)
 
 (use-package aggressive-indent
-  :delight
+  :diminish
   :init
   (global-aggressive-indent-mode))
 
@@ -93,7 +93,7 @@
   :custom
   (auto-revert-verbose nil)
   (global-auto-revert-non-file-buffers t)
-  :delight auto-revert-mode
+  :diminish auto-revert-mode
   :init
   (global-auto-revert-mode))
 
@@ -104,7 +104,7 @@
   :custom
   (company-idle-delay 0)
   (company-minimum-prefix-length 1)
-  :delight
+  :diminish
   :init
   (global-company-mode))
 
@@ -123,7 +123,7 @@
                '("^  \\(.+?\\)::\\([[:digit:]]+\\):\\([[:digit:]]+\\)" 1 2 3)))
 
 (use-package counsel
-  :delight
+  :diminish
   :bind (("C-c g" . counsel-git)
          ("C-c j" . counsel-git-grep)
          ("C-c k" . counsel-rg)
@@ -164,7 +164,7 @@
 
 (use-package emmet-mode
   :hook (css-mode rjsx-mode scss-mode sgml-mode)
-  :delight)
+  :diminish)
 
 (use-package ert
   :bind ("C-c e" . ert-run-tests-from-buffer)
@@ -197,7 +197,7 @@
 (use-package flyspell
   :hook ((text-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode))
-  :delight)
+  :diminish)
 
 (use-package frame
   :ensure nil
@@ -220,7 +220,7 @@
   (ivy-count-format "(%d/%d) ")
   (ivy-display-style 'fancy)
   (ivy-use-virtual-buffers t)
-  :delight
+  :diminish
   :config
   (ivy-mode))
 
@@ -252,7 +252,7 @@
 (use-package markdown-mode)
 
 (use-package npm-mode
-  :delight
+  :diminish
   :init
   (npm-global-mode))
 
@@ -300,13 +300,13 @@
 
 (use-package prettier-js
   :hook (rjsx-mode . prettier-js-mode)
-  :delight)
+  :diminish)
 
 (use-package projectile
   :custom
   (projectile-completion-system 'ivy)
   (projectile-create-missing-test-files t)
-  :delight '(:eval (concat " " (projectile-project-name)))
+  (projectile-mode-line '(:eval (concat " " (projectile-project-name))))
   :init
   (projectile-mode)
   :config
@@ -334,7 +334,7 @@
 
 (use-package rainbow-mode
   :hook prog-mode
-  :delight)
+  :diminish)
 
 (use-package restart-emacs
   :bind ("C-x C-S-c" . restart-emacs))
@@ -375,10 +375,10 @@
   :custom
   (kill-whole-line t)
   (line-number-mode)
-  :delight auto-fill-function)
+  :diminish auto-fill-function)
 
 (use-package smartparens
-  :delight smartparens-mode
+  :diminish
   :init
   (require 'smartparens-config)
   (smartparens-global-strict-mode)
@@ -391,13 +391,13 @@
 (use-package super-save
   :custom
   (super-save-auto-save-when-idle t)
-  :delight
+  :diminish
   :init
   (super-save-mode))
 
 (use-package tern
   :hook (rjsx-mode . tern-mode)
-  :delight
+  :diminish
   :config
   (add-to-list 'tern-command "--no-port-file" t))
 
@@ -410,7 +410,7 @@
   :custom
   (undo-tree-visualizer-diff t)
   (undo-tree-visualizer-timestamps t)
-  :delight
+  :diminish
   :init
   (global-undo-tree-mode))
 
@@ -425,7 +425,7 @@
   (vc-git-diff-switches "-w -C"))
 
 (use-package wakatime-mode
-  :delight
+  :diminish
   :init
   (global-wakatime-mode))
 
@@ -433,7 +433,7 @@
   :hook (before-save . whitespace-cleanup)
   :custom
   (whitespace-style '(face trailing tabs lines-tail empty tab-mark))
-  :delight global-whitespace-mode
+  :diminish global-whitespace-mode
   :config
   (global-whitespace-mode))
 
