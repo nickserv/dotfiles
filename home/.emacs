@@ -68,7 +68,6 @@
            ("C-c m l" . cdnm-list)
            ("C-c m u" . cdnm-update)
            ("C-c s" . sort-lines)
-           ("C-s" . swiper)
            ("C-x C-b" . ibuffer)
            ("M-/" . hippie-expand))
 
@@ -383,6 +382,9 @@
   :diminish
   :init
   (super-save-mode))
+
+(use-package swiper
+  :bind ("C-s" . swiper))
 
 (use-package tern
   :hook (rjsx-mode . tern-mode)
