@@ -124,10 +124,6 @@
 
 (use-package counsel
   :diminish
-  :bind (("C-c g" . counsel-git)
-         ("C-c j" . counsel-git-grep)
-         ("C-c k" . counsel-rg)
-         ("C-x l" . counsel-locate))
   :init
   (counsel-mode))
 
@@ -221,7 +217,7 @@
   (ivy-display-style 'fancy)
   (ivy-use-virtual-buffers t)
   :diminish
-  :config
+  :init
   (ivy-mode))
 
 (use-package ivy-hydra
@@ -232,7 +228,6 @@
 
 (use-package magit
   :custom
-  (magit-completing-read-function 'ivy-completing-read)
   (magit-diff-arguments '("--no-ext-diff" "-w" "-C"))
   (magit-diff-refine-hunk 'all)
   (magit-diff-section-arguments '("--ignore-space-change"
@@ -304,11 +299,9 @@
 
 (use-package projectile
   :custom
-  (projectile-completion-system 'ivy)
   (projectile-create-missing-test-files t)
   (projectile-mode-line '(:eval (concat " " (projectile-project-name))))
-  :init
-  (projectile-mode)
+  (projectile-use-git-grep t)
   :config
   (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'web '("index.html")
