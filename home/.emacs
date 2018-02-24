@@ -313,24 +313,20 @@
   (projectile-discover-projects-in-directory "~/Repos")
   (projectile-register-project-type 'web '("index.html")
                                     :run 'browse-url-of-buffer)
-  (projectile-register-project-type 'jekyll '("_config.yml")
-                                    :compile "jekyll build"
-                                    :test "jekyll doctor"
-                                    :run "jekyll serve")
-  (projectile-register-project-type 'jekyll-bundler '("_config.yml")
-                                    :compile "bundle exec jekyll build"
-                                    :test "bundle exec jekyll doctor"
-                                    :run "bundle exec jekyll serve")
   (projectile-register-project-type 'npm '("package.json")
                                     :compile "npm install"
                                     :test "npm test"
                                     :run "npm start"
                                     :test-suffix ".test")
-  (projectile-register-project-type 'yarn '("yarn.lock")
+  (projectile-register-project-type 'yarn '("package.json" "yarn.lock")
                                     :compile "yarn"
                                     :test "yarn test"
-                                    :run "yarn run start"
-                                    :test-suffix ".test"))
+                                    :run "yarn start"
+                                    :test-suffix ".test")
+  (projectile-register-project-type 'jekyll '("Gemfile" "_config.yml")
+                                    :compile "bundle exec jekyll build"
+                                    :test "bundle exec jekyll doctor"
+                                    :run "bundle exec jekyll serve"))
 
 (use-package rainbow-mode
   :hook prog-mode
