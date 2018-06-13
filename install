@@ -9,12 +9,12 @@ else
 fi
 echo
 
-echo "Switching shell to zsh..."
-if [ "$SHELL" != "/usr/local/bin/zsh" ]; then
+echo "Switching shell to fish..."
+if [ "$SHELL" != "/usr/local/bin/fish" ]; then
   if [ "$(uname)" = "Darwin" ]; then
-    chsh -s /usr/local/bin/zsh
+    chsh -s /usr/local/bin/fish
   else
-    sudo chsh --shell /usr/local/bin/zsh "$(whoami)"
+    sudo chsh --shell /usr/local/bin/fish "$(whoami)"
   fi
 fi
 echo
