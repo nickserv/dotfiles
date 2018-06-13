@@ -5,6 +5,5 @@ path=(
 )
 
 # Other variables
-export EDITOR='emacsclient'
-export EMACS='emacs'
+export EDITOR='code --wait'
 export PYTHONSTARTUP="$HOME/.pythonrc"

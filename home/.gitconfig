@@ -36,7 +36,11 @@
 	username = nickmccurdy
 
 [diff]
+	tool = default-difftool
 	renames = copies
+	
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 
 [grep]
 	lineNumber = true
@@ -53,7 +57,6 @@
 	decorate = short
 
 [merge]
-	tool = vimdiff
 	defaultToUpstream = true
 
 [push]
