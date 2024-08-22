@@ -9,27 +9,20 @@
 
 ;;; Variables
 
-(defconst nick-indent-level 2)
-
 (setq auto-save-default nil
       backup-directory-alist `((".*" . ,(locate-user-emacs-file "backup/")))
       custom-file (locate-user-emacs-file "custom.el")
       default-frame-alist `((fullscreen . ,(if (eq window-system 'ns) 'fullboth 'maximized)))
       inhibit-startup-screen t
-      initial-buffer-choice "~/Google Drive/Organizer.org"
       initial-scratch-message nil
-      mouse-wheel-scroll-amount '(1 ((control)))
       ns-pop-up-frames nil
       package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
                          ("gnu" . "https://elpa.gnu.org/packages/"))
       tab-always-indent 'complete
       visible-bell t)
 
 (setq-default fill-column 80
-              indent-tabs-mode nil
-              line-spacing 0.4
-              tab-width nick-indent-level)
+              tab-width 2)
 
 ;; Abbreviate yes/no prompts.
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -40,13 +33,7 @@
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
 
-;;; Package setup
-(package-initialize)
-
 ;; use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-defer t
       use-package-always-ensure t)
@@ -63,9 +50,7 @@
   (interactive)
   (shell-command (format "cdnm update \"%s\"" buffer-file-name) "*cdnm-update*"))
 
-(bind-keys ("<mouse-4>" . scroll-down-line)
-           ("<mouse-5>" . scroll-up-line)
-           ("C-c m l" . cdnm-list)
+(bind-keys ("C-c m l" . cdnm-list)
            ("C-c m u" . cdnm-update)
            ("C-c s" . sort-lines)
            ("C-x C-b" . ibuffer)
@@ -81,12 +66,17 @@
   (exec-path-from-shell-initialize))
 
 (use-package add-node-modules-path
-  :hook rjsx-mode)
+  :disabled
+  :hook prog-mode)
 
 (use-package aggressive-indent
   :diminish
   :init
   (global-aggressive-indent-mode))
+
+(use-package auto-package-update
+  :config
+  (auto-package-update-maybe))
 
 (use-package autorevert
   :custom
@@ -131,15 +121,6 @@
   :init
   (counsel-projectile-mode))
 
-(use-package css-mode
-  :custom
-  (css-indent-offset nick-indent-level))
-
-(use-package custom
-  :ensure nil
-  :custom
-  (custom-enabled-themes '(leuven)))
-
 (use-package dired
   :ensure nil
   :hook (dired-mode . dired-hide-details-mode)
@@ -155,7 +136,9 @@
 
 (use-package emacs-lisp-mode
   :ensure nil
-  :mode "Cask")
+  :mode "Cask"
+  :init
+  (setq-default indent-tabs-mode nil))
 
 (use-package emmet-mode
   :hook (css-mode rjsx-mode scss-mode sgml-mode)
@@ -197,11 +180,7 @@
 (use-package frame
   :ensure nil
   :custom
-  (blink-cursor-mode)
-  :config
-  (let ((system-fonts '((ns .  "SF Mono")
-                        (w32 . "Consolas"))))
-    (set-frame-font (alist-get window-system system-fonts) nil t)))
+  (blink-cursor-mode))
 
 (use-package gist)
 
@@ -225,6 +204,11 @@
 
 (use-package js-comint)
 
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-c l"))
+
 (use-package magit
   :custom
   (magit-diff-arguments '("--no-ext-diff" "-w" "-C"))
@@ -234,14 +218,7 @@
                                   "--no-ext-diff"
                                   "-M"
                                   "-C"))
-  (magit-save-repository-buffers 'dontask)
-  :init
-  (global-magit-file-mode))
-
-(use-package magithub
-  :after magit
-  :init
-  (magithub-feature-autoinject t))
+  (magit-save-repository-buffers 'dontask))
 
 (use-package markdown-mode)
 
@@ -293,7 +270,9 @@
   %a"))))
 
 (use-package prettier-js
-  :hook (rjsx-mode . prettier-js-mode)
+  :hook (prog-mode . prettier-js-mode)
+  :custom
+  (prettier-js-show-errors nil)
   :diminish)
 
 (use-package projectile
@@ -324,9 +303,6 @@
   :hook prog-mode
   :diminish)
 
-(use-package restart-emacs
-  :bind ("C-x C-S-c" . restart-emacs))
-
 (use-package restclient
   :bind ("C-c h" . restclient-buffer)
   :config
@@ -353,13 +329,9 @@
   :custom
   (scroll-bar-mode nil))
 
-(use-package sh-script
-  :custom
-  (sh-basic-offset nick-indent-level))
-
 (use-package simple
   :ensure nil
-  :hook (text-mode . auto-fill-mode)
+  :hook (prog-mode . auto-fill-mode)
   :custom
   (kill-whole-line t)
   (line-number-mode)
@@ -415,19 +387,14 @@
   :custom
   (vc-git-diff-switches "-w -C"))
 
-(use-package wakatime-mode
-  :diminish
-  :init
-  (global-wakatime-mode))
-
 (use-package whitespace
-  :hook (before-save . whitespace-cleanup)
-  :custom
-  (whitespace-style '(face trailing tabs lines-tail empty tab-mark))
-  :diminish global-whitespace-mode
-  :config
-  (global-whitespace-mode))
+  :hook (before-save . whitespace-cleanup))
 
 (use-package yaml-mode)
+
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-c l"))
 
 ;;; .emacs ends here
