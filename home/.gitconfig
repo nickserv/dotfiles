@@ -1,18 +1,10 @@
 [user]
-	name = Nick McCurdy
+	name = Nicky McCurdy
 	email = nick@nickmccurdy.com
 	signingkey = 2AD315D8
 
-[alias]
-	uncommit = reset --soft HEAD^
-	wdiff = diff --color-words
-	wshow = show --color-words
-
 [apply]
 	whitespace = warn
-
-[color]
-	ui = auto
 
 [color "status"]
 	added = green
@@ -20,17 +12,22 @@
 	untracked = red
 
 [core]
-	autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
+	autocrlf = input
 	excludesfile = ~/.gitignore_global
+	fsMonitor = true
+	pager = delta
+	attributesfile = /Users/nick/.gitattributes
 
 [credential]
 	helper = osxkeychain
 
 [credential "https://github.com"]
 	username = nickmccurdy
+	helper = !/usr/local/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
 	username = nickmccurdy
+	helper = !/usr/local/bin/gh auth git-credential
 
 [credential "https://bitbucket.org"]
 	username = nickmccurdy
@@ -42,8 +39,11 @@
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
 
+[delta]
+	light = true
+
 [grep]
-	lineNumber = true
+	lineNumber = false
 	extendedRegexp = true
 
 [format]
@@ -58,10 +58,21 @@
 
 [merge]
 	defaultToUpstream = true
+	autoStash = true
+  tool = code
+
+[rebase]
+	autoStash = true
+	autosquash = true
 
 [push]
 	default = current
 	followTags = true
+	autoSetupRemote = true
+
+[pull]
+	rebase = false
+	twohead = ort
 
 [status]
 	branch = true
@@ -82,3 +93,36 @@
 [merge "npm-merge-driver"]
 	name = automatically merge npm lockfiles
 	driver = npx npm-merge-driver merge %A %O %B %P
+
+[clean]
+	requireForce = false
+
+[commit]
+	status = false
+
+[fetch]
+	prune = true
+
+[remote]
+	pushDefault = origin
+
+[init]
+	defaultBranch = main
+
+[branch]
+	sort = -authordate
+
+[checkout]
+	defaultRemote = origin
+
+[help]
+	autoCorrect = prompt
+
+[gc]
+	cruftPacks = true
+
+[am]
+	threeWay = true
+
+[rerere]
+	enabled = 1
