@@ -6,18 +6,26 @@ exists() {
 }
 
 if exists brew; then
-    echo brew
+    echo Homebrew
     brew upgrade
-    brew cask outdated | xargs brew cask reinstall
 fi
 
 if exists gem; then
-    echo gem
-    gem update --silent --system
-    gem update --silent
+    echo Gem
+    gem update --system
+    gem update
 fi
 
 if exists npm; then
     echo npm
-    npm update -g
+    npm update --global
+fi
+
+if exists rustup; then
+    echo Rust
+    rustup update
+fi
+
+if exists code; then
+    code --update-extensions
 fi
