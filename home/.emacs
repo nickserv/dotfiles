@@ -1,9 +1,9 @@
-;;; .emacs --- Nick's Emacs configuration
+;;; .emacs --- Nicky's Emacs configuration
 
 ;;; Commentary:
 
-;; My GNU Emacs 25.1 configuration for macOS and Windows, using MELPA
-;; and use-package.
+;; My GNU Emacs 29.4 configuration for macOS and Windows, using MELPA,
+;; ELPA, and use-package.
 
 ;;; Code:
 
