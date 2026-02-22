@@ -16,17 +16,17 @@
 	excludesfile = ~/.gitignore_global
 	fsMonitor = true
 	pager = delta
-	attributesfile = /Users/nick/.gitattributes
+	attributesfile = /Users/nicky/.gitattributes
 
 [credential]
 	helper = osxkeychain
 
 [credential "https://github.com"]
-	username = nickmccurdy
+	username = nickserv
 	helper = !/usr/local/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-	username = nickmccurdy
+	username = nickserv
 	helper = !/usr/local/bin/gh auth git-credential
 
 [credential "https://bitbucket.org"]

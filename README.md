@@ -1,4 +1,4 @@
-# Nick's config files
+# Nicky's config files
 
 ## About
 This is my config file repo for
@@ -8,7 +8,7 @@ that you must install Stow yourself before running the install script.
 
 ## Installation
 ```bash
-wget -q https://raw.github.com/nickmccurdy/dotfiles/master/install
+wget -q https://raw.github.com/nickserv/dotfiles/master/install
 ./install
 ```
 
@@ -25,5 +25,5 @@ brew bundle
 ```
 
 ## Older config files
-- [Fork of Cody Krieger's vim config](https://github.com/nickmccurdy/dotvim-old)
-- [Fork of dwm](https://github.com/nickmccurdy/dwm)
+- [Fork of Cody Krieger's vim config](https://github.com/nickserv/dotvim-old)
+- [Fork of dwm](https://github.com/nickserv/dwm)
