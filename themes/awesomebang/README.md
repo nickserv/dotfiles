@@ -1,6 +1,6 @@
 # AwesomeBang by [Nicky McCurdy](https://nickmccurdy.com/)
-A minimal, [CrunchBang Linux](https://crunchbanglinux.org/) style theme for the
-[awesome window manager](https://awesome.naquadah.org/).
+A minimal, [CrunchBang Linux](https://crunchbang.org/) style theme for the
+[awesome window manager](https://awesomewm.org/).
 
 ## About
 This theme is based off of the default awesome theme and inspired by the color
