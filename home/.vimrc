@@ -305,7 +305,7 @@ command! -range=% -nargs=0 IndentTabs execute '<line1>,<line2>s#^\( \{'.&ts.'\}\
 " indents: convert tabs to spaces
 command! -range=% -nargs=0 IndentSpaces execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 
-" highlight duplicated code (see http://stackoverflow.com/a/1270689/406249)
+" highlight duplicated code (see https://stackoverflow.com/a/1270689/406249)
 command! Dupes syn clear Repeat | g/^\(.*\)\n\ze\%(.*\n\)*\1$/exe 'syn match Repeat "^' . escape(getline('.'), '".\^$*[]') . '$"' | nohlsearch
 
 set cursorcolumn

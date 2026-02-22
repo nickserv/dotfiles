@@ -41,7 +41,7 @@ looks like this:
 
 ## License
 
-- [CC BY-NC 3.0](http://creativecommons.org/licenses/by-nc/3.0/)
+- [CC BY-NC 3.0](https://creativecommons.org/licenses/by-nc/3.0/)
 
 - Based off of the default awesome theme by awesome's developers.
 
