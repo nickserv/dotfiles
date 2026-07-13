@@ -5,10 +5,12 @@ exists() {
   command -v $1 > /dev/null
 }
 
-if exists brew; then
-    echo Homebrew
-    brew upgrade
-fi
+# TODO: Figure out permissions
+# if exists port; then
+#     echo MacPorts
+#     sudo port selfupdate
+#     sudo port upgrade outdated
+# fi
 
 if exists gem; then
     echo Gem

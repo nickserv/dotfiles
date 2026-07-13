@@ -186,7 +186,7 @@
 
 (use-package ispell
   :custom
-  (ispell-program-name "/usr/local/bin/aspell"))
+  (ispell-program-name "/opt/local/bin/aspell"))
 
 (use-package ivy
   :bind ("C-c C-r" . ivy-resume)
