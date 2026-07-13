@@ -1,4 +1,12 @@
+# JavaScript lockfiles
+bun.lock
+bun.lockb
 Gemfile.lock
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# macOS directories
+/Library/
+/Music/Music/Music Library.musiclibrary/
+/Pictures/Photos Library.photoslibrary/
