@@ -1,6 +1,2 @@
-# Package managers
-/packages/.bundle/
-/packages/Gemfile.lock
-
 # Vim
 /home/.vim/

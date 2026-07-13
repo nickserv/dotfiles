@@ -12,18 +12,6 @@ wget -q https://raw.github.com/nickserv/dotfiles/master/install
 ./install
 ```
 
-### Packages
-The install script does not install these yet, so run this to install some of my
-favorite Ruby, Node.js, and Homebrew packages:
-
-```bash
-# before you run anything, make sure you have bundler, npm, and homebrew installed first
-cd packages
-bundle
-npm install -g `cat node_packages.txt`
-brew bundle
-```
-
 ## Older config files
 - [Fork of Cody Krieger's vim config](https://github.com/nickserv/dotvim-old)
 - [Fork of dwm](https://github.com/nickserv/dwm)
