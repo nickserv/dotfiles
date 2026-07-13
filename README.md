@@ -8,7 +8,7 @@ that you must install Stow yourself before running the install script.
 
 ## Installation
 ```bash
-wget -q https://raw.github.com/nickserv/dotfiles/master/install
+wget -q https://raw.github.com/nickserv/dotfiles/main/install
 ./install
 ```
 
