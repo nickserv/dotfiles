@@ -6,11 +6,11 @@ exists() {
 }
 
 # TODO: Figure out permissions
-# if exists port; then
-#     echo MacPorts
-#     sudo port selfupdate
-#     sudo port upgrade outdated
-# fi
+if exists port; then
+    echo MacPorts
+    sudo port selfupdate
+    sudo port upgrade outdated
+fi
 
 if exists gem; then
     echo Gem
