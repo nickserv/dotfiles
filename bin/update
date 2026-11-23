@@ -8,8 +8,8 @@ exists() {
 # TODO: Figure out permissions
 if exists port; then
     echo MacPorts
-    sudo port selfupdate
-    sudo port -N upgrade outdated
+    # Chain commands to avoid installing stale ports
+    sudo port selfupdate && sudo port -N upgrade outdated
 fi
 
 if exists gem; then
