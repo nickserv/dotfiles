@@ -23,6 +23,12 @@ if exists npm; then
     npm update --global
 fi
 
+if exists pnpm; then
+    echo pnpm
+    pnpm self-update
+    pnpm update --global --latest
+fi
+
 if exists rustup; then
     echo Rust
     rustup update
