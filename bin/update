@@ -9,7 +9,7 @@ exists() {
 if exists port; then
     echo MacPorts
     sudo port selfupdate
-    sudo port upgrade outdated
+    sudo port -N upgrade outdated
 fi
 
 if exists gem; then
